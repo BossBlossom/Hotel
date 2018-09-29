@@ -1,0 +1,9 @@
+1. xac dinh chuc nang
+2. thiet ke database
+3. tao project / cai dat moi trong
+4. phan chia cong viec
+***bao cao ( dau moi buoi )***
+- truoc buoi hoc lam gi
+- hom nay se lam gi
+- co van de gi hay khong
+ 
