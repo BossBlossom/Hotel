@@ -16,7 +16,7 @@ import vn.com.java.service.AccountService;
 
 @Configuration
 @EnableWebSecurity
-@ComponentScan({ "jp.com.java" })
+@ComponentScan({ "vn.com.java" })
 public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
