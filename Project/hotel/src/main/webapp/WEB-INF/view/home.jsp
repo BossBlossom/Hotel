@@ -10,6 +10,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1><center>Home</center></h1>
+<h1><center>Home Hotel</center></h1>
 </body>
 </html>
