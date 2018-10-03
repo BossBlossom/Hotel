@@ -32,4 +32,18 @@ public class RoomService
 		Room result = roomDao.create(room);
 		return result;
 	}
+	
+	@Transactional(value=TxType.REQUIRED)
+	public Room updateRoom(Room room)
+	{
+		Room result = roomDao.update(room);
+		return result;
+	}
+	
+	@Transactional(value=TxType.REQUIRED)
+	public Room deleteRoom(Room room)
+	{
+		Room result = roomDao.delete(room);
+		return result;
+	}
 }
