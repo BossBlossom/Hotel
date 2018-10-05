@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import vn.com.java.dao.RoomDao;
 import vn.com.java.entity.Room;
 @Service
+@Transactional
 public class RoomService 
 {
 	@Autowired
@@ -26,21 +27,18 @@ public class RoomService
 		return (List<Room>) roomDao.findByRoom(roomNo);
 	}
 	
-	@Transactional(value=TxType.REQUIRED)
 	public Room createRoom(Room room)
 	{
 		Room result = roomDao.create(room);
 		return result;
 	}
 	
-	@Transactional(value=TxType.REQUIRED)
 	public Room updateRoom(Room room)
 	{
 		Room result = roomDao.update(room);
 		return result;
 	}
 	
-	@Transactional(value=TxType.REQUIRED)
 	public Room deleteRoom(Room room)
 	{
 		Room result = roomDao.delete(room);
