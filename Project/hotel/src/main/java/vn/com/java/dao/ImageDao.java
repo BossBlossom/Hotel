@@ -34,6 +34,12 @@ public class ImageDao
 		return new ArrayList<>();
 	}
 	
+	public Image find(int id)
+	{
+		Image image = getSession().find(Image.class, id);
+		return image;
+	}
+	
 	public Image create(Image image)
 	{
 		getSession().save(image);

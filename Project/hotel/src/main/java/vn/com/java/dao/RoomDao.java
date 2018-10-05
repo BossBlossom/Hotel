@@ -35,6 +35,12 @@ public class RoomDao
 		return new ArrayList<>();
 	}
 	
+	public Room find(int roomNo)
+	{
+		Room room = getSession().find(Room.class, roomNo);
+		return room;
+	}
+	
 	public Room create(Room room)
 	{
 		getSession().save(room);

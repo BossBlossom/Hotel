@@ -16,9 +16,8 @@ public class RoomModel
 	
 	private String information;
 	
-	public Room toRoom()
+	public Room toRoom(Room room)
 	{
-		Room room = new Room();
 		room.setRoomNo(this.roomNo);
 		room.setStatus(this.status);
 		room.setBed(this.bed);

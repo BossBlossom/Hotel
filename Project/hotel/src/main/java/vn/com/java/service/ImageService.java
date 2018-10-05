@@ -26,6 +26,11 @@ public class ImageService
 		return imageDao.findById(id);
 	}
 	
+	public Image find(int id)
+	{
+		return imageDao.find(id);
+	}
+	
 	public Image createImage(Image image)
 	{
 		Image result = imageDao.create(image);
