@@ -17,7 +17,7 @@ public class HomeController
 	
 	@GetMapping
 	public String index() {
-		return "forward:/home";
+		return "home";
 	}
 	
 	@GetMapping(value = "/login")
