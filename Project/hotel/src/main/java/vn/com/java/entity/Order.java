@@ -17,7 +17,7 @@ public class Order {
 	private int money;
 	
 	@Column(name = "status")
-	private boolean status;
+	private String status;
 
 	public String getProduct() {
 		return product;
@@ -35,11 +35,12 @@ public class Order {
 		this.money = money;
 	}
 
-	public boolean isStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(boolean status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
+	
 }

@@ -18,7 +18,7 @@ public class Quantum {
 	private String product;
 	
 	@Column(name = "quantum")
-	private String quantum;
+	private int quantum;
 
 	public int getId() {
 		return id;
@@ -36,11 +36,12 @@ public class Quantum {
 		this.product = product;
 	}
 
-	public String getQuantum() {
+	public int getQuantum() {
 		return quantum;
 	}
 
-	public void setQuantum(String quantum) {
+	public void setQuantum(int quantum) {
 		this.quantum = quantum;
 	}
+	
 }
