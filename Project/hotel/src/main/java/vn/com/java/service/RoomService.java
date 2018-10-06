@@ -32,6 +32,7 @@ public class RoomService
 	{
 		return roomDao.find(roomNo);
 	}
+	
 	public Room createRoom(RoomModel roomModel)
 	{
 		Room room = new Room();

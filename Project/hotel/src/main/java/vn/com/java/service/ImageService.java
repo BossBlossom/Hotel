@@ -28,9 +28,13 @@ public class ImageService
 	
 	public Image find(int id)
 	{
-		return imageDao.find(id);
+		return imageDao.findId(id);
 	}
 	
+	public List<Image> findByRoom(int roomNo)
+	{
+		return imageDao.findByRoom(roomNo);
+	}
 	public Image createImage(Image image)
 	{
 		Image result = imageDao.create(image);

@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import vn.com.java.entity.Room;
 import vn.com.java.model.RoomModel;
-import vn.com.java.service.ImageService;
 import vn.com.java.service.RoomService;
 
 @Controller
@@ -22,11 +21,7 @@ public class RoomController
 {
 	@Autowired
 	private RoomService roomService;
-	@Autowired
-	private ImageService imageService;
-	@Autowired
-	private static String UPLOADED_FOLDER = "C:/Users/Kitsune/Pictures/temp//";
-	
+
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(Model model)
 	{
@@ -36,21 +31,21 @@ public class RoomController
 		return "manager-list";
 	}
 	
-	@RequestMapping(value="/create", method = RequestMethod.GET)
+	@RequestMapping(value="/create_room", method = RequestMethod.GET)
 	public String Create(Model model)
 	{
 		RoomModel roomModel = new RoomModel();
 		model.addAttribute("room", roomModel);
 		
-		return "create-room";
+		return "manager-create-room";
 	}
 	
-	@RequestMapping(value = "/create", method = RequestMethod.POST)
+	@RequestMapping(value = "/create_room", method = RequestMethod.POST)
 	public String handleCreate(@ModelAttribute("room") RoomModel roomModel, BindingResult result, Model model)
 	{
 		if(result.hasErrors())
 		{
-			return "create-room";
+			return "manager-create-room";
 		}
 		
 		roomService.createRoom(roomModel);
@@ -58,7 +53,7 @@ public class RoomController
 		return "redirect:/manager-list";
 	}
 	
-	@RequestMapping(value="/update", method = RequestMethod.GET)
+	@RequestMapping(value="/update_room", method = RequestMethod.GET)
 	public String Update(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
 		Room room = roomService.find(roomNo);
@@ -72,15 +67,15 @@ public class RoomController
 		
 		model.addAttribute("room", roomModel);
 		
-		return "update-room";
+		return "manager-update-room";
 	}
 	
-	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	@RequestMapping(value = "/update_room", method = RequestMethod.POST)
 	public String handleUpdate(@RequestParam(name="roomNo")int roomNo, @ModelAttribute("room") RoomModel roomModel, BindingResult result, Model model)
 	{
 		if(result.hasErrors())
 		{
-			return "update-room";
+			return "manager-update-room";
 		}
 		
 		roomService.updateRoom(roomModel);

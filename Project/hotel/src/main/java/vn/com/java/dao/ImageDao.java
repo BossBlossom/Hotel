@@ -29,12 +29,23 @@ public class ImageDao
 		return images;
 	}
 	
+	public List<Image> findByRoom(int roomNo)
+	{
+		return new ArrayList<>();
+	}
+	
 	public List<Image> findById(int id)
 	{
 		return new ArrayList<>();
 	}
 	
-	public Image find(int id)
+	public Image findRoom(int roomNo)
+	{
+		Image image = getSession().find(Image.class, roomNo);
+		return image;
+	}
+	
+	public Image findId(int id)
 	{
 		Image image = getSession().find(Image.class, id);
 		return image;
