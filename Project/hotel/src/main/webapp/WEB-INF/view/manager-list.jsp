@@ -40,10 +40,11 @@
 					<td class="col5">Điều khiển</td>
 				</tr>
 				<tr>
-					<td>101</td>
+				<c:forEach var="room" items="${rooms}">
+					<td>${room.roomNo }</td>
 					<td>6/10/2018</td>
 					<td>10/10/2018</td>
-					<td>check in</td>
+					<td>${room.status }</td>
 					<td class="left">
 						<a href="">view_room</a> | 
 						<a href="">update_room</a> | 
@@ -54,6 +55,7 @@
 						<a href="">history</a> | 
 						<a href="">delete</a>
 					</td>
+				</c:forEach>
 				</tr>
 				<tr>
 					<td>102</td>

@@ -16,7 +16,7 @@ import vn.com.java.model.RoomModel;
 import vn.com.java.service.RoomService;
 
 @Controller
-@RequestMapping("/manager")
+@RequestMapping("/manager-list")
 public class RoomController 
 {
 	@Autowired
