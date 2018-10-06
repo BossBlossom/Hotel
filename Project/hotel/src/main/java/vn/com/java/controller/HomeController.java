@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/home")
 public class HomeController 
 {
 	
 	@GetMapping
 	public String index() {
-		return "manager-list";
+		return "home";
 	}
 	
 	@GetMapping(value = "/login")
