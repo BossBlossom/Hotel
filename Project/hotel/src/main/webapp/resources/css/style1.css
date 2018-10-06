@@ -1,0 +1,204 @@
+		* {
+			box-sizing: border-box;
+		}
+		h1 {
+			font-size: 45px;
+		}
+		body {
+			margin: 0px;
+			background: #f1f1f1;
+			background-image: url(../images_action/action_3.gif);
+		}
+
+
+
+
+		header {
+			margin: 0px 0px 0px 0px;
+			padding: 10px 0px;
+			background: white;
+			color: #cc0000;
+			text-align: center;
+			background-color: #ebf7f9;
+			width: 100%;
+			top: 0;
+		}
+		nav {
+			list-style-type: none;
+			margin: 0;
+			float: left;
+			overflow: hidden;
+			width: 100%;
+			background: black;
+			position: sticky;
+			top: 0;
+		}		
+		nav a {
+			float: left;
+			display: block;
+			padding: 15px 20px;
+			color: white;
+			text-decoration: none;
+		}
+		nav a:hover {
+			background-color: #ffff00;
+			color: black;
+		}
+
+
+
+
+		article {
+			float: left;
+			margin: 20px 20px 20px 20px;
+			width: calc(75% - 40px);
+		}
+		article div{
+			margin-bottom: 10px;
+			padding: 20px 20px;
+			float: left;
+		}
+		article img {
+			height: 350px;
+			width: 925px;
+		}
+		
+
+
+
+		
+		aside {
+			float: left;
+			margin: 20px 20px 20px 0px;
+			padding: 0px;
+			width: calc(25% - 20px);
+		}
+		aside h3{
+			margin: auto;
+			padding: 1px 1px 4px 1px;
+			color: #804000;
+		}
+		aside h4{
+			margin: auto;
+			padding: 1px;
+			color: #527a7a;
+		}
+		aside h5, h6{
+			margin: auto;
+			padding: 1px;
+		}
+		aside div{
+			border: 3px ridge red;
+			float: left;
+			margin-bottom: 20px;
+			width: 100%;
+			padding: 20px 20px 20px 20px;
+			background: #f2ffe6;
+			border-radius: 10px 10px 10px 10px;
+		}
+		aside img {
+			height: 110px;
+			width: 130px;
+		}
+		#popular img {
+			margin: auto;
+			width: 100px;
+			height: 100px;
+		}
+
+
+
+
+		footer {
+			clear: left;
+			margin: 10px 0px 0px 0px;
+			padding: 7px;
+			background: #ddd;
+			bottom: 0;
+			text-align: center;
+			background-color: #9999ff;
+			width: 100%;
+			height: 5%;
+		}
+		footer:hover{
+			background-color: #9999ff;
+			background: #000000 -webkit-gradient(linear, left top, right top,
+from(#000000), to(#000000), color-stop(0.5, #ffffff)) 0 0 no-repeat;
+		    color: rgba(0, 0, 0, 0.1);
+		    font-size: 16px;
+		    font-weight: bold;
+		    position: none;
+		 
+		    -webkit-animation: shine 1.5s infinite;
+		    -webkit-background-clip: text;
+		    -webkit-background-size: 250px;
+		}
+	@media screen and (max-width: 700px) {
+		article {
+			width: calc(100% - 40px);
+		}
+		aside {
+			margin-left: 20px;
+			width: calc(100% - 40px);
+		}
+	}
+	@media screen and (max-width: 338px) {
+		nav a {
+			width: 100%;
+		}
+	}
+		p{
+			font-size: small;
+			margin: auto;
+		}
+
+
+
+.effectText2{
+	background: #000000 -webkit-gradient(linear, left top, right top,
+from(#000000), to(#000000), color-stop(0.5, #b3b3ff)) 0 0 repeat;
+    color: rgba(255,255,255,0.1);
+    font-size: 23px;
+    font-weight: bold;
+    position: none;
+ 
+    -webkit-animation: shine 1.8s infinite;
+    -webkit-background-clip: text;
+    -webkit-background-size: 150px;
+}
+
+@-webkit-keyframes shine {
+	    0% {
+	        background-position: top left;
+	    }
+	    100% {
+	        background-position: top right;
+	    }
+	}
+
+
+
+	#effectText1 {
+    background: #00b506 -webkit-gradient(linear, left top, right top,
+from(#00b506), to(#00b506), color-stop(0.5, #ffffff)) 0 0 no-repeat;
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 45px;
+    font-weight: bold;
+    position: relative;
+ 
+    -webkit-animation: shine 2s infinite;
+    -webkit-background-clip: text;
+    -webkit-background-size: 300px;
+	}
+ 
+	@-webkit-keyframes shine {
+	    0% {
+	        background-position: top left;
+	    }
+	    100% {
+	        background-position: top right;
+	    }
+	}
+
+
+
