@@ -31,7 +31,7 @@ public class RoomController
 		return "manager-list";
 	}
 	
-	@RequestMapping(value="/create_room", method = RequestMethod.GET)
+	@RequestMapping(value="/manager-create-room", method = RequestMethod.GET)
 	public String Create(Model model)
 	{
 		RoomModel roomModel = new RoomModel();
@@ -40,7 +40,7 @@ public class RoomController
 		return "manager-create-room";
 	}
 	
-	@RequestMapping(value = "/create_room", method = RequestMethod.POST)
+	@RequestMapping(value = "/manager-create-room", method = RequestMethod.POST)
 	public String handleCreate(@ModelAttribute("room") RoomModel roomModel, BindingResult result, Model model)
 	{
 		if(result.hasErrors())

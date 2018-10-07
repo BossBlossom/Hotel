@@ -19,7 +19,10 @@ public class RoomModel
 	public Room toRoom(Room room)
 	{
 		room.setRoomNo(this.roomNo);
-		room.setStatus(this.status);
+		if(this.status==null)
+		{
+			room.setStatus("none");
+		}
 		room.setBed(this.bed);
 		room.setAirConditioner(this.airConditioner);
 		room.setMoney(this.money);

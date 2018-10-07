@@ -14,15 +14,14 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <% int i = 1; %>
-<% int x = 1; %>
 <body>
 	<header>
 		<h1 id="effectText1">KHÁCH SẠN AN AN</h1>
 	</header>
 
 	<nav>
-		<a href ="">Trang chủ</a>
-		<a href ="">Tạo phòng mới</a>
+		<a href ='<spring:url value="/manager-list" />'>Trang chủ</a>
+		<a href ='<spring:url value="/manager-list/manager-create-room" />'>Tạo phòng mới</a>
 		<a href ="">Lịch sử phòng</a>
 		<a href ="" style="float: right;">Ðặt phòng online</a>
 	</nav>

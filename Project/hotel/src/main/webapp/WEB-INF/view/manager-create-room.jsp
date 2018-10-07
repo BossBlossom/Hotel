@@ -24,43 +24,39 @@
 		<a href ="">Liên hệ</a>
 		<a href ="" style="float: right;">Ðặt phòng online</a>
 	</nav>
-
+<form:form modelAttribute="room">
 	<article>
 		<div>
 			<table>
 				<p>PHÒNG</p>
 				<tr>
 					<td>SỐ PHÒNG</td>
-					<td><input type="text" name="no"></td>
-				</tr>
-				<tr>
-					<td>TRẠNG THÁI</td>
-					<td><input type="text" name="status"></td>
+					<td><form:input path="roomNo"/></td>
 				</tr>
 				<tr>
 					<td>GIƯỜNG</td>
-					<td><input type="number" name="bed"></td>
+					<td><form:input path="bed" type="number"/></td>
 				</tr>
 				<tr>
 					<td>MÁY LẠNH</td>
-					<td><input type="number" name="air"></td>
+					<td><form:input path="airConditioner" type="number"/></td>
 				</tr>
 				<tr>
 					<td>THÔNG TIN</td>
-					<td><textarea rows="5" cols="70" name="inf"></textarea></td>
+					<td><form:input path="information" rows="5" cols="70"/></td>
 				</tr>
 				<tr>
 					<td>GIÁ TIỀN</td>
-					<td><input type="number" step="50000" name="money"></td>
+					<td><form:input path="money" type="number" step="50000"/></td>
 				</tr>
 			</table>
 			<p>
-				<a href="" style="margin: 10px 10px 10px 28%">TẠO PHÒNG</a>
-				<a href="">TRỞ VỀ</a>
+				<form:button name="action" value="create" style="margin: 10px 10px 10px 28%">TẠO PHÒNG</form:button>
+				<a href='<spring:url value="/manager-list" />'>TRỞ VỀ</a>
 			</p>
 		</div>
 	</article>
-	
+</form:form>
 	<aside>
 		<div>
 			<h1 class="effectText2">Thông tin liên hệ</h1>
