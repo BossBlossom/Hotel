@@ -45,6 +45,7 @@
 					<td>6/10/2018</td>
 					<td>10/10/2018</td>
 					<td>${room.status }</td>
+				<c:if test="${room.status eq 'check in'}">
 					<td class="left">
 						<a href="">view_room</a> | 
 						<a href="">update_room</a> | 
@@ -55,206 +56,37 @@
 						<a href="">history</a> | 
 						<a href="">delete</a>
 					</td>
-				</c:forEach>
-				</tr>
-				<tr>
-					<td>102</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="left"></td>
-				</tr>
-				<tr>
-					<td>103</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="left"></td>
-				</tr>
-				<tr>
-					<td>104</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="left"></td>
-				</tr>
-				<tr>
-					<td>105</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="left"></td>
-				</tr>
-			</table>
-		</div>
-			
-		<div>
-			<table>
-				<tr>
-					<th>Lầu 2</th>
-				</tr>
-				<tr>
-					<td class="col1">Phòng</td>
-					<td class="col2">Ngày đặt phòng</td>
-					<td class="col3">Ngày trả phòng</td>
-					<td class="col4">Ghi chú</td>
-					<td class="col5">Điều khiển</td>
-				</tr>
-				<tr>
-					<td>201</td>
-					<td>7/10/2018</td>
-					<td>11/10/2018</td>
-					<td>check out</td>
+				</c:if>
+				<c:if test="${room.status eq 'check out'}">
 					<td class="left">
 						<a href="">view_room</a> | 
 						<a href="">update_room</a> | 
 						<a href="">history</a> | 
-						<a href="">bill</a> | 
- 						<a href="">delete</a>
+						<a href="">bill</a>
 					</td>
-				</tr>
-				<tr>
-					<td>202</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="left"></td>
-				</tr>
-				<tr>
-					<td>203</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="left"></td>
-				</tr>
-				<tr>
-					<td>204</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="left"></td>
-				</tr>
-				<tr>
-					<td>205</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="left"></td>
-				</tr>
-			</table>
-		</div>
-
-		<div>
-			<table>
-				<tr>
-					<th>Lầu 3</th>
-				</tr>
-				<tr>
-					<td class="col1">Phòng</td>
-					<td class="col2">Ngày đặt phòng</td>
-					<td class="col3">Ngày trả phòng</td>
-					<td class="col4">Ghi chú</td>
-					<td class="col5">Điều khiển</td>
-				</tr>
-				<tr>
-					<td>301</td>
-					<td>10/10/2018</td>
-					<td>15/10/2018</td>
-					<td>customer</td>
+				</c:if>
+				<c:if test="${room.status eq 'customer'}">
 					<td class="left">
 						<a href="">view_room</a> | 
 						<a href="">update_room</a> | 
 						<a href="">view_customer</a> | 
 						<a href="">check_in</a> | 
-						<a href="">history</a> | 
-						<a href="">delete</a>
+						<a href="">history</a>
 					</td>
-				</tr>
-				<tr>
-					<td>302</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="left"></td>
-				</tr>
-				<tr>
-					<td>303</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="left"></td>
-				</tr>
-				<tr>
-					<td>304</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="left"></td>
-				</tr>
-				<tr>
-					<td>305</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="left"></td>
-				</tr>
-			</table>
-		</div>
-
-		<div>
-			<table>
-				<tr>
-					<th>Lầu 4</th>
-				</tr>
-				<tr>
-					<td class="col1">Phòng</td>
-					<td class="col2">Ngày đặt phòng</td>
-					<td class="col3">Ngày trả phòng</td>
-					<td class="col4">Ghi chú</td>
-					<td class="col5">Điều khiển</td>
-				</tr>
-				<tr>
-					<td>401</td>
-					<td>20/10/2018</td>
-					<td>22/10/2018</td>
-					<td></td>
+				</c:if>
+				<c:if test="${room.status eq 'none'}">
 					<td class="left">
 						<a href="">view_room</a> | 
 						<a href="">update_room</a> | 
 						<a href="">create_customer</a> | 
 						<a href="">history</a>
 					</td>
+				</c:if>
 				</tr>
-				<tr>
-					<td>402</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="left"></td>
-				</tr>
-				<tr>
-					<td>403</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="left"></td>
-				</tr>
-				<tr>
-					<td>404</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="left"></td>
-				</tr>
-				<tr>
-					<td>405</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td class="left"></td>
-				</tr>
+				</c:forEach>
 			</table>
 		</div>
+			
 	</article>
 	
 	<aside>
