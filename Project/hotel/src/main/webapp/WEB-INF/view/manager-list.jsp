@@ -13,7 +13,8 @@
 	<link rel="stylesheet" type="text/css" href="resources/css/style2.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
-
+<% int i = 1; %>
+<% int x = 1; %>
 <body>
 	<header>
 		<h1 id="effectText1">KHÁCH SẠN AN AN</h1>
@@ -30,7 +31,7 @@
 		<div>
 			<table>
 				<tr>
-					<th>Lầu 1</th>
+					<th>Lầu <%=i++ %></th>
 				</tr>
 				<tr>
 					<td class="col1">Phòng</td>
@@ -42,8 +43,8 @@
 				<tr>
 				<c:forEach var="room" items="${rooms}">
 					<td>${room.roomNo }</td>
-					<td>6/10/2018</td>
-					<td>10/10/2018</td>
+					<td>__/__/____</td>
+					<td>__/__/____</td>
 					<td>${room.status }</td>
 				<c:if test="${room.status eq 'check in'}">
 					<td class="left">
