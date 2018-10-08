@@ -10,35 +10,83 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Trang chủ HOTEL</title>
-	<link rel="stylesheet" type="text/css" href="resources/css/style1.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/style2.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
-
+<% int i = 1; %>
 <body>
 	<header>
 		<h1 id="effectText1">KHÁCH SẠN AN AN</h1>
 	</header>
 
 	<nav>
-		<a href ="">Trang chủ</a>
-		<a href ="">Liên hệ</a>
+		<a href ='<spring:url value="/manager-list" />'>Trang chủ</a>
+		<a href ='<spring:url value="/manager-list/manager-create-room" />'>Tạo phòng mới</a>
+		<a href ="">Lịch sử phòng</a>
 		<a href ="" style="float: right;">Ðặt phòng online</a>
 	</nav>
 
 	<article>
 		<div>
-			<img src="resources/images_hotel/main01.jpg" alt="Image">
+			<table>
+				<tr>
+					<th>Lầu <%=i++ %></th>
+				</tr>
+				<tr>
+					<td class="col1">Phòng</td>
+					<td class="col2">Ngày đặt phòng</td>
+					<td class="col3">Ngày trả phòng</td>
+					<td class="col4">Ghi chú</td>
+					<td class="col5">Điều khiển</td>
+				</tr>
+				<tr>
+				<c:forEach var="room" items="${rooms}">
+					<td>${room.roomNo }</td>
+					<td>__/__/____</td>
+					<td>__/__/____</td>
+					<td>${room.status }</td>
+				<c:if test="${room.status eq 'check in'}">
+					<td class="left">
+						<a href="">view_room</a> | 
+						<a href="">update_room</a> | 
+						<a href="">update_date</a> | 
+						<a href="">view_customer</a> | 
+						<a href="">order</a> | 
+						<a href="">check_out</a> | 
+						<a href="">history</a> | 
+						<a href="">delete</a>
+					</td>
+				</c:if>
+				<c:if test="${room.status eq 'check out'}">
+					<td class="left">
+						<a href="">view_room</a> | 
+						<a href="">update_room</a> | 
+						<a href="">history</a> | 
+						<a href="">bill</a>
+					</td>
+				</c:if>
+				<c:if test="${room.status eq 'customer'}">
+					<td class="left">
+						<a href="">view_room</a> | 
+						<a href="">update_room</a> | 
+						<a href="">view_customer</a> | 
+						<a href="">check_in</a> | 
+						<a href="">history</a>
+					</td>
+				</c:if>
+				<c:if test="${room.status eq 'none'}">
+					<td class="left">
+						<a href="">view_room</a> | 
+						<a href="">update_room</a> | 
+						<a href="">create_customer</a> | 
+						<a href="">history</a>
+					</td>
+				</c:if>
+				</tr>
+				</c:forEach>
+			</table>
 		</div>
-		<div>
-			<h2 align="center">Khách sạn An An <font color="#e60000">Kính Chào Quý Khách</font></h2>
-			<p style="font-size: 20px;" align="center">
-				Chỉ cách Sân Golf Đà Lạt 5 phút đi bộ, khách sạn An An với không gian và tiện nghi sang trọng và lịch sự luôn sẵn sàng chào đón quý khách.
-				<br>
-				Khách sạn An An mang đầy đủ tiện nghi của một khách sạn đạt chuẩn 3 sao với 20 phòng đầy đủ tiện nghi. Ngoài ra quý khách còn có thể yên tâm trải ngiệm những ngày nghỉ cùng gia đình hay những đợt công tác dài ngày với hệ thống quản lý an ninh thông minh được bố trí khắp khách sạn, hầm để xe an toàn với sức chứa 8 xe con, 30 xe gắn máy. Đến với khách sạn chúng tôi, quý khách còn có thể đắm mình trong không gian thơ mộng của Đà Lạt nhìn từ trên cao với nhà hàng & café được bài trí đẹp mắt tại tầng bốn của khách sạn.
-				<br>
-				Hân hạnh được phục vụ quý khách!
-			</p>
-		</div>
+			
 	</article>
 	
 	<aside>

@@ -3,7 +3,6 @@ package vn.com.java.service;
 import java.util.List;
 
 import javax.transaction.Transactional;
-import javax.transaction.Transactional.TxType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -11,7 +10,10 @@ import org.springframework.stereotype.Service;
 
 import vn.com.java.dao.RoomDao;
 import vn.com.java.entity.Room;
+import vn.com.java.model.RoomModel;
+
 @Service
+@Transactional
 public class RoomService 
 {
 	@Autowired
@@ -23,13 +25,38 @@ public class RoomService
 		{
 			return roomDao.findAll();
 		}
-		return (List<Room>) roomDao.findByRoom(roomNo);
+		return roomDao.findByRoom(roomNo);
 	}
 	
-	@Transactional(value=TxType.REQUIRED)
-	public Room createRoom(Room room)
+	public Room find(int roomNo)
 	{
+		return roomDao.find(roomNo);
+	}
+	
+	public Room createRoom(RoomModel roomModel)
+	{
+		Room room = new Room();
+		roomModel.toRoom(room);
+		
 		Room result = roomDao.create(room);
+		return result;
+	}
+	
+	public Room updateRoom(RoomModel roomModel)
+	{
+		Room room = new Room();
+		roomModel.toRoom(room);
+		
+		Room result = roomDao.update(room);
+		return result;
+	}
+	
+	public Room deleteRoom(RoomModel roomModel)
+	{
+		Room room = new Room();
+		roomModel.toRoom(room);
+		
+		Room result = roomDao.delete(room);
 		return result;
 	}
 }

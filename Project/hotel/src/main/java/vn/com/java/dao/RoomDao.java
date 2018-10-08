@@ -1,5 +1,6 @@
 package vn.com.java.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.TypedQuery;
@@ -17,40 +18,44 @@ public class RoomDao
 	@Autowired
 	private SessionFactory sessionFactory;
 	
+	private Session getSession()
+	{
+		return sessionFactory.getCurrentSession();
+	}
+	
 	public List<Room> findAll()
 	{
-		Session session = sessionFactory.openSession();
-		TypedQuery<Room> query = session.createQuery("FROM Room", Room.class);
+		TypedQuery<Room> query = getSession().createQuery("FROM Room", Room.class);
 		List<Room> rooms = query.getResultList();
 		return rooms;
 	}
 	
-	public Room findByRoom(int roomNo)
+	public List<Room> findByRoom(int roomNo)
 	{
-		return sessionFactory.openSession().find(Room.class, roomNo);
+		return new ArrayList<>();
+	}
+	
+	public Room find(int roomNo)
+	{
+		Room room = getSession().find(Room.class, roomNo);
+		return room;
 	}
 	
 	public Room create(Room room)
 	{
-		Session session = sessionFactory.openSession();
-		session.save(room);
-		session.close();
+		getSession().save(room);
 		return room;
 	}
 	
 	public Room update(Room room)
 	{
-		Session session = sessionFactory.openSession();
-		session.update(room);
-		session.close();
+		getSession().update(room);
 		return room;
 	}
 	
 	public Room delete(Room room)
 	{
-		Session session = sessionFactory.openSession();
-		session.delete(room);
-		session.close();
+		getSession().delete(room);
 		return room;
 	}
 }

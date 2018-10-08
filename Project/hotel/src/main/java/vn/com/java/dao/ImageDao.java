@@ -1,5 +1,6 @@
 package vn.com.java.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.TypedQuery;
@@ -17,32 +18,48 @@ public class ImageDao
 	@Autowired
 	private SessionFactory sessionFactory;
 	
+	private Session getSession()
+	{
+		return sessionFactory.getCurrentSession();
+	}
 	public List<Image> findAll()
 	{
-		Session session = sessionFactory.openSession();
-		TypedQuery<Image> query = session.createQuery("FROM Image", Image.class);
+		TypedQuery<Image> query = getSession().createQuery("FROM Image", Image.class);
 		List<Image> images = query.getResultList();
 		return images;
 	}
 	
-	public Image findById(int id)
+	public List<Image> findByRoom(int roomNo)
 	{
-		return sessionFactory.openSession().find(Image.class, id);
+		return new ArrayList<>();
+	}
+	
+	public List<Image> findById(int id)
+	{
+		return new ArrayList<>();
+	}
+	
+	public Image findRoom(int roomNo)
+	{
+		Image image = getSession().find(Image.class, roomNo);
+		return image;
+	}
+	
+	public Image findId(int id)
+	{
+		Image image = getSession().find(Image.class, id);
+		return image;
 	}
 	
 	public Image create(Image image)
 	{
-		Session session = sessionFactory.openSession();
-		session.save(image);
-		session.close();
+		getSession().save(image);
 		return image;
 	}
 	
 	public Image delete(Image image)
 	{
-		Session session = sessionFactory.openSession();
-		session.delete(image);
-		session.close();
+		getSession().delete(image);
 		return image;
 	}
 }
