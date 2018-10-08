@@ -1,58 +1,58 @@
-package vn.com.java.config;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
-import vn.com.java.service.AccountService;
-
-
-@Configuration
-@EnableWebSecurity
-@ComponentScan({ "vn.com.java" })
-public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
-
-	@Autowired
-	@Qualifier("accountService")
-	private AccountService accountService;
-	
+//package vn.com.java.config;
+//
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Qualifier;
+//import org.springframework.context.annotation.Bean;
+//import org.springframework.context.annotation.ComponentScan;
+//import org.springframework.context.annotation.Configuration;
+//import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+//import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+//import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
+//
+//import vn.com.java.service.AccountService;
+//
+//
+//@Configuration
+//@EnableWebSecurity
+//@ComponentScan({ "vn.com.java" })
+//public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
+//
+//	@Autowired
+//	@Qualifier("accountService")
+//	private AccountService accountService;
+//	
+////	@Bean
+////	public AuthenticationTrustResolver getAuthenticationTrustResolver() {
+////	    return new AuthenticationTrustResolverImpl();
+////	}
+//	
 //	@Bean
-//	public AuthenticationTrustResolver getAuthenticationTrustResolver() {
-//	    return new AuthenticationTrustResolverImpl();
+//    public PasswordEncoder passwordEncoder() {
+//        return new BCryptPasswordEncoder();
+//    }
+//	
+//	@Override
+//	protected void configure(HttpSecurity http) throws Exception {
+//		http
+//		.authorizeRequests()
+//			.anyRequest().permitAll()
+//			.antMatchers("/resources/**").permitAll()
+////			.antMatchers("/admin/**").access("hasRole('ADMIN')")
+////			.antMatchers("/contact/create").access("hasRole('CONTACT-MANAGER')")
+//		.and()
+//			.formLogin()
+//			.loginPage("/login")
+//			.loginProcessingUrl("/handleLogin")
+//			.usernameParameter("username")
+//			.passwordParameter("password")
+//			.permitAll()
+//		.and()
+//			.logout().logoutUrl("/logout")
+//		.and().csrf()
+//		.and().exceptionHandling().accessDeniedPage("/denied")
+//		.and().userDetailsService(accountService);
 //	}
-	
-	@Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-	
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http
-		.authorizeRequests()
-			.anyRequest().permitAll()
-			.antMatchers("/resources/**").permitAll()
-//			.antMatchers("/admin/**").access("hasRole('ADMIN')")
-//			.antMatchers("/contact/create").access("hasRole('CONTACT-MANAGER')")
-		.and()
-			.formLogin()
-			.loginPage("/login")
-			.loginProcessingUrl("/handleLogin")
-			.usernameParameter("username")
-			.passwordParameter("password")
-			.permitAll()
-		.and()
-			.logout().logoutUrl("/logout")
-		.and().csrf()
-		.and().exceptionHandling().accessDeniedPage("/denied")
-		.and().userDetailsService(accountService);
-	}
-
-}
+//
+//}
