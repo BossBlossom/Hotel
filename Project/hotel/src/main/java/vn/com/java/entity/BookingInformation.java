@@ -22,14 +22,11 @@ public class BookingInformation {
 	@Column(name="room_no")
 	private int roomNo;
 	
-	@Column(name="start_date")
-	private Date startDate;
-	
 	@Column(name="started_at")
-	private Date startedAt;
+	private String startedAt;
 	
 	@Column(name="ended_at")
-	private Date endedAd;
+	private String endedAd;
 
 	public int getId() {
 		return id;
@@ -55,36 +52,20 @@ public class BookingInformation {
 		this.roomNo = roomNo;
 	}
 
-	public Date getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	public Date getStartedAt() {
+	public String getStartedAt() {
 		return startedAt;
 	}
 
-	public void setStartedAt(Date startedAt) {
+	public void setStartedAt(String startedAt) {
 		this.startedAt = startedAt;
 	}
 
-	public Date getEndedAd() {
+	public String getEndedAd() {
 		return endedAd;
 	}
 
-	public void setEndedAd(Date endedAd) {
+	public void setEndedAd(String endedAd) {
 		this.endedAd = endedAd;
-	}
-
-	
-
-	
-
-	
-	
-	
+	}	
 	
 }

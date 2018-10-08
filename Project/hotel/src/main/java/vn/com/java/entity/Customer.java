@@ -1,7 +1,11 @@
 package vn.com.java.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="customers")
 public class Customer {
 	@Column(name="cmnd")
 	private int cmnd;
