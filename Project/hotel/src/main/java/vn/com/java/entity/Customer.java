@@ -3,10 +3,13 @@ package vn.com.java.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Id;
 
 @Entity
 @Table(name="customers")
 public class Customer {
+	
+	@Id
 	@Column(name="cmnd")
 	private int cmnd;
 	
