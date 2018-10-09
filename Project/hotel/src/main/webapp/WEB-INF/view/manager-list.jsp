@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Trang chủ HOTEL</title>
-<link rel="stylesheet" type="text/css" href="resources/css/style2.css">
+<link rel="stylesheet" type="text/css" href='<spring:url value="resources/css/style2.css"/>'>
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
@@ -23,10 +23,9 @@
 	<jsp:include page="../template/header.jsp"></jsp:include>
 
 	<nav>
-		<a href='<spring:url value="/manager-list" />'>Trang chủ</a> <a
-			href='<spring:url value="/manager-list/manager-create-room" />'>Tạo
-			phòng mới</a> <a href="">Lịch sử phòng</a> <a href=""
-			style="float: right;">Ðặt phòng online</a>
+		<a href='<spring:url value="/manager-list" />'>Trang chủ</a> 
+		<a href='<spring:url value="/manager-create-room" />'>Tạo phòng mới</a> 
+		<a href="">Lịch sử phòng</a> <a href=""	style="float: right;">Ðặt phòng online</a>
 	</nav>
 
 	<article>

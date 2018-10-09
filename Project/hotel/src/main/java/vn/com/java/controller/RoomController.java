@@ -16,13 +16,12 @@ import vn.com.java.model.RoomModel;
 import vn.com.java.service.RoomService;
 
 @Controller
-@RequestMapping("/manager-list")
 public class RoomController 
 {
 	@Autowired
 	private RoomService roomService;
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value = "/manager-list", method = RequestMethod.GET)
 	public String list(Model model)
 	{
 		List<Room> rooms = roomService.search(0);
