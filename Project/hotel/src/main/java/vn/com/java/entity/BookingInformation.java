@@ -24,7 +24,10 @@ public class BookingInformation {
 	private String startedAt;
 	
 	@Column(name="ended_at")
-	private String endedAd;
+	private String endedAt;
+	
+	@Column(name="total")
+	private int total;
 
 	public int getId() {
 		return id;
@@ -58,12 +61,20 @@ public class BookingInformation {
 		this.startedAt = startedAt;
 	}
 
-	public String getEndedAd() {
-		return endedAd;
+	public String getEndedAt() {
+		return endedAt;
 	}
 
-	public void setEndedAd(String endedAd) {
-		this.endedAd = endedAd;
+	public void setEndedAt(String endedAt) {
+		this.endedAt = endedAt;
+	}
+
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
 	}	
 	
 }
