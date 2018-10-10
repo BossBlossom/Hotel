@@ -1,8 +1,15 @@
 package vn.com.java.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -28,6 +35,14 @@ public class Room
 	@Column(name="information")
 	private String information;
 
+	@OneToMany(mappedBy = "room")
+	private Set<Image> images;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "booking_informations", joinColumns = { @JoinColumn(name = "room_no") }, inverseJoinColumns = { @JoinColumn(name = "cmnd") })
+	private Set<Customer> customerRoomNumbers = new HashSet<Customer>(0);
+	
+	
 	public int getRoomNo() {
 		return roomNo;
 	}
@@ -75,6 +90,13 @@ public class Room
 	public void setInformation(String information) {
 		this.information = information;
 	}
-	
+
+	public Set<Image> getImages() {
+		return images;
+	}
+
+	public void setImages(Set<Image> images) {
+		this.images = images;
+	}
 	
 }

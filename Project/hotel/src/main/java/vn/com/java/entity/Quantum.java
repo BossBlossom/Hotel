@@ -1,8 +1,11 @@
 package vn.com.java.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,11 +17,12 @@ public class Quantum {
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "product")
-	private String product;
-	
 	@Column(name = "quantum")
 	private int quantum;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "product")
+	private Order order;
 
 	public int getId() {
 		return id;
@@ -28,20 +32,20 @@ public class Quantum {
 		this.id = id;
 	}
 
-	public String getProduct() {
-		return product;
-	}
-
-	public void setProduct(String product) {
-		this.product = product;
-	}
-
 	public int getQuantum() {
 		return quantum;
 	}
 
 	public void setQuantum(int quantum) {
 		this.quantum = quantum;
+	}
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 	
 }
