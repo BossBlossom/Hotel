@@ -10,7 +10,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import vn.com.java.entity.Order;
+import vn.com.java.entity.Product;
 
 @Repository
 public class OrderDao {
@@ -22,31 +22,31 @@ public class OrderDao {
 		return sessionFactory.getCurrentSession();
 	}
 	
-	public List<Order> findAll()
+	public List<Product> findAll()
 	{
-		TypedQuery<Order> query = getSession().createQuery("FROM Order", Order.class);
-		List<Order> orders = query.getResultList();
+		TypedQuery<Product> query = getSession().createQuery("FROM Order", Product.class);
+		List<Product> orders = query.getResultList();
 		return orders;
 	}
 	
-	public List<Order> findByOrder(String product)
+	public List<Product> findByOrder(String product)
 	{
 		return new ArrayList<>();
 	}
 	
-	public Order create(Order order)
+	public Product create(Product order)
 	{
 		getSession().save(order);
 		return order;
 	}
 	
-	public Order update(Order order)
+	public Product update(Product order)
 	{
 		getSession().update(order);
 		return order;
 	}
 	
-	public Order delete(Order order)
+	public Product delete(Product order)
 	{
 		getSession().delete(order);
 		return order;

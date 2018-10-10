@@ -6,8 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "orders")
-public class Order {
+@Table(name = "products")
+public class Product {
 	
 	@Id
 	@Column(name = "product")
@@ -16,8 +16,8 @@ public class Order {
 	@Column(name = "money")
 	private int money;
 	
-	@Column(name = "status")
-	private String status;
+	@Column(name = "quantum")
+	private int quantum;
 
 	public String getProduct() {
 		return product;
@@ -35,12 +35,12 @@ public class Order {
 		this.money = money;
 	}
 
-	public String getStatus() {
-		return status;
+	public int getQuantum() {
+		return quantum;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setQuantum(int quantum) {
+		this.quantum = quantum;
 	}
 	
 }

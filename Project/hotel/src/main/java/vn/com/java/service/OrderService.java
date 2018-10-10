@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import vn.com.java.dao.OrderDao;
-import vn.com.java.entity.Order;
+import vn.com.java.entity.Product;
 import vn.com.java.model.OrderModel;
 
 @Service
@@ -17,7 +17,7 @@ public class OrderService {
 	@Autowired
 	private OrderDao orderDao;
 	
-	public List<Order> search(String product)
+	public List<Product> search(String product)
 	{
 		if(product == null)
 		{
@@ -26,30 +26,30 @@ public class OrderService {
 		return orderDao.findByOrder(product);
 	}
 	
-	public Order createOrder(OrderModel orderModel)
+	public Product createOrder(OrderModel orderModel)
 	{
-		Order order = new Order();
+		Product order = new Product();
 		orderModel.toOrder(order);
 		
-		Order result = orderDao.create(order);
+		Product result = orderDao.create(order);
 		return result;
 	}
 	
-	public Order updateOrder(OrderModel orderModel) 
+	public Product updateOrder(OrderModel orderModel) 
 	{
-		Order order = new Order();
+		Product order = new Product();
 		orderModel.toOrder(order);
 		
-		Order result = orderDao.update(order);
+		Product result = orderDao.update(order);
 		return result;
 	}
 	
-	public Order deleteOrder(OrderModel orderModel) 
+	public Product deleteOrder(OrderModel orderModel) 
 	{
-		Order order = new Order();
+		Product order = new Product();
 		orderModel.toOrder(order);
 		
-		Order result = orderDao.update(order);
+		Product result = orderDao.update(order);
 		return result;
 	}
 }

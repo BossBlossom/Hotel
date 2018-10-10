@@ -42,6 +42,9 @@ public class Room
 	@JoinTable(name = "booking_informations", joinColumns = { @JoinColumn(name = "room_no") }, inverseJoinColumns = { @JoinColumn(name = "cmnd") })
 	private Set<Customer> customerRoomNumbers = new HashSet<Customer>(0);
 	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "booking_histories", joinColumns = { @JoinColumn(name = "room_no") }, inverseJoinColumns = { @JoinColumn(name = "cmnd") })
+	private Set<Customer> customerRoomHistories = new HashSet<Customer>(0);
 	
 	public int getRoomNo() {
 		return roomNo;

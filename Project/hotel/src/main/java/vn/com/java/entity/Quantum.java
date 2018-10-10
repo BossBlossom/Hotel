@@ -22,7 +22,7 @@ public class Quantum {
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "product")
-	private Order order;
+	private Product order;
 
 	public int getId() {
 		return id;
@@ -40,11 +40,11 @@ public class Quantum {
 		this.quantum = quantum;
 	}
 
-	public Order getOrder() {
+	public Product getOrder() {
 		return order;
 	}
 
-	public void setOrder(Order order) {
+	public void setOrder(Product order) {
 		this.order = order;
 	}
 	

@@ -1,6 +1,6 @@
 package vn.com.java.model;
 
-import vn.com.java.entity.Order;
+import vn.com.java.entity.Product;
 
 public class OrderModel {
 	private String product;
@@ -20,7 +20,7 @@ public class OrderModel {
 
 
 
-	public Order toOrder(Order order)
+	public Product toOrder(Product order)
 	{
 		order.setProduct(this.product);
 		if(this.status==null)
@@ -32,7 +32,7 @@ public class OrderModel {
 		return order;
 	}
 	
-	public void fromOrder(Order order)
+	public void fromOrder(Product order)
 	{
 		this.setProduct(order.getProduct());
 		this.setMoney(order.getMoney());
