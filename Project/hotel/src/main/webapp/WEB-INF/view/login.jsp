@@ -42,18 +42,30 @@
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape"></i>
 					</span>
-
 					<span class="login100-form-title p-b-34 p-t-27">
 						LOGIN MANAGER
 					</span>
-
+					<c:url value="/handleLogin" var="loginUrl"/>
+					<form action="${loginUrl}" method="post">
+					<c:if test="${param.error != null}">        
+						<p>
+							Invalid username and password.
+						</p>
+					</c:if>
+					<c:if test="${param.logout != null}">       
+						<p>
+							You have been logged out.
+						</p>
+					</c:if>
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<label for="username"></label>
 						<input class="input100" type="text" name="username" placeholder="Username">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<label for="password"></label>
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
@@ -63,13 +75,15 @@
 							Remember me
 						</label>
 					</div>
-
+					<input type="hidden"                        
+						name="${_csrf.parameterName}"
+						value="${_csrf.token}"/>
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Login
 						</button>
 					</div>
-
+					</form>
 				</form>
 			</div>
 		</div>

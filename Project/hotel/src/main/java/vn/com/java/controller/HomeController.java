@@ -30,7 +30,7 @@ public class HomeController
 		}
 			
 		
-		return "redirect:/home";
+		return "redirect:/manager-list";
 	}
 	
 	
