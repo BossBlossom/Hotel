@@ -1,7 +1,6 @@
 package vn.com.java.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,11 +9,9 @@ import org.springframework.security.authentication.AuthenticationTrustResolverIm
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import vn.com.java.service.AccountService;
-
 
 @Configuration
 @EnableWebSecurity
@@ -22,8 +19,7 @@ import vn.com.java.service.AccountService;
 public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	@Qualifier("accountService")
-	private AccountService accountService;
+	private UserDetailsService userDetailsService;
 	
 	@Bean
 	public AuthenticationTrustResolver getAuthenticationTrustResolver() {
@@ -54,7 +50,7 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
 			.logout().logoutUrl("/logout")
 		.and().csrf()
 		.and().exceptionHandling().accessDeniedPage("/denied")
-		.and().userDetailsService(accountService);
+		.and().userDetailsService(userDetailsService);
 	}
 
 }

@@ -16,13 +16,15 @@ import vn.com.java.dao.AccountDao;
 import vn.com.java.entity.Account;
 
 @Service
-@Qualifier("accountService")
 public class AccountService implements UserDetailsService
 {
+	
 	@Autowired
 	private AccountDao accountDao;
+	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		System.out.println(username);
 		Account account = accountDao.find(username);
 		if(account==null)
 			throw new UsernameNotFoundException(username + " not found!");
