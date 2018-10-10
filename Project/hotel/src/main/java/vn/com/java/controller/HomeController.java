@@ -1,9 +1,9 @@
 package vn.com.java.controller;
 
-//import org.springframework.security.authentication.AuthenticationTrustResolver;
-//import org.springframework.security.authentication.AuthenticationTrustResolverImpl;
-//import org.springframework.security.core.Authentication;
-//import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.authentication.AuthenticationTrustResolver;
+import org.springframework.security.authentication.AuthenticationTrustResolverImpl;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,28 +17,28 @@ public class HomeController
 	
 	@GetMapping
 	public String index() {
-		return "login";
+		return "home";
 	}
 	
 	@GetMapping(value = "/login")
 	public String Login() {
-		/*Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		AuthenticationTrustResolver authenticationTrustResolver = new AuthenticationTrustResolverImpl();
 		if(authenticationTrustResolver.isAnonymous(authentication))
 		{
 			return "login";
-		}*/
+		}
 			
 		
-		return "redirect:/home";
+		return "redirect:/manager-list";
 	}
 	
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logoutPage() {
-//		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//		if(authentication != null)
-//			SecurityContextHolder.getContext().setAuthentication(null);
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if(authentication != null)
+			SecurityContextHolder.getContext().setAuthentication(null);
 			
 		return "redirect:/login?logout=true";
 	}

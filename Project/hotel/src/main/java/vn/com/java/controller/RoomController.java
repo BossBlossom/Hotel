@@ -16,13 +16,12 @@ import vn.com.java.model.RoomModel;
 import vn.com.java.service.RoomService;
 
 @Controller
-@RequestMapping("/manager-list")
 public class RoomController 
 {
 	@Autowired
 	private RoomService roomService;
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value = "/manager-list", method = RequestMethod.GET)
 	public String list(Model model)
 	{
 		List<Room> rooms = roomService.search(0);
@@ -53,7 +52,7 @@ public class RoomController
 		return "redirect:/manager-list";
 	}
 	
-	@RequestMapping(value="/update_room", method = RequestMethod.GET)
+	@RequestMapping(value="/manager-update_room", method = RequestMethod.GET)
 	public String Update(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
 		Room room = roomService.find(roomNo);
@@ -70,7 +69,7 @@ public class RoomController
 		return "manager-update-room";
 	}
 	
-	@RequestMapping(value = "/update_room", method = RequestMethod.POST)
+	@RequestMapping(value = "/manager-update_room", method = RequestMethod.POST)
 	public String handleUpdate(@RequestParam(name="roomNo")int roomNo, @ModelAttribute("room") RoomModel roomModel, BindingResult result, Model model)
 	{
 		if(result.hasErrors())

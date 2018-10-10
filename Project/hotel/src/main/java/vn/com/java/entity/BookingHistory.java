@@ -7,7 +7,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "booking_histories")
-
 public class BookingHistory {
 	
 	@Id

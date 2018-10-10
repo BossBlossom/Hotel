@@ -9,8 +9,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Trang chủ HOTEL</title>
-<link rel="stylesheet" type="text/css" href="resources/css/style2.css">
+<title>Trang chủ Manager</title>
+<link rel="stylesheet" type="text/css" href='<spring:url value="resources/css/style2.css"/>'>
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
@@ -23,13 +23,13 @@
 	<jsp:include page="../template/header.jsp"></jsp:include>
 
 	<nav>
-		<a href='<spring:url value="/manager-list" />'>Trang chủ</a> <a
-			href='<spring:url value="/manager-list/manager-create-room" />'>Tạo
-			phòng mới</a> <a href="">Lịch sử phòng</a> <a href=""
-			style="float: right;">Ðặt phòng online</a>
+		<a href='<spring:url value="/manager-list" />'>Trang chủ</a> 
+		<a href='<spring:url value="/manager-create-room" />'>Tạo phòng mới</a> 
+		<a href="">Lịch sử phòng</a>
 	</nav>
 
 	<article>
+	<c:forEach var="room" items="${rooms}">
 		<div>
 			<table>
 				<tr>
@@ -43,35 +43,34 @@
 					<td class="col5">Điều khiển</td>
 				</tr>
 				<tr>
-					<c:forEach var="room" items="${rooms}">
 						<td>${room.roomNo }</td>
 						<td>__/__/____</td>
 						<td>__/__/____</td>
 						<td>${room.status }</td>
 						<c:if test="${room.status eq 'check in'}">
-							<td class="left"><a href="">view_room</a> | <a href="">update_room</a>
+							<td class="left"><a href="">view_room</a> | <a href='<spring:url value="/manager-update-room" />'>update_room</a>
 								| <a href="">update_date</a> | <a href="">view_customer</a> | <a
 								href="">order</a> | <a href="">check_out</a> | <a href="">history</a>
 								| <a href="">delete</a></td>
 						</c:if>
 						<c:if test="${room.status eq 'check out'}">
-							<td class="left"><a href="">view_room</a> | <a href="">update_room</a>
+							<td class="left"><a href="">view_room</a> | <a href='<spring:url value="/manager-update-room" />'>update_room</a>
 								| <a href="">history</a> | <a href="">bill</a></td>
 						</c:if>
 						<c:if test="${room.status eq 'customer'}">
-							<td class="left"><a href="">view_room</a> | <a href="">update_room</a>
+							<td class="left"><a href="">view_room</a> | <a href='<spring:url value="/manager-update-room" />'>update_room</a>
 								| <a href="">view_customer</a> | <a href="">check_in</a> | <a
 								href="">history</a></td>
 						</c:if>
 						<c:if test="${room.status eq 'none'}">
-							<td class="left"><a href="">view_room</a> | <a href="">update_room</a>
+							<td class="left"><a href="">view_room</a> | <a href='<spring:url value="/manager-update-room" />'>update_room</a>
 								| <a href="">create_customer</a> | <a href="">history</a></td>
 						</c:if>
 				</tr>
-				</c:forEach>
 			</table>
 		</div>
-
+	</c:forEach>
+	
 	</article>
 
 	<jsp:include page="../template/aside.jsp"></jsp:include>

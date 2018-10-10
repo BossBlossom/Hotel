@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Tạo phòng</title>
+<title>Chỉnh sửa phòng</title>
 <link rel="stylesheet" type="text/css" href='<spring:url value="resources/css/style3.css"/>'>
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
@@ -60,7 +60,8 @@
 				</table>
 				<p>
 					
-					<a style="margin: 10px 10px 10px 28%" href="#" onclick="submitForm('form1')">TẠO PHÒNG</a>
+					<a style="margin: 10px 10px 10px 28%" href="#" onclick="submitForm('form1')">UPDATE PHÒNG</a>
+					<a>XÓA PHÒNG</a>
 					<a href='<spring:url value="/manager-list" />'>TRỞ VỀ</a>
 				</p>
 			</div>

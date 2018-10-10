@@ -55,7 +55,7 @@
 						<div class="col-md-2 col-sm-6 col-xs-6">
 							<div id="logo">
 								<!--<a href="index.html"><img src="images/logo.png" alt="logo"></a>-->
-								<a href="/home"><span>Star</span>home</a>
+								<a href="home"><span>Star</span>home</a>
 							</div>
 						</div>
 						<div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
@@ -73,12 +73,12 @@
 									class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
 									<ul class="list-unstyled nav1 cl-effect-10">
 										<li><a data-hover="Home" class="active"><span>Home</span></a></li>
-										<li><a data-hover="About" href="/about"><span>About</span></a></li>
-										<li><a data-hover="Rooms" href="/rooms"><span>Rooms</span></a></li>
-										<li><a data-hover="Gallery" href="/gallery"><span>Gallery</span></a></li>
-										<li><a data-hover="Dinning" href="/dinning"><span>Dinning</span></a></li>
-										<li><a data-hover="Rooms-View" href="/rooms-view"><span>Rooms-View</span></a></li>
-										<li><a data-hover="Booking" href="/booking"><span>Booking</span></a></li>
+										<li><a data-hover="About" href="about"><span>About</span></a></li>
+										<li><a data-hover="Rooms" href="rooms"><span>Rooms</span></a></li>
+										<li><a data-hover="Gallery" href="gallery"><span>Gallery</span></a></li>
+										<li><a data-hover="Dinning" href="dinning"><span>Dinning</span></a></li>
+										<li><a data-hover="Rooms-View" href="rooms-view"><span>Rooms-View</span></a></li>
+										<li><a data-hover="Booking" href="booking"><span>Booking</span></a></li>
 									</ul>
 
 								</div>
@@ -383,7 +383,6 @@
 									hendrerit tortor vulputate id. Vestibulum mauris nibh, luctus
 									non maximus vitae, porttitor eget neque. Donec tristique nunc
 									facilisis, dapibus libero ac</p>
-								<a class="btn btn-default" href="single-blog.html">Read More</a>
 							</div>
 						</div>
 					</div>
@@ -417,7 +416,6 @@
 									hendrerit tortor vulputate id. Vestibulum mauris nibh, luctus
 									non maximus vitae, porttitor eget neque. Donec tristique nunc
 									facilisis, dapibus libero ac</p>
-								<a class="btn btn-default" href="single-blog.html">Read More</a>
 							</div>
 						</div>
 					</div>
@@ -460,12 +458,12 @@
 							<h4>explore</h4>
 							<ul class="list-unstyled footer-links">
 								<li class="active"><a>Home</a></li>
-								<li><a href="/about">About</a></li>
-								<li><a href="/rooms">Rooms</a></li>
-								<li><a href="/gallery">Gallery</a></li>
-								<li><a href="/dinning">Dinning</a></li>
-								<li><a href="/rooms-view">Rooms-View</a></li>
-								<li><a href="/booking">Booking</a></li>
+								<li><a href="about">About</a></li>
+								<li><a href="rooms">Rooms</a></li>
+								<li><a href="gallery">Gallery</a></li>
+								<li><a href="dinning">Dinning</a></li>
+								<li><a href="rooms-view">Rooms-View</a></li>
+								<li><a href="booking">Booking</a></li>
 							</ul>
 						</div>
 					</div>
