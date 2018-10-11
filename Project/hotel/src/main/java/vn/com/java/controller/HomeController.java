@@ -2,7 +2,6 @@ package vn.com.java.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationTrustResolver;
-import org.springframework.security.authentication.AuthenticationTrustResolverImpl;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -21,7 +20,7 @@ public class HomeController
 	
 	@GetMapping
 	public String index() {
-		return "home";
+		return "forward:/home";
 	}
 	
 	@GetMapping(value = "/login")
