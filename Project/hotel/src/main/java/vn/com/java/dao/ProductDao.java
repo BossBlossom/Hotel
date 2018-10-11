@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import vn.com.java.entity.Product;
 
 @Repository
-public class OrderDao {
+public class ProductDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
@@ -29,26 +29,26 @@ public class OrderDao {
 		return orders;
 	}
 	
-	public List<Product> findByOrder(String product)
+	public List<Product> findByProduct(String product)
 	{
 		return new ArrayList<>();
 	}
 	
-	public Product create(Product order)
+	public Product create(Product product)
 	{
-		getSession().save(order);
-		return order;
+		getSession().save(product);
+		return product;
 	}
 	
-	public Product update(Product order)
+	public Product update(Product product)
 	{
-		getSession().update(order);
-		return order;
+		getSession().update(product);
+		return product;
 	}
 	
-	public Product delete(Product order)
+	public Product delete(Product product)
 	{
-		getSession().delete(order);
-		return order;
+		getSession().delete(product);
+		return product;
 	}
 }
