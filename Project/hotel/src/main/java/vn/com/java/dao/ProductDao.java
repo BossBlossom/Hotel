@@ -24,9 +24,9 @@ public class ProductDao {
 	
 	public List<Product> findAll()
 	{
-		TypedQuery<Product> query = getSession().createQuery("FROM Order", Product.class);
-		List<Product> orders = query.getResultList();
-		return orders;
+		TypedQuery<Product> query = getSession().createQuery("FROM Product", Product.class);
+		List<Product> products = query.getResultList();
+		return products;
 	}
 	
 	public List<Product> findByProduct(String product)
