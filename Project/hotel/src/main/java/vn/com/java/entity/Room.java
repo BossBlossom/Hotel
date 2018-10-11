@@ -46,6 +46,14 @@ public class Room
 	@JoinTable(name = "booking_histories", joinColumns = { @JoinColumn(name = "room_no") }, inverseJoinColumns = { @JoinColumn(name = "cmnd") })
 	private Set<Customer> customerRoomHistories = new HashSet<Customer>(0);
 	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "bills", joinColumns = { @JoinColumn(name = "room_no") }, inverseJoinColumns = { @JoinColumn(name = "product") })
+	private Set<Product> productRoomBills = new HashSet<Product>(0);
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "bill_details", joinColumns = { @JoinColumn(name = "room_no") }, inverseJoinColumns = { @JoinColumn(name = "product") })
+	private Set<Product> productRoomDetail = new HashSet<Product>(0);
+	
 	public int getRoomNo() {
 		return roomNo;
 	}
@@ -100,6 +108,38 @@ public class Room
 
 	public void setImages(Set<Image> images) {
 		this.images = images;
+	}
+
+	public Set<Customer> getCustomerRoomNumbers() {
+		return customerRoomNumbers;
+	}
+
+	public void setCustomerRoomNumbers(Set<Customer> customerRoomNumbers) {
+		this.customerRoomNumbers = customerRoomNumbers;
+	}
+
+	public Set<Customer> getCustomerRoomHistories() {
+		return customerRoomHistories;
+	}
+
+	public void setCustomerRoomHistories(Set<Customer> customerRoomHistories) {
+		this.customerRoomHistories = customerRoomHistories;
+	}
+
+	public Set<Product> getProductRoomBills() {
+		return productRoomBills;
+	}
+
+	public void setProductRoomBills(Set<Product> productRoomBills) {
+		this.productRoomBills = productRoomBills;
+	}
+
+	public Set<Product> getProductRoomDetail() {
+		return productRoomDetail;
+	}
+
+	public void setProductRoomDetail(Set<Product> productRoomDetail) {
+		this.productRoomDetail = productRoomDetail;
 	}
 	
 }

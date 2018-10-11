@@ -26,7 +26,7 @@ public class ProductService {
 		return productDao.findByProduct(product);
 	}
 	
-	public Product createOrder(ProductModel productModel)
+	public Product createProduct(ProductModel productModel)
 	{
 		Product product = new Product();
 		productModel.toProduct(product);
@@ -35,7 +35,7 @@ public class ProductService {
 		return result;
 	}
 	
-	public Product updateOrder(ProductModel productModel) 
+	public Product updateProduct(ProductModel productModel) 
 	{
 		Product product = new Product();
 		productModel.toProduct(product);
