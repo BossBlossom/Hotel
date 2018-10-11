@@ -55,7 +55,7 @@
 		}
 		article div{
 			margin-bottom: 10px;
-			padding: 6px 6px;
+			padding: 5px 5px;
 			float: left;
 		}
 		article img {
@@ -68,12 +68,12 @@
 		}
 		article td {
 			padding: 3px;
-			border: 3.5px #00ff00 outset;
+			border: 3px #00ff00 outset;
 			text-align: center;
 		}
 		article th {
 			padding: 3px;
-			border: 3.5px #00ff00 outset;
+			border: 3px #00ff00 outset;
 			text-align: center;
 		}
 		article a {
@@ -95,7 +95,7 @@
 			width: 8%;
 		}
 		.col5 {
-			width: 63%;
+			width: 52%;
 		}
 
 

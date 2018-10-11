@@ -2,6 +2,6 @@
     pageEncoding="UTF-8"  isELIgnored="false"%>
 
 <header>
-	<h1 id="effectText1">KHÁCH SẠN AN AN</h1>
+	<h1 id="effectText1">MANAGER PAGE</h1>
 </header>
 

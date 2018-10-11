@@ -51,4 +51,10 @@ public class CustomerController
 	{
 		return "booking";
 	}
+	
+	@RequestMapping(value = "/test",method = RequestMethod.GET)
+	public String Test(Model model)
+	{
+		return "test";
+	}
 }

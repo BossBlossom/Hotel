@@ -17,7 +17,7 @@
 	crossorigin="anonymous">
 </head>
 <%
-	int i = 1;
+	int i = 0, j = 0;
 %>
 <body>
 	<jsp:include page="../template/header.jsp"></jsp:include>
@@ -30,10 +30,11 @@
 
 	<article>
 	<c:forEach var="room" items="${rooms}">
+	<%j++; if (j%5==1){ %>
 		<div>
 			<table>
 				<tr>
-					<th>Lầu <%=i++%></th>
+					<th>Lầu <%=++i%></th>
 				</tr>
 				<tr>
 					<td class="col1">Phòng</td>
@@ -42,18 +43,19 @@
 					<td class="col4">Ghi chú</td>
 					<td class="col5">Điều khiển</td>
 				</tr>
+				<%} %>
 				<tr>
 						<td>${room.roomNo }</td>
 						<td>__/__/____</td>
 						<td>__/__/____</td>
 						<td>${room.status }</td>
-						<c:if test="${room.status eq 'check in'}">
+						<c:if test="${room.status eq 'check_in'}">
 							<td class="left"><a href="">view_room</a> | <a href='<spring:url value="/manager-update-room" />'>update_room</a>
 								| <a href="">update_date</a> | <a href="">view_customer</a> | <a
 								href="">order</a> | <a href="">check_out</a> | <a href="">history</a>
-								| <a href="">delete</a></td>
+							</td>
 						</c:if>
-						<c:if test="${room.status eq 'check out'}">
+						<c:if test="${room.status eq 'check_out'}">
 							<td class="left"><a href="">view_room</a> | <a href='<spring:url value="/manager-update-room" />'>update_room</a>
 								| <a href="">history</a> | <a href="">bill</a></td>
 						</c:if>
@@ -67,11 +69,14 @@
 								| <a href="">create_customer</a> | <a href="">history</a></td>
 						</c:if>
 				</tr>
+		<%if (j%5==0){ %>
 			</table>
 		</div>
+		<%} %>
 	</c:forEach>
 	
 	</article>
+
 
 	<jsp:include page="../template/aside.jsp"></jsp:include>
 
