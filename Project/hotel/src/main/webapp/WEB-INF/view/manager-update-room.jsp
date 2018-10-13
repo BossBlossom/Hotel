@@ -4,6 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.*"%>
+<%@ page import="vn.com.java.model.RoomModel" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,13 +27,17 @@
 
 <body>
 
-	<jsp:include page="../template/header.jsp"></jsp:include>
+	<header>
+		<h1 id="effectText1">MANAGER PAGE</h1>
+	</header>
 
 	<nav>
 		<a href='<spring:url value="/manager-list" />'>Trang chủ</a>
 	</nav>
 
-	<form:form name="form1" modelAttribute="room">
+	<c:url var="formUrl" value="/manager-update-room" />
+
+	<form:form id="form2" modelAttribute="room" action="${formUrl}" method="post">
 		<article>
 			<div>
 				<table>
@@ -79,18 +84,76 @@
 				</table>
 				<p>
 
-					<a style="margin: 10px 10px 10px 28%" href='<spring:url value="/manager-update-room" />'
-						onclick="submitForm('form1')">TẠO PHÒNG</a> 
-					<a href='<spring:url value="/manager-list" />'>XÓA PHÒNG</a>
+					<a style="margin: 10px 10px 10px 10%" href="#" onclick="submitForm('form2')">CẬP NHẬT PHÒNG</a> 
+					<a href='<spring:url value="/manager-delete-room?roomNo=${room.roomNo}" />' onclick="submitForm('form2')">XÓA PHÒNG</a>
 					<a href='<spring:url value="/manager-list" />'>TRỞ VỀ</a>
 				</p>
 			</div>
 		</article>
 	</form:form>
 
-	<jsp:include page="../template/aside.jsp"></jsp:include>
+<aside>
+		<div>
+			<h3 class="effectText2">Thông tin liên hệ</h3>
+			<img src="resources/images_action/backrough_1.gif" alt="Image" /> <img
+				src="resources/images_action/backrough.gif" alt="Image" />
+			<h6>Địa chỉ: 67, Phù Đổng Thiên Vương, phường 8, TP Đà Lạt</h6>
+			<h6>Số điện thoại: A.Ân 0974384921 - A.Dũng 0987264731</h6>
+		</div>
 
-	<jsp:include page="../template/footer.jsp"></jsp:include>
+		<div id="popular">
+			<h3 class="effectText2">Khách yêu thích chỗ này vì...</h3>
+			<h4>** Hoàn hảo cho kỳ nghỉ 1 đêm!</h4>
+			<h5>
+				<i class="fas fa-map-marker-alt"></i> Địa điểm hàng đầu: Được khách
+				gần đây đánh giá cao (9,9 điểm)
+			</h5>
+			<h4>** Phòng có:</h4>
+			<h5>
+				<i class="fas fa-eye"></i> Ban công nhìn ra quang cảnh
+			</h5>
+			<h5>
+				<i class="fas fa-swimming-pool"></i> Có hồ bơi trong khuôn viên
+				khách sạn
+			</h5>
+			<h5>
+				<i class="fas fa-eye"></i> Nhìn ra Thành phố / Núi
+			</h5>
+			<h5 style="color: white; background-color: green;">
+				<i class="fas fa-wifi"></i> Wifi miễn phí
+			</h5>
+			<h5>
+				<i class="fas fa-parking"></i> Có chỗ đậu xe miễn phí tại khách sạn
+			</h5>
+		</div>
+
+		<div>
+			<h3 class="effectText2">Tất cả các phòng có:</h3>
+			<h5>
+				<i class="fas fa-shower"></i> Phòng tắm riêng
+			</h5>
+			<h5>
+				<i class="fas fa-tv"></i> Ti vi màn hình phẳng
+			</h5>
+			<h5>
+				<i class="fas fa-check"></i> Chậu rửa vệ sinh
+			</h5>
+			<h5>
+				<i class="fas fa-check"></i> Không gây dị ứng
+			</h5>
+			<h5>
+				<i class="fas fa-check"></i> Sản phẩm lau rửa
+			</h5>
+			<h5>
+				<i class="fas fa-check"></i> Nệm nước
+			</h5>
+		</div>
+	</aside>
+
+	<footer>
+		<h3>Nơi dừng chân nghỉ ngơi hợp với túi tiền của bạn khi đi du
+			lịch và đi công tác tại thành phố hoa</h3>
+	</footer>
 
 
 	<script type="text/javascript">
