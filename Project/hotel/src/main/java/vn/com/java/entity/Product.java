@@ -13,6 +13,9 @@ public class Product {
 	@Column(name = "product")
 	private String product;
 	
+	@Column(name = "image")
+	private String image;
+	
 	@Column(name = "money")
 	private int money;
 	
@@ -25,6 +28,14 @@ public class Product {
 
 	public void setProduct(String product) {
 		this.product = product;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public int getMoney() {

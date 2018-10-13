@@ -1,36 +1,46 @@
 package vn.com.java.entity;
 
-import javax.persistence.CascadeType;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="images")
-public class Image 
+@Table(name="images_style_rooms")
+public class ImageStyleRoom 
 {
 	@Id
 	@GeneratedValue
 	@Column(name="id")
 	private int id;
 	
+	@Column(name="style_room")
+	private String styleRoom;
+	
 	@Column(name="image")
 	private String image;
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="style")
-	private StyleRoom styleRoom;
-
+	@OneToMany(mappedBy = "imagestyleroom")
+	private Set<Room> rooms;
+	
 	public int getId() {
 		return id;
 	}
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getStyleRoom() {
+		return styleRoom;
+	}
+
+	public void setStyleRoom(String styleRoom) {
+		this.styleRoom = styleRoom;
 	}
 
 	public String getImage() {
@@ -41,12 +51,12 @@ public class Image
 		this.image = image;
 	}
 
-	public StyleRoom getStyleRoom() {
-		return styleRoom;
+	public Set<Room> getRooms() {
+		return rooms;
 	}
 
-	public void setStyleRoom(StyleRoom styleRoom) {
-		this.styleRoom = styleRoom;
+	public void setRooms(Set<Room> rooms) {
+		this.rooms = rooms;
 	}
 	
 }
