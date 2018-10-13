@@ -22,8 +22,8 @@ public class Image
 	private String image;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="room_no")
-	private Room room;
+	@JoinColumn(name="style")
+	private StyleRoom styleRoom;
 
 	public int getId() {
 		return id;
@@ -41,12 +41,12 @@ public class Image
 		this.image = image;
 	}
 
-	public Room getRoom() {
-		return room;
+	public StyleRoom getStyleRoom() {
+		return styleRoom;
 	}
 
-	public void setRoom(Room room) {
-		this.room = room;
+	public void setStyleRoom(StyleRoom styleRoom) {
+		this.styleRoom = styleRoom;
 	}
 	
 }

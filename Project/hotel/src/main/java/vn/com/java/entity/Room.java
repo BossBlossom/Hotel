@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -34,9 +35,10 @@ public class Room
 	
 	@Column(name="information")
 	private String information;
-
-	@OneToMany(mappedBy = "room")
-	private Set<Image> images;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="style")
+	private StyleRoom styleRoom;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "booking_informations", joinColumns = { @JoinColumn(name = "room_no") }, inverseJoinColumns = { @JoinColumn(name = "cmnd") })
@@ -53,7 +55,7 @@ public class Room
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "bill_details", joinColumns = { @JoinColumn(name = "room_no") }, inverseJoinColumns = { @JoinColumn(name = "product") })
 	private Set<Product> productRoomDetail = new HashSet<Product>(0);
-	
+
 	public int getRoomNo() {
 		return roomNo;
 	}
@@ -102,12 +104,12 @@ public class Room
 		this.information = information;
 	}
 
-	public Set<Image> getImages() {
-		return images;
+	public StyleRoom getStyleRoom() {
+		return styleRoom;
 	}
 
-	public void setImages(Set<Image> images) {
-		this.images = images;
+	public void setStyleRoom(StyleRoom styleRoom) {
+		this.styleRoom = styleRoom;
 	}
 
 	public Set<Customer> getCustomerRoomNumbers() {
