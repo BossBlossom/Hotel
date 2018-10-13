@@ -21,12 +21,9 @@ public class ImageStyleRoom
 	@Column(name="style_room")
 	private String styleRoom;
 	
-	@Column(name="image")
-	private String image;
+	@OneToMany(mappedBy="imageStyleRoom")
+	private Set<Image> images;
 
-	@OneToMany(mappedBy = "imagestyleroom")
-	private Set<Room> rooms;
-	
 	public int getId() {
 		return id;
 	}
@@ -43,20 +40,12 @@ public class ImageStyleRoom
 		this.styleRoom = styleRoom;
 	}
 
-	public String getImage() {
-		return image;
+	public Set<Image> getImages() {
+		return images;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
-	}
-
-	public Set<Room> getRooms() {
-		return rooms;
-	}
-
-	public void setRooms(Set<Room> rooms) {
-		this.rooms = rooms;
+	public void setImages(Set<Image> images) {
+		this.images = images;
 	}
 	
 }

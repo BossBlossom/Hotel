@@ -52,9 +52,9 @@ public class ImageStyleRoomDao
 		return imageStyleRoom;
 	}
 	
-	public ImageStyleRoom delete(ImageStyleRoom image)
+	public ImageStyleRoom delete(ImageStyleRoom imageStyleRoom)
 	{
-		getSession().delete(image);
-		return image;
+		getSession().delete(imageStyleRoom);
+		return imageStyleRoom;
 	}
 }

@@ -14,7 +14,7 @@ public class RoomModel
 	
 	private int money;
 	
-	private String information;
+	private String styleRoom;
 	
 	public Room toRoom(Room room)
 	{
@@ -25,8 +25,8 @@ public class RoomModel
 		}
 		room.setBed(this.bed);
 		room.setAirConditioner(this.airConditioner);
+		room.setStyleRoom(this.styleRoom);
 		room.setMoney(this.money);
-		room.setInformation(this.information);
 		return room;
 	}
 	
@@ -36,8 +36,8 @@ public class RoomModel
 		this.setStatus(room.getStatus());
 		this.setBed(room.getBed());
 		this.setAirConditioner(room.getAirConditioner());
+		this.setStyleRoom(room.getStyleRoom());
 		this.setMoney(room.getMoney());
-		this.setInformation(room.getInformation());
 	}
 
 	public int getRoomNo() {
@@ -80,12 +80,12 @@ public class RoomModel
 		this.money = money;
 	}
 
-	public String getInformation() {
-		return information;
+	public String getStyleRoom() {
+		return styleRoom;
 	}
 
-	public void setInformation(String information) {
-		this.information = information;
+	public void setStyleRoom(String styleRoom) {
+		this.styleRoom = styleRoom;
 	}
 	
 }

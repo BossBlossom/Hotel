@@ -38,24 +38,6 @@
 			<div>
 				<table>
 					<p>PHÒNG</p>
-					<tr>
-						<td rowspan="4">HÌNH ẢNH</td>
-						<td><input type="file" name="file" id="h1" /></td>
-						<td><img src="" id="hinh1" width="100px" height="50px" /></td>
-					</tr>
-					<tr>
-						<td><input type="file" name="file" id="h2" /></td>
-						<td><img src="" id="hinh2" width="100px" height="50px" /></td>
-					</tr>
-					<tr>
-						<td><input type="file" name="file" id="h3" /></td>
-						<td><img src="" id="hinh3" width="100px" height="50px" /></td>
-					</tr>
-					<tr>
-						<td><input type="file" name="file" id="h4" /></td>
-						<td><img src="" id="hinh4" width="100px" height="50px" /></td>
-					</tr>
-					<tr>
 						<td>SỐ PHÒNG</td>
 						<td colspan="2"><form:input path="roomNo" /></td>
 					</tr>
@@ -68,8 +50,8 @@
 						<td colspan="2"><form:input path="airConditioner" type="number" /></td>
 					</tr>
 					<tr>
-						<td>THÔNG TIN</td>
-						<td colspan="2"><form:textarea path="information" rows="10" /></td>
+						<td>LOẠI PHÒNG</td>
+						<td colspan="2"><form:select path="bed"/></td>
 					</tr>
 					<tr>
 						<td>GIÁ TIỀN</td>

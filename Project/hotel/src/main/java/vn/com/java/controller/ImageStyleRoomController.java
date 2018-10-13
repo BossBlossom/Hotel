@@ -17,10 +17,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import vn.com.java.entity.Image;
 import vn.com.java.entity.ImageStyleRoom;
 import vn.com.java.service.ImageStyleRoomService;
 
 @Controller
+@RequestMapping("/image-style-room")
 public class ImageStyleRoomController 
 {
 	@Autowired
@@ -28,7 +30,7 @@ public class ImageStyleRoomController
 	@Autowired
 	private static String UPLOADED_FOLDER = "C:/java_images//";
 	
-	@RequestMapping(value = "/image-style-room-view", method = RequestMethod.GET )
+	@RequestMapping(value = "/view", method = RequestMethod.GET )
 	public String ListStyleRoom(@RequestParam("styleRoom") String styleRoom, Model model)
 	{
 		List<ImageStyleRoom> imageStyleRooms = imageStyleRoomService.search(styleRoom);
@@ -36,7 +38,7 @@ public class ImageStyleRoomController
 		return "image-style-room-view";
 	}
 	
-	@RequestMapping(value = "/image-style-room-add", method = RequestMethod.GET)
+	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String ImageStyleRoom(Model model)
 	{
 		ImageStyleRoom imageStyleRoom = new ImageStyleRoom();
@@ -45,8 +47,8 @@ public class ImageStyleRoomController
 		return "image-style-room-add";
 	}
 	
-	@RequestMapping(value = "/image-style-room-update", method = RequestMethod.POST)
-	public String handleImage(@RequestParam("file") MultipartFile file, @ModelAttribute("image") ImageStyleRoom image,BindingResult result ,Model model, RedirectAttributes redirectAttributes)
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	public String handleImage(@RequestParam("file") MultipartFile file, @ModelAttribute("image") Image image,BindingResult result ,Model model, RedirectAttributes redirectAttributes)
 	{
 		if(result.hasErrors())
 		{
