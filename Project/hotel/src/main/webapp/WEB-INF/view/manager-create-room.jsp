@@ -38,6 +38,24 @@
 			<div>
 				<table>
 					<p>PHÒNG</p>
+					<tr>
+						<td rowspan="4">HÌNH ẢNH</td>
+						<td><input type="file" name="file" id="h1" /></td>
+						<td><img src="" id="hinh1" width="100px" height="50px" /></td>
+					</tr>
+					<tr>
+						<td><input type="file" name="file" id="h2" /></td>
+						<td><img src="" id="hinh2" width="100px" height="50px" /></td>
+					</tr>
+					<tr>
+						<td><input type="file" name="file" id="h3" /></td>
+						<td><img src="" id="hinh3" width="100px" height="50px" /></td>
+					</tr>
+					<tr>
+						<td><input type="file" name="file" id="h4" /></td>
+						<td><img src="" id="hinh4" width="100px" height="50px" /></td>
+					</tr>
+					<tr>
 						<td>SỐ PHÒNG</td>
 						<td colspan="2"><form:input path="roomNo" /></td>
 					</tr>
@@ -50,8 +68,8 @@
 						<td colspan="2"><form:input path="airConditioner" type="number" /></td>
 					</tr>
 					<tr>
-						<td>LOẠI PHÒNG</td>
-						<td colspan="2"><form:select path="bed"/></td>
+						<td>THÔNG TIN</td>
+						<td colspan="2"><form:textarea path="information" rows="10" /></td>
 					</tr>
 					<tr>
 						<td>GIÁ TIỀN</td>
@@ -135,14 +153,12 @@
 		function readURL1(input) {
 			if (input.files && input.files[0]) {
 				var reader = new FileReader();
-
 				reader.onload = function(e) {
 					$('#hinh1').attr('src', e.target.result);
 				}
 				reader.readAsDataURL(input.files[0]);
 			}
 		}
-
 		$("#h1").change(function() {
 			readURL1(this);
 		});
@@ -152,7 +168,6 @@
 		function readURL2(input) {
 			if (input.files && input.files[0]) {
 				var reader = new FileReader();
-
 				reader.onload = function(e) {
 					$('#hinh2').attr('src', e.target.result);
 				}
@@ -168,7 +183,6 @@
 		function readURL3(input) {
 			if (input.files && input.files[0]) {
 				var reader = new FileReader();
-
 				reader.onload = function(e) {
 					$('#hinh3').attr('src', e.target.result);
 				}
@@ -184,7 +198,6 @@
 		function readURL4(input) {
 			if (input.files && input.files[0]) {
 				var reader = new FileReader();
-
 				reader.onload = function(e) {
 					$('#hinh4').attr('src', e.target.result);
 				}
