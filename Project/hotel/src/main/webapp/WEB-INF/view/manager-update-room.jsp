@@ -43,21 +43,8 @@
 				<table>
 					<p>PHÒNG</p>
 					<tr>
-						<td rowspan="4">HÌNH ẢNH</td>
-						<td><input type="file" name="file" id="h1" /></td>
-						<td><img src="" id="hinh1" width="100px" height="50px" /></td>
-					</tr>
-					<tr>
-						<td><input type="file" name="file" id="h2" /></td>
-						<td><img src="" id="hinh2" width="100px" height="50px" /></td>
-					</tr>
-					<tr>
-						<td><input type="file" name="file" id="h3" /></td>
-						<td><img src="" id="hinh3" width="100px" height="50px" /></td>
-					</tr>
-					<tr>
-						<td><input type="file" name="file" id="h4" /></td>
-						<td><img src="" id="hinh4" width="100px" height="50px" /></td>
+						<td>LOẠI PHÒNG</td>
+						<td colspan="2"><form:input path="roomType" /></td>
 					</tr>
 					<tr>
 						<td>SỐ PHÒNG</td>
@@ -85,7 +72,6 @@
 				<p>
 
 					<a style="margin: 10px 10px 10px 10%" href="#" onclick="submitForm('form2')">CẬP NHẬT PHÒNG</a> 
-					<a href='<spring:url value="/manager-delete-room?roomNo=${room.roomNo}" />' onclick="submitForm('form2')">XÓA PHÒNG</a>
 					<a href='<spring:url value="/manager-list" />'>TRỞ VỀ</a>
 				</p>
 			</div>
