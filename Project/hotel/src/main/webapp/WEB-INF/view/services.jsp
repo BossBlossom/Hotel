@@ -50,7 +50,7 @@
                             <div class="col-md-2 col-sm-6 col-xs-6">
                                 <div id="logo">
                                     <!--<a href="index.html"><img src="images/logo.png" alt="logo"></a>-->
-                                    <a href="home"><span>Star</span>home</a>
+                                    <a href="rooms"><span>Star</span>home</a>
                                 </div>                       
                             </div>
                             <div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
@@ -66,13 +66,9 @@
                                     </div>
                                     <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
                                         <ul class="list-unstyled nav1 cl-effect-10">
-                                            <li><a data-hover="Home" href="home"><span>Home</span></a></li>
-                                            <li><a data-hover="About" href="about"><span>About</span></a></li>
                                             <li><a data-hover="Rooms" href="rooms"><span>Rooms</span></a></li>
-                                            <li><a data-hover="Gallery" href="gallery"><span>Gallery</span></a></li>
-                                            <li><a data-hover="Dinning" class="active"><span>Dinning</span></a></li>
-                                            <li><a data-hover="Rooms-View" href="rooms-view"><span>Rooms-View</span></a></li>
-                                            <li><a data-hover="Booking" href="booking"><span>Booking</span></a></li>
+											<li><a data-hover="Services" class="active"><span>Services</span></a></li>
+											<li><a data-hover="About" href="about"><span>About</span></a></li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -230,14 +226,10 @@
                         <div class="col-md-3 col-sm-6 col-xs-12 width-50 width-set-50">
                             <div class="footer-details">
                                 <h4>explore</h4>
-                                <ul class="list-unstyled footer-links">
-                                    <li><a href="home">Home</a></li>
+                                <ul class="list-unstyled footer-links">                                                                       
+                                    <li><a href="rooms">Rooms</a></li>                              
+                                    <li class="active"><a>Services</a></li>
                                     <li><a href="about">About</a></li>
-                                    <li><a href="rooms">Rooms</a></li>
-                                    <li><a href="gallery">Gallery</a></li>
-                                    <li class="active"><a>Dinning</a></li>
-                                    <li> <a href="rooms-view">Rooms-View</a></li>
-                                    <li> <a href="booking">Booking</a></li>
                                 </ul>
                             </div>
                         </div>

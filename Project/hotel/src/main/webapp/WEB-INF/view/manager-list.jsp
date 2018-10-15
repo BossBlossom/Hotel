@@ -17,9 +17,7 @@
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 	crossorigin="anonymous">
 </head>
-<%
-	int i = 0, j = 0;
-%>
+
 <body>
 	<header>
 		<h1 id="effectText1">MANAGER PAGE</h1>
@@ -32,129 +30,80 @@
 	</nav>
 
 	<article>
-		<c:forEach var="room" items="${rooms}">
-			<%
-				j++;
-					if (j % 5 == 1) {
-			%>
-			<div>
-				<table>
-					<tr>
-						<th>Lầu <%=++i%></th>
-					</tr>
-					<tr>
-						<td class="col1">Phòng</td>
-						<td class="col2">Ngày đặt phòng</td>
-						<td class="col3">Ngày trả phòng</td>
-						<td class="col4">Ghi chú</td>
-						<td class="col5">Điều khiển</td>
-					</tr>
-					<%
-						}
-					%>
-					<tr>
-						<td>${room.roomNo }</td>
-						<td>__/__/____</td>
-						<td>__/__/____</td>
-						<td>${room.status }</td>
-						<c:if test="${room.status eq 'check_in'}">
-							<td class="left"><a href="">view_room</a> | <a
-								href='<spring:url value="/manager-update-room?roomNo=${room.roomNo}" />'>update_room</a>
-								| <a href="">update_date</a> | <a href="">view_customer</a> | <a
-								href="">order</a> | <a href="">check_out</a> | <a href="">history</a>
-							</td>
-						</c:if>
-						<c:if test="${room.status eq 'check_out'}">
-							<td class="left"><a href="">view_room</a> | <a
-								href='<spring:url value="/manager-update-room?roomNo=${room.roomNo}" />'>update_room</a>
-								| <a href="">history</a> | <a href="">bill</a></td>
-						</c:if>
-						<c:if test="${room.status eq 'customer'}">
-							<td class="left"><a href="">view_room</a> | <a
-								href='<spring:url value="/manager-update-room?roomNo=${room.roomNo}" />'>update_room</a>
-								| <a href="">view_customer</a> | <a href="">check_in</a> | <a
-								href="">history</a></td>
-						</c:if>
-						<c:if test="${room.status eq 'none'}">
-							<td class="left"><a href="">view_room</a> | <a
-								href='<spring:url value="/manager-update-room?roomNo=${room.roomNo}" />'>update_room</a>
-								| <a href="">create_customer</a> | <a href="">history</a></td>
-						</c:if>
-					</tr>
-					<%
-						if (j % 5 == 0) {
-					%>
-				</table>
-			</div>
-			<%
-				}
-			%>
-		</c:forEach>
+		<div id="filter" style="margin-bottom: 50px;">
+			<input type="text" id="inp1" class="myInput" onkeyup="myFunction1()" placeholder="Search for room no..." title="Type in a no">
+			<input type="text" id="inp2" class="myInput" onkeyup="myFunction2()" placeholder="Search for status..." title="Type in a status">
+		</div>
+		
+		<div id="myFilter">
+			<c:forEach var="room" items="${rooms}">
+				<div class="room">
+					<table>
+						<tr>
+							<td style="color: #ffff00;">delux room</td>
+						</tr>
+						<tr>
+							<td>101</td>
+						</tr>
+						<tr>
+							<td>check_in</td>
+						</tr>
+					</table>
+					<span class="dropdown">
+						<button class="dropbtn">&#9947;</button>
+						<span class="dropdown-content">
+							<a href="#">view</a> <a href="#">closed</a> <a href="#">delete</a>
+							<a href="#">check_out</a>
+						</span>
+					</span>
+				</div>
+			</c:forEach>
+		</div>
 
 	</article>
 
-
-	<aside>
-		<div>
-			<h3 class="effectText2">Thông tin liên hệ</h3>
-			<img src="resources/images_action/backrough_1.gif" alt="Image" /> <img
-				src="resources/images_action/backrough.gif" alt="Image" />
-			<h6>Địa chỉ: 67, Phù Đổng Thiên Vương, phường 8, TP Đà Lạt</h6>
-			<h6>Số điện thoại: A.Ân 0974384921 - A.Dũng 0987264731</h6>
-		</div>
-
-		<div id="popular">
-			<h3 class="effectText2">Khách yêu thích chỗ này vì...</h3>
-			<h4>** Hoàn hảo cho kỳ nghỉ 1 đêm!</h4>
-			<h5>
-				<i class="fas fa-map-marker-alt"></i> Địa điểm hàng đầu: Được khách
-				gần đây đánh giá cao (9,9 điểm)
-			</h5>
-			<h4>** Phòng có:</h4>
-			<h5>
-				<i class="fas fa-eye"></i> Ban công nhìn ra quang cảnh
-			</h5>
-			<h5>
-				<i class="fas fa-swimming-pool"></i> Có hồ bơi trong khuôn viên
-				khách sạn
-			</h5>
-			<h5>
-				<i class="fas fa-eye"></i> Nhìn ra Thành phố / Núi
-			</h5>
-			<h5 style="color: white; background-color: green;">
-				<i class="fas fa-wifi"></i> Wifi miễn phí
-			</h5>
-			<h5>
-				<i class="fas fa-parking"></i> Có chỗ đậu xe miễn phí tại khách sạn
-			</h5>
-		</div>
-
-		<div>
-			<h3 class="effectText2">Tất cả các phòng có:</h3>
-			<h5>
-				<i class="fas fa-shower"></i> Phòng tắm riêng
-			</h5>
-			<h5>
-				<i class="fas fa-tv"></i> Ti vi màn hình phẳng
-			</h5>
-			<h5>
-				<i class="fas fa-check"></i> Chậu rửa vệ sinh
-			</h5>
-			<h5>
-				<i class="fas fa-check"></i> Không gây dị ứng
-			</h5>
-			<h5>
-				<i class="fas fa-check"></i> Sản phẩm lau rửa
-			</h5>
-			<h5>
-				<i class="fas fa-check"></i> Nệm nước
-			</h5>
-		</div>
-	</aside>
 
 	<footer>
 		<h3>Nơi dừng chân nghỉ ngơi hợp với túi tiền của bạn khi đi du
 			lịch và đi công tác tại thành phố hoa</h3>
 	</footer>
+	
+	
+	<script>
+		function myFunction1() {
+		    var input, filter, div, div1, a, i;
+		    input = document.getElementById("inp1");
+		    filter = input.value.toUpperCase();
+		    div = document.getElementById("myFilter");
+		    div1 = div.getElementsByTagName("div");
+		    for (i = 0; i < div1.length; i++) {
+		        td = div1[i].getElementsByTagName("td")[1];
+		        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+		            div1[i].style.display = "";
+		        } else {
+		            div1[i].style.display = "none";
+		        }
+		    }
+		}
+	</script>
+	
+	<script>
+		function myFunction2() {
+		    var input, filter, div, div1, a, i;
+		    input = document.getElementById("inp2");
+		    filter = input.value.toUpperCase();
+		    div = document.getElementById("myFilter");
+		    div1 = div.getElementsByTagName("div");
+		    for (i = 0; i < div1.length; i++) {
+		        td = div1[i].getElementsByTagName("td")[2];
+		        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+		            div1[i].style.display = "";
+		        } else {
+		            div1[i].style.display = "none";
+		        }
+		    }
+		}
+	</script>
+	
 </body>
 </html>
