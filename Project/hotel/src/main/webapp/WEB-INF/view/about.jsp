@@ -48,7 +48,7 @@
 					<div class="col-md-2 col-sm-6 col-xs-6">
 						<div id="logo">
 							<!--<a href="index.html"><img src="images/logo.png" alt="logo"></a>-->
-							<a href="home"><span>Star</span>home</a>
+							<a href="rooms"><span>Star</span>home</a>
 						</div>
 					</div>
 					<div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
@@ -65,13 +65,9 @@
 							<div
 								class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
 								<ul class="list-unstyled nav1 cl-effect-10">
-									<li><a data-hover="Home" href="home"><span>Home</span></a></li>
-									<li><a data-hover="About" class="active"><span>About</span></a></li>
 									<li><a data-hover="Rooms" href="rooms"><span>Rooms</span></a></li>
-									<li><a data-hover="Gallery" href="gallery"><span>Gallery</span></a></li>
-									<li><a data-hover="Dinning" href="dinning"><span>Dinning</span></a></li>
-									<li><a data-hover="Rooms-View" href="rooms-view"><span>Rooms-View</span></a></li>
-									<li><a data-hover="Booking" href="booking"><span>Booking</span></a></li>
+									<li><a data-hover="Services" href="services"><span>Services</span></a></li>
+									<li><a data-hover="About" class="active"><span>About</span></a></li>
 								</ul>
 							</div>
 						</nav>
@@ -83,12 +79,114 @@
 
 
 	<!--end-->
-	<section class="image-head-wrapper"
-		style="background-image: url(<spring:url value="resources/Home_resources/images/banner3.jpg"/>);">
-		<div class="inner-wrapper">
-			<h1>About us</h1>
+	<div id="myCarousel1" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel1" data-slide-to="1"></li>
+				<li data-target="#myCarousel1" data-slide-to="2"></li>
+				<li data-target="#myCarousel1" data-slide-to="3"></li>
+				<li data-target="#myCarousel1" data-slide-to="4"></li>
+				<li data-target="#myCarousel1" data-slide-to="5"></li>
+				<li data-target="#myCarousel1" data-slide-to="6"></li>
+				<li data-target="#myCarousel1" data-slide-to="7"></li>
+				<li data-target="#myCarousel1" data-slide-to="8"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="item active">
+					<img src='<spring:url value="resources/Home_resources/images/banner3.jpg"/>' style="width: 100%; height: 500px"
+						alt="First slide">
+					<div class="carousel-caption">
+						<h1>
+							about us
+						</h1>
+					</div>
+				</div>
+				<div class="item">
+					<img src='<spring:url value="resources/Home_resources/images/resort.jpg"/>' style="width: 100%; height: 500px"
+						alt="Ninth slide">
+					<div class="carousel-caption">
+						<h1>
+							about us
+						</h1>
+					</div>
+				</div>
+				<div class="item">
+					<img src='<spring:url value="resources/Home_resources/images/blog-full.png"/>' style="width: 100%; height: 500px"
+						alt="Second slide">
+					<div class="carousel-caption">
+						<h1>
+							about us
+						</h1>
+					</div>
+				</div>
+				<div class="item">
+					<img src='<spring:url value="resources/Home_resources/images/gallery1-1.jpg"/>' style="width: 100%; height: 500px"
+						alt="Third slide">
+					<div class="carousel-caption">
+						<h1>
+							about us
+						</h1>
+					</div>
+				</div>
+				<div class="item">
+					<img src='<spring:url value="resources/Home_resources/images/gallery2-2.jpg"/>' style="width: 100%; height: 500px"
+						alt="Forth slide">
+					<div class="carousel-caption">
+						<h1>
+							about us
+						</h1>
+					</div>
+				</div>
+				<div class="item">
+					<img src='<spring:url value="resources/Home_resources/images/gallery5-5.jpg"/>' style="width: 100%; height: 500px"
+						alt="Fifth slide">
+					<div class="carousel-caption">
+						<h1>
+							about us
+						</h1>
+					</div>
+				</div>
+				<div class="item">
+					<img src='<spring:url value="resources/Home_resources/images/gallery6-6.jpg"/>' style="width: 100%; height: 500px"
+						alt="Sixth slide">
+					<div class="carousel-caption">
+						<h1>
+							about us
+						</h1>
+					</div>
+				</div>
+				<div class="item">
+					<img src='<spring:url value="resources/Home_resources/images/gallery7-7.jpg"/>' style="width: 100%; height: 500px"
+						alt="Seventh slide">
+					<div class="carousel-caption">
+						<h1>
+							about us
+						</h1>
+					</div>
+				</div>
+				<div class="item">
+					<img src='<spring:url value="resources/Home_resources/images/gallery9-9.jpg"/>' style="width: 100%; height: 500px"
+						alt="Eighth slide">
+					<div class="carousel-caption">
+						<h1>
+							about us
+						</h1>
+					</div>
+				</div>
+
+			</div>
+			<a class="left carousel-control" href="#myCarousel1"
+				data-slide="prev"> <img src='<spring:url value="resources/Home_resources/images/icons/left-arrow.png"/>'
+				onmouseover="this.src = '<spring:url value="resources/Home_resources/images/icons/left-arrow-hover.png"/>'"
+				onmouseout="this.src = '<spring:url value="resources/Home_resources/images/icons/left-arrow.png"/>'" alt="left"></a>
+			<a class="right carousel-control" href="#myCarousel1"
+				data-slide="next"><img src="images/icons/right-arrow.png"
+				onmouseover="this.src = '<spring:url value="resources/Home_resources/images/icons/right-arrow-hover.png"/>'"
+				onmouseout="this.src = '<spring:url value="resources/Home_resources/images/icons/right-arrow.png"/>'" alt="left"></a>
+
 		</div>
-	</section>
 	<div class="clearfix"></div>
 
 
@@ -162,13 +260,9 @@
 					<div class="footer-details">
 						<h4>explore</h4>
 						<ul class="list-unstyled footer-links">
-							<li><a href="home">Home</a></li>
-							<li class="active"><a>About</a></li>
-							<li><a href="rooms">Rooms</a></li>
-							<li><a href="gallery">Gallery</a></li>
-							<li><a href="dinning">Dinning</a></li>
-							<li><a href="rooms-view">Rooms-View</a></li>
-							<li><a href="booking">Booking</a></li>
+							<li><a href="rooms">Rooms</a></li>                              
+                            <li><a href="services">Services</a></li>
+                            <li class="active"><a>About</a></li>
 						</ul>
 					</div>
 				</div>

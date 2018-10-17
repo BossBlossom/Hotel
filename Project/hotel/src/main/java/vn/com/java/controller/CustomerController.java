@@ -10,12 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class CustomerController 
 {
 	
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String Home(Model model)
-	{
-		return "home";
-	}
-	
 	@RequestMapping(value = "/about",method = RequestMethod.GET)
 	public String About(Model model)
 	{
@@ -28,33 +22,9 @@ public class CustomerController
 		return "rooms";
 	}
 	
-	@RequestMapping(value = "/gallery",method = RequestMethod.GET)
-	public String Gallery(Model model)
-	{
-		return "gallery";
-	}
-	
-	@RequestMapping(value = "/dinning",method = RequestMethod.GET)
-	public String Dinning(Model model)
-	{
-		return "dinning";
-	}
-	
-	@RequestMapping(value = "/rooms-view",method = RequestMethod.GET)
-	public String Rooms_view(Model model)
-	{
-		return "rooms-view";
-	}
-	
-	@RequestMapping(value = "/booking",method = RequestMethod.GET)
-	public String Booking(Model model)
-	{
-		return "booking";
-	}
-	
-	@RequestMapping(value = "/test",method = RequestMethod.GET)
+	@RequestMapping(value = "/services",method = RequestMethod.GET)
 	public String Test(Model model)
 	{
-		return "test";
+		return "services";
 	}
 }
