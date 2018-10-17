@@ -41,7 +41,7 @@
 				
 					<table>
 						<tr>
-							<td style="color: #ffff00;">${room.styleRoom}</td>
+							<td style="color: #ffff00;">${room.roomStyle}</td>
 						</tr>
 						<tr>
 							<td>${room.roomNo}</td>
