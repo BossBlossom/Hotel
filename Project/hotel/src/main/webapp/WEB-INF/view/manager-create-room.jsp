@@ -40,7 +40,14 @@
 					<p>PHÒNG</p>
 					<tr>
 						<td>LOẠI PHÒNG</td>
-						<td colspan="2"><form:input path="styleRoom" /></td>
+						<td colspan="2">
+							<form:select path="roomStyle">
+								<form:option value="Single Room">Single Room</form:option>
+								<form:option value="Double Room">Double Room</form:option>
+								<form:option value="Super Room">Super Room</form:option>
+								<form:option value="Delux Room">Delux Room</form:option>
+							</form:select>
+						</td>
 					</tr>
 					<tr>
 						<td>SỐ PHÒNG</td>

@@ -454,7 +454,9 @@
                             <div class="side-B">
                                 <div class="product-desc-side">
                                     <h3><a href="single-blog.html">delux room</a></h3>
-                                    <p>Phòng sang trọng dành cho thương gia, 1000$/ngày.</p>
+                                    	<p>* Phòng sang trọng, tiện nghi cao cấp, không gian rộng, có view đẹp.</p>
+                                    	<p>* Phòng 2 giường, 3 máy lạnh, tivi công nghệ LED cao cấp.</p>
+                                    	<p>* </p>
                                     <div class="links"><a href="single-blog.html">Booking</a></div>
                                 </div>
                             </div>
