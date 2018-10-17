@@ -174,7 +174,7 @@ public class RoomController
 		return "redirect:/manager-list";
 	}
 	
-	@RequestMapping(value = "/manager-delete-room", method = RequestMethod.GET)
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String delete(@RequestParam(name="roomNo")int roomNo, @ModelAttribute("room") RoomModel roomModel, BindingResult result, Model model)
 	{
 		if(result.hasErrors())
