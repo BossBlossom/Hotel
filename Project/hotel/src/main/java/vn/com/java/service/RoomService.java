@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import vn.com.java.dao.RoomDao;
+import vn.com.java.dao.RoomStyleDao;
 import vn.com.java.entity.Room;
 import vn.com.java.model.RoomModel;
 
@@ -18,6 +19,8 @@ public class RoomService
 {
 	@Autowired
 	private RoomDao roomDao;
+	@Autowired
+	private RoomStyleDao roomStyleDao;
 	
 	public List<Room> search(int roomNo)
 	{
@@ -38,6 +41,8 @@ public class RoomService
 		Room room = new Room();
 		roomModel.toRoom(room);
 		
+		int roomStyleId = room.getRoomStyleId().getId();
+		room.setRoomStyleId(roomStyleDao.findId(roomStyleId));
 		Room result = roomDao.create(room);
 		return result;
 	}

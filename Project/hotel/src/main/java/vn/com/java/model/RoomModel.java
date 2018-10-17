@@ -17,6 +17,8 @@ public class RoomModel
 	
 	private RoomStyle roomStyle;
 	
+	private int roomStyleId;
+	
 	public Room toRoom(Room room)
 	{
 		room.setRoomNo(this.roomNo);
@@ -26,51 +28,6 @@ public class RoomModel
 		}
 		room.setBed(this.bed);
 		room.setAirConditioner(this.airConditioner);
-		room.setRoomStyle(this.roomStyle);
-		room.setMoney(this.money);
-		return room;
-	}
-	
-	public Room closeRoom(Room room)
-	{
-		room.setRoomNo(this.roomNo);
-		room.setStatus("close");
-		room.setBed(this.bed);
-		room.setAirConditioner(this.airConditioner);
-		room.setRoomStyle(this.roomStyle);
-		room.setMoney(this.money);
-		return room;
-	}
-	
-	public Room checkInRoom(Room room)
-	{
-		room.setRoomNo(this.roomNo);
-		room.setStatus("check in");
-		room.setBed(this.bed);
-		room.setAirConditioner(this.airConditioner);
-		room.setRoomStyle(this.roomStyle);
-		room.setMoney(this.money);
-		return room;
-	}
-	
-	public Room checkOutRoom(Room room)
-	{
-		room.setRoomNo(this.roomNo);
-		room.setStatus("check out");
-		room.setBed(this.bed);
-		room.setAirConditioner(this.airConditioner);
-		room.setRoomStyle(this.roomStyle);
-		room.setMoney(this.money);
-		return room;
-	}
-	
-	public Room billRoom(Room room)
-	{
-		room.setRoomNo(this.roomNo);
-		room.setStatus("none");
-		room.setBed(this.bed);
-		room.setAirConditioner(this.airConditioner);
-		room.setRoomStyle(this.roomStyle);
 		room.setMoney(this.money);
 		return room;
 	}
@@ -81,7 +38,7 @@ public class RoomModel
 		this.setStatus(room.getStatus());
 		this.setBed(room.getBed());
 		this.setAirConditioner(room.getAirConditioner());
-		this.setRoomStyle(room.getRoomStyle());
+		//
 		this.setMoney(room.getMoney());
 	}
 
@@ -131,6 +88,14 @@ public class RoomModel
 
 	public void setRoomStyle(RoomStyle roomStyle) {
 		this.roomStyle = roomStyle;
+	}
+
+	public int getRoomStyleId() {
+		return roomStyleId;
+	}
+
+	public void setRoomStyleId(int roomStyleId) {
+		this.roomStyleId = roomStyleId;
 	}
 	
 }
