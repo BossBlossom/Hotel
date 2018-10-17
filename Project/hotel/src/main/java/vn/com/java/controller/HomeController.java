@@ -5,6 +5,7 @@ import org.springframework.security.authentication.AuthenticationTrustResolver;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,24 @@ public class HomeController
 	@GetMapping
 	public String index() {
 		return "rooms";
+	}
+	
+	@RequestMapping(value = "/about",method = RequestMethod.GET)
+	public String About(Model model)
+	{
+		return "about";
+	}
+	
+	@RequestMapping(value = "/rooms",method = RequestMethod.GET)
+	public String Rooms(Model model)
+	{
+		return "rooms";
+	}
+	
+	@RequestMapping(value = "/services",method = RequestMethod.GET)
+	public String Test(Model model)
+	{
+		return "services";
 	}
 	
 	@GetMapping(value = "/login")

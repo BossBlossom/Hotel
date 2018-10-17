@@ -31,6 +31,50 @@ public class RoomModel
 		return room;
 	}
 	
+	public Room closeRoom(Room room)
+	{
+		room.setRoomNo(this.roomNo);
+		room.setStatus("close");
+		room.setBed(this.bed);
+		room.setAirConditioner(this.airConditioner);
+		room.setRoomStyle(this.roomStyle);
+		room.setMoney(this.money);
+		return room;
+	}
+	
+	public Room checkInRoom(Room room)
+	{
+		room.setRoomNo(this.roomNo);
+		room.setStatus("check in");
+		room.setBed(this.bed);
+		room.setAirConditioner(this.airConditioner);
+		room.setRoomStyle(this.roomStyle);
+		room.setMoney(this.money);
+		return room;
+	}
+	
+	public Room checkOutRoom(Room room)
+	{
+		room.setRoomNo(this.roomNo);
+		room.setStatus("check out");
+		room.setBed(this.bed);
+		room.setAirConditioner(this.airConditioner);
+		room.setRoomStyle(this.roomStyle);
+		room.setMoney(this.money);
+		return room;
+	}
+	
+	public Room billRoom(Room room)
+	{
+		room.setRoomNo(this.roomNo);
+		room.setStatus("none");
+		room.setBed(this.bed);
+		room.setAirConditioner(this.airConditioner);
+		room.setRoomStyle(this.roomStyle);
+		room.setMoney(this.money);
+		return room;
+	}
+	
 	public void fromRoom(Room room)
 	{
 		this.setRoomNo(room.getRoomNo());
