@@ -11,7 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Cập nhật phòng</title>
-<link rel="stylesheet" type="text/css" href='<spring:url value="resources/css/style3.css"/>'>
+<link rel="stylesheet" type="text/css" href='<spring:url value="/resources/css/style3.css"/>'>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
@@ -35,7 +35,7 @@
 		<a href='<spring:url value="/manager-list" />'>Trang chủ</a>
 	</nav>
 
-	<c:url var="formUrl" value="/manager-update-room" />
+	<c:url var="formUrl" value="/manager-list/update" />
 
 	<form:form id="form2" modelAttribute="room" action="${formUrl}" method="post">
 		<article>
@@ -44,7 +44,7 @@
 					<p>PHÒNG</p>
 					<tr>
 						<td>LOẠI PHÒNG</td>
-						<td colspan="2"><form:input path="roomType" /></td>
+						<td colspan="2"><form:input path="styleRoom" /></td>
 					</tr>
 					<tr>
 						<td>SỐ PHÒNG</td>
@@ -52,26 +52,20 @@
 					</tr>
 					<tr>
 						<td>GIƯỜNG</td>
-						<td colspan="2"><form:input path="bed" type="number" /></td>
+						<td colspan="2"><form:input path="bed" type="number" maxlength="3"/></td>
 					</tr>
 					<tr>
 						<td>MÁY LẠNH</td>
-						<td colspan="2"><form:input path="airConditioner"
-								type="number" /></td>
-					</tr>
-					<tr>
-						<td>THÔNG TIN</td>
-						<td colspan="2"><form:textarea path="information" rows="10" /></td>
+						<td colspan="2"><form:input path="airConditioner" type="number" maxlength="3"/></td>
 					</tr>
 					<tr>
 						<td>GIÁ TIỀN</td>
-						<td colspan="2"><form:input path="money" type="number"
-								step="50000" /></td>
+						<td colspan="2"><form:input path="money" type="number" step="10" /></td>
 					</tr>
 				</table>
 				<p>
 
-					<a style="margin: 10px 10px 10px 10%" href="#" onclick="submitForm('form2')">CẬP NHẬT PHÒNG</a> 
+					<a style="margin: 10px 10px 10px 28%" href="#" onclick="submitForm('form2')">CẬP NHẬT PHÒNG</a> 
 					<a href='<spring:url value="/manager-list" />'>TRỞ VỀ</a>
 				</p>
 			</div>

@@ -25,7 +25,7 @@
 
 	<nav>
 		<a href='<spring:url value="/manager-list" />'>Trang chủ</a> <a
-			href='<spring:url value="/manager-create-room" />'>Tạo phòng mới</a>
+			href='<spring:url value="/manager-list/create" />'>Tạo phòng mới</a>
 		<a href="">Lịch sử phòng</a>
 	</nav>
 
@@ -38,24 +38,66 @@
 		<div id="myFilter">
 			<c:forEach var="room" items="${rooms}">
 				<div class="room">
+				
 					<table>
 						<tr>
-							<td style="color: #ffff00;">delux room</td>
+							<td style="color: #ffff00;">${room.styleRoom}</td>
 						</tr>
 						<tr>
-							<td>101</td>
+							<td>${room.roomNo}</td>
 						</tr>
 						<tr>
-							<td>check_in</td>
+							<td>${room.status}</td>
 						</tr>
 					</table>
-					<span class="dropdown">
-						<button class="dropbtn">&#9947;</button>
-						<span class="dropdown-content">
-							<a href="#">view</a> <a href="#">closed</a> <a href="#">delete</a>
-							<a href="#">check_out</a>
+					
+					<c:if test="${room.status eq 'check_in'}">
+						<span class="dropdown">
+							<button class="dropbtn">&#9947;</button>
+							<span class="dropdown-content">
+								<a href="#">view</a> 
+								<a href="#">check_out</a>
+								<a href="#">history</a>
+							</span>
 						</span>
-					</span>
+					</c:if>
+					
+					<c:if test="${room.status eq 'check_out'}">
+						<span class="dropdown">
+							<button class="dropbtn">&#9947;</button>
+							<span class="dropdown-content">
+								<a href="#">view</a> 
+								<a href="#">closed</a> 
+								<a href="#">check_in</a>
+								<a href="#">history</a>
+							</span>
+						</span>
+					</c:if>
+					
+					<c:if test="${room.status eq 'customer'}">
+						<span class="dropdown">
+							<button class="dropbtn">&#9947;</button>
+							<span class="dropdown-content">
+								<a href="#">view</a> 
+								<a href="#">check_out</a>
+								<a href="#">history</a>
+							</span>
+						</span>
+					</c:if>
+					
+					<c:if test="${room.status eq 'none'}">
+						<span class="dropdown">
+							<button class="dropbtn">&#9947;</button>
+							<span class="dropdown-content">
+								<a href="#">view</a> 
+								<a href="#">closed</a> 
+								<a href='<spring:url value="/manager-list/manager-delete-room" />'>delete</a>
+								<a href="#">check_in</a>
+								<a href="#">history</a>
+							</span>
+						</span>
+					</c:if>
+					
 				</div>
 			</c:forEach>
 		</div>

@@ -11,14 +11,14 @@
 <meta charset="UTF-8">
 <title>Tạo phòng</title>
 <link rel="stylesheet" type="text/css"
-	href='<spring:url value="resources/css/style3.css"/>'>
+	href='<spring:url value="/resources/css/style3.css"/>'>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 	
-<script type="text/javascript" src='<spring:url value="resources/js/app.js" />'></script>
+<script type="text/javascript" src='<spring:url value="/resources/js/app.js" />'></script>
 
 </head>
 
@@ -31,7 +31,7 @@
 	<nav>
 		<a href='<spring:url value="/manager-list" />'>Trang chủ</a>
 	</nav>
-	<c:url var="formUrl" value="/manager-create-room" />
+	<c:url var="formUrl" value="/manager-list/create" />
 
 	<form:form id="form1" modelAttribute="room" action="${formUrl}" method="post">
 		<article>
@@ -40,7 +40,7 @@
 					<p>PHÒNG</p>
 					<tr>
 						<td>LOẠI PHÒNG</td>
-						<td colspan="2"><form:input path="roomType" /></td>
+						<td colspan="2"><form:input path="styleRoom" /></td>
 					</tr>
 					<tr>
 						<td>SỐ PHÒNG</td>
@@ -48,19 +48,15 @@
 					</tr>
 					<tr>
 						<td>GIƯỜNG</td>
-						<td colspan="2"><form:input path="bed" type="number" /></td>
+						<td colspan="2"><form:input path="bed" type="number" maxlength="3"/></td>
 					</tr>
 					<tr>
 						<td>MÁY LẠNH</td>
-						<td colspan="2"><form:input path="airConditioner" type="number" /></td>
-					</tr>
-					<tr>
-						<td>THÔNG TIN</td>
-						<td colspan="2"><form:textarea path="information" rows="10" /></td>
+						<td colspan="2"><form:input path="airConditioner" type="number" maxlength="3"/></td>
 					</tr>
 					<tr>
 						<td>GIÁ TIỀN</td>
-						<td colspan="2"><form:input path="money" type="number" step="50000" /></td>
+						<td colspan="2"><form:input path="money" type="number" step="10" /></td>
 					</tr>
 				</table>
 				<p>
@@ -79,7 +75,7 @@
 
 
 	<script type="text/javascript">
-		function readURL1(input) {
+		function readURL(input) {
 			if (input.files && input.files[0]) {
 				var reader = new FileReader();
 				reader.onload = function(e) {
@@ -90,51 +86,6 @@
 		}
 		$("#h1").change(function() {
 			readURL1(this);
-		});
-	</script>
-
-	<script type="text/javascript">
-		function readURL2(input) {
-			if (input.files && input.files[0]) {
-				var reader = new FileReader();
-				reader.onload = function(e) {
-					$('#hinh2').attr('src', e.target.result);
-				}
-				reader.readAsDataURL(input.files[0]);
-			}
-		}
-		$("#h2").change(function() {
-			readURL2(this);
-		});
-	</script>
-
-	<script type="text/javascript">
-		function readURL3(input) {
-			if (input.files && input.files[0]) {
-				var reader = new FileReader();
-				reader.onload = function(e) {
-					$('#hinh3').attr('src', e.target.result);
-				}
-				reader.readAsDataURL(input.files[0]);
-			}
-		}
-		$("#h3").change(function() {
-			readURL3(this);
-		});
-	</script>
-
-	<script type="text/javascript">
-		function readURL4(input) {
-			if (input.files && input.files[0]) {
-				var reader = new FileReader();
-				reader.onload = function(e) {
-					$('#hinh4').attr('src', e.target.result);
-				}
-				reader.readAsDataURL(input.files[0]);
-			}
-		}
-		$("#h4").change(function() {
-			readURL4(this);
 		});
 	</script>
 
