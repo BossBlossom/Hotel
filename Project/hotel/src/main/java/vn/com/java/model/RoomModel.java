@@ -1,6 +1,7 @@
 package vn.com.java.model;
 
 import vn.com.java.entity.Room;
+import vn.com.java.entity.RoomStyle;
 
 public class RoomModel 
 {
@@ -14,7 +15,7 @@ public class RoomModel
 	
 	private int money;
 	
-	private String styleRoom;
+	private RoomStyle roomStyle;
 	
 	public Room toRoom(Room room)
 	{
@@ -25,7 +26,7 @@ public class RoomModel
 		}
 		room.setBed(this.bed);
 		room.setAirConditioner(this.airConditioner);
-		room.setStyleRoom(this.styleRoom);
+		room.setRoomStyle(this.roomStyle);
 		room.setMoney(this.money);
 		return room;
 	}
@@ -36,7 +37,7 @@ public class RoomModel
 		this.setStatus(room.getStatus());
 		this.setBed(room.getBed());
 		this.setAirConditioner(room.getAirConditioner());
-		this.setStyleRoom(room.getStyleRoom());
+		this.setRoomStyle(room.getRoomStyle());
 		this.setMoney(room.getMoney());
 	}
 
@@ -80,12 +81,12 @@ public class RoomModel
 		this.money = money;
 	}
 
-	public String getStyleRoom() {
-		return styleRoom;
+	public RoomStyle getRoomStyle() {
+		return roomStyle;
 	}
 
-	public void setStyleRoom(String styleRoom) {
-		this.styleRoom = styleRoom;
+	public void setRoomStyle(RoomStyle roomStyle) {
+		this.roomStyle = roomStyle;
 	}
 	
 }

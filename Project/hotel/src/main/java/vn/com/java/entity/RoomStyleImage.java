@@ -1,9 +1,12 @@
 package vn.com.java.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,12 +17,13 @@ public class RoomStyleImage
 	@GeneratedValue
 	@Column(name="id")
 	private int id;
-	
-	@Column(name="room_style")
-	private String roomStyle;
-	
+
 	@Column(name="image_style")
 	private String imageStyle;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="room_style_name")
+	private RoomStyle roomStyle;
 
 	public int getId() {
 		return id;
@@ -29,20 +33,20 @@ public class RoomStyleImage
 		this.id = id;
 	}
 
-	public String getRoomStyle() {
-		return roomStyle;
-	}
-
-	public void setRoomStyle(String roomStyle) {
-		this.roomStyle = roomStyle;
-	}
-
 	public String getImageStyle() {
 		return imageStyle;
 	}
 
 	public void setImageStyle(String imageStyle) {
 		this.imageStyle = imageStyle;
+	}
+
+	public RoomStyle getRoomStyle() {
+		return roomStyle;
+	}
+
+	public void setRoomStyle(RoomStyle roomStyle) {
+		this.roomStyle = roomStyle;
 	}
 	
 }
