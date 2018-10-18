@@ -43,7 +43,44 @@ public class RoomService
 		
 		int roomStyleId = room.getRoomStyleId().getId();
 		room.setRoomStyleId(roomStyleDao.findId(roomStyleId));
+		
 		Room result = roomDao.create(room);
+		return result;
+	}
+	
+	public Room closedRoom(int roomNo)
+	{
+		Room room = roomDao.find(roomNo);
+		room.setStatus("closed");
+		
+		Room result = roomDao.update(room);
+		return result;
+	}
+	
+	public Room checkInRoom(int roomNo)
+	{
+		Room room = roomDao.find(roomNo);
+		room.setStatus("check in");
+		
+		Room result = roomDao.update(room);
+		return result;
+	}
+	
+	public Room checkOutRoom(int roomNo)
+	{
+		Room room = roomDao.find(roomNo);
+		room.setStatus("check out");
+		
+		Room result = roomDao.update(room);
+		return result;
+	}
+	
+	public Room billRoom(int roomNo)
+	{
+		Room room = roomDao.find(roomNo);
+		room.setStatus("none");
+		
+		Room result = roomDao.update(room);
 		return result;
 	}
 	

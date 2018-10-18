@@ -96,14 +96,11 @@ public class RoomController
 		return "manager-view-room";
 	}
 	
-	@RequestMapping(value = "/close", method = RequestMethod.GET)
+	@RequestMapping(value = "/closed", method = RequestMethod.GET)
 	public String close(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
-		Room room = roomService.find(roomNo);
-		RoomModel roomModel = new RoomModel();
 		
-		roomModel.closeRoom(room);
-		roomService.updateRoom(roomModel);
+		roomService.closedRoom(roomNo);
 		
 		return "redirect:/manager-list";
 	}
@@ -111,11 +108,7 @@ public class RoomController
 	@RequestMapping(value = "/check-in", method = RequestMethod.GET)
 	public String checkIn(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
-		Room room = roomService.find(roomNo);
-		RoomModel roomModel = new RoomModel();
-		
-		roomModel.checkInRoom(room);
-		roomService.updateRoom(roomModel);
+		roomService.checkInRoom(roomNo);
 		
 		return "redirect:/manager-list";
 	}
@@ -123,11 +116,7 @@ public class RoomController
 	@RequestMapping(value = "/check-out", method = RequestMethod.GET)
 	public String checkOut(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
-		Room room = roomService.find(roomNo);
-		RoomModel roomModel = new RoomModel();
-		
-		roomModel.checkOutRoom(room);
-		roomService.updateRoom(roomModel);
+		roomService.checkOutRoom(roomNo);
 		
 		return "redirect:/manager-list";
 	}
@@ -135,11 +124,7 @@ public class RoomController
 	@RequestMapping(value = "/bill", method = RequestMethod.GET)
 	public String bill(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
-		Room room = roomService.find(roomNo);
-		RoomModel roomModel = new RoomModel();
-		
-		roomModel.billRoom(room);
-		roomService.updateRoom(roomModel);
+		roomService.billRoom(roomNo);
 		
 		return "redirect:/manager-list";
 	}
