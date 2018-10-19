@@ -40,11 +40,7 @@
 				<div class="room">
 					<table>
 						<tr>
-						<c:forEach var="style" items="${styles}">
-							<td style="color: #ffff00;">
-								<c:if test="${style.id eq '1'}">${style.name} ${room.getRoomStyleId().getId()}</c:if>
-							</td>
-						</c:forEach>
+							<td style="color: #ffff00;">${room.getRoomStyle().getName()}</td>
 						</tr>
 						<tr>
 							<td>${room.roomNo}</td>

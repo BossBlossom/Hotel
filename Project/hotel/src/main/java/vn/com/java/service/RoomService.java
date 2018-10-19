@@ -42,7 +42,7 @@ public class RoomService
 		roomModel.toRoom(room);
 		
 		int roomStyleId = roomModel.getRoomStyleId();
-		room.setRoomStyleId(roomStyleDao.findId(roomStyleId));
+		room.setRoomStyle(roomStyleDao.findId(roomStyleId));
 		
 		Room result = roomDao.create(room);
 		return result;
@@ -99,7 +99,7 @@ public class RoomService
 		roomModel.toRoom(room);
 		
 		int roomStyleId = roomModel.getRoomStyleId();
-		room.setRoomStyleId(roomStyleDao.findId(roomStyleId));
+		room.setRoomStyle(roomStyleDao.findId(roomStyleId));
 		
 		Room result = roomDao.update(room);
 		return result;

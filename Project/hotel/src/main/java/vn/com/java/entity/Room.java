@@ -35,7 +35,7 @@ public class Room
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="room_style_id")
-	private RoomStyle roomStyleId;
+	private RoomStyle roomStyle;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "booking_informations", joinColumns = { @JoinColumn(name = "room_no") }, inverseJoinColumns = { @JoinColumn(name = "cmnd") })
@@ -92,13 +92,13 @@ public class Room
 	public void setMoney(int money) {
 		this.money = money;
 	}
-	
-	public RoomStyle getRoomStyleId() {
-		return roomStyleId;
+
+	public RoomStyle getRoomStyle() {
+		return roomStyle;
 	}
 
-	public void setRoomStyleId(RoomStyle roomStyleId) {
-		this.roomStyleId = roomStyleId;
+	public void setRoomStyle(RoomStyle roomStyle) {
+		this.roomStyle = roomStyle;
 	}
 
 	public Set<Customer> getCustomerRoomNumbers() {

@@ -21,10 +21,10 @@ public class RoomStyle
 	@Column(name="name")
 	private String name;
 	
-	@OneToMany(mappedBy = "roomStyleId")
+	@OneToMany(mappedBy = "roomStyle")
 	private Set<RoomStyleImage> roomStyleImages;
 	
-	@OneToMany(mappedBy = "roomStyleId")
+	@OneToMany(mappedBy = "roomStyle")
 	private Set<Room> rooms;
 
 	public int getId() {
@@ -43,13 +43,13 @@ public class RoomStyle
 		this.name = name;
 	}
 
-//	public Set<RoomStyleImage> getRoomStyleImages() {
-//		return roomStyleImages;
-//	}
-//
-//	public void setRoomStyleImages(Set<RoomStyleImage> roomStyleImages) {
-//		this.roomStyleImages = roomStyleImages;
-//	}
+	public Set<RoomStyleImage> getRoomStyleImages() {
+		return roomStyleImages;
+	}
+
+	public void setRoomStyleImages(Set<RoomStyleImage> roomStyleImages) {
+		this.roomStyleImages = roomStyleImages;
+	}
 
 	public Set<Room> getRooms() {
 		return rooms;
