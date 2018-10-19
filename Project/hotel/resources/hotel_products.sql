@@ -27,6 +27,8 @@ CREATE TABLE `products` (
   `image` varchar(255) DEFAULT NULL,
   `money` int(11) DEFAULT NULL,
   `quantum` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `style` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`product`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -49,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-19 20:33:22
+-- Dump completed on 2018-10-19 22:18:42
