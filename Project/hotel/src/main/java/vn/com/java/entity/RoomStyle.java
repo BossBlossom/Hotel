@@ -21,10 +21,10 @@ public class RoomStyle
 	@Column(name="name")
 	private String name;
 	
-//	@OneToMany(mappedBy = "roomStyle")
-//	private Set<RoomStyleImage> roomStyleImages;
+	@OneToMany(mappedBy = "roomStyleId")
+	private Set<RoomStyleImage> roomStyleImages;
 	
-	@OneToMany(mappedBy = "roomStyle")
+	@OneToMany(mappedBy = "roomStyleId")
 	private Set<Room> rooms;
 
 	public int getId() {

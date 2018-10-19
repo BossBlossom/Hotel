@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import vn.com.java.entity.Room;
+import vn.com.java.entity.RoomStyle;
 import vn.com.java.model.CustomerModel;
 import vn.com.java.model.RoomModel;
 import vn.com.java.service.CustomerService;
 import vn.com.java.service.RoomService;
+import vn.com.java.service.RoomStyleService;
 
 @Controller
 @RequestMapping("/manager-list")
@@ -25,12 +27,17 @@ public class RoomController
 	private RoomService roomService;
 	@Autowired
 	private CustomerService customerService;
+	@Autowired
+	private RoomStyleService roomStyleService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(Model model)
 	{
 		List<Room> rooms = roomService.search(0);
 		model.addAttribute("rooms", rooms);
+		
+		List<RoomStyle> styles = roomStyleService.search(null);
+		model.addAttribute("styles", styles);
 		
 		return "manager-list";
 	}

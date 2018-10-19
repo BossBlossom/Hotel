@@ -45,11 +45,11 @@
 					<tr>
 						<td>LOẠI PHÒNG</td>
 						<td colspan="2">
-							<form:select path="roomStyle">
-								<form:option value="Single Room">Single Room</form:option>
-								<form:option value="Double Room">Double Room</form:option>
-								<form:option value="Super Room">Super Room</form:option>
-								<form:option value="Delux Room">Delux Room</form:option>
+							<form:select path="roomStyleId">
+								<form:option value="1">Single Room</form:option>
+								<form:option value="2">Double Room</form:option>
+								<form:option value="3">Super Room</form:option>
+								<form:option value="4">Delux Room</form:option>
 							</form:select>
 						</td>
 					</tr>

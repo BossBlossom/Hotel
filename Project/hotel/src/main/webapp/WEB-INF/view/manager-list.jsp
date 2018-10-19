@@ -38,10 +38,13 @@
 		<div id="myFilter">
 			<c:forEach var="room" items="${rooms}">
 				<div class="room">
-				
 					<table>
 						<tr>
-							<td style="color: #ffff00;">${room.roomStyle}</td>
+						<c:forEach var="style" items="${styles}">
+							<td style="color: #ffff00;">
+								<c:if test="${style.id eq '1'}">${style.name} ${room.getRoomStyleId().getId()}</c:if>
+							</td>
+						</c:forEach>
 						</tr>
 						<tr>
 							<td>${room.roomNo}</td>
@@ -51,7 +54,7 @@
 						</tr>
 					</table>
 					
-					<c:if test="${room.status eq 'check_in'}">
+					<c:if test="${room.status eq 'check in'}">
 						<span class="dropdown">
 							<button class="dropbtn">&#9947;</button>
 							<span class="dropdown-content">
@@ -62,7 +65,7 @@
 						</span>
 					</c:if>
 					
-					<c:if test="${room.status eq 'check_out'}">
+					<c:if test="${room.status eq 'check out'}">
 						<span class="dropdown">
 							<button class="dropbtn">&#9947;</button>
 							<span class="dropdown-content">
@@ -89,10 +92,11 @@
 						<span class="dropdown">
 							<button class="dropbtn">&#9947;</button>
 							<span class="dropdown-content">
-								<a href="#">view</a> 
-								<a href="#">closed</a> 
-								<a href='<spring:url value="/manager-list/manager-delete-room" />'>delete</a>
-								<a href="#">check_in</a>
+								<a href="'<spring:url value="/manager-list/view-room?roomNo=${room.roomNo}" />'">view</a> 
+								<a href='<spring:url value="/manager-list/closed?roomNo=${room.roomNo}" />'>closed</a> 
+								<a href='<spring:url value="/manager-list/update?roomNo=${room.roomNo}" />'>update</a>
+								<a href='<spring:url value="/manager-list/delete?roomNo=${room.roomNo}" />'>delete</a>
+								<a href="'<spring:url value="/manager-list/check-in?roomNo=${room.roomNo}" />'">check in</a>
 								<a href="#">history</a>
 							</span>
 						</span>

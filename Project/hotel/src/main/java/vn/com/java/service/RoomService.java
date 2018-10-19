@@ -41,7 +41,7 @@ public class RoomService
 		Room room = new Room();
 		roomModel.toRoom(room);
 		
-		int roomStyleId = room.getRoomStyleId().getId();
+		int roomStyleId = roomModel.getRoomStyleId();
 		room.setRoomStyleId(roomStyleDao.findId(roomStyleId));
 		
 		Room result = roomDao.create(room);

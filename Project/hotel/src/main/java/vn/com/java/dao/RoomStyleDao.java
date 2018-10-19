@@ -29,14 +29,14 @@ public class RoomStyleDao
 		return roomStyle;
 	}
 	
-	public List<RoomStyle> findByRoomStyle(String name)
+	public List<RoomStyle> findByRoomStyleName(String roomStyleName)
 	{
 		return new ArrayList<>();
 	}
 	
-	public RoomStyle findRoomStyle(String name)
+	public RoomStyle findRoomStyleName(String roomStyleName)
 	{
-		RoomStyle roomStyle = getSession().find(RoomStyle.class, name);
+		RoomStyle roomStyle = getSession().find(RoomStyle.class, roomStyleName);
 		return roomStyle;
 	}
 	
