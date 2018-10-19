@@ -105,9 +105,10 @@ public class RoomService
 		return result;
 	}
 	
-	public Room deleteRoom(int roomNo)
+	public Room deleteRoom(RoomModel roomModel)
 	{
-		Room room = roomDao.find(roomNo);
+		Room room = new Room();
+		roomModel.toRoom(room);
 		
 		Room result = roomDao.delete(room);
 		return result;
