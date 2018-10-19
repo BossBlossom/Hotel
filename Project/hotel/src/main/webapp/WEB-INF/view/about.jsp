@@ -48,7 +48,7 @@
 					<div class="col-md-2 col-sm-6 col-xs-6">
 						<div id="logo">
 							<!--<a href="index.html"><img src="images/logo.png" alt="logo"></a>-->
-							<a href="rooms"><span>Star</span>home</a>
+							<a href="home"><span>Star</span>home</a>
 						</div>
 					</div>
 					<div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
@@ -65,9 +65,9 @@
 							<div
 								class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
 								<ul class="list-unstyled nav1 cl-effect-10">
-									<li><a data-hover="Rooms" href="rooms"><span>Rooms</span></a></li>
-									<li><a data-hover="Services" href="services"><span>Services</span></a></li>
-									<li><a data-hover="About" class="active"><span>About</span></a></li>
+									<li><a data-hover="Trang chủ" href="home"><span>Trang chủ</span></a></li>
+									<li><a data-hover="Dịch vụ" href="services"><span>Dịch vụ</span></a></li>
+									<li><a data-hover="Về chúng tôi" class="active"><span>Về chúng tôi</span></a></li>
 								</ul>
 							</div>
 						</nav>
@@ -99,7 +99,7 @@
 						alt="First slide">
 					<div class="carousel-caption">
 						<h1>
-							about us
+							về chúng tôi
 						</h1>
 					</div>
 				</div>
@@ -108,7 +108,7 @@
 						alt="Ninth slide">
 					<div class="carousel-caption">
 						<h1>
-							about us
+							về chúng tôi
 						</h1>
 					</div>
 				</div>
@@ -117,7 +117,7 @@
 						alt="Second slide">
 					<div class="carousel-caption">
 						<h1>
-							about us
+							về chúng tôi
 						</h1>
 					</div>
 				</div>
@@ -126,7 +126,7 @@
 						alt="Third slide">
 					<div class="carousel-caption">
 						<h1>
-							about us
+							về chúng tôi
 						</h1>
 					</div>
 				</div>
@@ -135,7 +135,7 @@
 						alt="Forth slide">
 					<div class="carousel-caption">
 						<h1>
-							about us
+							về chúng tôi
 						</h1>
 					</div>
 				</div>
@@ -144,7 +144,7 @@
 						alt="Fifth slide">
 					<div class="carousel-caption">
 						<h1>
-							about us
+							về chúng tôi
 						</h1>
 					</div>
 				</div>
@@ -153,7 +153,7 @@
 						alt="Sixth slide">
 					<div class="carousel-caption">
 						<h1>
-							about us
+							về chúng tôi
 						</h1>
 					</div>
 				</div>
@@ -162,7 +162,7 @@
 						alt="Seventh slide">
 					<div class="carousel-caption">
 						<h1>
-							about us
+							về chúng tôi
 						</h1>
 					</div>
 				</div>
@@ -171,7 +171,7 @@
 						alt="Eighth slide">
 					<div class="carousel-caption">
 						<h1>
-							about us
+							về chúng tôi
 						</h1>
 					</div>
 				</div>
@@ -182,7 +182,7 @@
 				onmouseover="this.src = '<spring:url value="resources/Home_resources/images/icons/left-arrow-hover.png"/>'"
 				onmouseout="this.src = '<spring:url value="resources/Home_resources/images/icons/left-arrow.png"/>'" alt="left"></a>
 			<a class="right carousel-control" href="#myCarousel1"
-				data-slide="next"><img src="images/icons/right-arrow.png"
+				data-slide="next"><img src='<spring:url value="resources/Home_resources/images/icons/right-arrow.png"/>'
 				onmouseover="this.src = '<spring:url value="resources/Home_resources/images/icons/right-arrow-hover.png"/>'"
 				onmouseout="this.src = '<spring:url value="resources/Home_resources/images/icons/right-arrow.png"/>'" alt="left"></a>
 
@@ -192,36 +192,99 @@
 
 	<section class="about-block">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-5 about-left">
-					<p>
-						Lorem <label>ipsum</label> dol <span>-sitamet</span>
-					</p>
+			<div class="row offspace-45" style="margin-bottom: 100px;">
+					<div class="view-set-block">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="event-blog-image">
+								<img alt="image" class="img-responsive" src='<spring:url value="resources/Home_resources/images/Luxury.jpg"/>'>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 side-in-image" style="margin-top: 45px;">
+							<div class="event-blog-details">
+								<h4 style="font-size: 30px;">
+									<a href="" >STARHOME LUXYRY</a>
+								</h4>
+								
+								<p style="font-size:18px; font-family: sans-serif; text-align: justify; padding: 5px; line-height: 40px;">Chào đón quý khách đến với trải nghiệm đầy ấn tượng tại StarHome Luxury. 
+									Khách sạn 5 sao với thiết kế biểu trưng độc đáo, hứa hẹn mang đến những kỳ nghỉ đẳng cấp tại những điểm đến đẹp nhất Việt Nam.</p>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="col-md-7 about-right">
-					<h3>Lorem ipsum dolor sit amet, consec</h3>
-					<p>Donec bibendum massa metus, vel aliquet nunc varius eu.
-						Curabitur nec scelerisque dui. Quisque mattis libero et enim
-						ultricies gravida. Nulla ut commodo massa, eget tincidunt ligula.
-						Vivamus eu ante tincidunt, fermentum risus nec, pharetra turpis.
-						Donec rhoncus eros sed felis aliquet tincidunt. In consectetur
-						tempor quam</p>
-					<ul class="list-unstyled list-inline">
-						<li>Sed vitae facilisis nisi, in finibus lacus. Duis vel
-							nulla orci.</li>
-						<li>fringilla, at ultrices felis dignissim. Integer ultricies
-							posuere odio</li>
-						<li>Sed vestibulum mattis laoreet. Donec sollicitudin justo
-							luctus nulla consectetur</li>
-						<li>Nam dolor tellus, dictum sit amet libero eu, semper
-							placerat massa.</li>
-						<li>consectetur tempor quam, aliquam dignissim diam hendrerit
-							nec. Cras sodales at nisl</li>
-					</ul>
-					<span>Lorem ipsum dolor sit amet, consectetur adipiscing
-						elit</span>
+				
+			<div class="clearfix"></div>
+			
+			<div class="row offspace-45" style="margin-bottom: 100px;">
+					<div class="view-set-block">
+						
+						<div class="col-md-6 col-sm-6 col-xs-12 side-in-image" style="margin-top: 65px;">
+							<div class="event-blog-details">
+								<h4 style="font-size: 30px;">
+									<a href="" >STARHOME HOTELS & RESORTS</a>
+								</h4>
+								
+								<p style="font-size: 18px; font-family: sans-serif; text-align: justify; padding: 5px; line-height: 40px;">
+									Chào đón quý khách đến với không gian hoàn hảo của StarHome Hotels & Resorts; với thiết kế tuyệt đẹp của khách sạn 5 sao cùng với chuỗi spa và sân golf ngay tại resort mang tới trải nghiệm ấn tượng, chuẩn quốc tế tại những bãi biển và núi đồi trên khắp đất nước.
+								</p>
+							</div>
+						</div>
+						
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="image">
+								<img alt="image" class="img-responsive" src='<spring:url value="resources/Home_resources/images/Luxury1.jpg"/>'>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
+				
+			<div class="clearfix"></div>
+			
+			<div class="row offspace-45" style="margin-bottom: 100px;">
+					<div class="view-set-block">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="event-blog-image">
+								<img alt="image" class="img-responsive" src='<spring:url value="resources/Home_resources/images/Luxury2.jpg"/>'>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 side-in-image" style="margin-top: 60px;">
+							<div class="event-blog-details">
+								<h4 style="font-size: 30px;">
+									<a href="" >STARHOME DISCOVERY</a>
+								</h4>
+								
+								<p style="font-size:18px; font-family: sans-serif; text-align: justify; padding: 5px; line-height: 40px;">
+									Chào mừng quý khách đến với không gian đầy tươi mới của StarHome Discovery với hệ thống khách sạn 5 sao và condotel, resort, chắc chắn mang đến cho quý khách trải nghiệm đầy mới mẻ tại những điểm đến được mong chờ nhất tại Việt Nam.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			<div class="clearfix"></div>
+			
+			<div class="row offspace-45" style="margin-bottom: 50px;">
+					<div class="view-set-block">
+						
+						<div class="col-md-6 col-sm-6 col-xs-12 side-in-image" style="margin-top: 55px;">
+							<div class="event-blog-details">
+								<h4 style="font-size: 30px;">
+									<a href="" >STAROASIS</a>
+								</h4>
+								
+								<p style="font-size: 18px; font-family: sans-serif; text-align: justify; padding: 5px; line-height: 40px;">
+									Chào mừng bạn đến với thế giới năng động của StarOasis. Với các khách sạn và khu nghỉ dưỡng hiện đại trên ốc đảo sôi động. StarOasis hứa hẹn cho bạn những kỳ nghỉ thú vị ở trung tâm của mọi điểm đến tuyệt vời nhất tại Việt Nam.
+								</p>
+							</div>
+						</div>
+						
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="image">
+								<img alt="image" class="img-responsive" src='<spring:url value="resources/Home_resources/images/Luxury3.jpg"/>'>
+							</div>
+						</div>
+					</div>
+				</div>
+				
 			<div class="clearfix"></div>
 		</div>
 	</section>
@@ -232,10 +295,10 @@
 			<div class="row">
 				<div class="col-md-3 col-sm-6 col-xs-12 width-set-50">
 					<div class="footer-details">
-						<h4>Get in touch</h4>
+						<h4>Liên lạc</h4>
 						<ul class="list-unstyled footer-contact-list">
 							<li><i class="fa fa-map-marker fa-lg"></i>
-								<p>701 Old York Drive Richmond USA.</p></li>
+								<p>311 Bùi Thị Xuân, phường 16, Tp Đà Lạt.</p></li>
 							<li><i class="fa fa-phone fa-lg"></i>
 								<p>
 									<a href="tel:+1-202-555-0100"> 0974384921</a>
@@ -258,17 +321,17 @@
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12 width-50 width-set-50">
 					<div class="footer-details">
-						<h4>explore</h4>
+						<h4>Khám phá</h4>
 						<ul class="list-unstyled footer-links">
-							<li><a href="rooms">Rooms</a></li>                              
-                            <li><a href="services">Services</a></li>
-                            <li class="active"><a>About</a></li>
+							<li><a href="home">Trang chủ</a></li>                              
+                            <li><a href="services">Dịch vụ</a></li>
+                            <li class="active"><a>Về chúng tôi</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-12 col-xs-12">
 					<div class="footer-details">
-						<h4>Now On Instagram</h4>
+						<h4>Liên kết Instagram</h4>
 						<div class="row">
 							<div class="instagram-images">
 								<div id="instafeed"></div>
@@ -289,7 +352,8 @@
 	<!--back to top--->
 	<a style="display: none;" href="javascript:void(0);"
 		class="scrollTop back-to-top" id="back-to-top"> <span><i
-			aria-hidden="true" class="fa fa-angle-up fa-lg"></i></span> <span>Top</span>
+			aria-hidden="true" class="fa fa-angle-up fa-lg"></i></span> 
+			<span>Đầu</span> <span>Trang</span>
 	</a>
 
 	</div>

@@ -30,7 +30,7 @@ public class HomeController
 		return "about";
 	}
 	
-	@RequestMapping(value = "/rooms",method = RequestMethod.GET)
+	@RequestMapping(value = "/home",method = RequestMethod.GET)
 	public String Rooms(Model model)
 	{
 		return "rooms";
