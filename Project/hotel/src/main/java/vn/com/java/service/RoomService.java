@@ -57,6 +57,15 @@ public class RoomService
 		return result;
 	}
 	
+	public Room openRoom(int roomNo)
+	{
+		Room room = roomDao.find(roomNo);
+		room.setStatus("none");
+		
+		Room result = roomDao.update(room);
+		return result;
+	}
+	
 	public Room checkInRoom(int roomNo)
 	{
 		Room room = roomDao.find(roomNo);
@@ -89,14 +98,16 @@ public class RoomService
 		Room room = new Room();
 		roomModel.toRoom(room);
 		
+		int roomStyleId = roomModel.getRoomStyleId();
+		room.setRoomStyleId(roomStyleDao.findId(roomStyleId));
+		
 		Room result = roomDao.update(room);
 		return result;
 	}
 	
-	public Room deleteRoom(RoomModel roomModel)
+	public Room deleteRoom(int roomNo)
 	{
-		Room room = new Room();
-		roomModel.toRoom(room);
+		Room room = roomDao.find(roomNo);
 		
 		Room result = roomDao.delete(room);
 		return result;

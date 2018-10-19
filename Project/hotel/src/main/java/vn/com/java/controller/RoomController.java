@@ -112,6 +112,15 @@ public class RoomController
 		return "redirect:/manager-list";
 	}
 	
+	@RequestMapping(value = "/open", method = RequestMethod.GET)
+	public String open(@RequestParam(name="roomNo")int roomNo, Model model)
+	{
+		
+		roomService.openRoom(roomNo);
+		
+		return "redirect:/manager-list";
+	}
+	
 	@RequestMapping(value = "/check-in", method = RequestMethod.GET)
 	public String checkIn(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
@@ -167,14 +176,10 @@ public class RoomController
 	}
 	
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
-	public String delete(@RequestParam(name="roomNo")int roomNo, @ModelAttribute("room") RoomModel roomModel, BindingResult result, Model model)
+	public String delete(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
-		if(result.hasErrors())
-		{
-			return "manager-list";
-		}
 		
-		roomService.deleteRoom(roomModel);
+		roomService.deleteRoom(roomNo);
 		
 		return "redirect:/manager-list";
 	}

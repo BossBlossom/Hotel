@@ -38,7 +38,6 @@ public class RoomModel
 		this.setStatus(room.getStatus());
 		this.setBed(room.getBed());
 		this.setAirConditioner(room.getAirConditioner());
-		//
 		this.setMoney(room.getMoney());
 	}
 
