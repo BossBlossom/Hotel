@@ -130,7 +130,7 @@
 						<h2 class="blog-title-head" style="font-size: 30px;">StarHome Restaurant hân hạnh được
 							phục vụ quý khách</h2>
 						<p class="user-info">
-							Posted by <a>Thien An</a> in <a>General</a>
+							Được viết bởi <a href="https://thienan1999.wordpress.com/">Thiên Ân</a>
 						</p>
 						<p class="blog-desc" style="font-size: 20px;">Muốn ăn hay uống gì thì vào đây... Nhé!!!</p>
 						<div class="blog-image-single margin-top-large">
@@ -332,7 +332,7 @@
 				</div>
 
 				<div class="copyright">
-					&copy; 2017 All right reserved. Designed by <a href=""
+					&copy; 2017 All right reserved. Designed by <a href="https://thienan1999.wordpress.com/"
 						target="_blank">Thien An.</a>
 				</div>
 

@@ -91,7 +91,7 @@
 	<div id="page">
 
 		<!---header top---->
-		<div class="top-header" >
+		<div class="top-header">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
@@ -130,9 +130,12 @@
 								<div
 									class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
 									<ul class="list-unstyled nav1 cl-effect-10">
-										<li><a data-hover="Trang chủ" class="active"><span>Trang chủ</span></a></li>
-										<li><a data-hover="Dịch vụ" href="services"><span>Dịch vụ</span></a></li>
-										<li><a data-hover="Về chúng tôi" href="about"><span>Về chúng tôi</span></a></li>
+										<li><a data-hover="Trang chủ" class="active"><span>Trang
+													chủ</span></a></li>
+										<li><a data-hover="Dịch vụ" href="services"><span>Dịch
+													vụ</span></a></li>
+										<li><a data-hover="Về chúng tôi" href="about"><span>Về
+													chúng tôi</span></a></li>
 									</ul>
 
 								</div>
@@ -351,7 +354,8 @@
 						<div class="col-md-5 col-sm-6 col-xs-12">
 							<div class="vacation-offer-details">
 								<h1>Nơi nghỉ mát lý tưởng</h1>
-								<h4>Hãy đến với chúng tôi để có 1 nơi nghỉ chân tuyệt vời và 1 chuyến du lịch đáng nhớ.</h4>
+								<h4>Hãy đến với chúng tôi để có 1 nơi nghỉ chân tuyệt vời
+									và 1 chuyến du lịch đáng nhớ.</h4>
 							</div>
 						</div>
 					</div>
@@ -375,11 +379,20 @@
 						<div class="carousel-inner" role="listbox">
 							<div class="item active">
 								<div class="blog-box">
-									<p>Lorem Ipsum is simply dummy text of the printing and
-										typesetting industry. Lorem Ipsum has been the industry's
-										standard dummy text ever since the 1500s, when an unknown
-										printer took a galley of type and scrambled it to make a type
-										specimen book. It has survived not only</p>
+									<h3 style="text-align: center; color: yellow;">
+										<b>Một Khu Nghĩ Dưỡng Tuyệt Vời Tại Đà Lạt</b>
+									</h3>
+									<br>
+									<p>Tôi đã có một kỳ nghĩ tuyệt vời tại đây. Rất gần gũi với
+										thiên nhiên, mang lại cho tôi một cảm giác yên bình đến lạ.
+										Các ngôi biệt thự cổ kính, với lối kiến trúc độc đáo mang
+										phong cách châu Âu làm cho tôi thây thực sự gần gũi và cảm
+										giác rất tuyệt vời khi bước vào. Nhân viên rất lịch sự, lễ
+										phép và nhanh nhẹn. Đồ ăn ở đây rất ngon và đa dạng. Phòng ốc
+										rất đẹp và sang trọng, đâu đó vẫn có gì đó hoài cổ rất thú vị.
+										Buổi sáng trong lành, yên tĩnh và mơ mộng. Tôi thực sự thích
+										nơi đây. Chắc chắn tôi sẽ trở lại đây để tận hưởng kì nghỉ
+										dưỡng cùng các bạn!</p>
 								</div>
 								<div class="blog-view-box">
 									<div class="media">
@@ -389,19 +402,28 @@
 												class="media-object">
 										</div>
 										<div class="media-body">
-											<h3 class="media-heading blog-title">Walter Hucko</h3>
-											<h5 class="blog-rev">Satisfied Customer</h5>
+											<h3 class="media-heading blog-title">Thân Văn Quốc Bảo</h3>
+											<h5 class="blog-rev">Khách VIP</h5>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="item">
 								<div class="blog-box">
-									<p>Lorem Ipsum is simply dummy text of the printing and
-										typesetting industry. Lorem Ipsum has been the industry's
-										standard dummy text ever since the 1500s, when an unknown
-										printer took a galley of type and scrambled it to make a type
-										specimen book. It has survived not only</p>
+									<h3 style="text-align: center; color: yellow;">
+										<b>Một kì nghỉ đáng giá tại Đà Lạt</b>
+									</h3>
+									<br>
+									<p>Đúng chất là một khu nghỉ dưỡng tại Đà Lạt. Không gian
+										yên tĩnh, trong lành. Nhân viên lịch sự, và rất dễ thương.
+										Trang thiết bị hiện đại, từ của tự động đến tivi led thế hệ
+										mới, nó làm tôi rất thích thú và cảm thấy rất đáng ở đây. Đồ
+										ăn ngon và rất đa dạng. Khu nghỉ dưỡng được chăm sóc rất kĩ
+										càng và có nhiều hoạt động hay ho và thú vị. Tôi đã được tham
+										gia hầu hết các hoạt động của khu nghỉ dưỡng như Yoga, lễ hội
+										hoa. Tôi đã có một kì nghỉ cực kì đáng giá và tuyệt vời tại
+										khu nghỉ dưỡng của Star-Home. Chắc chắn sẽ trở lại vào kì nghỉ
+										tiếp theo của tôi.</p>
 								</div>
 								<div class="blog-view-box">
 									<div class="media">
@@ -411,19 +433,29 @@
 												class="media-object">
 										</div>
 										<div class="media-body">
-											<h3 class="media-heading blog-title">Jules Boutin</h3>
-											<h5 class="blog-rev">Satisfied Customer</h5>
+											<h3 class="media-heading blog-title">Lê Quang Anh</h3>
+											<h5 class="blog-rev">Khách Thân Thiết</h5>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="item">
 								<div class="blog-box">
-									<p>Lorem Ipsum is simply dummy text of the printing and
-										typesetting industry. Lorem Ipsum has been the industry's
-										standard dummy text ever since the 1500s, when an unknown
-										printer took a galley of type and scrambled it to make a type
-										specimen book. It has survived not only</p>
+									<h3 style="text-align: center; color: yellow;">
+										<b>Là một nơi đáng để tới để nghỉ dưỡng nhất của thành phố
+											Đà Lạt</b>
+									</h3>
+									<br>
+									<p>Khu nghỉ dưỡng với những khu biệt thự mang phong cách
+										châu Âu cổ kính, tôi gần như đã có một kì nghỉ tuyệt vời như
+										là đang ở quê nhà của mình. Đồ ăn ở đây thực sự rất tuyệt và
+										quá nhiều thứ để chọn. tôi muốn ở lại lâu hơn để có thể thưởng
+										thức hết đồ ăn nơi này. Nhân viên hết sức chu đáo và lịch sự.
+										Đà Lạt là một nơi tuyệt đẹp, phong cảnh hữu tình, khí hậu mát
+										mẻ, tôi thật sự rất thích hoa ở Đà Lạt và thực sự tuyệt hơn
+										nữa khi tôi đã vào đây. Ngưỡng tưởng như tôi đã có một kì nghỉ
+										tuyệt vời tại quê nhà, cứ như mơ vậy. Trong kỳ nghỉ năm nay
+										tôi sẽ trở lại với các bạn, với Đà Lạt!</p>
 								</div>
 								<div class="blog-view-box">
 									<div class="media">
@@ -433,8 +465,8 @@
 												class="media-object">
 										</div>
 										<div class="media-body">
-											<h3 class="media-heading blog-title">Attilio Marzi</h3>
-											<h5 class="blog-rev">Satisfied Customer</h5>
+											<h3 class="media-heading blog-title">Nguyễn Việt Dũng</h3>
+											<h5 class="blog-rev">Khách Ngoại Quốc</h5>
 										</div>
 									</div>
 								</div>
@@ -460,25 +492,23 @@
 						<div class="col-md-6 col-sm-6 col-xs-12 side-in-image">
 							<div class="event-blog-details">
 								<h4>
-									<a href="single-blog.html">Lorem ipsum dolor sit amet</a>
+									<a href="about">sự sang trọng của khách sạn homestar</a>
 								</h4>
 								<h5>
-									Post By Admin <a><i aria-hidden="true"
-										class="fa fa-heart-o fa-lg"></i>Likes</a><a><i
-										aria-hidden="true" class="fa fa-comment-o fa-lg"></i>comments</a>
+									Được viết bởi <font color="red">Thiên Ân</font> <a><i aria-hidden="true"
+										class="fa fa-heart-o fa-lg"></i>Thích</a><a><i
+										aria-hidden="true" class="fa fa-comment-o fa-lg"></i>Bình luận</a>
 								</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Nunc lorem nulla, ornare eu felis quis, efficitur posuere
-									nulla. Aliquam ac luctus turpis, non faucibus sem. Fusce ornare
-									turpis neque, eu commodo sapien porta sed. Nam ut ante turpis.
-									Nam arcu odio, scelerisque a vehicula vitae, auctor sit amet
-									lectus.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Nunc lorem nulla, ornare eu felis quis, efficitur posuere
-									nulla. Aliquam ac luctus turpis, non faucibus sem. Fusce ornard
-									hendrerit tortor vulputate id. Vestibulum mauris nibh, luctus
-									non maximus vitae, porttitor eget neque. Donec tristique nunc
-									facilisis, dapibus libero ac</p>
+								<p>Khu nghỉ dưỡng Star-Home năm sâu trong hồ Tuyền Lâm. Là
+									một tọa lạc lí tưởng với phong cảnh mơ mộng, trữ tình. Khu nghỉ
+									dưỡng gồm nhiều khu biệt thự mang đậm phong cách châu Âu cùng
+									những loại phòng đa dạng, đáp ứng nhu cầu của khách hàng.</p>
+								<p>Mọi phòng quý khách hàng chọn luôn được chăm sóc kĩ càng,
+									sạch sẽ. Các phòng luôn mang những phong cách châu Âu nhưng
+									luôn riêng biệt để không gây nhàm chán.</p>
+								<p>Khu nghỉ dưỡng gồm 4 hạng phòng. Với đầy đủ mọi loại tiện
+									thiết nghi cũng như phân bố đa dạng trên nhiều tọa lạc lí tưởng
+									trong Resort, mang lại cho bạn cảm giác nghỉ dưỡng tuyệt vời.</p>
 							</div>
 						</div>
 					</div>
@@ -488,31 +518,31 @@
 						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="event-blog-image">
 								<img alt="image" class="img-responsive"
-									src='<spring:url value="resources/Home_resources/images/blog2.png"/>'>
+									src='<spring:url value="resources/Home_resources/images/yoga.jpg"/>'>
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12 side-in-image">
 							<div class="event-blog-details">
 								<h4>
-									<a href="single-blog.html">Lorem ipsum dolor sit amet</a>
+									<a href="about">Những hoạt động ở Khách sạn
+										Homestar</a>
 								</h4>
 								<h5>
-									Post By Admin <a><i aria-hidden="true"
-										class="fa fa-heart-o fa-lg"></i>Likes</a><a><i
-										aria-hidden="true" class="fa fa-comment-o fa-lg"></i>comments</a>
+									Được viết bởi <font color="red">Thiên Ân</font> <a><i aria-hidden="true"
+										class="fa fa-heart-o fa-lg"></i>Thích</a><a><i
+										aria-hidden="true" class="fa fa-comment-o fa-lg"></i>Bình luận</a>
 								</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Nunc lorem nulla, ornare eu felis quis, efficitur posuere
-									nulla. Aliquam ac luctus turpis, non faucibus sem. Fusce ornare
-									turpis neque, eu commodo sapien porta sed. Nam ut ante turpis.
-									Nam arcu odio, scelerisque a vehicula vitae, auctor sit amet
-									lectus.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Nunc lorem nulla, ornare eu felis quis, efficitur posuere
-									nulla. Aliquam ac luctus turpis, non faucibus sem. Fusce ornard
-									hendrerit tortor vulputate id. Vestibulum mauris nibh, luctus
-									non maximus vitae, porttitor eget neque. Donec tristique nunc
-									facilisis, dapibus libero ac</p>
+								<p>Resort luôn được chăm sóc kĩ lưỡng và cực kì chu đáo. Ở
+									đây, các bạn có thể tận hưởng kì nghỉ với mọi phong cách mà các
+									bạn muốn cùng những hoạt động thú vị, đậm tính chất thư giãn
+									của Resort.</p>
+								<p>Các bạn có thể tham gia câu lạc bộ trẻ em cùng đội ngũ
+									nhân viên yêu trẻ em và thân thiện hay tham gia các hoạt động
+									nghệ thuật thủ công của chúng tôi. Resort còn gồm những phòng
+									tập sức khỏe công nghệ cao hay lớp học Yoga đáp ứng mọi nhu cầu
+									sức khỏe của khách hàng. Hay những hoạt động thú vị ở dưới nước
+									cùng mọi sự hỗ trợ và phục vụ của đội ngũ nhân viên được đào
+									tạo vô cùng chuyên nghiệp của khách sạn.</p>
 							</div>
 						</div>
 					</div>
@@ -702,7 +732,7 @@
 						<div class="footer-details">
 							<h4>Khám phá</h4>
 							<ul class="list-unstyled footer-links">
-								<li  class="active"><a>Trang chủ</a></li>
+								<li class="active"><a>Trang chủ</a></li>
 								<li><a href="services">Dịch vụ</a></li>
 								<li><a href="about">Về chúng tôi</a></li>
 							</ul>
@@ -721,7 +751,7 @@
 				</div>
 
 				<div class="copyright">
-					&copy; 2017 All right reserved. Designed by <a href=""
+					&copy; 2017 All right reserved. Designed by <a href="https://thienan1999.wordpress.com/"
 						target="_blank">Thien An.</a>
 				</div>
 

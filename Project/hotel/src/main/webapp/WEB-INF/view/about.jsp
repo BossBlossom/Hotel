@@ -202,7 +202,7 @@
 						<div class="col-md-6 col-sm-6 col-xs-12 side-in-image" style="margin-top: 45px;">
 							<div class="event-blog-details">
 								<h4 style="font-size: 30px;">
-									<a href="" >STARHOME LUXYRY</a>
+									<a href="https://news.zing.vn/16-nha-hang-dep-nhat-the-gioi-ai-cung-ao-uoc-dat-chan-den-post689205.html" >STARHOME LUXYRY</a>
 								</h4>
 								
 								<p style="font-size:18px; font-family: sans-serif; text-align: justify; padding: 5px; line-height: 40px;">Chào đón quý khách đến với trải nghiệm đầy ấn tượng tại StarHome Luxury. 
@@ -220,7 +220,7 @@
 						<div class="col-md-6 col-sm-6 col-xs-12 side-in-image" style="margin-top: 65px;">
 							<div class="event-blog-details">
 								<h4 style="font-size: 30px;">
-									<a href="" >STARHOME HOTELS & RESORTS</a>
+									<a href="https://news.zing.vn/nhung-khu-nghi-duong-tot-nhat-the-gioi-2016-post690946.html" >STARHOME HOTELS & RESORTS</a>
 								</h4>
 								
 								<p style="font-size: 18px; font-family: sans-serif; text-align: justify; padding: 5px; line-height: 40px;">
@@ -249,7 +249,7 @@
 						<div class="col-md-6 col-sm-6 col-xs-12 side-in-image" style="margin-top: 60px;">
 							<div class="event-blog-details">
 								<h4 style="font-size: 30px;">
-									<a href="" >STARHOME DISCOVERY</a>
+									<a href="https://news.zing.vn/10-resort-huong-bien-dep-nhat-the-gioi-post617285.html" >STARHOME DISCOVERY</a>
 								</h4>
 								
 								<p style="font-size:18px; font-family: sans-serif; text-align: justify; padding: 5px; line-height: 40px;">
@@ -268,7 +268,7 @@
 						<div class="col-md-6 col-sm-6 col-xs-12 side-in-image" style="margin-top: 55px;">
 							<div class="event-blog-details">
 								<h4 style="font-size: 30px;">
-									<a href="" >STAROASIS</a>
+									<a href="http://ndh.vn/khu-nghi-duong-datai-tren-oc-dao-langkawi-malaysia-4876217p99c121.news" >STAROASIS</a>
 								</h4>
 								
 								<p style="font-size: 18px; font-family: sans-serif; text-align: justify; padding: 5px; line-height: 40px;">
@@ -342,7 +342,7 @@
 			</div>
 
 			<div class="copyright">
-				&copy; 2017 All right reserved. Designed by <a href=""
+				&copy; 2017 All right reserved. Designed by <a href="https://thienan1999.wordpress.com/"
 					target="_blank">Thien An.</a>
 			</div>
 
