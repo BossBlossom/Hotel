@@ -16,6 +16,9 @@ public class Product {
 	@Column(name = "image")
 	private String image;
 	
+	@Column(name = "style")
+	private String style;
+	
 	@Column(name = "money")
 	private int money;
 	
@@ -52,6 +55,14 @@ public class Product {
 
 	public void setQuantum(int quantum) {
 		this.quantum = quantum;
+	}
+
+	public String getStyle() {
+		return style;
+	}
+
+	public void setStyle(String style) {
+		this.style = style;
 	}
 	
 }
