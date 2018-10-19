@@ -21,13 +21,46 @@
 <!-- Custom styles for this template -->
 <link href='<spring:url value="resources/Home_resources/css/style.css"/>' rel="stylesheet">
 <link href='<spring:url value="resources/Home_resources/fonts/antonio-exotic/stylesheet.css"/>' rel="stylesheet">
-<link rel="stylesheet" href='<spring:url value="resources/Home_resources/css/lightbox.min.css"/>' >
+<link href='<spring:url value="resources/Home_resources/css/lightbox.min.css"/>' rel="stylesheet">
 <link href='<spring:url value="resources/Home_resources/css/responsive.css"/>' rel="stylesheet">
 <script src='<spring:url value="resources/Home_resources/js/jquery.min.js"/>' type="text/javascript"></script>
 <script src='<spring:url value="resources/Home_resources/js/bootstrap.min.js"/>' type="text/javascript"></script>
 <script src='<spring:url value="resources/Home_resources/js/lightbox-plus-jquery.min.js"/>' type="text/javascript"></script>
 <script src='<spring:url value="resources/Home_resources/js/instafeed.min.js"/>' type="text/javascript"></script>
 <script src='<spring:url value="resources/Home_resources/js/custom.js"/>' type="text/javascript"></script>
+
+  
+  <style type="text/css">
+  	.main-main{
+  		position: relative;
+  	}
+	.main-image{
+		width: 250px;
+		height: 120px;
+		margin: 0px 10px 10px 10px;
+	}
+	.image-img{
+		width: 80px;
+		height: 80px;
+		margin: 10px 0px 10px 10px;
+	}   
+	.image-position{
+		left: 0;
+		top: 0;
+		width: 290px;
+		margin: 120px 0px 0px 10px;
+		position: fixed;
+	}
+	.inf-position{
+		right: 30px;
+		width: 250px;
+		margin: 60px 10px 0px 0px;
+		position: absolute;
+	}
+
+</style>
+
+
 </head>
 <body>
 	<div id="page">
@@ -447,17 +480,18 @@
                             <div class="side-A">
                                 <div class="product-thumb">
                                     <div class="image">
-                                        <a href="single-blog.html"><img alt="image" class="img-responsive" src='<spring:url value="resources/Home_resources/images/room1.png"/>'></a>
+                                        <a href="" data-toggle="modal" data-target="#myModal" style="margin-top: 10px;" data-backdrop="static" data-keyboard="false"><img alt="image" class="img-responsive" src='<spring:url value="resources/Home_resources/images/room1.png"/>'></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="side-B">
                                 <div class="product-desc-side">
-                                    <h3><a href="single-blog.html">delux room</a></h3>
-                                    	<p>* Phòng sang trọng, tiện nghi cao cấp, không gian rộng, có view đẹp.</p>
-                                    	<p>* Phòng 2 giường, 3 máy lạnh, tivi công nghệ LED cao cấp.</p>
-                                    	<p>* </p>
-                                    <div class="links"><a href="single-blog.html">Booking</a></div>
+                                    <h3><a href="" data-toggle="modal" data-target="#myModal" style="margin-top: 10px;" data-backdrop="static" data-keyboard="false">delux room</a></h3>
+                                    	<p style="margin: 5px 0px 5px 0px;">* Phòng sang trọng, tiện nghi cao cấp, không gian rộng, có view đẹp.</p>
+                                    	<p style="margin: 5px 0px 5px 0px;">* Phòng ngủ và phòng khách riêng, có người phục vụ riêng cho từng phòng.</p>
+                                    	<p style="margin: 5px 0px 5px 0px;">* Phòng 2 giường, 3 máy lạnh, tivi công nghệ LED cao cấp.</p>
+                                    	<p style="margin: 5px 0px 5px 0px;">* Giá: 1200$/ngày</p>
+                                    <div class="links"><a href="" data-toggle="modal" data-target="#myModal" style="margin-top: 10px;" data-backdrop="static" data-keyboard="false">Booking</a></div>
                                 </div>
                             </div>
                         </div>
@@ -466,15 +500,17 @@
                             <div class="side-A">
                                 <div class="product-thumb">
                                     <div class="image">
-                                        <a href="single-blog.html"><img src='<spring:url value="resources/Home_resources/images/room2.png"/>' class="img-responsive" alt="image"></a>
+                                        <a href="" data-toggle="modal" data-target="#myModal" style="margin-top: 10px;" data-backdrop="static" data-keyboard="false"><img src='<spring:url value="resources/Home_resources/images/room2.png"/>' class="img-responsive" alt="image"></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="side-B">
                                 <div class="product-desc-side">
-                                    <h3><a href="single-blog.html">super room</a></h3>
-                                    <p>Phòng siêu rộng, 2 giường 3 người, 700$/ngày.</p>
-                                    <div class="links"><a href="single-blog.html">Booking</a></div>
+                                    <h3><a href="" data-toggle="modal" data-target="#myModal" style="margin-top: 10px;" data-backdrop="static" data-keyboard="false">super room</a></h3>
+                                    	<p style="margin: 5px 0px 5px 0px;">* Phòng đẹp, tiện nghi đầy đủ, không gian cực rộng, có view đẹp.</p>
+                                    	<p style="margin: 5px 0px 5px 0px;">* Phòng 3 giường, 3 máy lạnh, tivi công nghệ LED cao cấp.</p>
+                                    	<p style="margin: 5px 0px 5px 0px;">* Giá: 800$/ngày</p>
+                                    <div class="links"><a href="" data-toggle="modal" data-target="#myModal" style="margin-top: 10px;" data-backdrop="static" data-keyboard="false">Booking</a></div>
                                 </div>
                             </div>
                         </div>
@@ -483,16 +519,18 @@
                         <div class="col-md-6 col-sm-12 col-xs-12 remove-padd-right">
                             <div class="side-A">
                                 <div class="product-desc-side">
-                                    <h3><a href="single-blog.html">single room</a></h3>
-                                    <p>Phòng dành cho người FA, 300$/ngày.</p>
-                                    <div class="links"><a href="single-blog.html">Booking</a></div>
+                                    <h3><a href="" data-toggle="modal" data-target="#myModal" style="margin-top: 10px;" data-backdrop="static" data-keyboard="false">single room</a></h3>
+                                    	<p style="margin: 5px 0px 5px 0px;">* Phòng kín đáo, tiện nghi đầy đủ, không gian rộng.</p>
+                                    	<p style="margin: 5px 0px 5px 0px;">* Phòng 1 giường, 1 máy lạnh, tivi công nghệ LED cao cấp.</p>
+                                    	<p style="margin: 5px 0px 5px 0px;">* Giá: 300$/ngày</p>
+                                    <div class="links"><a href="" data-toggle="modal" data-target="#myModal" style="margin-top: 10px;" data-backdrop="static" data-keyboard="false">Booking</a></div>
                                 </div>
                             </div>
 
                             <div class="side-B">
                                 <div class="product-thumb">
                                     <div class="image txt-rgt">
-                                        <a class="arrow-left" href="single-blog.html"><img alt="imaga" class="img-responsive" src='<spring:url value="resources/Home_resources/images/room3.png"/>'></a>
+                                        <a class="arrow-left" href="" data-toggle="modal" data-target="#myModal" style="margin-top: 10px;" data-backdrop="static" data-keyboard="false"><img alt="imaga" class="img-responsive" src='<spring:url value="resources/Home_resources/images/room3.png"/>'></a>
                                     </div>
                                 </div>
                             </div>
@@ -501,16 +539,18 @@
                         <div class="col-md-6 col-sm-12 col-xs-12 remove-padd-left">
                             <div class="side-A">
                                 <div class="product-desc-side">
-                                    <h3><a href="single-blog.html">double room</a></h3>
-                                    <p>Phòng gia đình, 500$/ngày.</p>
-                                    <div class="links"><a href="single-blog.html">Booking</a></div>
+                                    <h3><a href="" data-toggle="modal" data-target="#myModal" style="margin-top: 10px;" data-backdrop="static" data-keyboard="false">double room</a></h3>
+                                    	<p style="margin: 5px 0px 5px 0px;">* Phòng đẹp, tiện nghi đầy đủ, không gian rộng, có view đẹp.</p>
+                                    	<p style="margin: 5px 0px 5px 0px;">* Phòng 2 giường, 2 máy lạnh, tivi công nghệ LED cao cấp.</p>
+                                    	<p style="margin: 5px 0px 5px 0px;">* Giá: 600$/ngày</p>
+                                    <div class="links"><a href="" data-toggle="modal" data-target="#myModal" style="margin-top: 10px;" data-backdrop="static" data-keyboard="false">Booking</a></div>
                                 </div>
                             </div>
 
                             <div class="side-B">
                                 <div class="product-thumb txt-rgt">
                                     <div class="image">
-                                        <a class="arrow-left" href="single-blog.html"><img alt="imaga" class="img-responsive" src='<spring:url value="resources/Home_resources/images/room4.png"/>'></a>
+                                        <a class="arrow-left" href="" data-toggle="modal" data-target="#myModal" style="margin-top: 10px;" data-backdrop="static" data-keyboard="false"><img alt="imaga" class="img-responsive" src='<spring:url value="resources/Home_resources/images/room4.png"/>'></a>
                                     </div>
                                 </div>
                             </div>
@@ -588,6 +628,68 @@
 			class="scrollTop back-to-top" id="back-to-top"> <span><i
 				aria-hidden="true" class="fa fa-angle-up fa-lg"></i></span> <span>Top</span>
 		</a>
+
+
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					
+					<div class="modal-body" style="height: 350px; margin-right: 0;">
+						<div class="image-position">
+							<table>
+								<tr>
+									<td>
+										<img src='<spring:url value="resources/Home_resources/images/room1.jpg"/>' class="main-image">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img src='<spring:url value="resources/Home_resources/images/room1.jpg"/>' class="image-img">
+										<img src='<spring:url value="resources/Home_resources/images/room1.jpg"/>' class="image-img">
+										<img src='<spring:url value="resources/Home_resources/images/room1.jpg"/>' class="image-img">		
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="inf-position">
+							<table style="border-collapse: collapse;">
+								
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">Họ-tên: </td>
+									<td><input type="text"></td>
+								</tr>
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">CMND: </td>
+									<td><input type="text"></td>
+								</tr>
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">Ngày nhận phòng: </td>
+									<td><input type="date"></td>
+								</tr>
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">Ngày trả phòng: </td>
+									<td><input type="date"></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">CLOSE</button>
+						<button type="button" class="btn btn-primary">BOOKING</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
 
 	</div>
 </body>
