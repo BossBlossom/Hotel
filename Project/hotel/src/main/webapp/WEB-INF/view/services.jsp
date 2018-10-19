@@ -90,105 +90,59 @@
                     <div class="row">
 
                         <div class="col-md-9 col-sm-8 col-xs-12">
-                            <h2 class="blog-title-head">Lorem Ipsum Dolor Sit amet</h2>
-                            <p class="user-info">Posted by <a>Admin</a> in <a>General</a> | <a>10 Comments</a></p>
+                            <h2 class="blog-title-head">StarHome Restaurant hân hạnh được phục vụ quý khách</h2>
+                            <p class="user-info">Posted by <a>Thien An</a> in <a>General</a></p>
                             <div class="blog-image-single margin-top-small">
                                 <img src='<spring:url value="resources/Home_resources/images/banner2.png"/>' class="img-responsive">
                             </div>
-                            <p class="blog-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do </p>
+                            <p class="blog-desc">Muốn ăn hay uống gì thì vào đây... Nhé!!!</p>
 
                             <div class="clearfix"></div>
-                            <div class="single-bottom comment-form">
-                                <h3>Leave your Comment</h3>
-                                <form action="#" method="post">
-                                    <input type="text" class="form-control" name="Name" placeholder="Name" required="">
-                                    <input type="email" class="form-control" name="Email" placeholder="Email" required="">
-                                    <textarea class="form-control" name="Message" placeholder="Message Here...." required=""></textarea>
-                                    <input type="submit" class="submit-btn" value="Send">
-                                </form>
-                            </div>
+                            
                         </div>
                         <aside class="col-md-3 col-sm-4 col-xs-12">
                             <div class="blog-list">
-                                <h4>Categories</h4>
+                                <h4>ĐỒ UỐNG</h4>
                                 <ul>
-                                    <li><a><i class="fa fa-caret-right"> </i>Lorem Ipsum is simply</a></li>
-                                    <li><a><i class="fa fa-caret-right"> </i>Contrary to popular belief</a></li>
-                                    <li><a><i class="fa fa-caret-right"> </i>It is a long established</a></li>
-                                    <li><a><i class="fa fa-caret-right"> </i>There are many variations</a></li>
-                                    <li><a><i class="fa fa-caret-right"> </i>But I must explain to you</a></li>
-                                    <li><a><i class="fa fa-caret-right"> </i>At vero eos et accusamus</a></li>
-                                    <li><a><i class="fa fa-caret-right"> </i>On the other hand</a></li>
+                                    <li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/drink/coca.jpg"/>'><i class="fa fa-caret-right"> </i>Coca Cola</a></li>
+                                    <li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/drink/pepsi.jpg"/>'><i class="fa fa-caret-right"> </i>Pepsi</a></li>
+                                    <li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/drink/mirinda.jpg"/>'><i class="fa fa-caret-right"> </i>Mirinda</a></li>
+                                    <li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/drink/sting.jpg"/>'><i class="fa fa-caret-right"> </i>Sting</a></li>
+                                    <li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/drink/samurai.jpg"/>'><i class="fa fa-caret-right"> </i>Samurai</a></li>
+                                    <li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/drink/redbull.jpg"/>'><i class="fa fa-caret-right"> </i>Red Bull</a></li>
+                                    <li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/drink/water1.jpg"/>'><i class="fa fa-caret-right"> </i>Aquafina</a></li>
+                                    <li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/drink/water2.jpg"/>'><i class="fa fa-caret-right"> </i>LaVie</a></li>
+                                    <li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/drink/333Bear.jpg"/>'><i class="fa fa-caret-right"> </i>Bear 333</a></li>
+                                    <li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/drink/SaigonBear.jpg"/>'><i class="fa fa-caret-right"> </i>Bear Sài Gòn</a></li>
+                                    <li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/drink/HanoiBear.jpg"/>'><i class="fa fa-caret-right"> </i>Bear Hà Nội</a></li>
+                                    <li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/drink/blue_cocktail.jpg"/>'><i class="fa fa-caret-right"> </i>Blue Cocktail</a></li>
+                                    <li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/drink/blue_lagoon.jpg"/>'><i class="fa fa-caret-right"> </i>Blue Lagoon</a></li>
+                                    <li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/drink/gin.jpg"/>'><i class="fa fa-caret-right"> </i>Rượu Gin</a></li>
+                                    <li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/drink/vodka.jpg"/>'><i class="fa fa-caret-right"> </i>Rượu Vodka</a></li>
+                                    <li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/drink/whisky.jpg"/>'><i class="fa fa-caret-right"> </i>Rượu Whisky</a></li>
                                 </ul>
 
                                 <div class="clearfix"> </div>
                             </div>
                             <div class="blog-list">
-                                <h4>Archives List</h4>
+                                <h4>ĐỒ ĂN</h4>
                                 <ul>
-                                    <li><a><i class="fa fa-caret-right"> </i>July (15)</a></li>
-                                    <li><a><i class="fa fa-caret-right"> </i>Oct (20)</a></li>
-                                    <li><a><i class="fa fa-caret-right"> </i>November (8)</a></li>
-                                    <li><a><i class="fa fa-caret-right"> </i>December (25)</a></li>
-                                    <li><a><i class="fa fa-caret-right"> </i>August (9)</a></li>
-                                    <li><a><i class="fa fa-caret-right"> </i>July (15)</a></li>
-                                    <li><a><i class="fa fa-caret-right"> </i>Mar (25)</a></li>
+                                	<li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/Food/food1.jpg"/>'><i class="fa fa-caret-right"> </i>Lẩu thập cẩm</a></li>
+                                	<li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/Food/food2.jpg"/>'><i class="fa fa-caret-right"> </i>Ức gà nấu trứng hầm khoai</a></li>
+                                	<li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/Food/food3.jpg"/>'><i class="fa fa-caret-right"> </i>Bánh Tiramisu</a></li>
+                                	<li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/Food/food4.jpg"/>'><i class="fa fa-caret-right"> </i>Sườn bò</a></li>
+                                	<li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/Food/food5.jpg"/>'><i class="fa fa-caret-right"> </i>Mỳ Ramen</a></li>
+                                	<li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/Food/food6.jpg"/>'><i class="fa fa-caret-right"> </i>Cá viên, bò viên chiên</a></li>	
+                                	<li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/Food/food7.jpg"/>'><i class="fa fa-caret-right"> </i>Mỳ xào giòn chay</a></li>
+                                	<li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/Food/food8.jpg"/>'><i class="fa fa-caret-right"> </i>Sallad Cá Khoai</a></li>
+                                	<li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/Food/food9.jpg"/>'><i class="fa fa-caret-right"> </i>Nui xào bò</a></li>
+                                	<li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/Food/food10.jpg"/>'><i class="fa fa-caret-right"> </i>Bánh Machiato Cam</a></li>
+                                	<li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/Food/food11.jpg"/>'><i class="fa fa-caret-right"> </i>Bánh Machiato Nho</a></li>
+                                	<li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/Food/food12.jpg"/>'><i class="fa fa-caret-right"> </i>Set trà và bánh ngọt 1</a></li>
+                                	<li><a data-lightbox="example-1" href='<spring:url value="resources/Home_resources/images/Food/food13.jpg"/>'><i class="fa fa-caret-right"> </i>Set trà và bánh ngọt 2</a></li>
                                 </ul>
                             </div>
-                            <div class="blog-list1">
-                                <h4>Popular Posts</h4>
-                                <div class="blog-list-top">
-                                    <div class="blog-img">
-                                        <a><img class="img-responsive" src='<spring:url value="resources/Home_resources/images/Home/img1.jpg"/>' alt=""></a>
-                                    </div>
-                                    <div class="blog-text">
-                                        <p><a>Lorem ipsum dolor sit amet, consectetuer</a></p>
-                                        <span class="link">
-                                            Sep 14, 2016
-                                        </span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-
-                                <div class="blog-list-top">
-                                    <div class="blog-img">
-                                        <a><img class="img-responsive" src='<spring:url value="resources/Home_resources/images/Home/img3.jpg"/>' alt=""></a>
-                                    </div>
-                                    <div class="blog-text">
-                                        <p><a>Lorem ipsum dolor sit amet, consectetuer</a></p>
-                                        <span class="link">
-                                            Sep 14, 2016
-                                        </span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-
-                                <div class="blog-list-top">
-                                    <div class="blog-img">
-                                        <a><img class="img-responsive" src='<spring:url value="resources/Home_resources/images/Home/img4.jpg"/>' alt=""></a>
-                                    </div>
-                                    <div class="blog-text">
-                                        <p><a>Lorem ipsum dolor sit amet, consectetuer</a></p>
-                                        <span class="link">
-                                            Sep 14, 2016
-                                        </span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-
-                                <div class="blog-list-top">
-                                    <div class="blog-img">
-                                        <a><img class="img-responsive" src='<spring:url value="resources/Home_resources/images/Home/img5.jpg"/>' alt=""></a>
-                                    </div>
-                                    <div class="blog-text">
-                                        <p><a>Lorem ipsum dolor sit amet, consectetuer</a></p>
-                                        <span class="link">
-                                            Sep 14, 2016
-                                        </span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
+                           
                         </aside>
                     </div>
                 </div>

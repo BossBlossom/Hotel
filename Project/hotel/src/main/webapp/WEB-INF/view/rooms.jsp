@@ -35,8 +35,8 @@
   		position: relative;
   	}
 	.main-image{
-		width: 250px;
-		height: 120px;
+		width: 265px;
+		height: 140px;
 		margin: 0px 10px 10px 10px;
 	}
 	.image-img{
@@ -634,10 +634,7 @@
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
+						<h5 class="modal-title" id="exampleModalLongTitle" style="font-size: 30px;">Điền thông tin đặt phòng</h5>
 					</div>
 					
 					<div class="modal-body" style="height: 350px; margin-right: 0;">
@@ -676,6 +673,7 @@
 									<td style="padding: 10px;">Ngày trả phòng: </td>
 									<td><input type="date"></td>
 								</tr>
+								
 							</table>
 						</div>
 					</div>
