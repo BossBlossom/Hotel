@@ -796,9 +796,13 @@
 						</div>
 						<div class="inf-position">
 							<table style="border-collapse: collapse;">
-
+							
 								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Họ-tên:</td>
+									<td style="padding: 10px;">Phòng:</td>
+									<td><input type="text"></td>
+								</tr>
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">Họ Tên:</td>
 									<td><input type="text"></td>
 								</tr>
 								<tr style="padding: 5px;">
