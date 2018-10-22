@@ -1,8 +1,11 @@
 package vn.com.java.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -13,11 +16,13 @@ public class BookingHistory {
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "room_no")
-	private int roomNo;
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="room_no")
+	private Room room;
 	
-	@Column(name = "cmnd")
-	private int cmnd;
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="customer_id")
+	private Customer customer;
 	
 	@Column(name = "check_in")
 	private String checkIn;
@@ -33,20 +38,20 @@ public class BookingHistory {
 		this.id = id;
 	}
 
-	public int getRoomNo() {
-		return roomNo;
+	public Room getRoom() {
+		return room;
 	}
 
-	public void setRoomNo(int roomNo) {
-		this.roomNo = roomNo;
+	public void setRoom(Room room) {
+		this.room = room;
 	}
 
-	public int getCmnd() {
-		return cmnd;
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setCmnd(int cmnd) {
-		this.cmnd = cmnd;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 	public String getCheckIn() {
@@ -64,4 +69,5 @@ public class BookingHistory {
 	public void setCheckOut(String checkOut) {
 		this.checkOut = checkOut;
 	}
+	
 }

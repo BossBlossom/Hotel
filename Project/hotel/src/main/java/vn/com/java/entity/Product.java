@@ -2,6 +2,7 @@ package vn.com.java.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,6 +11,10 @@ import javax.persistence.Table;
 public class Product {
 	
 	@Id
+	@GeneratedValue
+	@Column(name="id")
+	private int id;
+	
 	@Column(name = "product")
 	private String product;
 	
@@ -19,11 +24,19 @@ public class Product {
 	@Column(name = "style")
 	private String style;
 	
-	@Column(name = "money")
-	private int money;
+	@Column(name = "price")
+	private int price;
 	
 	@Column(name = "quantum")
 	private int quantum;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getProduct() {
 		return product;
@@ -41,12 +54,20 @@ public class Product {
 		this.image = image;
 	}
 
-	public int getMoney() {
-		return money;
+	public String getStyle() {
+		return style;
 	}
 
-	public void setMoney(int money) {
-		this.money = money;
+	public void setStyle(String style) {
+		this.style = style;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
 	public int getQuantum() {
@@ -56,13 +77,4 @@ public class Product {
 	public void setQuantum(int quantum) {
 		this.quantum = quantum;
 	}
-
-	public String getStyle() {
-		return style;
-	}
-
-	public void setStyle(String style) {
-		this.style = style;
-	}
-	
 }

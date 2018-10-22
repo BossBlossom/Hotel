@@ -5,7 +5,7 @@ import vn.com.java.entity.Customer;
 
 public class BookingInformationModel 
 {
-	private int cmnd;
+	private String cmnd;
 	
 	private int roomNo;
 	
@@ -37,8 +37,8 @@ public class BookingInformationModel
 	{
 		bookingInformation.setCmnd(this.cmnd);
 		bookingInformation.setRoomNo(this.roomNo);
-		bookingInformation.setStartedAt(this.startedAt);
-		bookingInformation.setEndedAt(this.endedAt);
+		bookingInformation.setStartedAt(this.startedAt+" 12:00");
+		bookingInformation.setEndedAt(this.endedAt +" 12:00");
 		
 		return bookingInformation;
 	}
@@ -52,11 +52,11 @@ public class BookingInformationModel
 		this.setTotal(bookingInformation.getTotal());
 	}
 
-	public int getCmnd() {
+	public String getCmnd() {
 		return cmnd;
 	}
 
-	public void setCmnd(int cmnd) {
+	public void setCmnd(String cmnd) {
 		this.cmnd = cmnd;
 	}
 

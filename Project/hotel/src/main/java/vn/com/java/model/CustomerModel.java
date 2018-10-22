@@ -4,7 +4,7 @@ import vn.com.java.entity.Customer;
 
 public class CustomerModel {
 	
-	private int cmnd;
+	private String cmnd;
 	
 	private String fullName;
 	
@@ -21,11 +21,11 @@ public class CustomerModel {
 		customer.setFullName(customer.getFullName());
 	}
 
-	public int getCmnd() {
+	public String getCmnd() {
 		return cmnd;
 	}
 
-	public void setCmnd(int cmnd) {
+	public void setCmnd(String cmnd) {
 		this.cmnd = cmnd;
 	}
 

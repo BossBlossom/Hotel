@@ -2,6 +2,7 @@ package vn.com.java.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Table;
 import javax.persistence.Id;
 
@@ -10,17 +11,29 @@ import javax.persistence.Id;
 public class Customer {
 	
 	@Id
+	@GeneratedValue
+	@Column(name="id")
+	private int id;
+	
 	@Column(name="cmnd")
-	private int cmnd;
+	private String cmnd;
 	
 	@Column(name="full_name")
 	private String fullName;
 
-	public int getCmnd() {
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getCmnd() {
 		return cmnd;
 	}
 
-	public void setCmnd(int cmnd) {
+	public void setCmnd(String cmnd) {
 		this.cmnd = cmnd;
 	}
 
@@ -31,6 +44,5 @@ public class Customer {
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
-	
 	
 }
