@@ -23,7 +23,7 @@ public class BillDetail
 	private Bill bill;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="product")
+	@JoinColumn(name="product_id")
 	private Product product;
 	
 	@Column(name = "quantum")
@@ -34,4 +34,53 @@ public class BillDetail
 	
 	@Column(name="total")
 	private int total;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Bill getBill() {
+		return bill;
+	}
+
+	public void setBill(Bill bill) {
+		this.bill = bill;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+	public int getQuantum() {
+		return quantum;
+	}
+
+	public void setQuantum(int quantum) {
+		this.quantum = quantum;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
+	
 }

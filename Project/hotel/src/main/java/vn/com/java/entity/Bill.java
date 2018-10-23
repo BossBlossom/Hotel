@@ -22,6 +22,10 @@ public class Bill
 	@JoinColumn(name="room_no")
 	private Room room;
 	
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="product_id")
+	private Product product;
+	
 	@Column(name="total")
 	private int total;
 
@@ -41,6 +45,14 @@ public class Bill
 		this.room = room;
 	}
 
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
 	public int getTotal() {
 		return total;
 	}
@@ -48,6 +60,5 @@ public class Bill
 	public void setTotal(int total) {
 		this.total = total;
 	}
-
 	
 }

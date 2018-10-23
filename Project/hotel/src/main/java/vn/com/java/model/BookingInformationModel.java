@@ -2,6 +2,7 @@ package vn.com.java.model;
 
 import vn.com.java.entity.BookingInformation;
 import vn.com.java.entity.Customer;
+import vn.com.java.entity.Room;
 
 public class BookingInformationModel 
 {
@@ -15,38 +16,35 @@ public class BookingInformationModel
 	
 	private int total;
 	
-	private String status;
-	
 	private String fullName;
+	
+	private Room room;
+	
+	private Customer customer;
 	
 	public Customer toCustomer(Customer customer)
 	{
-		customer.setFullName(this.fullName);
 		customer.setCmnd(this.cmnd);
-		
+		customer.setFullName(this.fullName);
 		return customer;
 	}
 	
 	public void fromCustomer(Customer customer)
 	{
-		this.setCmnd(customer.getCmnd());
-		this.setFullName(customer.getFullName());
+		customer.setCmnd(customer.getCmnd());
+		customer.setFullName(customer.getFullName());
 	}
 	
 	public BookingInformation toBookingInformation(BookingInformation bookingInformation)
 	{
-		bookingInformation.setCmnd(this.cmnd);
-		bookingInformation.setRoomNo(this.roomNo);
 		bookingInformation.setStartedAt(this.startedAt+" 12:00");
 		bookingInformation.setEndedAt(this.endedAt +" 12:00");
-		
+		bookingInformation.setTotal(this.total);
 		return bookingInformation;
 	}
 	
 	public void fromBookingInformation(BookingInformation bookingInformation)
 	{
-		this.setCmnd(bookingInformation.getCmnd());
-		this.setRoomNo(bookingInformation.getRoomNo());
 		this.setStartedAt(bookingInformation.getStartedAt());
 		this.setEndedAt(bookingInformation.getEndedAt());
 		this.setTotal(bookingInformation.getTotal());
@@ -92,20 +90,28 @@ public class BookingInformationModel
 		this.total = total;
 	}
 
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public String getFullName() {
 		return fullName;
 	}
 
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
+	}
+
+	public Room getRoom() {
+		return room;
+	}
+
+	public void setRoom(Room room) {
+		this.room = room;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 	
 }

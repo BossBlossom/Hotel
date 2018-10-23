@@ -44,9 +44,6 @@ public class BookingInformationService
 	
 	public BookingInformation createBookingInformationCustomer(BookingInformationModel bookingInformationModel)
 	{	
-		// tim customer theo id
-		
-		// neu customer khong ton tai thi tao moi
 		Customer customer = new Customer();
 		bookingInformationModel.toCustomer(customer);
 		customerDao.create(customer);
@@ -57,7 +54,7 @@ public class BookingInformationService
 		
 		BookingInformation bookingInformation = new BookingInformation();
 		bookingInformationModel.toBookingInformation(bookingInformation);
-//		bookingInformation.setCustomer(customer)
+		bookingInformation.setCustomer(customer);
 		
 		BookingInformation result = bookingInformationDao.create(bookingInformation);
 		
