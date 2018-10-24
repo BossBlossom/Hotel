@@ -782,16 +782,16 @@
 							<table>
 								<tr>
 									<td><img
-										src='<spring:url value="resources/Home_resources/images/room13.jpg"/>'
+										src='<spring:url value="resources/Home_resources/images/room9.jpg"/>'
 										class="main-image"></td>
 								</tr>
 								<tr>
 									<td><img
-										src='<spring:url value="resources/Home_resources/images/room14.jpg"/>'
+										src='<spring:url value="resources/Home_resources/images/room10.jpg"/>'
 										class="image-img"> <img
-										src='<spring:url value="resources/Home_resources/images/room15.jpg"/>'
+										src='<spring:url value="resources/Home_resources/images/room11.jpg"/>'
 										class="image-img"> <img
-										src='<spring:url value="resources/Home_resources/images/room16.jpg"/>'
+										src='<spring:url value="resources/Home_resources/images/room12.jpg"/>'
 										class="image-img"></td>
 								</tr>
 							</table>
@@ -848,16 +848,16 @@
 							<table>
 								<tr>
 									<td><img
-										src='<spring:url value="resources/Home_resources/images/room9.jpg"/>'
+										src='<spring:url value="resources/Home_resources/images/room13.jpg"/>'
 										class="main-image"></td>
 								</tr>
 								<tr>
 									<td><img
-										src='<spring:url value="resources/Home_resources/images/room10.jpg"/>'
+										src='<spring:url value="resources/Home_resources/images/room14.jpg"/>'
 										class="image-img"> <img
-										src='<spring:url value="resources/Home_resources/images/room11.jpg"/>'
+										src='<spring:url value="resources/Home_resources/images/room15.jpg"/>'
 										class="image-img"> <img
-										src='<spring:url value="resources/Home_resources/images/room12.jpg"/>'
+										src='<spring:url value="resources/Home_resources/images/room16.jpg"/>'
 										class="image-img"></td>
 								</tr>
 							</table>
