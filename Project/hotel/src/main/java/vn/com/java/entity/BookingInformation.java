@@ -1,24 +1,29 @@
 package vn.com.java.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="booking_informations")
 public class BookingInformation {
 	@Id
-	@Column(name="id")
 	@GeneratedValue
+	@Column(name="id")
 	private int id;
 	
-	@Column(name="cmnd")
-	private int cmnd;
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="room_no")
+	private Room room;
 	
-	@Column(name="room_no")
-	private int roomNo;
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="customer_id")
+	private Customer customer;
 	
 	@Column(name="started_at")
 	private String startedAt;
@@ -37,20 +42,20 @@ public class BookingInformation {
 		this.id = id;
 	}
 
-	public int getCmnd() {
-		return cmnd;
+	public Room getRoom() {
+		return room;
 	}
 
-	public void setCmnd(int cmnd) {
-		this.cmnd = cmnd;
+	public void setRoom(Room room) {
+		this.room = room;
 	}
 
-	public int getRoomNo() {
-		return roomNo;
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setRoomNo(int roomNo) {
-		this.roomNo = roomNo;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 	public String getStartedAt() {
@@ -75,6 +80,6 @@ public class BookingInformation {
 
 	public void setTotal(int total) {
 		this.total = total;
-	}	
+	}
 	
 }
