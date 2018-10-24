@@ -767,7 +767,7 @@
 
 
 
-
+	<form:form modelAttribute="booking" action="booking" method="post">
 		<div class="modal fade" id="myModal4" tabindex="-1" role="dialog"
 			aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -801,23 +801,23 @@
 							
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Phòng:</td>
-									<td><input type="text"></td>
+									<td><form:input path="roomNo"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Họ Tên:</td>
-									<td><input type="text"></td>
+									<td><form:input path="fullName"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">CMND:</td>
-									<td><input type="text"></td>
+									<td><form:input path="cmnd"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Ngày nhận phòng:</td>
-									<td><input type="date"></td>
+									<td><form:input path="startedAt" type="date"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Ngày trả phòng:</td>
-									<td><input type="date"></td>
+									<td><form:input path="endedAt" type="date"/></td>
 								</tr>
 
 							</table>
@@ -827,13 +827,13 @@
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary"
 							data-dismiss="modal">CLOSE</button>
-						<button type="button" class="btn btn-primary">BOOKING</button>
+						<button type="submit" class="btn btn-primary">BOOKING</button>
 					</div>
 				</div>
 			</div>
-		</div>
-		
-		
+		</div>		
+	</form:form>	
+	<form:form modelAttribute="booking" action="booking" method="post">
 		<div class="modal fade" id="myModal3" tabindex="-1" role="dialog"
 			aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -867,23 +867,23 @@
 							
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Phòng:</td>
-									<td><input type="text"></td>
+									<td><form:input path="roomNo"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Họ Tên:</td>
-									<td><input type="text"></td>
+									<td><form:input path="fullName"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">CMND:</td>
-									<td><input type="text"></td>
+									<td><form:input path="cmnd"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Ngày nhận phòng:</td>
-									<td><input type="date"></td>
+									<td><form:input path="startedAt" type="date"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Ngày trả phòng:</td>
-									<td><input type="date"></td>
+									<td><form:input path="endedAt" type="date"/></td>
 								</tr>
 
 							</table>
@@ -893,13 +893,13 @@
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary"
 							data-dismiss="modal">CLOSE</button>
-						<button type="button" class="btn btn-primary">BOOKING</button>
+						<button type="submit" class="btn btn-primary">BOOKING</button>
 					</div>
 				</div>
 			</div>
 		</div>
-		
-		
+	</form:form>	
+	<form:form modelAttribute="booking" action="booking" method="post">
 		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
 			aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -933,23 +933,23 @@
 							
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Phòng:</td>
-									<td><input type="text"></td>
+									<td><form:input path="roomNo"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Họ Tên:</td>
-									<td><input type="text"></td>
+									<td><form:input path="fullName"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">CMND:</td>
-									<td><input type="text"></td>
+									<td><form:input path="cmnd"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Ngày nhận phòng:</td>
-									<td><input type="date"></td>
+									<td><form:input path="startedAt" type="date"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Ngày trả phòng:</td>
-									<td><input type="date"></td>
+									<td><form:input path="endedAt" type="date"/></td>
 								</tr>
 
 							</table>
@@ -959,13 +959,13 @@
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary"
 							data-dismiss="modal">CLOSE</button>
-						<button type="button" class="btn btn-primary">BOOKING</button>
+						<button type="submit" class="btn btn-primary">BOOKING</button>
 					</div>
 				</div>
 			</div>
 		</div>
-		
-		
+	</form:form>	
+	<form:form modelAttribute="booking" action="booking" method="post">
 		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog"
 			aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -999,23 +999,23 @@
 							
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Phòng:</td>
-									<td><input type="text"></td>
+									<td><form:input path="roomNo"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Họ Tên:</td>
-									<td><input type="text"></td>
+									<td><form:input path="fullName"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">CMND:</td>
-									<td><input type="text"></td>
+									<td><form:input path="cmnd"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Ngày nhận phòng:</td>
-									<td><input type="date"></td>
+									<td><form:input path="startedAt" type="date"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Ngày trả phòng:</td>
-									<td><input type="date"></td>
+									<td><form:input path="endedAt" type="date"/></td>
 								</tr>
 
 							</table>
@@ -1025,12 +1025,12 @@
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary"
 							data-dismiss="modal">CLOSE</button>
-						<button type="button" class="btn btn-primary">BOOKING</button>
+						<button type="submit" class="btn btn-primary">BOOKING</button>
 					</div>
 				</div>
 			</div>
 		</div>
-
+	</form:form>
 
 
 	</div>
