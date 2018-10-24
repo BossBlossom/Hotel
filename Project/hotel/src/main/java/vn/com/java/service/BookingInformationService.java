@@ -55,6 +55,7 @@ public class BookingInformationService
 		BookingInformation bookingInformation = new BookingInformation();
 		bookingInformationModel.toBookingInformation(bookingInformation);
 		bookingInformation.setCustomer(customer);
+		bookingInformation.setRoom(room);
 		
 		BookingInformation result = bookingInformationDao.create(bookingInformation);
 		
