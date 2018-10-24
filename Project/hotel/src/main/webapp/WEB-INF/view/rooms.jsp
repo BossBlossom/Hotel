@@ -422,7 +422,7 @@
 										càng và có nhiều hoạt động hay ho và thú vị. Tôi đã được tham
 										gia hầu hết các hoạt động của khu nghỉ dưỡng như Yoga, lễ hội
 										hoa. Tôi đã có một kì nghỉ cực kì đáng giá và tuyệt vời tại
-										khu nghỉ dưỡng của Star-Home. Chắc chắn sẽ trở lại vào kì nghỉ
+										khu nghỉ dưỡng của StarHome. Chắc chắn sẽ trở lại vào kì nghỉ
 										tiếp theo của tôi.</p>
 								</div>
 								<div class="blog-view-box">
@@ -492,14 +492,14 @@
 						<div class="col-md-6 col-sm-6 col-xs-12 side-in-image">
 							<div class="event-blog-details">
 								<h4>
-									<a href="about">sự sang trọng của khách sạn homestar</a>
+									<a href="about">sự sang trọng của khách sạn starhome</a>
 								</h4>
 								<h5>
 									Được viết bởi <font color="red">Thiên Ân</font> <a><i aria-hidden="true"
 										class="fa fa-heart-o fa-lg"></i>Thích</a><a><i
 										aria-hidden="true" class="fa fa-comment-o fa-lg"></i>Bình luận</a>
 								</h5>
-								<p>Khu nghỉ dưỡng Star-Home năm sâu trong hồ Tuyền Lâm. Là
+								<p>Khu nghỉ dưỡng StarHome năm sâu trong hồ Tuyền Lâm. Là
 									một tọa lạc lí tưởng với phong cảnh mơ mộng, trữ tình. Khu nghỉ
 									dưỡng gồm nhiều khu biệt thự mang đậm phong cách châu Âu cùng
 									những loại phòng đa dạng, đáp ứng nhu cầu của khách hàng.</p>
@@ -558,7 +558,7 @@
 						<div class="side-A">
 							<div class="product-thumb">
 								<div class="image">
-									<a href="" data-toggle="modal" data-target="#myModal"
+									<a href="" data-toggle="modal" data-target="#myModal1"
 										style="margin-top: 10px;" data-backdrop="static"
 										data-keyboard="false"><img alt="image"
 										class="img-responsive"
@@ -569,7 +569,7 @@
 						<div class="side-B">
 							<div class="product-desc-side">
 								<h3>
-									<a href="" data-toggle="modal" data-target="#myModal"
+									<a href="" data-toggle="modal" data-target="#myModal1"
 										style="margin-top: 10px;" data-backdrop="static"
 										data-keyboard="false">delux room</a>
 								</h3>
@@ -581,7 +581,7 @@
 									lạnh, tivi công nghệ LED cao cấp.</p>
 								<p style="margin: 5px 0px 5px 0px;">* Giá: 1200$/ngày</p>
 								<div class="links">
-									<a href="" data-toggle="modal" data-target="#myModal"
+									<a href="" data-toggle="modal" data-target="#myModal1"
 										style="margin-top: 10px;" data-backdrop="static"
 										data-keyboard="false">Booking</a>
 								</div>
@@ -593,7 +593,7 @@
 						<div class="side-A">
 							<div class="product-thumb">
 								<div class="image">
-									<a href="" data-toggle="modal" data-target="#myModal"
+									<a href="" data-toggle="modal" data-target="#myModal2"
 										style="margin-top: 10px;" data-backdrop="static"
 										data-keyboard="false"><img
 										src='<spring:url value="resources/Home_resources/images/room2.png"/>'
@@ -604,7 +604,7 @@
 						<div class="side-B">
 							<div class="product-desc-side">
 								<h3>
-									<a href="" data-toggle="modal" data-target="#myModal"
+									<a href="" data-toggle="modal" data-target="#myModal2"
 										style="margin-top: 10px;" data-backdrop="static"
 										data-keyboard="false">super room</a>
 								</h3>
@@ -614,7 +614,7 @@
 									lạnh, tivi công nghệ LED cao cấp.</p>
 								<p style="margin: 5px 0px 5px 0px;">* Giá: 800$/ngày</p>
 								<div class="links">
-									<a href="" data-toggle="modal" data-target="#myModal"
+									<a href="" data-toggle="modal" data-target="#myModal2"
 										style="margin-top: 10px;" data-backdrop="static"
 										data-keyboard="false">Booking</a>
 								</div>
@@ -627,7 +627,7 @@
 						<div class="side-A">
 							<div class="product-desc-side">
 								<h3>
-									<a href="" data-toggle="modal" data-target="#myModal"
+									<a href="" data-toggle="modal" data-target="#myModal3"
 										style="margin-top: 10px;" data-backdrop="static"
 										data-keyboard="false">single room</a>
 								</h3>
@@ -637,7 +637,7 @@
 									lạnh, tivi công nghệ LED cao cấp.</p>
 								<p style="margin: 5px 0px 5px 0px;">* Giá: 300$/ngày</p>
 								<div class="links">
-									<a href="" data-toggle="modal" data-target="#myModal"
+									<a href="" data-toggle="modal" data-target="#myModal3"
 										style="margin-top: 10px;" data-backdrop="static"
 										data-keyboard="false">Booking</a>
 								</div>
@@ -648,7 +648,7 @@
 							<div class="product-thumb">
 								<div class="image txt-rgt">
 									<a class="arrow-left" href="" data-toggle="modal"
-										data-target="#myModal" style="margin-top: 10px;"
+										data-target="#myModal3" style="margin-top: 10px;"
 										data-backdrop="static" data-keyboard="false"><img
 										alt="imaga" class="img-responsive"
 										src='<spring:url value="resources/Home_resources/images/room3.png"/>'></a>
@@ -661,7 +661,7 @@
 						<div class="side-A">
 							<div class="product-desc-side">
 								<h3>
-									<a href="" data-toggle="modal" data-target="#myModal"
+									<a href="" data-toggle="modal" data-target="#myModal4"
 										style="margin-top: 10px;" data-backdrop="static"
 										data-keyboard="false">double room</a>
 								</h3>
@@ -671,7 +671,7 @@
 									lạnh, tivi công nghệ LED cao cấp.</p>
 								<p style="margin: 5px 0px 5px 0px;">* Giá: 600$/ngày</p>
 								<div class="links">
-									<a href="" data-toggle="modal" data-target="#myModal"
+									<a href="" data-toggle="modal" data-target="#myModal4"
 										style="margin-top: 10px;" data-backdrop="static"
 										data-keyboard="false">Booking</a>
 								</div>
@@ -682,7 +682,7 @@
 							<div class="product-thumb txt-rgt">
 								<div class="image">
 									<a class="arrow-left" href="" data-toggle="modal"
-										data-target="#myModal" style="margin-top: 10px;"
+										data-target="#myModal4" style="margin-top: 10px;"
 										data-backdrop="static" data-keyboard="false"><img
 										alt="imaga" class="img-responsive"
 										src='<spring:url value="resources/Home_resources/images/room4.png"/>'></a>
@@ -766,7 +766,207 @@
 		</a>
 
 
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+
+
+		<div class="modal fade" id="myModal4" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle"
+							style="font-size: 30px;">Điền thông tin đặt phòng</h5>
+					</div>
+
+					<div class="modal-body" style="height: 350px; margin-right: 0;">
+						<div class="image-position">
+							<table>
+								<tr>
+									<td><img
+										src='<spring:url value="resources/Home_resources/images/room13.jpg"/>'
+										class="main-image"></td>
+								</tr>
+								<tr>
+									<td><img
+										src='<spring:url value="resources/Home_resources/images/room14.jpg"/>'
+										class="image-img"> <img
+										src='<spring:url value="resources/Home_resources/images/room15.jpg"/>'
+										class="image-img"> <img
+										src='<spring:url value="resources/Home_resources/images/room16.jpg"/>'
+										class="image-img"></td>
+								</tr>
+							</table>
+						</div>
+						<div class="inf-position">
+							<table style="border-collapse: collapse;">
+							
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">Phòng:</td>
+									<td><input type="text"></td>
+								</tr>
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">Họ Tên:</td>
+									<td><input type="text"></td>
+								</tr>
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">CMND:</td>
+									<td><input type="text"></td>
+								</tr>
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">Ngày nhận phòng:</td>
+									<td><input type="date"></td>
+								</tr>
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">Ngày trả phòng:</td>
+									<td><input type="date"></td>
+								</tr>
+
+							</table>
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">CLOSE</button>
+						<button type="button" class="btn btn-primary">BOOKING</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="modal fade" id="myModal3" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle"
+							style="font-size: 30px;">Điền thông tin đặt phòng</h5>
+					</div>
+
+					<div class="modal-body" style="height: 350px; margin-right: 0;">
+						<div class="image-position">
+							<table>
+								<tr>
+									<td><img
+										src='<spring:url value="resources/Home_resources/images/room9.jpg"/>'
+										class="main-image"></td>
+								</tr>
+								<tr>
+									<td><img
+										src='<spring:url value="resources/Home_resources/images/room10.jpg"/>'
+										class="image-img"> <img
+										src='<spring:url value="resources/Home_resources/images/room11.jpg"/>'
+										class="image-img"> <img
+										src='<spring:url value="resources/Home_resources/images/room12.jpg"/>'
+										class="image-img"></td>
+								</tr>
+							</table>
+						</div>
+						<div class="inf-position">
+							<table style="border-collapse: collapse;">
+							
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">Phòng:</td>
+									<td><input type="text"></td>
+								</tr>
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">Họ Tên:</td>
+									<td><input type="text"></td>
+								</tr>
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">CMND:</td>
+									<td><input type="text"></td>
+								</tr>
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">Ngày nhận phòng:</td>
+									<td><input type="date"></td>
+								</tr>
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">Ngày trả phòng:</td>
+									<td><input type="date"></td>
+								</tr>
+
+							</table>
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">CLOSE</button>
+						<button type="button" class="btn btn-primary">BOOKING</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle"
+							style="font-size: 30px;">Điền thông tin đặt phòng</h5>
+					</div>
+
+					<div class="modal-body" style="height: 350px; margin-right: 0;">
+						<div class="image-position">
+							<table>
+								<tr>
+									<td><img
+										src='<spring:url value="resources/Home_resources/images/room5.jpg"/>'
+										class="main-image"></td>
+								</tr>
+								<tr>
+									<td><img
+										src='<spring:url value="resources/Home_resources/images/room6.jpg"/>'
+										class="image-img"> <img
+										src='<spring:url value="resources/Home_resources/images/room7.jpg"/>'
+										class="image-img"> <img
+										src='<spring:url value="resources/Home_resources/images/room8.jpg"/>'
+										class="image-img"></td>
+								</tr>
+							</table>
+						</div>
+						<div class="inf-position">
+							<table style="border-collapse: collapse;">
+							
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">Phòng:</td>
+									<td><input type="text"></td>
+								</tr>
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">Họ Tên:</td>
+									<td><input type="text"></td>
+								</tr>
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">CMND:</td>
+									<td><input type="text"></td>
+								</tr>
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">Ngày nhận phòng:</td>
+									<td><input type="date"></td>
+								</tr>
+								<tr style="padding: 5px;">
+									<td style="padding: 10px;">Ngày trả phòng:</td>
+									<td><input type="date"></td>
+								</tr>
+
+							</table>
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">CLOSE</button>
+						<button type="button" class="btn btn-primary">BOOKING</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog"
 			aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
@@ -785,11 +985,11 @@
 								</tr>
 								<tr>
 									<td><img
-										src='<spring:url value="resources/Home_resources/images/room1.jpg"/>'
+										src='<spring:url value="resources/Home_resources/images/room2.jpg"/>'
 										class="image-img"> <img
-										src='<spring:url value="resources/Home_resources/images/room1.jpg"/>'
+										src='<spring:url value="resources/Home_resources/images/room3.jpg"/>'
 										class="image-img"> <img
-										src='<spring:url value="resources/Home_resources/images/room1.jpg"/>'
+										src='<spring:url value="resources/Home_resources/images/room4.jpg"/>'
 										class="image-img"></td>
 								</tr>
 							</table>

@@ -20,6 +20,9 @@
 	href='<spring:url value="resources/Home_resources/css/bootstrap.min.css"/>'
 	rel="stylesheet">
 <link
+	href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
+	rel="stylesheet">
+<link
 	href='<spring:url value="resources/Home_resources/font-awesome/css/font-awesome.min.css"/>'
 	rel="stylesheet" type="text/css" />
 <!-- Custom styles for this template -->
@@ -49,19 +52,27 @@
 <script
 	src='<spring:url value="resources/Home_resources/js/custom.js"/>'
 	type="text/javascript"></script>
-	
-<style type="text/css">
-	.list-services{
-		border-collapse: collapse;
-	}
-	.tr-list-services{
-		margin: 5px;
-		padding: 10px;
-	}
-	.td-list-services{
-		padding: 15px;
-	}
 
+<style type="text/css">
+.list-services {
+	border-collapse: collapse;
+}
+
+.tr-list-services {
+	margin: 5px;
+	padding: 10px;
+}
+
+.td-list-services {
+	padding: 15px;
+}
+
+.td-list-sv{
+	padding: 15px 25px 15px 25px;
+}
+.td-list-sv-1{
+	padding: 15px 25px 15px 4.5%;
+}
 </style>
 
 
@@ -102,9 +113,12 @@
 								<div
 									class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
 									<ul class="list-unstyled nav1 cl-effect-10">
-										<li><a data-hover="Trang chủ" href="home"><span>Trang chủ</span></a></li>
-										<li><a data-hover="Dịch vụ" class="active"><span>Dịch vụ</span></a></li>
-										<li><a data-hover="Về chúng tôi" href="about"><span>Về chúng tôi</span></a></li>
+										<li><a data-hover="Trang chủ" href="home"><span>Trang
+													chủ</span></a></li>
+										<li><a data-hover="Dịch vụ" class="active"><span>Dịch
+													vụ</span></a></li>
+										<li><a data-hover="Về chúng tôi" href="about"><span>Về
+													chúng tôi</span></a></li>
 									</ul>
 								</div>
 							</nav>
@@ -127,154 +141,601 @@
 				<div class="row">
 
 					<div class="col-md-9 col-sm-8 col-xs-12" style="width: 100%;">
-						<h2 class="blog-title-head" style="font-size: 30px;">StarHome Restaurant hân hạnh được
-							phục vụ quý khách</h2>
+						<h2 class="blog-title-head" style="font-size: 30px;">StarHome
+							Restaurant hân hạnh được phục vụ quý khách</h2>
 						<p class="user-info">
-							Được viết bởi <a href="https://thienan1999.wordpress.com/">Thiên Ân</a>
+							Được viết bởi <a href="https://thienan1999.wordpress.com/">Thiên
+								Ân</a>
 						</p>
-						<p class="blog-desc" style="font-size: 20px;">Muốn ăn hay uống gì thì vào đây... Nhé!!!</p>
+						<p class="blog-desc" style="font-size: 20px;">Muốn ăn hay uống
+							gì thì vào đây... Nhé!!!</p>
 						<div class="blog-image-single margin-top-large">
-							<h2><b>Đồ uống</b></h2>
+							<h2>
+								<b>Đồ uống nhanh</b>
+							</h2>
 							<hr style="border: 2px solid red;">
-							<table class="list-services">
-								<tr class="tr-list-services">
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/water1.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/water1.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											AQUAFINA
-										</a>
-									</td>
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/water2.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/water2.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											LA VIE
-										</a>
-									</td>
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/sting.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/sting.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											STING
-										</a>
-									</td>
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/mirinda.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/mirinda.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											MIRINDA
-										</a>
-									</td>
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/coca.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/coca.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											COCA COLA
-										</a>
-									</td>
-								</tr>
-								
-								<tr class="tr-list-services">
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/pepsi.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/pepsi.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											PEPSI
-										</a>
-									</td>
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/samurai.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/samurai.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											SAMURAI
-										</a>
-									</td>
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/redbull.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/redbull.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											RED BULL
-										</a>
-									</td>
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/HanoiBear.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/HanoiBear.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											BIA HÀ NỘI
-										</a>
-									</td>
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/SaigonBear.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/SaigonBear.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											BIA SÀI GÒN
-										</a>
-									</td>
-								</tr>
-								
-								<tr class="tr-list-services">
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/333Bear.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/333Bear.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											BIA 333
-										</a>
-									</td>
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/TigerBear.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/TigerBear.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											BIA TIGER
-										</a>
-									</td>
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/HeinekenBear.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/HeinekenBear.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											BIA HEINEKEN
-										</a>
-									</td>
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/BudweiserBear.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/BudweiserBear.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											BIA BUDWEISER
-										</a>
-									</td>
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/blacklabel.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/blacklabel.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											RƯỢU BLACK LABEL
-										</a>
-									</td>
-								</tr>
-								
-								<tr class="tr-list-services">
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/gin.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/gin.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											RƯỢU GIN
-										</a>
-									</td>
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/vodka.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/vodka.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											RƯỢU VODKA
-										</a>
-									</td>
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/whisky.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/whisky.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											RƯỢU WHISKY
-										</a>
-									</td>
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/vang.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/vang.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											RƯỢU VANG
-										</a>
-									</td>
-									<td class="td-list-services">
-										<a class="example-image-link img-responsive" href='<spring:url value="resources/Home_resources/images/drink/nacallan.jpg"/> ' data-lightbox="example-1" style="text-align: center;">
-											<img src='<spring:url value="resources/Home_resources/images/drink/macallan.jpg"/> ' class="img-responsive" style="width: 200px; height: 200px;" alt="drink">
-											RƯỢU MACALLAN
-										</a>
-									</td>
-								</tr>
-							</table>
+
+							<div id="myCarousel1" class="carousel slide" style="padding: 0 40px 0 40px" data-ride="carousel">
+								<!-- Indicators -->
+
+								<div class="carousel-inner">
+									<div class="item active">
+										<table class="display" id="example" style="width: 100%;">
+											<tr class="tr-list-services">
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/water1.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/water1.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														AQUAFINA
+												</a></td>
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/water2.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/water2.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink"> LA
+														VIE
+												</a></td>
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/sting.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/sting.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														STING
+												</a></td>
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/mirinda.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/mirinda.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														MIRINDA
+												</a></td>
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/coca.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/coca.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														COCA COLA
+												</a></td>
+											</tr>
+										</table>
+									</div>
+
+									<div class="item">
+										<table class="display" id="example" style="width: 100%;">
+											<tr class="tr-list-services">
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/pepsi.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/pepsi.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														PEPSI
+												</a></td>
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/samurai.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/samurai.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														SAMURAI
+												</a></td>
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/redbull.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/redbull.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														RED BULL
+												</a></td>
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/HanoiBear.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/HanoiBear.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														BIA HÀ NỘI
+												</a></td>
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/SaigonBear.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/SaigonBear.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														BIA SÀI GÒN
+												</a></td>
+											</tr>
+										</table>
+									</div>
+
+									<div class="item">
+										<table class="display" id="example" style="width: 100%;">
+											<tr class="tr-list-services">
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/333Bear.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/333Bear.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														BIA 333
+												</a></td>
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/TigerBear.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/TigerBear.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														BIA TIGER
+												</a></td>
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/HeinekenBear.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/HeinekenBear.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														BIA HEINEKEN
+												</a></td>
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/BudweiserBear.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/BudweiserBear.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														BIA BUDWEISER
+												</a></td>
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/blacklabel.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/blacklabel.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														RƯỢU BLACK LABEL
+												</a></td>
+											</tr>
+										</table>
+									</div>
+
+									<div class="item">
+										<table class="display" id="example" style="width: 100%;">
+											<tr class="tr-list-services">
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/gin.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/gin.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														RƯỢU GIN
+												</a></td>
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/vodka.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/vodka.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														RƯỢU VODKA
+												</a></td>
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/whisky.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/whisky.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														RƯỢU WHISKY
+												</a></td>
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/vang.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/vang.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														RƯỢU VANG
+												</a></td>
+												<td class="td-list-services"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/nacallan.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/macallan.jpg"/> '
+														class="img-responsive"
+														style="width: 200px; height: 200px;" alt="drink">
+														RƯỢU MACALLAN
+												</a></td>
+											</tr>
+										</table>
+									</div>
+
+
+								</div>
+
+								<a class="left carousel-control" href="#myCarousel1"
+									data-slide="prev" style="width: 0; left: 0; right: auto;">
+									<img
+									src='<spring:url value="resources/Home_resources/images/icons/Arrow_Left.png"/>'
+									onmouseover="this.src = '<spring:url value="resources/Home_resources/images/icons/left-arrow-hover.png"/>'"
+									onmouseout="this.src = '<spring:url value="resources/Home_resources/images/icons/Arrow_Left.png"/>'"
+									alt="left">
+								</a> <a class="right carousel-control" href="#myCarousel1"
+									data-slide="next" style="width: 0; margin-right: 32px;"><img
+									src='<spring:url value="resources/Home_resources/images/icons/Arrow_Right.png"/>'
+									onmouseover="this.src = '<spring:url value="resources/Home_resources/images/icons/right-arrow-hover.png"/>'"
+									onmouseout="this.src = '<spring:url value="resources/Home_resources/images/icons/Arrow_Right.png"/>'"
+									alt="right"></a>
+							</div>
 						</div>
 
 						<div class="clearfix"></div>
+						<br><br><br><br>
+
+						<div class="blog-image-single margin-top-large">
+							<h2>
+								<b>Đồ ăn - Đồ uống của nhà hàng</b>
+							</h2>
+							<hr style="border: 2px solid red;">
+
+							<div id="myCarousel2" style="padding: 0 40px 0 40px" class="carousel slide" data-ride="carousel">
+								<!-- Indicators -->
+
+								<div class="carousel-inner">
+									<div class="item active">
+										<table class="display" id="example" style="width: 100%;">
+											<tr class="tr-list-services">
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/cafe.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/cafe.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														CÀ PHÊ
+												</a></td>
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/espresso .jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/espresso .jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														ESPRESSO
+												</a></td>
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/lemontea.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/lemontea.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														TRÀ CHANH
+												</a></td>
+											</tr>
+										</table>
+									</div>
+
+									<div class="item">
+										<table class="display" id="example" style="width: 100%;">
+											<tr class="tr-list-services">
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/tea.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/tea.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														TRÀ HOA CÚC
+												</a></td>
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/waterlemon.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/waterlemon.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														NƯỚC ÉP DƯA HẤU
+												</a></td>
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/fruit.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/fruit.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														NƯỚC ÉP HOA QUẢ
+												</a></td>
+											</tr>
+										</table>
+									</div>
+
+									<div class="item">
+										<table class="display" id="example" style="width: 100%;">
+											<tr class="tr-list-services">
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/chocolate_cake.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/chocolate_cake.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														BÁNH HẠT CHOCOLATE
+												</a></td>
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/rainbow_cake.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/rainbow_cake.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														BÁNH LY CẦU VỒNG
+												</a></td>
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/drink/dau_cake.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/drink/dau_cake.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														BÁNH LY DÂU
+												</a></td>
+											</tr>
+										</table>
+									</div>
+
+									<div class="item">
+										<table class="display" id="example" style="width: 100%;">
+											<tr class="tr-list-services">
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/food/food1.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/food/food1.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														BÁNH BURRITOS
+												</a></td>
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/food/food2.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/food/food2.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														BÒ BÍP TẾT LOẠI 1
+												</a></td>
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/food/food3.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/food/food3.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														BÒ BÍP TẾT LOẠI 2
+												</a></td>
+											</tr>
+										</table>
+									</div>
+									
+									<div class="item">
+										<table class="display" id="example" style="width: 100%;">
+											<tr class="tr-list-services">
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/food/food4.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/food/food4.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														CÁ PHI LÊ
+												</a></td>
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/food/food5.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/food/food5.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														HAMBURGER
+												</a></td>
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/food/food6.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/food/food6.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														LẨU CÁ CHÉP NẤU CHUA
+												</a></td>
+											</tr>
+										</table>
+									</div>
+									
+									<div class="item">
+										<table class="display" id="example" style="width: 100%;">
+											<tr class="tr-list-services">
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/food/food7.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/food/food7.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														LẨU CÁ LẤU CỦ CẢI
+												</a></td>
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/food/food8.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/food/food8.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														PHI LÊ CÁ BƠN
+												</a></td>
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/food/food9.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/food/food9.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														PHI LÊ CHIÊN
+												</a></td>
+											</tr>
+										</table>
+									</div>
+									
+									<div class="item">
+										<table class="display" id="example" style="width: 100%;">
+											<tr class="tr-list-services">
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/food/food10.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/food/food10.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														PIZZA NẤM
+												</a></td>
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/food/food11.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/food/food11.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														PIZZA PHÔ MAI
+												</a></td>
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/food/food12.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/food/food12.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														BÀN CƠM TRƯA GIA ĐÌNH
+												</a></td>
+											</tr>
+										</table>
+									</div>
+									
+									<div class="item">
+										<table class="display" id="example" style="width: 100%;">
+											<tr class="tr-list-services">
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/food/food13.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/food/food13.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														SUSHI
+												</a></td>
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/food/food14.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/food/food14.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														TRỨNG CÁ MUỐI
+												</a></td>
+												<td class="td-list-sv"><a
+													class="example-image-link img-responsive"
+													href='<spring:url value="resources/Home_resources/images/food/food15.jpg"/> '
+													data-lightbox="example-1" style="text-align: center;">
+														<img
+														src='<spring:url value="resources/Home_resources/images/food/food15.jpg"/> '
+														class="img-responsive"
+														style="width: 300px; height: 200px;" alt="drink">
+														LẨU CUA BIỂN
+												</a></td>
+											</tr>
+										</table>
+									</div>
+
+
+								</div>
+
+								<a class="left carousel-control" href="#myCarousel2"
+									data-slide="prev" style="width: 0; left: 0; right: auto;">
+									<img
+									src='<spring:url value="resources/Home_resources/images/icons/Arrow_Left.png"/>'
+									onmouseover="this.src = '<spring:url value="resources/Home_resources/images/icons/left-arrow-hover.png"/>'"
+									onmouseout="this.src = '<spring:url value="resources/Home_resources/images/icons/Arrow_Left.png"/>'"
+									alt="left">
+								</a> <a class="right carousel-control" href="#myCarousel2"
+									data-slide="next" style="width: 0; margin-right: 32px;"><img
+									src='<spring:url value="resources/Home_resources/images/icons/Arrow_Right.png"/>'
+									onmouseover="this.src = '<spring:url value="resources/Home_resources/images/icons/right-arrow-hover.png"/>'"
+									onmouseout="this.src = '<spring:url value="resources/Home_resources/images/icons/Arrow_Right.png"/>'"
+									alt="right"></a>
+							</div>
+						</div>
 
 					</div>
-					
+
 				</div>
 			</div>
 		</section>
@@ -332,8 +793,9 @@
 				</div>
 
 				<div class="copyright">
-					&copy; 2017 All right reserved. Designed by <a href="https://thienan1999.wordpress.com/"
-						target="_blank">Thien An.</a>
+					&copy; 2017 All right reserved. Designed by <a
+						href="https://thienan1999.wordpress.com/" target="_blank">Thien
+						An.</a>
 				</div>
 
 			</div>
@@ -347,5 +809,11 @@
 		</a>
 
 	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#example').DataTable();
+		});
+	</script>
 </body>
 </html>
