@@ -24,8 +24,9 @@
 	</header>
 
 	<nav>
-		<a href='<spring:url value="/manager-list" />'>Trang chủ</a> <a
-			href='<spring:url value="/manager-list/create" />'>Tạo phòng mới</a>
+		<a href='<spring:url value="/manager-list" />'>Trang chủ</a> 
+		<a href='<spring:url value="/manager-list/create" />'>Tạo phòng mới</a>
+		<a href='<spring:url value="/product-list" />'>Danh sách sản phẩm</a>
 		<a href="">Lịch sử phòng</a>
 	</nav>
 

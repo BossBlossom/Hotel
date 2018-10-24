@@ -59,6 +59,12 @@ public class HomeController
 		return "services";
 	}
 	
+	@RequestMapping(value = "/gun",method = RequestMethod.GET)
+	public String Gun(Model model)
+	{
+		return "gun";
+	}
+	
 	@GetMapping(value = "/login")
 	public String Login() 
 	{
