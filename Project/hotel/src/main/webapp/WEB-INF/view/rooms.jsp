@@ -805,7 +805,7 @@
 										<c:if test="${room.status eq 'none'}">
 											<tr style="padding: 5px;">
 												<td style="padding: 10px;">Phòng:</td>
-												<%while (i<5){ %>
+												<%while (i<5){ i++;%>
 												<td>
 													<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
 												</td>
@@ -881,7 +881,7 @@
 										<c:if test="${room.status eq 'none'}">
 											<tr style="padding: 5px;">
 												<td style="padding: 10px;">Phòng:</td>
-												<%while (i<5){ %>
+												<%while (i<5){ i++;%>
 												<td>
 													<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
 												</td>
@@ -957,7 +957,7 @@
 										<c:if test="${room.status eq 'none'}">
 											<tr style="padding: 5px;">
 												<td style="padding: 10px;">Phòng:</td>
-												<%while (i<5){ %>
+												<%while (i<5){ i++;%>
 												<td>
 													<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
 												</td>
@@ -1033,7 +1033,7 @@
 										<c:if test="${room.status eq 'none'}">
 											<tr style="padding: 5px;">
 												<td style="padding: 10px;">Phòng:</td>
-												<%while (i<5){ %>
+												<%while (i<5){ i++;%>
 												<td>
 													<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
 												</td>
