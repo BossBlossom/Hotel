@@ -799,35 +799,36 @@
 						
 						<div class="inf-position">
 							<table style="border-collapse: collapse;">
-								
+								<%int i=0;%>
 								<c:forEach var="room" items="${rooms}">
 									<c:if test="${room.getRoomStyle().getName() eq 'Double'}">
 										<c:if test="${room.status eq 'none'}">
-											<tr>
-												<td>${room.roomNo}</td>
+											<tr style="padding: 5px;">
+												<td style="padding: 10px;">Phòng:</td>
+												<%while (i<5){ %>
+												<td>
+													<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
+												</td>
+												<%} %>
 											</tr>
 										</c:if>
 									</c:if>
 								</c:forEach>
 								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Phòng:</td>
-									<td><form:input path="roomNo"/></td>
-								</tr>
-								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Họ Tên:</td>
-									<td><form:input path="fullName"/></td>
+									<td colspan="5"><form:input path="fullName"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">CMND:</td>
-									<td><form:input path="cmnd"/></td>
+									<td colspan="5"><form:input path="cmnd"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Ngày nhận phòng:</td>
-									<td><form:input path="startedAt" type="date"/></td>
+									<td colspan="5"><form:input path="startedAt" type="date"/></td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Ngày trả phòng:</td>
-									<td><form:input path="endedAt" type="date"/></td>
+									<td colspan="5"><form:input path="endedAt" type="date"/></td>
 								</tr>
 
 							</table>
@@ -874,11 +875,21 @@
 						</div>
 						<div class="inf-position">
 							<table style="border-collapse: collapse;">
-							
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Phòng:</td>
-									<td><form:input path="roomNo"/></td>
-								</tr>
+								<%int i=0;%>
+								<c:forEach var="room" items="${rooms}">
+									<c:if test="${room.getRoomStyle().getName() eq 'Single'}">
+										<c:if test="${room.status eq 'none'}">
+											<tr style="padding: 5px;">
+												<td style="padding: 10px;">Phòng:</td>
+												<%while (i<5){ %>
+												<td>
+													<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
+												</td>
+												<%} %>
+											</tr>
+										</c:if>
+									</c:if>
+								</c:forEach>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Họ Tên:</td>
 									<td><form:input path="fullName"/></td>
@@ -940,11 +951,21 @@
 						</div>
 						<div class="inf-position">
 							<table style="border-collapse: collapse;">
-							
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Phòng:</td>
-									<td><form:input path="roomNo"/></td>
-								</tr>
+								<%int i=0;%>
+								<c:forEach var="room" items="${rooms}">
+									<c:if test="${room.getRoomStyle().getName() eq 'Super'}">
+										<c:if test="${room.status eq 'none'}">
+											<tr style="padding: 5px;">
+												<td style="padding: 10px;">Phòng:</td>
+												<%while (i<5){ %>
+												<td>
+													<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
+												</td>
+												<%} %>
+											</tr>
+										</c:if>
+									</c:if>
+								</c:forEach>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Họ Tên:</td>
 									<td><form:input path="fullName"/></td>
@@ -1006,11 +1027,21 @@
 						</div>
 						<div class="inf-position">
 							<table style="border-collapse: collapse;">
-							
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Phòng:</td>
-									<td><form:input path="roomNo"/></td>
-								</tr>
+								<%int i=0;%>
+								<c:forEach var="room" items="${rooms}">
+									<c:if test="${room.getRoomStyle().getName() eq 'Delux'}">
+										<c:if test="${room.status eq 'none'}">
+											<tr style="padding: 5px;">
+												<td style="padding: 10px;">Phòng:</td>
+												<%while (i<5){ %>
+												<td>
+													<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
+												</td>
+												<%} %>
+											</tr>
+										</c:if>
+									</c:if>
+								</c:forEach>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Họ Tên:</td>
 									<td><form:input path="fullName"/></td>

@@ -29,9 +29,15 @@ public class ProductDao {
 		return products;
 	}
 	
-	public List<Product> findByProduct(String product)
+	public List<Product> findById(int id)
 	{
 		return new ArrayList<>();
+	}
+	
+	public Product find(int id)
+	{
+		Product product = getSession().find(Product.class, id);
+		return product;
 	}
 	
 	public Product create(Product product)

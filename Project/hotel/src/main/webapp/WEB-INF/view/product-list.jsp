@@ -30,40 +30,33 @@
 
 	<article>
 		<div id="filter" style="margin-bottom: 50px;">
-			<input type="text" id="inp1" class="myInput" onkeyup="myFunction1()" placeholder="Search for room no..." title="Type in a no"> 
-			<input type="text" id="inp2" class="myInput" onkeyup="myFunction2()" placeholder="Search for status..." title="Type in a status">
+			<input type="text" id="inp1" class="myInput" onkeyup="myFunction1()" placeholder="Search for name..." title="Type in a name"> 
+			<input type="text" id="inp2" class="myInput" onkeyup="myFunction2()" placeholder="Search for type..." title="Type in a type">
 		</div>
 
 		<div id="myFilter">
-			<c:forEach var="roon" items="${rooms}">
-				<div class="room">
-					<table>
-						<tr>
-							<td style="color: #ffff00;">loại sản phẩm</td>
-						</tr>
-						<tr>
-							<td>tên sản phẩm</td>
-						</tr>
-						<tr>
-							<td>giá tiền của sản phẩm</td>
-						</tr>
-					</table>
-
-
-					<span class="dropdown">
-						<button class="dropbtn">&#9947;</button> <span
-						class="dropdown-content"> <a
-							href='<spring:url value="/manager-list/view-room?roomNo=${room.roomNo}" />'>view</a>
-							<a href="#">update date</a> <a
-							href='<spring:url value="/manager-list/order?roomNo=${room.roomNo}" />'>order</a>
-							<a href="#">customer view</a> <a
-							href='<spring:url value="/manager-list/check-out?roomNo=${room.roomNo}" />'>check
-								out</a> <a href="#">history</a>
-					</span>
-					</span>
-
-				</div>
-			</c:forEach>
+			<table>
+				<tr>
+					<td>Hình</td>
+					<td>Tên</td>
+					<td>Loại</td>
+					<td>Giá</td>
+					<td colspan="2">action</td>
+				</tr>
+				<hr>
+				<c:forEach var="product" items="${product}">
+					<tr>
+						<td>Hình</td>
+						<td>Tên</td>
+						<td>Loại</td>
+						<td>Giá</td>
+						<td>update</td>
+						<td>delete</td>	
+					</tr>
+					<hr>
+				</c:forEach>
+			</table>
+			
 		</div>
 
 	</article>
