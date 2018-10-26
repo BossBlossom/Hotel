@@ -811,7 +811,9 @@
 								</c:forEach>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Phòng:</td>
-									<td><form:input path="roomNo"/></td>
+									<td>
+									<form:input path="roomNo"/>
+									</td>
 								</tr>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Họ Tên:</td>

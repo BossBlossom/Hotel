@@ -1,5 +1,7 @@
 package vn.com.java.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationTrustResolver;
 import org.springframework.security.core.Authentication;
@@ -13,8 +15,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import vn.com.java.entity.Room;
 import vn.com.java.model.BookingInformationModel;
 import vn.com.java.service.BookingInformationService;
+import vn.com.java.service.RoomService;
 
 @Controller
 @RequestMapping("/")
@@ -26,10 +30,16 @@ public class HomeController
 	@Autowired
 	private BookingInformationService bookingInformationService;
 	
+	@Autowired
+	private RoomService roomService;
+	
 	@GetMapping
 	public String index( Model model) {
 		BookingInformationModel bookingInformationModel = new BookingInformationModel();
 		model.addAttribute("booking", bookingInformationModel);
+		
+		List<Room> rooms = roomService.findAll();
+		model.addAttribute("rooms", rooms);
 		
 		return "rooms";
 	}
@@ -38,7 +48,9 @@ public class HomeController
 	public String handleBookingCustomer(@ModelAttribute("booking") BookingInformationModel bookingInformationModel, BindingResult result, Model model)
 	{
 		bookingInformationService.createBookingInformationCustomer(bookingInformationModel);
-		return "rooms";
+		
+		
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value = "/about",method = RequestMethod.GET)
