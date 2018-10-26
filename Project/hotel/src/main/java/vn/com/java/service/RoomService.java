@@ -22,6 +22,10 @@ public class RoomService
 	@Autowired
 	private RoomStyleDao roomStyleDao;
 	
+	public List<Room> findAll() {
+		return roomDao.findAll();
+	}
+	
 	public List<Room> search(int roomNo)
 	{
 		if(roomNo <= 0)
