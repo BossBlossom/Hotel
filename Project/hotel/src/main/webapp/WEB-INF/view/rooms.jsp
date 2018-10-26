@@ -495,8 +495,8 @@
 									<a href="about">sự sang trọng của khách sạn starhome</a>
 								</h4>
 								<h5>
-									Được viết bởi <font color="red">Thiên Ân</font> <a><i aria-hidden="true"
-										class="fa fa-heart-o fa-lg"></i>Thích</a><a><i
+									Được viết bởi <font color="red">Thiên Ân</font> <a><i
+										aria-hidden="true" class="fa fa-heart-o fa-lg"></i>Thích</a><a><i
 										aria-hidden="true" class="fa fa-comment-o fa-lg"></i>Bình luận</a>
 								</h5>
 								<p>Khu nghỉ dưỡng StarHome năm sâu trong hồ Tuyền Lâm. Là
@@ -524,12 +524,11 @@
 						<div class="col-md-6 col-sm-6 col-xs-12 side-in-image">
 							<div class="event-blog-details">
 								<h4>
-									<a href="about">Những hoạt động ở Khách sạn
-										Homestar</a>
+									<a href="about">Những hoạt động ở Khách sạn Homestar</a>
 								</h4>
 								<h5>
-									Được viết bởi <font color="red">Thiên Ân</font> <a><i aria-hidden="true"
-										class="fa fa-heart-o fa-lg"></i>Thích</a><a><i
+									Được viết bởi <font color="red">Thiên Ân</font> <a><i
+										aria-hidden="true" class="fa fa-heart-o fa-lg"></i>Thích</a><a><i
 										aria-hidden="true" class="fa fa-comment-o fa-lg"></i>Bình luận</a>
 								</h5>
 								<p>Resort luôn được chăm sóc kĩ lưỡng và cực kì chu đáo. Ở
@@ -751,8 +750,9 @@
 				</div>
 
 				<div class="copyright">
-					&copy; 2017 All right reserved. Designed by <a href="https://thienan1999.wordpress.com/"
-						target="_blank">Thien An.</a>
+					&copy; 2017 All right reserved. Designed by <a
+						href="https://thienan1999.wordpress.com/" target="_blank">Thien
+						An.</a>
 				</div>
 
 			</div>
@@ -767,311 +767,347 @@
 
 
 
-	<form:form modelAttribute="booking" action="booking" method="post">
-		<div class="modal fade" id="myModal4" tabindex="-1" role="dialog"
-			aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle"
-							style="font-size: 30px;">Điền thông tin đặt phòng</h5>
-					</div>
-		
-					<div class="modal-body" style="height: 350px; margin-right: 0;">
-						<div class="image-position">
-							<table>
-								<tr>
-									<td><img
-										src='<spring:url value="resources/Home_resources/images/room9.jpg"/>'
-										class="main-image"></td>
-								</tr>
-								<tr>
-									<td><img
-										src='<spring:url value="resources/Home_resources/images/room10.jpg"/>'
-										class="image-img"> <img
-										src='<spring:url value="resources/Home_resources/images/room11.jpg"/>'
-										class="image-img"> <img
-										src='<spring:url value="resources/Home_resources/images/room12.jpg"/>'
-										class="image-img"></td>
-								</tr>
-							</table>
+		<form:form modelAttribute="booking" action="booking" method="post">
+			<div class="modal fade" id="myModal4" tabindex="-1" role="dialog"
+				aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLongTitle"
+								style="font-size: 30px;">Điền thông tin đặt phòng</h5>
 						</div>
-						
-						<div class="inf-position">
-							<table style="border-collapse: collapse;">
-								<%int i=0;%>
-								<c:forEach var="room" items="${rooms}">
-									<c:if test="${room.getRoomStyle().getName() eq 'Double'}">
-										<tr style="padding: 5px;">
-											<td style="padding: 10px;">Phòng:</td>
+
+						<div class="modal-body" style="height: 350px; margin-right: 0;">
+							<div class="image-position">
+								<table>
+									<tr>
+										<td><img
+											src='<spring:url value="resources/Home_resources/images/room9.jpg"/>'
+											class="main-image"></td>
+									</tr>
+									<tr>
+										<td><img
+											src='<spring:url value="resources/Home_resources/images/room10.jpg"/>'
+											class="image-img"> <img
+											src='<spring:url value="resources/Home_resources/images/room11.jpg"/>'
+											class="image-img"> <img
+											src='<spring:url value="resources/Home_resources/images/room12.jpg"/>'
+											class="image-img"></td>
+									</tr>
+								</table>
+							</div>
+
+							<div class="inf-position">
+								<table style="border-collapse: collapse;">
+									<%
+										int i = 0;
+									%>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Phòng:</td>
+										<c:forEach var="room" items="${rooms}">
+											<c:if test="${room.getRoomStyle().getName() eq 'Double'}">
 												<c:if test="${room.status eq 'none'}">
-													<%if (i<5) { i++;%>
-														<td>
-															<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
-														</td>	
-													<%} %>
+													<%
+														if (i < 5) {
+																			i++;
+													%>
+													<td><form:radiobutton path="roomNo"
+															value="${room.roomNo}" /> ${room.roomNo}</td>
+													<%
+														}
+													%>
 												</c:if>
-										</tr>
-									</c:if>
-								</c:forEach>
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Họ Tên:</td>
-									<td colspan="5"><form:input path="fullName"/></td>
-								</tr>
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">CMND:</td>
-									<td colspan="5"><form:input path="cmnd"/></td>
-								</tr>
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Ngày nhận phòng:</td>
-									<td colspan="5"><form:input path="startedAt" type="date"/></td>
-								</tr>
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Ngày trả phòng:</td>
-									<td colspan="5"><form:input path="endedAt" type="date"/></td>
-								</tr>
+											</c:if>
+										</c:forEach>
+										<%if (i==0){ %>
+										<td>Không còn phòng trống loại này!</td>
+										<%} %>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Họ Tên:</td>
+										<td colspan="5"><form:input path="fullName" /></td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">CMND:</td>
+										<td colspan="5"><form:input path="cmnd" /></td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Ngày nhận phòng:</td>
+										<td colspan="5"><form:input path="startedAt" type="date" /></td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Ngày trả phòng:</td>
+										<td colspan="5"><form:input path="endedAt" type="date" /></td>
+									</tr>
 
-							</table>
+								</table>
+							</div>
 						</div>
-					</div>
 
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">CLOSE</button>
-						<button type="submit" class="btn btn-primary">BOOKING</button>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">CLOSE</button>
+							<button type="submit" class="btn btn-primary">BOOKING</button>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>		
-	</form:form>	
-	<form:form modelAttribute="booking" action="booking" method="post">
-		<div class="modal fade" id="myModal3" tabindex="-1" role="dialog"
-			aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle"
-							style="font-size: 30px;">Điền thông tin đặt phòng</h5>
-					</div>
-
-					<div class="modal-body" style="height: 350px; margin-right: 0;">
-						<div class="image-position">
-							<table>
-								<tr>
-									<td><img
-										src='<spring:url value="resources/Home_resources/images/room13.jpg"/>'
-										class="main-image"></td>
-								</tr>
-								<tr>
-									<td><img
-										src='<spring:url value="resources/Home_resources/images/room14.jpg"/>'
-										class="image-img"> <img
-										src='<spring:url value="resources/Home_resources/images/room15.jpg"/>'
-										class="image-img"> <img
-										src='<spring:url value="resources/Home_resources/images/room16.jpg"/>'
-										class="image-img"></td>
-								</tr>
-							</table>
+		</form:form>
+		<form:form modelAttribute="booking" action="booking" method="post">
+			<div class="modal fade" id="myModal3" tabindex="-1" role="dialog"
+				aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLongTitle"
+								style="font-size: 30px;">Điền thông tin đặt phòng</h5>
 						</div>
-						<div class="inf-position">
-							<table style="border-collapse: collapse;">
-								<%int i=0;%>
-								<c:forEach var="room" items="${rooms}">
-									<c:if test="${room.getRoomStyle().getName() eq 'Single'}">
-										<tr style="padding: 5px;">
-											<td style="padding: 10px;">Phòng:</td>
+
+						<div class="modal-body" style="height: 350px; margin-right: 0;">
+							<div class="image-position">
+								<table>
+									<tr>
+										<td><img
+											src='<spring:url value="resources/Home_resources/images/room13.jpg"/>'
+											class="main-image"></td>
+									</tr>
+									<tr>
+										<td><img
+											src='<spring:url value="resources/Home_resources/images/room14.jpg"/>'
+											class="image-img"> <img
+											src='<spring:url value="resources/Home_resources/images/room15.jpg"/>'
+											class="image-img"> <img
+											src='<spring:url value="resources/Home_resources/images/room16.jpg"/>'
+											class="image-img"></td>
+									</tr>
+								</table>
+							</div>
+							<div class="inf-position">
+								<table style="border-collapse: collapse;">
+									<%
+										int i = 0;
+									%>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Phòng:</td>
+										<c:forEach var="room" items="${rooms}">
+											<c:if test="${room.getRoomStyle().getName() eq 'Single'}">
 												<c:if test="${room.status eq 'none'}">
-													<%if (i<5) { i++;%>
-														<td>
-															<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
-														</td>	
-													<%} %>
+													<%
+														if (i < 5) {
+																			i++;
+													%>
+													<td><form:radiobutton path="roomNo"
+															value="${room.roomNo}" /> ${room.roomNo}</td>
+													<%
+														}
+													%>
 												</c:if>
-										</tr>
-									</c:if>
-								</c:forEach>
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Họ Tên:</td>
-									<td><form:input path="fullName"/></td>
-								</tr>
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">CMND:</td>
-									<td><form:input path="cmnd"/></td>
-								</tr>
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Ngày nhận phòng:</td>
-									<td><form:input path="startedAt" type="date"/></td>
-								</tr>
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Ngày trả phòng:</td>
-									<td><form:input path="endedAt" type="date"/></td>
-								</tr>
+											</c:if>
+										</c:forEach>
+										<%if (i==0){ %>
+										<td>Không còn phòng trống loại này!</td>
+										<%} %>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Họ Tên:</td>
+										<td><form:input path="fullName" /></td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">CMND:</td>
+										<td><form:input path="cmnd" /></td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Ngày nhận phòng:</td>
+										<td><form:input path="startedAt" type="date" /></td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Ngày trả phòng:</td>
+										<td><form:input path="endedAt" type="date" /></td>
+									</tr>
 
-							</table>
+								</table>
+							</div>
 						</div>
-					</div>
 
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">CLOSE</button>
-						<button type="submit" class="btn btn-primary">BOOKING</button>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">CLOSE</button>
+							<button type="submit" class="btn btn-primary">BOOKING</button>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</form:form>	
-	<form:form modelAttribute="booking" action="booking" method="post">
-		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
-			aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle"
-							style="font-size: 30px;">Điền thông tin đặt phòng</h5>
-					</div>
-
-					<div class="modal-body" style="height: 350px; margin-right: 0;">
-						<div class="image-position">
-							<table>
-								<tr>
-									<td><img
-										src='<spring:url value="resources/Home_resources/images/room5.jpg"/>'
-										class="main-image"></td>
-								</tr>
-								<tr>
-									<td><img
-										src='<spring:url value="resources/Home_resources/images/room6.jpg"/>'
-										class="image-img"> <img
-										src='<spring:url value="resources/Home_resources/images/room7.jpg"/>'
-										class="image-img"> <img
-										src='<spring:url value="resources/Home_resources/images/room8.jpg"/>'
-										class="image-img"></td>
-								</tr>
-							</table>
+		</form:form>
+		<form:form modelAttribute="booking" action="booking" method="post">
+			<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
+				aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLongTitle"
+								style="font-size: 30px;">Điền thông tin đặt phòng</h5>
 						</div>
-						<div class="inf-position">
-							<table style="border-collapse: collapse;">
-								<%int i=0;%>
-								<c:forEach var="room" items="${rooms}">
-									<c:if test="${room.getRoomStyle().getName() eq 'Super'}">
-										<tr style="padding: 5px;">
-											<td style="padding: 10px;">Phòng:</td>
+
+						<div class="modal-body" style="height: 350px; margin-right: 0;">
+							<div class="image-position">
+								<table>
+									<tr>
+										<td><img
+											src='<spring:url value="resources/Home_resources/images/room5.jpg"/>'
+											class="main-image"></td>
+									</tr>
+									<tr>
+										<td><img
+											src='<spring:url value="resources/Home_resources/images/room6.jpg"/>'
+											class="image-img"> <img
+											src='<spring:url value="resources/Home_resources/images/room7.jpg"/>'
+											class="image-img"> <img
+											src='<spring:url value="resources/Home_resources/images/room8.jpg"/>'
+											class="image-img"></td>
+									</tr>
+								</table>
+							</div>
+							<div class="inf-position">
+								<table style="border-collapse: collapse;">
+									<%
+										int i = 0;
+									%>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Phòng:</td>
+										<c:forEach var="room" items="${rooms}">
+											<c:if test="${room.getRoomStyle().getName() eq 'Super'}">
 												<c:if test="${room.status eq 'none'}">
-													<%if (i<5) { i++;%>
-														<td>
-															<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
-														</td>	
-													<%} %>
+													<%
+														if (i < 5) {
+																			i++;
+													%>
+													<td><form:radiobutton path="roomNo"
+															value="${room.roomNo}" /> ${room.roomNo}</td>
+													<%
+														}
+													%>
 												</c:if>
-										</tr>
-									</c:if>
-								</c:forEach>
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Họ Tên:</td>
-									<td><form:input path="fullName"/></td>
-								</tr>
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">CMND:</td>
-									<td><form:input path="cmnd"/></td>
-								</tr>
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Ngày nhận phòng:</td>
-									<td><form:input path="startedAt" type="date"/></td>
-								</tr>
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Ngày trả phòng:</td>
-									<td><form:input path="endedAt" type="date"/></td>
-								</tr>
+											</c:if>
+										</c:forEach>
+										<%if (i==0){ %>
+										<td>Không còn phòng trống loại này!</td>
+										<%} %>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Họ Tên:</td>
+										<td><form:input path="fullName" /></td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">CMND:</td>
+										<td><form:input path="cmnd" /></td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Ngày nhận phòng:</td>
+										<td><form:input path="startedAt" type="date" /></td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Ngày trả phòng:</td>
+										<td><form:input path="endedAt" type="date" /></td>
+									</tr>
 
-							</table>
+								</table>
+							</div>
 						</div>
-					</div>
 
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">CLOSE</button>
-						<button type="submit" class="btn btn-primary">BOOKING</button>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">CLOSE</button>
+							<button type="submit" class="btn btn-primary">BOOKING</button>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</form:form>	
-	<form:form modelAttribute="booking" action="booking" method="post">
-		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog"
-			aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle"
-							style="font-size: 30px;">Điền thông tin đặt phòng</h5>
-					</div>
-
-					<div class="modal-body" style="height: 350px; margin-right: 0;">
-						<div class="image-position">
-							<table>
-								<tr>
-									<td><img
-										src='<spring:url value="resources/Home_resources/images/room1.jpg"/>'
-										class="main-image"></td>
-								</tr>
-								<tr>
-									<td><img
-										src='<spring:url value="resources/Home_resources/images/room2.jpg"/>'
-										class="image-img"> <img
-										src='<spring:url value="resources/Home_resources/images/room3.jpg"/>'
-										class="image-img"> <img
-										src='<spring:url value="resources/Home_resources/images/room4.jpg"/>'
-										class="image-img"></td>
-								</tr>
-							</table>
+		</form:form>
+		<form:form modelAttribute="booking" action="booking" method="post">
+			<div class="modal fade" id="myModal1" tabindex="-1" role="dialog"
+				aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLongTitle"
+								style="font-size: 30px;">Điền thông tin đặt phòng</h5>
 						</div>
-						<div class="inf-position">
-							<table style="border-collapse: collapse;">
-								<%int i=0;%>
-								<c:forEach var="room" items="${rooms}">
-									<c:if test="${room.getRoomStyle().getName() eq 'Delux'}">
-										<tr style="padding: 5px;">
-											<td style="padding: 10px;">Phòng:</td>
+
+						<div class="modal-body" style="height: 350px; margin-right: 0;">
+							<div class="image-position">
+								<table>
+									<tr>
+										<td><img
+											src='<spring:url value="resources/Home_resources/images/room1.jpg"/>'
+											class="main-image"></td>
+									</tr>
+									<tr>
+										<td><img
+											src='<spring:url value="resources/Home_resources/images/room2.jpg"/>'
+											class="image-img"> <img
+											src='<spring:url value="resources/Home_resources/images/room3.jpg"/>'
+											class="image-img"> <img
+											src='<spring:url value="resources/Home_resources/images/room4.jpg"/>'
+											class="image-img"></td>
+									</tr>
+								</table>
+							</div>
+							<div class="inf-position">
+								<table style="border-collapse: collapse;">
+									<%
+										int i = 0;
+									%>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Phòng:</td>
+										<c:forEach var="room" items="${rooms}">
+											<c:if test="${room.getRoomStyle().getName() eq 'Delux'}">
 												<c:if test="${room.status eq 'none'}">
-													<%if (i<5) { i++;%>
-														<td>
-															<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
-														</td>	
-													<%} %>
+													<%
+														if (i < 5) {
+																			i++;
+													%>
+													<td><form:radiobutton path="roomNo"
+															value="${room.roomNo}" /> ${room.roomNo}</td>
+													<%
+														}
+													%>
 												</c:if>
-										</tr>
-									</c:if>
-								</c:forEach>
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Họ Tên:</td>
-									<td><form:input path="fullName"/></td>
-								</tr>
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">CMND:</td>
-									<td><form:input path="cmnd"/></td>
-								</tr>
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Ngày nhận phòng:</td>
-									<td><form:input path="startedAt" type="date"/></td>
-								</tr>
-								<tr style="padding: 5px;">
-									<td style="padding: 10px;">Ngày trả phòng:</td>
-									<td><form:input path="endedAt" type="date"/></td>
-								</tr>
+											</c:if>
+										</c:forEach>
+										<%if (i==0){ %>
+										<td>Không còn phòng trống loại này!</td>
+										<%} %>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Họ Tên:</td>
+										<td><form:input path="fullName" /></td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">CMND:</td>
+										<td><form:input path="cmnd" /></td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Ngày nhận phòng:</td>
+										<td><form:input path="startedAt" type="date" /></td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Ngày trả phòng:</td>
+										<td><form:input path="endedAt" type="date" /></td>
+									</tr>
 
-							</table>
+								</table>
+							</div>
 						</div>
-					</div>
 
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">CLOSE</button>
-						<button type="submit" class="btn btn-primary">BOOKING</button>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">CLOSE</button>
+							<button type="submit" class="btn btn-primary">BOOKING</button>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</form:form>
+		</form:form>
 
 
 	</div>
