@@ -21,8 +21,6 @@ public class ProductModel {
 		this.style = style;
 	}
 
-
-
 	public Product toProduct(Product product)
 	{
 		product.setProduct(this.product);

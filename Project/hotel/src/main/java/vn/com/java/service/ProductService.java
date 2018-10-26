@@ -17,13 +17,18 @@ public class ProductService {
 	@Autowired
 	private ProductDao productDao;
 	
-	public List<Product> search(String product)
+	public List<Product> search(int id)
 	{
-		if(product == null)
+		if(id == 0)
 		{
 			return productDao.findAll();
 		}
-		return productDao.findByProduct(product);
+		return productDao.findById(id);
+	}
+	
+	public Product find(int id)
+	{
+		return productDao.find(id);
 	}
 	
 	public Product createProduct(ProductModel productModel)
@@ -44,7 +49,7 @@ public class ProductService {
 		return result;
 	}
 	
-	public Product deleteOrder(ProductModel productModel) 
+	public Product deleteProduct(ProductModel productModel) 
 	{
 		Product product = new Product();
 		productModel.toProduct(product);
