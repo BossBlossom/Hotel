@@ -67,7 +67,7 @@ public class RoomController
 		
 		model.addAttribute("room", roomModel);
 		
-		return "manager-view-room";
+		return "view-room";
 	}
 	
 	@RequestMapping(value = "/closed", method = RequestMethod.GET)

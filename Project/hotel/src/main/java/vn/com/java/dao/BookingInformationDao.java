@@ -42,6 +42,12 @@ public class BookingInformationDao
 		return bookingInformation;
 	}
 	
+	public BookingInformation findByCustomer(int cmnd)
+	{
+		BookingInformation bookingInformation = getSession().find(BookingInformation.class, cmnd);
+		return bookingInformation;
+	}
+	
 	public BookingInformation create(BookingInformation bookingInformation)
 	{
 		getSession().save(bookingInformation);

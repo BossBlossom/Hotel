@@ -776,7 +776,7 @@
 						<h5 class="modal-title" id="exampleModalLongTitle"
 							style="font-size: 30px;">Điền thông tin đặt phòng</h5>
 					</div>
-
+		
 					<div class="modal-body" style="height: 350px; margin-right: 0;">
 						<div class="image-position">
 							<table>
@@ -796,9 +796,19 @@
 								</tr>
 							</table>
 						</div>
+						
 						<div class="inf-position">
 							<table style="border-collapse: collapse;">
-							
+								
+								<c:forEach var="room" items="${rooms}">
+									<c:if test="${room.getRoomStyle().getName() eq 'Double'}">
+										<c:if test="${room.status eq 'none'}">
+											<tr>
+												<td>${room.roomNo}</td>
+											</tr>
+										</c:if>
+									</c:if>
+								</c:forEach>
 								<tr style="padding: 5px;">
 									<td style="padding: 10px;">Phòng:</td>
 									<td><form:input path="roomNo"/></td>
