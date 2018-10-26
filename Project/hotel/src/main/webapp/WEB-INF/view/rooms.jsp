@@ -802,16 +802,16 @@
 								<%int i=0;%>
 								<c:forEach var="room" items="${rooms}">
 									<c:if test="${room.getRoomStyle().getName() eq 'Double'}">
-										<c:if test="${room.status eq 'none'}">
-											<tr style="padding: 5px;">
-												<td style="padding: 10px;">Phòng:</td>
-												<%while (i<5){ i++;%>
-												<td>
-													<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
-												</td>
-												<%} %>
-											</tr>
-										</c:if>
+										<tr style="padding: 5px;">
+											<td style="padding: 10px;">Phòng:</td>
+												<c:if test="${room.status eq 'none'}">
+													<%if (i<5) { i++;%>
+														<td>
+															<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
+														</td>	
+													<%} %>
+												</c:if>
+										</tr>
 									</c:if>
 								</c:forEach>
 								<tr style="padding: 5px;">
@@ -878,16 +878,16 @@
 								<%int i=0;%>
 								<c:forEach var="room" items="${rooms}">
 									<c:if test="${room.getRoomStyle().getName() eq 'Single'}">
-										<c:if test="${room.status eq 'none'}">
-											<tr style="padding: 5px;">
-												<td style="padding: 10px;">Phòng:</td>
-												<%while (i<5){ i++;%>
-												<td>
-													<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
-												</td>
-												<%} %>
-											</tr>
-										</c:if>
+										<tr style="padding: 5px;">
+											<td style="padding: 10px;">Phòng:</td>
+												<c:if test="${room.status eq 'none'}">
+													<%if (i<5) { i++;%>
+														<td>
+															<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
+														</td>	
+													<%} %>
+												</c:if>
+										</tr>
 									</c:if>
 								</c:forEach>
 								<tr style="padding: 5px;">
@@ -954,16 +954,16 @@
 								<%int i=0;%>
 								<c:forEach var="room" items="${rooms}">
 									<c:if test="${room.getRoomStyle().getName() eq 'Super'}">
-										<c:if test="${room.status eq 'none'}">
-											<tr style="padding: 5px;">
-												<td style="padding: 10px;">Phòng:</td>
-												<%while (i<5){ i++;%>
-												<td>
-													<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
-												</td>
-												<%} %>
-											</tr>
-										</c:if>
+										<tr style="padding: 5px;">
+											<td style="padding: 10px;">Phòng:</td>
+												<c:if test="${room.status eq 'none'}">
+													<%if (i<5) { i++;%>
+														<td>
+															<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
+														</td>	
+													<%} %>
+												</c:if>
+										</tr>
 									</c:if>
 								</c:forEach>
 								<tr style="padding: 5px;">
@@ -1030,16 +1030,16 @@
 								<%int i=0;%>
 								<c:forEach var="room" items="${rooms}">
 									<c:if test="${room.getRoomStyle().getName() eq 'Delux'}">
-										<c:if test="${room.status eq 'none'}">
-											<tr style="padding: 5px;">
-												<td style="padding: 10px;">Phòng:</td>
-												<%while (i<5){ i++;%>
-												<td>
-													<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
-												</td>
-												<%} %>
-											</tr>
-										</c:if>
+										<tr style="padding: 5px;">
+											<td style="padding: 10px;">Phòng:</td>
+												<c:if test="${room.status eq 'none'}">
+													<%if (i<5) { i++;%>
+														<td>
+															<form:radiobutton path="roomNo" value="${room.roomNo}"/> ${room.roomNo}
+														</td>	
+													<%} %>
+												</c:if>
+										</tr>
 									</c:if>
 								</c:forEach>
 								<tr style="padding: 5px;">
