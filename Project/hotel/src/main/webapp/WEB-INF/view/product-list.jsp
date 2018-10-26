@@ -35,22 +35,28 @@
 		</div>
 
 		<div id="myFilter">
-			<c:forEach var="roon" items="${rooms}">
-				<div class="room">
-					<table>
-						<tr>
-							<td style="color: #ffff00;">loại sản phẩm</td>
-						</tr>
-						<tr>
-							<td>tên sản phẩm</td>
-						</tr>
-						<tr>
-							<td>giá tiền của sản phẩm</td>
-						</tr>
-					</table>
-
-				</div>
-			</c:forEach>
+			<table>
+				<tr>
+					<td>Hình</td>
+					<td>Tên</td>
+					<td>Loại</td>
+					<td>Giá</td>
+					<td colspan="2">action</td>
+				</tr>
+				<hr>
+				<c:forEach var="product" items="${product}">
+					<tr>
+						<td>Hình</td>
+						<td>Tên</td>
+						<td>Loại</td>
+						<td>Giá</td>
+						<td>update</td>
+						<td>delete</td>	
+					</tr>
+					<hr>
+				</c:forEach>
+			</table>
+			
 		</div>
 
 	</article>
