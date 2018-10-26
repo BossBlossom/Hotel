@@ -35,7 +35,7 @@ CREATE TABLE `room_style` (
 
 LOCK TABLES `room_style` WRITE;
 /*!40000 ALTER TABLE `room_style` DISABLE KEYS */;
-INSERT INTO `room_style` VALUES (1,'Single'),(2,'Double'),(3,'Super'),(4,'Delux');
+INSERT INTO `room_style` VALUES (1,'Single'),(2,'Double'),(3,'Supper'),(4,'Delux');
 /*!40000 ALTER TABLE `room_style` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-19 22:18:42
+-- Dump completed on 2018-10-26 20:49:59

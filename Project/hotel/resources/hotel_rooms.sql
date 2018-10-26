@@ -41,7 +41,7 @@ CREATE TABLE `rooms` (
 
 LOCK TABLES `rooms` WRITE;
 /*!40000 ALTER TABLE `rooms` DISABLE KEYS */;
-INSERT INTO `rooms` VALUES (101,1,1,300,'none',1),(102,1,2,500,'none',2),(107,1,1,300,'none',1),(201,1,2,500,'customer',2),(301,2,2,700,'check in',3),(401,2,1,1000,'check out',4);
+INSERT INTO `rooms` VALUES (101,1,1,300,'customer',1),(201,1,2,600,'customer',2),(301,2,3,800,'none',3),(401,3,2,1200,'none',4);
 /*!40000 ALTER TABLE `rooms` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-19 22:18:44
+-- Dump completed on 2018-10-26 20:50:00

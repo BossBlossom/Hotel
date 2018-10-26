@@ -23,15 +23,16 @@ DROP TABLE IF EXISTS `booking_histories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `booking_histories` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `check_in` varchar(255) DEFAULT NULL,
   `check_out` varchar(255) DEFAULT NULL,
-  `cmnd` int(11) NOT NULL,
-  `room_no` int(11) NOT NULL,
-  PRIMARY KEY (`room_no`,`cmnd`),
-  UNIQUE KEY `UK_c9w16gv8yjegb82gddj8tfstn` (`cmnd`),
+  `customer_id` int(11) DEFAULT NULL,
+  `room_no` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKe53rawn7gpr8dl011uxsunwoi` (`customer_id`),
+  KEY `FKbo6tcdk5j4ota1fc0wcq5x4ei` (`room_no`),
   CONSTRAINT `FKbo6tcdk5j4ota1fc0wcq5x4ei` FOREIGN KEY (`room_no`) REFERENCES `rooms` (`room_no`),
-  CONSTRAINT `FKcc9r1fauanduimmrv1ss1p1lp` FOREIGN KEY (`cmnd`) REFERENCES `customers` (`cmnd`)
+  CONSTRAINT `FKe53rawn7gpr8dl011uxsunwoi` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -53,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-19 22:18:43
+-- Dump completed on 2018-10-26 20:49:59

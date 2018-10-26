@@ -23,14 +23,15 @@ DROP TABLE IF EXISTS `bills`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `bills` (
-  `id` int(11) NOT NULL,
-  `product` varchar(255) NOT NULL,
-  `room_no` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `total` int(11) DEFAULT NULL,
-  PRIMARY KEY (`room_no`,`product`),
-  UNIQUE KEY `UK_pl94cgy9ws0t101p7qklj0srg` (`product`),
+  `product_id` int(11) DEFAULT NULL,
+  `room_no` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKja2jdwvsth2hkvlk8k334i822` (`product_id`),
+  KEY `FK8oxp6hkw1y2gjdqc65fobwsjf` (`room_no`),
   CONSTRAINT `FK8oxp6hkw1y2gjdqc65fobwsjf` FOREIGN KEY (`room_no`) REFERENCES `rooms` (`room_no`),
-  CONSTRAINT `FKff6sb2njabk62apsjvtro2kse` FOREIGN KEY (`product`) REFERENCES `products` (`product`)
+  CONSTRAINT `FKja2jdwvsth2hkvlk8k334i822` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -52,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-19 22:18:43
+-- Dump completed on 2018-10-26 20:49:59
