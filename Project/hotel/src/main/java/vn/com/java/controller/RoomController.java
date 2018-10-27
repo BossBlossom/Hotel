@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,8 +42,35 @@ public class RoomController
 	}
 	
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
-	public String handleCreate(@ModelAttribute("room") RoomModel roomModel, BindingResult result, Model model)
+	public String handleCreate(@ModelAttribute("room") RoomModel roomModel, 
+			@RequestParam(name="roomNo")int roomNo, @RequestParam(name="bed")int bed, 
+			@RequestParam(name="airConditioner")int airConditioner, @RequestParam(name="money")int money,
+			BindingResult result, ModelMap modelMap)
 	{
+		Room rooms = roomService.find(roomNo);
+		if(rooms != null)
+		{
+			modelMap.put("ketqua", "Số phòng này đã tồn tại!");
+			return "manager-create-room";
+		}
+		
+		if(roomNo == 0) {
+			modelMap.put("ketqua", "Bạn chưa nhập số phòng!");
+			return "manager-create-room";
+		}
+		else if(bed == 0) {
+			modelMap.put("ketqua2", "Bạn chưa nhập số lượng giường!");
+			return "manager-create-room";
+		}
+		else if(airConditioner == 0) {
+			modelMap.put("ketqua3", "Bạn chưa nhập số lượng máy lạnh!");
+			return "manager-create-room";
+		}
+		else if(money == 0) {
+			modelMap.put("ketqua4", "Bạn chưa nhập giá tiền!");
+			return "manager-create-room";
+		}
+		
 		if(result.hasErrors())
 		{
 			return "manager-create-room";
@@ -130,8 +158,24 @@ public class RoomController
 	}
 	
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public String handleUpdate(@RequestParam(name="roomNo")int roomNo, @ModelAttribute("room") RoomModel roomModel, BindingResult result, Model model)
+	public String handleUpdate(@ModelAttribute("room") RoomModel roomModel,
+			@RequestParam(name="bed")int bed, @RequestParam(name="airConditioner")int airConditioner, 
+			@RequestParam(name="money")int money, BindingResult result, ModelMap modelMap)
 	{
+		
+		if(bed == 0) {
+			modelMap.put("ketqua2", "Bạn chưa cập nhật số lượng giường!");
+			return "manager-update-room";
+		}
+		else if(airConditioner == 0) {
+			modelMap.put("ketqua3", "Bạn chưa cập nhật số lượng máy lạnh!");
+			return "manager-update-room";
+		}
+		else if(money == 0) {
+			modelMap.put("ketqua4", "Bạn chưa cập nhật giá tiền!");
+			return "manager-update-room";
+		}
+		
 		if(result.hasErrors())
 		{
 			return "manager-update-room";

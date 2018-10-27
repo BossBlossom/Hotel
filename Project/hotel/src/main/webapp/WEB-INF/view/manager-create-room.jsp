@@ -23,7 +23,6 @@
 </head>
 
 <body>
-
 	<header>
 		<h1 id="effectText1">MANAGER PAGE</h1>
 	</header>
@@ -51,24 +50,28 @@
 					</tr>
 					<tr>
 						<td>SỐ PHÒNG</td>
-						<td colspan="2"><form:input path="roomNo" /></td>
+						<td colspan="2"><form:input path="roomNo" name="roomNo" /></td>
+						<td id="msg" style="color: red">${ketqua}</td>
 					</tr>
 					<tr>
 						<td>GIƯỜNG</td>
-						<td colspan="2"><form:input path="bed" type="number" maxlength="3"/></td>
+						<td colspan="2"><form:input path="bed" name="bed" type="number" maxlength="3"/></td>
+						<td id="msg1" style="color: red">${ketqua2}</td>
 					</tr>
 					<tr>
 						<td>MÁY LẠNH</td>
-						<td colspan="2"><form:input path="airConditioner" type="number" maxlength="3"/></td>
+						<td colspan="2"><form:input path="airConditioner" name="airConditioner" type="number" maxlength="3"/></td>
+						<td id="msg2" style="color: red">${ketqua3}</td>
 					</tr>
 					<tr>
 						<td>GIÁ TIỀN</td>
-						<td colspan="2"><form:input path="money" type="number" step="10" /></td>
+						<td colspan="2"><form:input path="money" name="money" type="number" step="100" /></td>
+						<td id="msg3" style="color: red">${ketqua4}</td>
 					</tr>
 				</table>
-				<p>
-
-					<a style="margin: 10px 10px 10px 28%" href="#" onclick="submitForm('form1')">TẠO PHÒNG</a> <a
+				<span style="margin-bottom: 100px;"></span>
+				<p class="btn">
+					<a style="margin: 10px 10px 10px 34%" href="#" onclick="submitForm('form1')">TẠO PHÒNG</a> <a
 						href='<spring:url value="/manager-list" />'>TRỞ VỀ</a>
 				</p>
 			</div>

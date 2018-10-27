@@ -910,19 +910,19 @@
 									</tr>
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">Họ Tên:</td>
-										<td><form:input path="fullName" /></td>
+										<td colspan="5"><form:input path="fullName" /></td>
 									</tr>
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">CMND:</td>
-										<td><form:input path="cmnd" /></td>
+										<td colspan="5"><form:input path="cmnd" /></td>
 									</tr>
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">Ngày nhận phòng:</td>
-										<td><form:input path="startedAt" type="date" /></td>
+										<td colspan="5"><form:input path="startedAt" type="date" /></td>
 									</tr>
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">Ngày trả phòng:</td>
-										<td><form:input path="endedAt" type="date" /></td>
+										<td colspan="5"><form:input path="endedAt" type="date" /></td>
 									</tr>
 
 								</table>
@@ -995,19 +995,19 @@
 									</tr>
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">Họ Tên:</td>
-										<td><form:input path="fullName" /></td>
+										<td colspan="5"><form:input path="fullName" /></td>
 									</tr>
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">CMND:</td>
-										<td><form:input path="cmnd" /></td>
+										<td colspan="5"><form:input path="cmnd" /></td>
 									</tr>
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">Ngày nhận phòng:</td>
-										<td><form:input path="startedAt" type="date" /></td>
+										<td colspan="5"><form:input path="startedAt" type="date" /></td>
 									</tr>
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">Ngày trả phòng:</td>
-										<td><form:input path="endedAt" type="date" /></td>
+										<td colspan="5"><form:input path="endedAt" type="date" /></td>
 									</tr>
 
 								</table>
@@ -1080,19 +1080,19 @@
 									</tr>
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">Họ Tên:</td>
-										<td><form:input path="fullName" /></td>
+										<td colspan="5"><form:input path="fullName" /></td>
 									</tr>
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">CMND:</td>
-										<td><form:input path="cmnd" /></td>
+										<td colspan="5"><form:input path="cmnd" /></td>
 									</tr>
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">Ngày nhận phòng:</td>
-										<td><form:input path="startedAt" type="date" /></td>
+										<td colspan="5"><form:input path="startedAt" type="date" /></td>
 									</tr>
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">Ngày trả phòng:</td>
-										<td><form:input path="endedAt" type="date" /></td>
+										<td colspan="5"><form:input path="endedAt" type="date" /></td>
 									</tr>
 
 								</table>
