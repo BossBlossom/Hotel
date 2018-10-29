@@ -10,8 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Trang chủ Manager</title>
-<link rel="stylesheet" type="text/css"
-	href='<spring:url value="resources/css/style2.css"/>'>
+<link rel="stylesheet" type="text/css" href='<spring:url value="/resources/css/style2.css"/>'>
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
@@ -49,6 +48,11 @@
 						<tr>
 							<td>${room.status}</td>
 						</tr>
+						<c:if test="${room.status eq 'customer'}">
+							<tr>
+								
+							</tr>
+						</c:if>
 					</table>
 					
 					<c:if test="${room.status eq 'check in'}">

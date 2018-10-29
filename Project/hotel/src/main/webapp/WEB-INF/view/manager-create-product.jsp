@@ -51,10 +51,12 @@
 					<tr>
 						<td>ID</td>
 						<td colspan="2"><form:input path="roomNo" /></td>
+						<td id="msg" style="color: red">${ketqua}</td>
 					</tr>
 					<tr>
 						<td>TÊN SẢN PHẨM</td>
 						<td colspan="2"><form:input path="bed" type="text"/></td>
+						<td id="msg" style="color: red">${ketqua}</td>
 					</tr>
 					<tr>
 						<td>HÌNH ẢNH</td>
