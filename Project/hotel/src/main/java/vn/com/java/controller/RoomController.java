@@ -108,7 +108,7 @@ public class RoomController
 	public String view(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
 		BookingInformation bookingInformations = bookingInformationService.findRoomNo(roomNo);
-		model.addAttribute("rooms", bookingInformations);
+		model.addAttribute("room", bookingInformations);
 		
 		return "view-room";
 	}
