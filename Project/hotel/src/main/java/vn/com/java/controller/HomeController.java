@@ -47,7 +47,7 @@ public class HomeController
 	@RequestMapping(value = "/booking", method = RequestMethod.POST)
 	public String handleBookingCustomer(@ModelAttribute("booking") BookingInformationModel bookingInformationModel, BindingResult result, Model model)
 	{
-		bookingInformationService.createBookingInformation(bookingInformationModel);
+		bookingInformationService.createBookingInformationCustomer(bookingInformationModel);
 		
 		
 		return "redirect:/";

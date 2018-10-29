@@ -42,7 +42,7 @@ public class BookingInformationService
 		return bookingInformationDao.findByRoom(roomNo);
 	}
 	
-	public BookingInformation createBookingInformation(BookingInformationModel bookingInformationModel)
+	public BookingInformation createBookingInformationCustomer(BookingInformationModel bookingInformationModel)
 	{	
 		Customer customer = new Customer();
 		bookingInformationModel.toCustomer(customer);
@@ -50,6 +50,26 @@ public class BookingInformationService
 		
 		Room room = roomDao.find(bookingInformationModel.getRoomNo());
 		room.setStatus("customer");
+		roomDao.update(room);
+		
+		BookingInformation bookingInformation = new BookingInformation();
+		bookingInformationModel.toBookingInformation(bookingInformation);
+		bookingInformation.setCustomer(customer);
+		bookingInformation.setRoom(room);
+		
+		BookingInformation result = bookingInformationDao.create(bookingInformation);
+		
+		return result;
+	}
+	
+	public BookingInformation createBookingInformationManager(BookingInformationModel bookingInformationModel)
+	{	
+		Customer customer = new Customer();
+		bookingInformationModel.toCustomer(customer);
+		customerDao.create(customer);
+		
+		Room room = roomDao.find(bookingInformationModel.getRoomNo());
+		room.setStatus("check in");
 		roomDao.update(room);
 		
 		BookingInformation bookingInformation = new BookingInformation();

@@ -98,7 +98,7 @@ public class RoomController
 	@RequestMapping(value = "/booking", method = RequestMethod.POST)
 	public String handleBookingManager(@ModelAttribute("booking") BookingInformationModel bookingInformationModel, BindingResult result, Model model)
 	{
-		bookingInformationService.createBookingInformation(bookingInformationModel);
+		bookingInformationService.createBookingInformationManager(bookingInformationModel);
 		
 		
 		return "redirect:/manager-list";
