@@ -1,7 +1,5 @@
 package vn.com.java.service;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -34,7 +32,10 @@ public class BookingInformationService
 		{
 			return bookingInformationDao.findAll();
 		}
-		return bookingInformationDao.findAllByRoom(roomNo);
+		
+		BookingInformation bookingInformation = bookingInformationDao.findByRoom(roomNo);
+		int id = bookingInformation.getId();
+		return bookingInformationDao.findAllById(id);
 	}
 	
 	public BookingInformation findRoomNo(int roomNo)
