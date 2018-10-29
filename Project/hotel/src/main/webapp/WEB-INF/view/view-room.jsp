@@ -29,39 +29,58 @@
 
 	<c:url var="formUrl" value="/manager-list/view-room" />
 
-	<form:form modelAttribute="room" action="${formUrl}">
+	<c:forEach var="room" items="${rooms}">
 		<article>
 
 			<div>
 				<table>
 					<tr>
-						<td colspan="2">Chi tiết phòng ${room.roomNo}</td>
+						<td colspan="2">Chi tiết phòng ${room.getRoom().getRoomNo()}</td>
 					</tr>
 					<tr>
 						<td>Loại phòng: </td>
-						<td><form:input path="roomStyle" readonly/></td>
+						<td>${room.getRoom().getRoomStyle().getName()}</td>
 					</tr>
 					<tr>
 						<td>Trạng thái: </td>
-						<td><form:input path="status" readonly/></td>
+						<td>${room.getRoom().getStatus()}</td>
 					</tr>
 					<tr>
 						<td>Giường: </td>
-						<td><form:input path="bed" readonly/></td>
+						<td>${room.getRoom().getBed()}</td>
 					</tr>
 					<tr>
 						<td>Máy lạnh: </td>
-						<td><form:input path="airConditioner" readonly/></td>
+						<td>${room.getRoom().getAirConditioner()}</td>
 					</tr>
 					<tr>
 						<td>Giá tiền: </td>
-						<td><form:input path="money" readonly/></td>
+						<td>${room.getRoom().getMoney()}</td>
+					</tr>
+				</table>
+				
+				<table>
+					<tr>
+						<td></td>
+						<td>${room.getCustomer().getCmnd()}</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>${room.getCustomer().getFullName()}</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>${room.startedAt}</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>${room.endedAt}</td>
 					</tr>
 				</table>
 			</div>
-
+			
 		</article>
-	</form:form>
+	</c:forEach>
 
 		<footer>
 			<h3>Nơi dừng chân nghỉ ngơi hợp với túi tiền của bạn khi đi du

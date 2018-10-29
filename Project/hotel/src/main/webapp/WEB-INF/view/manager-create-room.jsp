@@ -65,7 +65,14 @@
 					</tr>
 					<tr>
 						<td>GIÁ TIỀN</td>
-						<td colspan="2"><form:input path="money" name="money" type="number" step="100" /></td>
+						<td colspan="2">
+						<form:select path="money">
+								<form:option value="300">300</form:option>
+								<form:option value="600">600</form:option>
+								<form:option value="800">800</form:option>
+								<form:option value="1200">1200</form:option>
+						</form:select>
+						</td>
 						<td id="msg3" style="color: red">${ketqua4}</td>
 					</tr>
 				</table>

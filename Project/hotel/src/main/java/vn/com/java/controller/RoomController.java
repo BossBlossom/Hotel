@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import vn.com.java.entity.BookingInformation;
 import vn.com.java.entity.Room;
+import vn.com.java.model.BookingInformationModel;
 import vn.com.java.model.RoomModel;
+import vn.com.java.service.BookingInformationService;
 import vn.com.java.service.RoomService;
 
 @Controller
@@ -22,6 +25,8 @@ public class RoomController
 {
 	@Autowired
 	private RoomService roomService;
+	@Autowired
+	private BookingInformationService bookingInformationService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(Model model)
@@ -84,16 +89,8 @@ public class RoomController
 	@RequestMapping(value = "/view-room", method = RequestMethod.GET)
 	public String view(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
-		Room room = roomService.find(roomNo);
-		if(room == null)
-		{
-			return"redirect:/manager-list";
-		}
-		
-		RoomModel roomModel = new RoomModel();
-		roomModel.fromRoom(room);
-		
-		model.addAttribute("room", roomModel);
+		List<BookingInformation> bookingInformations = bookingInformationService.search(roomNo);
+		model.addAttribute("rooms", bookingInformations);
 		
 		return "view-room";
 	}

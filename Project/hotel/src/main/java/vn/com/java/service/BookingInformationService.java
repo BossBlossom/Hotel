@@ -28,13 +28,13 @@ public class BookingInformationService
 	@Autowired
 	private BookingInformationDao bookingInformationDao;
 	
-	public List<BookingInformation> search(int id)
+	public List<BookingInformation> search(int roomNo)
 	{
-		if(id<=0)
+		if(roomNo<=0)
 		{
 			return bookingInformationDao.findAll();
 		}
-		return bookingInformationDao.findAllById(id);
+		return bookingInformationDao.findAllByRoom(roomNo);
 	}
 	
 	public BookingInformation findRoomNo(int roomNo)
