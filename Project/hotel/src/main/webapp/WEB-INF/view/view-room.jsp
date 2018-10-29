@@ -28,7 +28,6 @@
 
 	<c:url var="formUrl" value="/manager-list/view-room" />
 
-	<c:forEach var="room" items="${rooms}">
 		<article>
 
 			<div>
@@ -58,7 +57,7 @@
 					</tr>
 				</table>
 				
-				<c:if test="${(room.getRoom().getStatus() eq 'customer') or (room.getRoom().getStatus() eq 'check in')}">
+				<c:if test="${room.getRoom().getStatus() eq 'customer' or 'check in'}">
 				<table>
 					<tr>
 						<td></td>
@@ -82,7 +81,6 @@
 			</div>
 			
 		</article>
-	</c:forEach>
 
 		<footer>
 			<h3>Nơi dừng chân nghỉ ngơi hợp với túi tiền của bạn khi đi du
