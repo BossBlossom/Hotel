@@ -107,7 +107,7 @@ public class RoomController
 	@RequestMapping(value = "/view-room", method = RequestMethod.GET)
 	public String view(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
-		List<BookingInformation> bookingInformations = bookingInformationService.search(roomNo);
+		BookingInformation bookingInformations = bookingInformationService.findRoomNo(roomNo);
 		model.addAttribute("rooms", bookingInformations);
 		
 		return "view-room";
