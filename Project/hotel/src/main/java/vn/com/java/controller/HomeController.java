@@ -34,7 +34,7 @@ public class HomeController
 	private RoomService roomService;
 	
 	@GetMapping
-	public String index( Model model) {
+	public String index(Model model) {
 		BookingInformationModel bookingInformationModel = new BookingInformationModel();
 		model.addAttribute("booking", bookingInformationModel);
 		
@@ -47,7 +47,7 @@ public class HomeController
 	@RequestMapping(value = "/booking", method = RequestMethod.POST)
 	public String handleBookingCustomer(@ModelAttribute("booking") BookingInformationModel bookingInformationModel, BindingResult result, Model model)
 	{
-		bookingInformationService.createBookingInformationCustomer(bookingInformationModel);
+		bookingInformationService.createBookingInformation(bookingInformationModel);
 		
 		
 		return "redirect:/";

@@ -86,6 +86,24 @@ public class RoomController
 		return "redirect:/manager-list";
 	}
 	
+	@RequestMapping(value="/create", method = RequestMethod.GET)
+	public String booking(Model model)
+	{
+		BookingInformationModel bookingInformationModel = new BookingInformationModel();
+		model.addAttribute("booking", bookingInformationModel);
+		
+		return "manager-booking-room";
+	}
+	
+	@RequestMapping(value = "/booking", method = RequestMethod.POST)
+	public String handleBookingManager(@ModelAttribute("booking") BookingInformationModel bookingInformationModel, BindingResult result, Model model)
+	{
+		bookingInformationService.createBookingInformation(bookingInformationModel);
+		
+		
+		return "redirect:/manager-list";
+	}
+	
 	@RequestMapping(value = "/view-room", method = RequestMethod.GET)
 	public String view(@RequestParam(name="roomNo")int roomNo, Model model)
 	{

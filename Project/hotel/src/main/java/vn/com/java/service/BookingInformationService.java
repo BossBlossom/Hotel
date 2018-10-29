@@ -42,7 +42,7 @@ public class BookingInformationService
 		return bookingInformationDao.findByRoom(roomNo);
 	}
 	
-	public BookingInformation createBookingInformationCustomer(BookingInformationModel bookingInformationModel)
+	public BookingInformation createBookingInformation(BookingInformationModel bookingInformationModel)
 	{	
 		Customer customer = new Customer();
 		bookingInformationModel.toCustomer(customer);
@@ -57,27 +57,6 @@ public class BookingInformationService
 		bookingInformation.setCustomer(customer);
 		bookingInformation.setRoom(room);
 		
-		BookingInformation result = bookingInformationDao.create(bookingInformation);
-		
-		return result;
-	}
-	
-	public BookingInformation createBookingInformationManager(BookingInformationModel bookingInformationModel)
-	{
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
-		LocalDateTime now = LocalDateTime.now().withHour(12).withMinute(00);
-		String time = dtf.format(now);
-		
-		Customer customer = new Customer();
-		bookingInformationModel.toCustomer(customer);
-		customerDao.create(customer);
-		
-		Room room = roomDao.find(bookingInformationModel.getRoomNo());
-		room.setStatus("check in");
-		roomDao.update(room);
-		
-		BookingInformation bookingInformation = new BookingInformation();
-		bookingInformationModel.toBookingInformation(bookingInformation);
 		BookingInformation result = bookingInformationDao.create(bookingInformation);
 		
 		return result;
