@@ -25,6 +25,9 @@ public class BookingInformation {
 	@JoinColumn(name="customer_id")
 	private Customer customer;
 	
+	@Column(name="status")
+	private String status;
+	
 	@Column(name="started_at")
 	private String startedAt;
 	
@@ -80,6 +83,14 @@ public class BookingInformation {
 
 	public void setTotal(int total) {
 		this.total = total;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 }

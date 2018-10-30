@@ -14,6 +14,8 @@ public class BookingInformationModel
 	
 	private String endedAt;
 	
+	private String status;
+	
 	private int total;
 	
 	private String fullName;
@@ -112,6 +114,14 @@ public class BookingInformationModel
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 }

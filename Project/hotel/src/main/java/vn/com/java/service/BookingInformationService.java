@@ -57,6 +57,7 @@ public class BookingInformationService
 		bookingInformationModel.toBookingInformation(bookingInformation);
 		bookingInformation.setCustomer(customer);
 		bookingInformation.setRoom(room);
+		bookingInformation.setStatus("none");
 		
 		BookingInformation result = bookingInformationDao.create(bookingInformation);
 		
@@ -77,6 +78,7 @@ public class BookingInformationService
 		bookingInformationModel.toBookingInformation(bookingInformation);
 		bookingInformation.setCustomer(customer);
 		bookingInformation.setRoom(room);
+		bookingInformation.setStatus("none");
 		
 		BookingInformation result = bookingInformationDao.create(bookingInformation);
 		
