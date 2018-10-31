@@ -26,6 +26,10 @@ public class Bill
 	@JoinColumn(name="product_id")
 	private Product product;
 	
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="booking_information_id")
+	private BookingInformation bookingInformation;
+	
 	@Column(name="status")
 	private String status;
 	
@@ -70,6 +74,14 @@ public class Bill
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public BookingInformation getBookingInformation() {
+		return bookingInformation;
+	}
+
+	public void setBookingInformation(BookingInformation bookingInformation) {
+		this.bookingInformation = bookingInformation;
 	}
 	
 }

@@ -33,9 +33,6 @@ public class BookingInformation {
 	
 	@Column(name="ended_at")
 	private String endedAt;
-	
-	@Column(name="total")
-	private int total;
 
 	public int getId() {
 		return id;
@@ -75,14 +72,6 @@ public class BookingInformation {
 
 	public void setEndedAt(String endedAt) {
 		this.endedAt = endedAt;
-	}
-
-	public int getTotal() {
-		return total;
-	}
-
-	public void setTotal(int total) {
-		this.total = total;
 	}
 
 	public String getStatus() {

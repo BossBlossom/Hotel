@@ -16,8 +16,6 @@ public class BookingInformationModel
 	
 	private String status;
 	
-	private int total;
-	
 	private String fullName;
 	
 	private Room room;
@@ -41,7 +39,6 @@ public class BookingInformationModel
 	{
 		bookingInformation.setStartedAt(this.startedAt+" 12:00");
 		bookingInformation.setEndedAt(this.endedAt +" 12:00");
-		bookingInformation.setTotal(this.total);
 		return bookingInformation;
 	}
 	
@@ -49,7 +46,6 @@ public class BookingInformationModel
 	{
 		this.setStartedAt(bookingInformation.getStartedAt());
 		this.setEndedAt(bookingInformation.getEndedAt());
-		this.setTotal(bookingInformation.getTotal());
 	}
 
 	public String getCmnd() {
@@ -82,14 +78,6 @@ public class BookingInformationModel
 
 	public void setEndedAt(String endedAt) {
 		this.endedAt = endedAt;
-	}
-
-	public int getTotal() {
-		return total;
-	}
-
-	public void setTotal(int total) {
-		this.total = total;
 	}
 
 	public String getFullName() {
