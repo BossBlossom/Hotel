@@ -25,14 +25,14 @@ public class BookingInformation {
 	@JoinColumn(name="customer_id")
 	private Customer customer;
 	
+	@Column(name="status")
+	private String status;
+	
 	@Column(name="started_at")
 	private String startedAt;
 	
 	@Column(name="ended_at")
 	private String endedAt;
-	
-	@Column(name="total")
-	private int total;
 
 	public int getId() {
 		return id;
@@ -74,12 +74,12 @@ public class BookingInformation {
 		this.endedAt = endedAt;
 	}
 
-	public int getTotal() {
-		return total;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setTotal(int total) {
-		this.total = total;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 }

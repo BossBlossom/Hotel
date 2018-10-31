@@ -36,26 +36,9 @@ public class BookingInformationDao
 		return new ArrayList<>();
 	}
 	
-	public List<BookingInformation> findAllByRoom(int roomNo)
-	{
-		return new ArrayList<>();
-	}
-	
 	public BookingInformation findById(int id)
 	{
 		BookingInformation bookingInformation = getSession().find(BookingInformation.class, id);
-		return bookingInformation;
-	}
-	
-	public BookingInformation findByRoom(int roomNo)
-	{
-		BookingInformation bookingInformation = getSession().find(BookingInformation.class, roomNo);
-		return bookingInformation;
-	}
-	
-	public BookingInformation findByCustomer(int cmnd)
-	{
-		BookingInformation bookingInformation = getSession().find(BookingInformation.class, cmnd);
 		return bookingInformation;
 	}
 	

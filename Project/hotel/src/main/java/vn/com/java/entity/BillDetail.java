@@ -32,6 +32,9 @@ public class BillDetail
 	@Column(name="price")
 	private int price;
 	
+	@Column(name="status")
+	private String status;
+	
 	@Column(name="total")
 	private int total;
 
@@ -81,6 +84,14 @@ public class BillDetail
 
 	public void setTotal(int total) {
 		this.total = total;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 }

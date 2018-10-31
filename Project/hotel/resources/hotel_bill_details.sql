@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.12, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: hotelhotelroom_style_imagesrooms
+-- Host: 127.0.0.1    Database: hotel
 -- ------------------------------------------------------
 -- Server version	8.0.12
 
@@ -29,6 +29,7 @@ CREATE TABLE `bill_details` (
   `total` int(11) DEFAULT NULL,
   `bill_id` int(11) DEFAULT NULL,
   `product_id` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKfwm4sko9p82ndh6belyxx12bj` (`bill_id`),
   KEY `FK4iagdr0uhsq4tj0ag99nmmya1` (`product_id`),
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-26 20:49:58
+-- Dump completed on 2018-10-31 17:40:39
