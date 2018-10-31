@@ -26,6 +26,9 @@ public class Bill
 	@JoinColumn(name="product_id")
 	private Product product;
 	
+	@Column(name="status")
+	private String status;
+	
 	@Column(name="total")
 	private int total;
 
@@ -59,6 +62,14 @@ public class Bill
 
 	public void setTotal(int total) {
 		this.total = total;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 }
