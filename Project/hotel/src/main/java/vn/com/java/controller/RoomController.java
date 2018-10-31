@@ -87,17 +87,39 @@ public class RoomController
 		return "redirect:/manager-list";
 	}
 	
+	/**
+	 * admin book phong
+	 * @param roomNo
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value="/booking", method = RequestMethod.GET)
-	public String booking(Model model)
+	public String booking(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
-		BookingInformationModel bookingInformationModel = new BookingInformationModel();
-		model.addAttribute("booking", bookingInformationModel);
+		Room room = roomService.find(roomNo);
+		if(room == null)
+		{
+			return"redirect:/manager-list";
+		}
+		
+		model.addAttribute("room", room);
 		
 		return "manager-booking-room";
 	}
 	
+	
+	/**
+	 * submit booking
+	 * @param bookingInformationModel
+	 * @param result
+	 * @param model
+	 * @return
+	 * @throws ParseException
+	 */
 	@RequestMapping(value = "/booking", method = RequestMethod.POST)
-	public String handleBookingManager(@ModelAttribute("booking") BookingInformationModel bookingInformationModel, BindingResult result, Model model) throws ParseException
+	public String handleBookingManager(@RequestParam(name="roomNo")int roomNo, 
+			@ModelAttribute("booking") BookingInformationModel bookingInformationModel, 
+			BindingResult result, Model model) throws ParseException
 	{
 		bookingInformationService.createBookingInformationManager(bookingInformationModel);
 		

@@ -30,14 +30,14 @@
 	<nav>
 		<a href='<spring:url value="/manager-list" />'>Trang chủ</a>
 	</nav>
-	<c:url var="formUrl" value="/manager-list/booking" />
 
-	<form:form id="form1" modelAttribute="room" action="${formUrl}" method="post">
+	<form:form id="form1" modelAttribute="room" method="post">
 		<article>
 			<div>
 				<table>
 					<tr>
-						<td colspan="2">PHÒNG ${rooms.roomNo}</td>
+						<td colspan="2">PHÒNG ${room.roomNo}</td>
+						<form:hidden path="roomNo"/>
 					</tr>
 					<tr>
 						<td>Họ Tên: </td>
@@ -49,11 +49,11 @@
 					</tr>
 					<tr>
 						<td>Ngày đặt phòng: </td>
-						<td><form:input path="start_at" type="date" /></td>
+						<td><form:input path="startedAt" type="date" /></td>
 					</tr>
 					<tr>
 						<td>Ngày trả phòng: </td>
-						<td><form:input path="start_end" type="date"/></td>
+						<td><form:input path="endedAt" type="date"/></td>
 					</tr>
 				</table>
 				<span style="margin-bottom: 100px;"></span>

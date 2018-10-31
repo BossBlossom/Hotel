@@ -1,6 +1,9 @@
 package vn.com.java.model;
 
 import java.text.ParseException;
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import vn.com.java.entity.BookingInformation;
 import vn.com.java.entity.Customer;
@@ -12,9 +15,11 @@ public class BookingInformationModel
 	
 	private int roomNo;
 	
-	private String startedAt;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private Date startedAt;
 	
-	private String endedAt;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private Date endedAt;
 	
 	private String status;
 	
@@ -66,20 +71,21 @@ public class BookingInformationModel
 	public void setRoomNo(int roomNo) {
 		this.roomNo = roomNo;
 	}
+	
 
-	public String getStartedAt() {
+	public Date getStartedAt() {
 		return startedAt;
 	}
 
-	public void setStartedAt(String startedAt) {
+	public void setStartedAt(Date startedAt) {
 		this.startedAt = startedAt;
 	}
 
-	public String getEndedAt() {
+	public Date getEndedAt() {
 		return endedAt;
 	}
 
-	public void setEndedAt(String endedAt) {
+	public void setEndedAt(Date endedAt) {
 		this.endedAt = endedAt;
 	}
 

@@ -1,5 +1,7 @@
 package vn.com.java.entity;
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="booking_informations")
@@ -29,10 +33,12 @@ public class BookingInformation {
 	private String status;
 	
 	@Column(name="started_at")
-	private String startedAt;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date startedAt;
 	
 	@Column(name="ended_at")
-	private String endedAt;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date endedAt;
 
 	public int getId() {
 		return id;
@@ -62,24 +68,24 @@ public class BookingInformation {
 		return status;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getStartedAt() {
+	public Date getStartedAt() {
 		return startedAt;
 	}
 
-	public void setStartedAt(String startedAt) {
+	public void setStartedAt(Date startedAt) {
 		this.startedAt = startedAt;
 	}
 
-	public String getEndedAt() {
+	public Date getEndedAt() {
 		return endedAt;
 	}
 
-	public void setEndedAt(String endedAt) {
+	public void setEndedAt(Date endedAt) {
 		this.endedAt = endedAt;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 }

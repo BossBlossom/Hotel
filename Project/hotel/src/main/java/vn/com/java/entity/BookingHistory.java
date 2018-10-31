@@ -1,5 +1,7 @@
 package vn.com.java.entity;
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "booking_histories")
@@ -27,10 +31,12 @@ public class BookingHistory {
 	private Customer customer;
 	
 	@Column(name = "check_in")
-	private String checkIn;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date checkIn;
 	
 	@Column(name = "check_out")
-	private String checkOut;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date checkOut;
 	
 	@Column(name = "price")
 	private int price;
@@ -62,19 +68,19 @@ public class BookingHistory {
 		this.customer = customer;
 	}
 
-	public String getCheckIn() {
+	public Date getCheckIn() {
 		return checkIn;
 	}
 
-	public void setCheckIn(String checkIn) {
+	public void setCheckIn(Date checkIn) {
 		this.checkIn = checkIn;
 	}
 
-	public String getCheckOut() {
+	public Date getCheckOut() {
 		return checkOut;
 	}
 
-	public void setCheckOut(String checkOut) {
+	public void setCheckOut(Date checkOut) {
 		this.checkOut = checkOut;
 	}
 

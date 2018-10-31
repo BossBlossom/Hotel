@@ -73,7 +73,6 @@
 						<span class="dropdown">
 							<button class="dropbtn">&#9947;</button>
 							<span class="dropdown-content">
-								<a href='<spring:url value="/manager-list/view-room?roomNo=${room.roomNo}" />'>view</a>
 								<a href='<spring:url value="/manager-list/bill?roomNo=${room.roomNo}" />'>bill</a> 
 								<a href="#">history</a>
 							</span>
@@ -108,8 +107,7 @@
 						<span class="dropdown">
 							<button class="dropbtn">&#9947;</button>
 							<span class="dropdown-content">
-								<a href='<spring:url value="/manager-list/view-room?roomNo=${room.roomNo}" />'>view</a> 
-								<a href="#">customer create</a>
+								< href='<spring:url value="/manager-list/booking?roomNo=${room.roomNo}" />'>booking</a>
 								<a href="#">history</a>
 								<a href='<spring:url value="/manager-list/closed?roomNo=${room.roomNo}" />'>closed</a> 
 								<a href='<spring:url value="/manager-list/update?roomNo=${room.roomNo}" />'>update</a>
