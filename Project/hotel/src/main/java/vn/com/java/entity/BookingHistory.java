@@ -31,6 +31,12 @@ public class BookingHistory {
 	
 	@Column(name = "check_out")
 	private String checkOut;
+	
+	@Column(name = "price")
+	private int price;
+	
+	@Column(name = "day_total")
+	private int dayTotal;
 
 	public int getId() {
 		return id;
@@ -71,5 +77,20 @@ public class BookingHistory {
 	public void setCheckOut(String checkOut) {
 		this.checkOut = checkOut;
 	}
-	
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public int getDayTotal() {
+		return dayTotal;
+	}
+
+	public void setDayTotal(int dayTotal) {
+		this.dayTotal = dayTotal;
+	}
 }

@@ -1,5 +1,6 @@
 package vn.com.java.controller;
 
+import java.text.ParseException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -100,7 +101,7 @@ public class RoomController
 	}
 	
 	@RequestMapping(value = "/booking", method = RequestMethod.POST)
-	public String handleBookingManager(@ModelAttribute("booking") BookingInformationModel bookingInformationModel, BindingResult result, Model model)
+	public String handleBookingManager(@ModelAttribute("booking") BookingInformationModel bookingInformationModel, BindingResult result, Model model) throws ParseException
 	{
 		bookingInformationService.createBookingInformationManager(bookingInformationModel);
 		
@@ -111,8 +112,13 @@ public class RoomController
 	@RequestMapping(value = "/view-room", method = RequestMethod.GET)
 	public String view(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
-		BookingInformation bookingInformations = bookingInformationService.findRoomNo(roomNo);
-		model.addAttribute("room", bookingInformations);
+//		BookingInformation bookingInformations = bookingInformationService.findRoomNo(roomNo);
+//		model.addAttribute("room", bookingInformations);
+		
+		// lay thong tin phong
+		
+		
+		// lay thong tin cua khach dat phong
 		
 		return "view-room";
 	}

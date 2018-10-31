@@ -1,5 +1,6 @@
 package vn.com.java.controller;
 
+import java.text.ParseException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,7 @@ public class HomeController
 	}
 	
 	@RequestMapping(value = "/booking", method = RequestMethod.POST)
-	public String handleBookingCustomer(@ModelAttribute("booking") BookingInformationModel bookingInformationModel, BindingResult result, Model model)
+	public String handleBookingCustomer(@ModelAttribute("booking") BookingInformationModel bookingInformationModel, BindingResult result, Model model) throws ParseException
 	{
 		bookingInformationService.createBookingInformationCustomer(bookingInformationModel);
 		

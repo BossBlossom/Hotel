@@ -1,5 +1,6 @@
 package vn.com.java.service;
 
+import java.text.ParseException;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -26,24 +27,22 @@ public class BookingInformationService
 	@Autowired
 	private BookingInformationDao bookingInformationDao;
 	
-	public List<BookingInformation> search(int roomNo)
+	public List<BookingInformation> search(int id)
 	{
-		if(roomNo<=0)
+		if(id<=0)
 		{
 			return bookingInformationDao.findAll();
 		}
-		
-		BookingInformation bookingInformation = bookingInformationDao.findByRoom(roomNo);
-		int id = bookingInformation.getId();
+
 		return bookingInformationDao.findAllById(id);
 	}
 	
-	public BookingInformation findRoomNo(int roomNo)
-	{
-		return bookingInformationDao.findByRoom(roomNo);
-	}
+//	public BookingInformation findRoomNo(int roomNo)
+//	{
+//		return bookingInformationDao.findByRoom(roomNo);
+//	}
 	
-	public BookingInformation createBookingInformationCustomer(BookingInformationModel bookingInformationModel)
+	public BookingInformation createBookingInformationCustomer(BookingInformationModel bookingInformationModel) throws ParseException
 	{	
 		Customer customer = new Customer();
 		bookingInformationModel.toCustomer(customer);
@@ -64,7 +63,7 @@ public class BookingInformationService
 		return result;
 	}
 	
-	public BookingInformation createBookingInformationManager(BookingInformationModel bookingInformationModel)
+	public BookingInformation createBookingInformationManager(BookingInformationModel bookingInformationModel) throws ParseException
 	{	
 		Customer customer = new Customer();
 		bookingInformationModel.toCustomer(customer);
