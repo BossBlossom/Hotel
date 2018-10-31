@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import vn.com.java.entity.BookingInformation;
+import vn.com.java.entity.Product;
 import vn.com.java.entity.Room;
 import vn.com.java.model.BookingInformationModel;
 import vn.com.java.model.RoomModel;
 import vn.com.java.service.BookingInformationService;
+import vn.com.java.service.OrderService;
 import vn.com.java.service.RoomService;
 
 @Controller
@@ -27,6 +29,8 @@ public class RoomController
 	private RoomService roomService;
 	@Autowired
 	private BookingInformationService bookingInformationService;
+	@Autowired
+	private OrderService orderService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(Model model)
@@ -208,5 +212,15 @@ public class RoomController
 		roomService.deleteRoom(roomModel);
 		
 		return "redirect:/manager-list";
+	}
+	
+	@RequestMapping(value = "/order", method = RequestMethod.GET)
+	public String order(@RequestParam(name="roomNo")int roomNo, @ModelAttribute("room") RoomModel roomModel, BindingResult result, Model model)
+	{
+		
+		List<Product> product = orderService.search(0);
+		model.addAttribute("order", product);
+		
+		return "redirect:/order";
 	}
 }

@@ -63,18 +63,6 @@
 						<td colspan="2"><form:input path="airConditioner" name="airConditioner" type="number" maxlength="3"/></td>
 						<td id="msg2" style="color: red">${ketqua3}</td>
 					</tr>
-					<tr>
-						<td>GIÁ TIỀN</td>
-						<td colspan="2">
-						<form:select path="money">
-								<form:option value="300">300</form:option>
-								<form:option value="600">600</form:option>
-								<form:option value="800">800</form:option>
-								<form:option value="1200">1200</form:option>
-						</form:select>
-						</td>
-						<td id="msg3" style="color: red">${ketqua4}</td>
-					</tr>
 				</table>
 				<span style="margin-bottom: 100px;"></span>
 				<p class="btn">
