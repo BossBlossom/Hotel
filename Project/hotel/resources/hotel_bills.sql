@@ -27,6 +27,7 @@ CREATE TABLE `bills` (
   `total` int(11) DEFAULT NULL,
   `product_id` int(11) DEFAULT NULL,
   `room_no` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKja2jdwvsth2hkvlk8k334i822` (`product_id`),
   KEY `FK8oxp6hkw1y2gjdqc65fobwsjf` (`room_no`),
@@ -53,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-26 20:49:59
+-- Dump completed on 2018-10-31 17:40:40

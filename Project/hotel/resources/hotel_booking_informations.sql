@@ -26,6 +26,7 @@ CREATE TABLE `booking_informations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ended_at` varchar(255) DEFAULT NULL,
   `started_at` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `total` int(11) DEFAULT NULL,
   `customer_id` int(11) DEFAULT NULL,
   `room_no` int(11) DEFAULT NULL,
@@ -43,7 +44,7 @@ CREATE TABLE `booking_informations` (
 
 LOCK TABLES `booking_informations` WRITE;
 /*!40000 ALTER TABLE `booking_informations` DISABLE KEYS */;
-INSERT INTO `booking_informations` VALUES (1,'2018-10-26 12:00','2018-10-24 12:00',0,2,101),(2,'2018-10-26 12:00','2018-10-24 12:00',0,3,201);
+INSERT INTO `booking_informations` VALUES (1,'2018-11-01 12:00','2018-10-30 12:00','none',0,8,101),(2,'2018-11-01 12:00','2018-10-31 12:00','none',0,9,102);
 /*!40000 ALTER TABLE `booking_informations` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-26 20:50:00
+-- Dump completed on 2018-10-31 17:40:40
