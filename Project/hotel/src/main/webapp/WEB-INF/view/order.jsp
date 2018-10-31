@@ -28,7 +28,7 @@
 	</nav>
 
 	<c:url var="formUrl" value="/order" />
-	<form:form id="form1" modelAttribute="product" action="${formUrl}" method="post">
+	<form:form id="form1" modelAttribute="order" action="${formUrl}" method="post">
 	
 	<article>
 		<div id="filter" style="margin-bottom: 50px;">
@@ -54,6 +54,11 @@
 					</tr>
 					<hr>
 				</c:forEach>
+				
+				<p class="btn">
+					<a style="right: 0;" href="#" onclick="submitForm('form1')">TẠO PHÒNG</a>
+					<a href='<spring:url value="/manager-list" />'>TRỞ VỀ</a>
+				</p>
 			</table>
 			
 		</div>

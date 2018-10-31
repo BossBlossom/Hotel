@@ -15,6 +15,36 @@
 	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 	crossorigin="anonymous">
+	
+<link
+	href='<spring:url value="resources/Home_resources/css/bootstrap.min.css"/>'
+	rel="stylesheet">
+<link
+	href='<spring:url value="resources/Home_resources/font-awesome/css/font-awesome.min.css"/>'
+	rel="stylesheet" type="text/css" />
+<!-- Custom styles for this template -->
+<link
+	href='<spring:url value="resources/Home_resources/css/style.css"/>'
+	rel="stylesheet">
+<link
+	href='<spring:url value="resources/Home_resources/fonts/antonio-exotic/stylesheet.css"/>'
+	rel="stylesheet">
+<link
+	href='<spring:url value="resources/Home_resources/css/lightbox.min.css"/>'
+	rel="stylesheet">
+<link
+	href='<spring:url value="resources/Home_resources/css/responsive.css"/>'
+	rel="stylesheet">
+	
+<style type="text/css">
+
+.inf-position {
+	margin: 0 auto;
+	padding: 0 auto;
+	position: relative;
+}
+
+</style>
 </head>
 
 <body>
@@ -73,7 +103,13 @@
 						<span class="dropdown">
 							<button class="dropbtn">&#9947;</button>
 							<span class="dropdown-content">
+<<<<<<< HEAD
 								<a href='<spring:url value="/manager-list/bill?roomNo=${room.roomNo}" />'>bill</a> 
+=======
+								<a href='<spring:url value="/manager-list/view-room?roomNo=${room.roomNo}" />'>view</a>
+								<a href="#"	data-toggle="modal" data-target="#myModal"
+									data-backdrop="static" data-keyboard="false">bill</a> 
+>>>>>>> branch 'master' of https://github.com/YuuSatou970726/Hotel.git
 								<a href="#">history</a>
 							</span>
 						</span>
@@ -124,9 +160,67 @@
 
 
 	<footer>
-		<h3>Nơi dừng chân nghỉ ngơi hợp với túi tiền của bạn khi đi du
-			lịch và đi công tác tại thành phố hoa</h3>
 	</footer>
+	
+	
+	
+	<script src="//code.jquery.com/jquery.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	
+<!--  	<form:form modelAttribute="room" action="room" method="post">   -->    
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+				aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLongTitle"
+								style="font-size: 30px;">Hóa Đơn</h5>
+						</div>
+
+						<div class="modal-body" style="height: 350px;">
+
+							<div class="inf-position">
+								<table style="border-collapse: collapse; width: 550px;">
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Phòng:</td>
+										<td colspan="5">101</td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Tổng tiền phòng:</td>
+										<td colspan="5">100</td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Tổng tiền dịch vụ:</td>
+										<td colspan="5">100</td>
+									</tr>
+									<tr>
+										<td><hr style="border: 2px red solid;"></td>
+										<td><hr style="border: 2px red solid;"></td>
+										<td><hr style="border: 2px red solid;"></td>
+										<td><hr style="border: 2px red solid;"></td>
+										<td><hr style="border: 2px red solid;"></td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td></td>
+										<td style="padding: 10px;">Tổng tiền:</td>
+										<td colspan="3">100</td>
+									</tr>
+
+								</table>
+							</div>
+						</div>
+
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">CLOSE</button>
+							<button type="submit" class="btn btn-primary">XUẤT HÓA ĐƠN</button>
+						</div>
+					</div>
+				</div>
+			</div>
+<!--    		</form:form>   -->    
 	
 	
 	<script>

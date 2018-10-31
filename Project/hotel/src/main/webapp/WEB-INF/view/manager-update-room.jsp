@@ -67,11 +67,6 @@
 						<td colspan="2"><form:input path="airConditioner" name="airConditioner" type="number" maxlength="3"/></td>
 						<td id="msg2" style="color: red">${ketqua3}</td>
 					</tr>
-					<tr>
-						<td>GIÁ TIỀN</td>
-						<td colspan="2"><form:input path="money" name="money" type="number" step="100" /></td>
-						<td id="msg3" style="color: red">${ketqua4}</td>
-					</tr>
 				</table>
 				<span style="margin-bottom: 100px;"></span>
 				<p class="btn">
