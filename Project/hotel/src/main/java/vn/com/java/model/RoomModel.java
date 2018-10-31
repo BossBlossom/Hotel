@@ -13,8 +13,6 @@ public class RoomModel
 	
 	private int airConditioner;
 	
-	private int money;
-	
 	private RoomStyle roomStyle;
 	
 	private int roomStyleId;
@@ -28,7 +26,6 @@ public class RoomModel
 		}
 		room.setBed(this.bed);
 		room.setAirConditioner(this.airConditioner);
-		room.setMoney(this.money);
 		return room;
 	}
 	
@@ -38,7 +35,6 @@ public class RoomModel
 		this.setStatus(room.getStatus());
 		this.setBed(room.getBed());
 		this.setAirConditioner(room.getAirConditioner());
-		this.setMoney(room.getMoney());
 	}
 
 	public int getRoomNo() {
@@ -71,14 +67,6 @@ public class RoomModel
 
 	public void setAirConditioner(int airConditioner) {
 		this.airConditioner = airConditioner;
-	}
-
-	public int getMoney() {
-		return money;
-	}
-
-	public void setMoney(int money) {
-		this.money = money;
 	}
 
 	public RoomStyle getRoomStyle() {

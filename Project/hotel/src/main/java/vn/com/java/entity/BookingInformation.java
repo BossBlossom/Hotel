@@ -58,6 +58,14 @@ public class BookingInformation {
 		this.customer = customer;
 	}
 
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	public String getStartedAt() {
 		return startedAt;
 	}
@@ -72,14 +80,6 @@ public class BookingInformation {
 
 	public void setEndedAt(String endedAt) {
 		this.endedAt = endedAt;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 	
 }

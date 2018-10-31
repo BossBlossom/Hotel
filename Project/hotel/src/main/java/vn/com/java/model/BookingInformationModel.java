@@ -1,5 +1,7 @@
 package vn.com.java.model;
 
+import java.text.ParseException;
+
 import vn.com.java.entity.BookingInformation;
 import vn.com.java.entity.Customer;
 import vn.com.java.entity.Room;
@@ -35,10 +37,11 @@ public class BookingInformationModel
 		customer.setFullName(customer.getFullName());
 	}
 	
-	public BookingInformation toBookingInformation(BookingInformation bookingInformation)
+	public BookingInformation toBookingInformation(BookingInformation bookingInformation) throws ParseException
 	{
-		bookingInformation.setStartedAt(this.startedAt+" 12:00");
-		bookingInformation.setEndedAt(this.endedAt +" 12:00");
+		bookingInformation.setStartedAt(this.startedAt);
+		bookingInformation.setEndedAt(this.endedAt);
+		
 		return bookingInformation;
 	}
 	
@@ -111,5 +114,4 @@ public class BookingInformationModel
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
 }

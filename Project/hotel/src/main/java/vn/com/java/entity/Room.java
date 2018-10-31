@@ -24,9 +24,6 @@ public class Room
 	
 	@Column(name="air_conditioner")
 	private int airConditioner;
-	
-	@Column(name="money")
-	private int money;
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="room_style_id")
@@ -62,14 +59,6 @@ public class Room
 
 	public void setAirConditioner(int airConditioner) {
 		this.airConditioner = airConditioner;
-	}
-
-	public int getMoney() {
-		return money;
-	}
-
-	public void setMoney(int money) {
-		this.money = money;
 	}
 
 	public RoomStyle getRoomStyle() {

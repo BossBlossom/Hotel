@@ -33,8 +33,11 @@ public class Bill
 	@Column(name="status")
 	private String status;
 	
-	@Column(name="total")
-	private int total;
+	@Column(name="service_total")
+	private int serviceTotal;
+	
+	@Column(name="room_total")
+	private int roomTotal;
 
 	public int getId() {
 		return id;
@@ -60,12 +63,12 @@ public class Bill
 		this.product = product;
 	}
 
-	public int getTotal() {
-		return total;
+	public BookingInformation getBookingInformation() {
+		return bookingInformation;
 	}
 
-	public void setTotal(int total) {
-		this.total = total;
+	public void setBookingInformation(BookingInformation bookingInformation) {
+		this.bookingInformation = bookingInformation;
 	}
 
 	public String getStatus() {
@@ -76,12 +79,20 @@ public class Bill
 		this.status = status;
 	}
 
-	public BookingInformation getBookingInformation() {
-		return bookingInformation;
+	public int getServiceTotal() {
+		return serviceTotal;
 	}
 
-	public void setBookingInformation(BookingInformation bookingInformation) {
-		this.bookingInformation = bookingInformation;
+	public void setServiceTotal(int serviceTotal) {
+		this.serviceTotal = serviceTotal;
+	}
+
+	public int getRoomTotal() {
+		return roomTotal;
+	}
+
+	public void setRoomTotal(int roomTotal) {
+		this.roomTotal = roomTotal;
 	}
 	
 }
