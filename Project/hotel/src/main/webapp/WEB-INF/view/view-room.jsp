@@ -30,7 +30,7 @@
 
 		<article>
 
-			<div>
+			<div style="margin: auto; float: none;">
 				<table>
 					<tr>
 						<td colspan="2">Chi tiết phòng ${room.getRoom().getRoomNo()}</td>
