@@ -33,50 +33,48 @@
 			<div style="margin: auto; float: none;">
 				<table>
 					<tr>
-						<td colspan="2">Chi tiết phòng ${room.getRoom().getRoomNo()}</td>
+						<td colspan="2">Chi tiết phòng ${room.roomNo}</td>
 					</tr>
 					<tr>
 						<td>Loại phòng: </td>
-						<td>${room.getRoom().getRoomStyle().getName()}</td>
+						<td>${room.getRoomStyle().getName()}</td>
 					</tr>
 					<tr>
 						<td>Trạng thái: </td>
-						<td>${room.getRoom().getStatus()}</td>
+						<td>${room.status}</td>
 					</tr>
 					<tr>
 						<td>Giường: </td>
-						<td>${room.getRoom().getBed()}</td>
+						<td>${room.bed}</td>
 					</tr>
 					<tr>
 						<td>Máy lạnh: </td>
-						<td>${room.getRoom().getAirConditioner()}</td>
+						<td>${room.airConditioner}</td>
 					</tr>
-					<tr>
-						<td>Giá tiền: </td>
-						<td>${room.getRoom().getMoney()}</td>
-					</tr>
+
 				</table>
+			<c:forEach var="bookingInformation" items="${bookingInformations}">
+				<c:if test="${bookingInformation.getRoom().getRoomNo() eq room.roomNo }">
 				
-				<c:if test="${room.getRoom().getStatus() eq 'customer' or 'check in'}">
-				<table>
-					<tr>
-						<td></td>
-						<td>${room.getCustomer().getCmnd()}</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>${room.getCustomer().getFullName()}</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>${room.startedAt}</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>${room.endedAt}</td>
-					</tr>
-				</table>
+					<c:if test="${bookingInformation.status eq 'none'}">
+						<table>
+							<tr>
+								<td>Chứng minh nhân dân: </td>
+								<td>${bookingInformation.getCustomer().getCmnd()}</td>
+							</tr>
+							<tr>
+								<td>Họ Tên: </td>
+								<td>${bookingInformation.getCustomer().getFullName()}</td>
+							</tr>
+							<tr>
+								<td>Ngày đặt phòng: </td>
+								<td>${bookingInformation.startedAt}</td>
+							</tr>
+						</table>
+					</c:if>
+					
 				</c:if>
+			</c:forEach>
 				
 			</div>
 			

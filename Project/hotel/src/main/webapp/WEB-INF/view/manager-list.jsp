@@ -103,13 +103,10 @@
 						<span class="dropdown">
 							<button class="dropbtn">&#9947;</button>
 							<span class="dropdown-content">
-<<<<<<< HEAD
 								<a href='<spring:url value="/manager-list/bill?roomNo=${room.roomNo}" />'>bill</a> 
-=======
 								<a href='<spring:url value="/manager-list/view-room?roomNo=${room.roomNo}" />'>view</a>
 								<a href="#"	data-toggle="modal" data-target="#myModal"
 									data-backdrop="static" data-keyboard="false">bill</a> 
->>>>>>> branch 'master' of https://github.com/YuuSatou970726/Hotel.git
 								<a href="#">history</a>
 							</span>
 						</span>
@@ -129,8 +126,7 @@
 					<c:if test="${room.status eq 'closed'}">
 						<span class="dropdown">
 							<button class="dropbtn">&#9947;</button>
-							<span class="dropdown-content">
-								<a href='<spring:url value="/manager-list/view-room?roomNo=${room.roomNo}" />'>view</a> 
+							<span class="dropdown-content"> 
 								<a href="#">history</a>
 								<a href='<spring:url value="/manager-list/open?roomNo=${room.roomNo}" />'>open</a> 
 								<a href='<spring:url value="/manager-list/update?roomNo=${room.roomNo}" />'>update</a>
@@ -143,7 +139,7 @@
 						<span class="dropdown">
 							<button class="dropbtn">&#9947;</button>
 							<span class="dropdown-content">
-								< href='<spring:url value="/manager-list/booking?roomNo=${room.roomNo}" />'>booking</a>
+								<a href='<spring:url value="/manager-list/booking?roomNo=${room.roomNo}" />'>booking</a>
 								<a href="#">history</a>
 								<a href='<spring:url value="/manager-list/closed?roomNo=${room.roomNo}" />'>closed</a> 
 								<a href='<spring:url value="/manager-list/update?roomNo=${room.roomNo}" />'>update</a>

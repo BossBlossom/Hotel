@@ -55,7 +55,7 @@ public class BookingInformationService
 //		return bookingInformationDao.findByRoom(roomNo);
 //	}
 	
-	public BookingInformation createBookingInformationCustomer(BookingInformationModel bookingInformationModel) throws ParseException
+	public BookingInformation createBookingInformationCustomer(BookingInformationModel bookingInformationModel)
 	{	
 		Customer customer = new Customer();
 		bookingInformationModel.toCustomer(customer);
@@ -75,7 +75,33 @@ public class BookingInformationService
 		return result;
 	}
 	
-	public BookingInformation createBookingInformationManager(BookingInformationModel bookingInformationModel) throws ParseException
+	public BookingInformation checkBookingInformationCustomer(BookingInformationModel bookingInformationModel)
+	{	
+		Customer customer = new Customer();
+		bookingInformationModel.toCustomer(customer);
+		
+		Room room = roomDao.find(bookingInformationModel.getRoomNo());
+		room.setStatus("check in");
+		roomDao.update(room);
+		
+		BookingInformation bookingInformation = new BookingInformation();
+		bookingInformation.setStatus("check in");
+		BookingInformation result = bookingInformationDao.update(bookingInformation);
+		
+		RoomStyle roomStyle = roomStyleDao.findId(room.getRoomStyle().getId());
+		
+		BookingHistory bookingHistory = new BookingHistory();
+		bookingHistory.setCheckIn(new Date());
+		bookingHistory.setPrice(roomStyle.getPrice());
+		bookingHistory.setCustomer(customer);
+		bookingHistory.setDayTotal(1);
+		bookingHistory.setRoom(room);
+		bookingHistoryDao.create(bookingHistory);
+		
+		return result;
+	}
+	
+	public BookingInformation createBookingInformationManager(BookingInformationModel bookingInformationModel)
 	{	
 		Customer customer = new Customer();
 		bookingInformationModel.toCustomer(customer);

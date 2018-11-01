@@ -108,7 +108,7 @@ public class RoomController
 	@RequestMapping(value = "/booking", method = RequestMethod.POST)
 	public String handleBookingManager(@RequestParam(name="roomNo")int roomNo, 
 			@ModelAttribute("booking") BookingInformationModel bookingInformationModel, 
-			BindingResult result, Model model) throws ParseException
+			BindingResult result, Model model)
 	{
 		bookingInformationService.createBookingInformationManager(bookingInformationModel);
 		
@@ -119,13 +119,10 @@ public class RoomController
 	@RequestMapping(value = "/view-room", method = RequestMethod.GET)
 	public String view(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
-//		BookingInformation bookingInformations = bookingInformationService.findRoomNo(roomNo);
-//		model.addAttribute("room", bookingInformations);
-		
-		// lay thong tin phong
-		
-		
-		// lay thong tin cua khach dat phong
+		Room room = roomService.find(roomNo);
+		List<BookingInformation> bookingInformations = bookingInformationService.search(0);
+		model.addAttribute("room", room);
+		model.addAttribute("bookingInformations", bookingInformations);
 		
 		return "view-room";
 	}
@@ -149,9 +146,10 @@ public class RoomController
 	}
 	
 	@RequestMapping(value = "/check-in", method = RequestMethod.GET)
-	public String checkIn(@RequestParam(name="roomNo")int roomNo, Model model)
+	public String checkIn(@RequestParam(name="roomNo")int roomNo, 
+			@ModelAttribute("booking") BookingInformationModel bookingInformationModel,BindingResult result, Model model)
 	{
-		roomService.checkInRoom(roomNo);
+		bookingInformationService.checkBookingInformationCustomer(bookingInformationModel);
 		
 		return "redirect:/manager-list";
 	}
