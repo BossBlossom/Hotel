@@ -27,7 +27,7 @@ CREATE TABLE `customers` (
   `cmnd` varchar(255) DEFAULT NULL,
   `full_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +36,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (2,'025753282','Satou Yuu'),(3,'025753282','Satou Yuu'),(4,'025753282','Satou Yuu'),(5,'025753282','Satou Yuu'),(6,'025753282','Satou Yuu'),(8,'025753282','Satou Yuu'),(9,'0257','Satou Yuu');
+INSERT INTO `customers` VALUES (24,'0257','Satou Yuu'),(25,'0257','Satou Yuu'),(26,'0257','Satou Yuu'),(27,'0257','Satou Yuu'),(28,'','An');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-31 17:40:38
+-- Dump completed on 2018-11-01 13:49:44

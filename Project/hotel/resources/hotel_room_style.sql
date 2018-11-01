@@ -25,6 +25,7 @@ DROP TABLE IF EXISTS `room_style`;
 CREATE TABLE `room_style` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -35,7 +36,7 @@ CREATE TABLE `room_style` (
 
 LOCK TABLES `room_style` WRITE;
 /*!40000 ALTER TABLE `room_style` DISABLE KEYS */;
-INSERT INTO `room_style` VALUES (1,'Single'),(2,'Double'),(3,'Super'),(4,'Delux');
+INSERT INTO `room_style` VALUES (1,'Single',300),(2,'Double',600),(3,'Super',800),(4,'Delux',1200);
 /*!40000 ALTER TABLE `room_style` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-31 17:40:39
+-- Dump completed on 2018-11-01 13:49:44

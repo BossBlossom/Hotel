@@ -26,7 +26,6 @@ CREATE TABLE `rooms` (
   `room_no` int(11) NOT NULL,
   `air_conditioner` int(11) DEFAULT NULL,
   `bed` int(11) DEFAULT NULL,
-  `money` int(11) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `room_style_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`room_no`),
@@ -41,7 +40,7 @@ CREATE TABLE `rooms` (
 
 LOCK TABLES `rooms` WRITE;
 /*!40000 ALTER TABLE `rooms` DISABLE KEYS */;
-INSERT INTO `rooms` VALUES (101,1,1,300,'check in',1),(102,1,1,300,'customer',1),(103,1,1,300,'none',1),(104,1,1,300,'none',1),(105,1,1,300,'none',1),(201,1,2,600,'none',2),(202,1,2,600,'none',2),(203,1,2,600,'none',2),(204,1,2,600,'none',2),(301,2,3,800,'none',3),(302,2,3,800,'none',3),(303,2,3,800,'none',3),(401,3,2,1200,'none',4),(402,3,2,1200,'none',4),(403,3,2,1200,'none',4);
+INSERT INTO `rooms` VALUES (101,1,1,'none',1),(102,1,1,'none',1),(103,1,1,'none',1),(104,1,1,'none',1),(105,1,1,'none',1),(201,1,2,'none',2),(202,1,2,'none',2),(203,1,2,'none',2),(204,1,2,'none',2),(301,2,3,'none',3),(302,2,3,'none',3),(303,2,3,'none',3),(401,3,2,'none',4),(402,3,2,'none',4),(403,3,2,'none',4);
 /*!40000 ALTER TABLE `rooms` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-31 17:40:40
+-- Dump completed on 2018-11-01 13:49:45

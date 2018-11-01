@@ -24,13 +24,17 @@ DROP TABLE IF EXISTS `bills`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `bills` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `total` int(11) DEFAULT NULL,
+  `room_total` int(11) DEFAULT NULL,
+  `service_total` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `booking_information_id` int(11) DEFAULT NULL,
   `product_id` int(11) DEFAULT NULL,
   `room_no` int(11) DEFAULT NULL,
-  `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
+  KEY `FK63k5hh5vtrf8lcv7bp24cxas3` (`booking_information_id`),
   KEY `FKja2jdwvsth2hkvlk8k334i822` (`product_id`),
   KEY `FK8oxp6hkw1y2gjdqc65fobwsjf` (`room_no`),
+  CONSTRAINT `FK63k5hh5vtrf8lcv7bp24cxas3` FOREIGN KEY (`booking_information_id`) REFERENCES `booking_informations` (`id`),
   CONSTRAINT `FK8oxp6hkw1y2gjdqc65fobwsjf` FOREIGN KEY (`room_no`) REFERENCES `rooms` (`room_no`),
   CONSTRAINT `FKja2jdwvsth2hkvlk8k334i822` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -54,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-31 17:40:40
+-- Dump completed on 2018-11-01 13:49:45

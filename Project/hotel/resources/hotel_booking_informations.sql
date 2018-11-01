@@ -24,18 +24,16 @@ DROP TABLE IF EXISTS `booking_informations`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `booking_informations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ended_at` varchar(255) DEFAULT NULL,
-  `started_at` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
-  `total` int(11) DEFAULT NULL,
   `customer_id` int(11) DEFAULT NULL,
   `room_no` int(11) DEFAULT NULL,
+  `started_at` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKginlo886sap4cvvnhtlh8fp9r` (`customer_id`),
   KEY `FKfi4nwf123b07udv84g4x5r1vj` (`room_no`),
   CONSTRAINT `FKfi4nwf123b07udv84g4x5r1vj` FOREIGN KEY (`room_no`) REFERENCES `rooms` (`room_no`),
   CONSTRAINT `FKginlo886sap4cvvnhtlh8fp9r` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +42,6 @@ CREATE TABLE `booking_informations` (
 
 LOCK TABLES `booking_informations` WRITE;
 /*!40000 ALTER TABLE `booking_informations` DISABLE KEYS */;
-INSERT INTO `booking_informations` VALUES (1,'2018-11-01 12:00','2018-10-30 12:00','none',0,8,101),(2,'2018-11-01 12:00','2018-10-31 12:00','none',0,9,102);
 /*!40000 ALTER TABLE `booking_informations` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-31 17:40:40
+-- Dump completed on 2018-11-01 13:49:45

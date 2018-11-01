@@ -33,12 +33,7 @@ public class BookingInformation {
 	private String status;
 	
 	@Column(name="started_at")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date startedAt;
-	
-	@Column(name="ended_at")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date endedAt;
+	private String startedAt;
 
 	public int getId() {
 		return id;
@@ -68,20 +63,12 @@ public class BookingInformation {
 		return status;
 	}
 
-	public Date getStartedAt() {
+	public String getStartedAt() {
 		return startedAt;
 	}
 
-	public void setStartedAt(Date startedAt) {
+	public void setStartedAt(String startedAt) {
 		this.startedAt = startedAt;
-	}
-
-	public Date getEndedAt() {
-		return endedAt;
-	}
-
-	public void setEndedAt(Date endedAt) {
-		this.endedAt = endedAt;
 	}
 
 	public void setStatus(String status) {

@@ -67,7 +67,6 @@ public class BookingInformationService
 		
 		BookingInformation bookingInformation = new BookingInformation();
 		bookingInformation.setStartedAt(bookingInformationModel.getStartedAt());
-		bookingInformation.setEndedAt(bookingInformationModel.getEndedAt());
 		bookingInformation.setCustomer(customer);
 		bookingInformation.setRoom(room);
 		bookingInformation.setStatus("none");
@@ -88,7 +87,6 @@ public class BookingInformationService
 		
 		BookingInformation bookingInformation = new BookingInformation();
 		bookingInformation.setStartedAt(bookingInformationModel.getStartedAt());
-		bookingInformation.setEndedAt(bookingInformationModel.getEndedAt());
 		bookingInformation.setCustomer(customer);
 		bookingInformation.setRoom(room);
 		bookingInformation.setStatus("check in");
@@ -96,7 +94,6 @@ public class BookingInformationService
 		
 		RoomStyle roomStyle = roomStyleDao.findId(room.getRoomStyle().getId());
 		
-		// check in
 		BookingHistory bookingHistory = new BookingHistory();
 		bookingHistory.setCheckIn(new Date());
 		bookingHistory.setPrice(roomStyle.getPrice());

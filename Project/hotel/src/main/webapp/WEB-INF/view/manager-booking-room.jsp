@@ -51,10 +51,7 @@
 						<td>Ngày đặt phòng: </td>
 						<td><form:input path="startedAt" type="date" /></td>
 					</tr>
-					<tr>
-						<td>Ngày trả phòng: </td>
-						<td><form:input path="endedAt" type="date"/></td>
-					</tr>
+
 				</table>
 				<span style="margin-bottom: 100px;"></span>
 				<p class="btn">

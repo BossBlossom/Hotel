@@ -26,10 +26,10 @@ CREATE TABLE `bill_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `price` int(11) DEFAULT NULL,
   `quantum` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `total` int(11) DEFAULT NULL,
   `bill_id` int(11) DEFAULT NULL,
   `product_id` int(11) DEFAULT NULL,
-  `status` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKfwm4sko9p82ndh6belyxx12bj` (`bill_id`),
   KEY `FK4iagdr0uhsq4tj0ag99nmmya1` (`product_id`),
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-31 17:40:39
+-- Dump completed on 2018-11-01 13:49:44

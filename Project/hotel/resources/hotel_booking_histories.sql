@@ -24,8 +24,10 @@ DROP TABLE IF EXISTS `booking_histories`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `booking_histories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `check_in` varchar(255) DEFAULT NULL,
-  `check_out` varchar(255) DEFAULT NULL,
+  `check_in` datetime(6) DEFAULT NULL,
+  `check_out` datetime(6) DEFAULT NULL,
+  `day_total` int(11) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
   `customer_id` int(11) DEFAULT NULL,
   `room_no` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -54,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-31 17:40:39
+-- Dump completed on 2018-11-01 13:49:45

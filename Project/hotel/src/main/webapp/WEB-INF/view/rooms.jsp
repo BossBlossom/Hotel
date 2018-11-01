@@ -835,10 +835,6 @@
 										<td style="padding: 10px;">Ngày nhận phòng:</td>
 										<td colspan="5"><form:input path="startedAt" type="date" /></td>
 									</tr>
-									<tr style="padding: 5px;">
-										<td style="padding: 10px;">Ngày trả phòng:</td>
-										<td colspan="5"><form:input path="endedAt" type="date" /></td>
-									</tr>
 
 								</table>
 							</div>
@@ -919,10 +915,6 @@
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">Ngày nhận phòng:</td>
 										<td colspan="5"><form:input path="startedAt" type="date" /></td>
-									</tr>
-									<tr style="padding: 5px;">
-										<td style="padding: 10px;">Ngày trả phòng:</td>
-										<td colspan="5"><form:input path="endedAt" type="date" /></td>
 									</tr>
 
 								</table>
@@ -1005,10 +997,6 @@
 										<td style="padding: 10px;">Ngày nhận phòng:</td>
 										<td colspan="5"><form:input path="startedAt" type="date" /></td>
 									</tr>
-									<tr style="padding: 5px;">
-										<td style="padding: 10px;">Ngày trả phòng:</td>
-										<td colspan="5"><form:input path="endedAt" type="date" /></td>
-									</tr>
 
 								</table>
 							</div>
@@ -1089,10 +1077,6 @@
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">Ngày nhận phòng:</td>
 										<td colspan="5"><form:input path="startedAt" type="date" /></td>
-									</tr>
-									<tr style="padding: 5px;">
-										<td style="padding: 10px;">Ngày trả phòng:</td>
-										<td colspan="5"><form:input path="endedAt" type="date" /></td>
 									</tr>
 
 								</table>

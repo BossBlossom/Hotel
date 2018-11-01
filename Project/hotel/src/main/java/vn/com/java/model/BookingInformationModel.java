@@ -1,10 +1,5 @@
 package vn.com.java.model;
 
-import java.text.ParseException;
-import java.util.Date;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
 import vn.com.java.entity.BookingInformation;
 import vn.com.java.entity.Customer;
 import vn.com.java.entity.Room;
@@ -15,11 +10,7 @@ public class BookingInformationModel
 	
 	private int roomNo;
 	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	private Date startedAt;
-	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	private Date endedAt;
+	private String startedAt;
 	
 	private String status;
 	
@@ -42,10 +33,9 @@ public class BookingInformationModel
 		customer.setFullName(customer.getFullName());
 	}
 	
-	public BookingInformation toBookingInformation(BookingInformation bookingInformation) throws ParseException
+	public BookingInformation toBookingInformation(BookingInformation bookingInformation)
 	{
 		bookingInformation.setStartedAt(this.startedAt);
-		bookingInformation.setEndedAt(this.endedAt);
 		
 		return bookingInformation;
 	}
@@ -53,7 +43,6 @@ public class BookingInformationModel
 	public void fromBookingInformation(BookingInformation bookingInformation)
 	{
 		this.setStartedAt(bookingInformation.getStartedAt());
-		this.setEndedAt(bookingInformation.getEndedAt());
 	}
 
 	public String getCmnd() {
@@ -72,21 +61,12 @@ public class BookingInformationModel
 		this.roomNo = roomNo;
 	}
 	
-
-	public Date getStartedAt() {
+	public String getStartedAt() {
 		return startedAt;
 	}
 
-	public void setStartedAt(Date startedAt) {
+	public void setStartedAt(String startedAt) {
 		this.startedAt = startedAt;
-	}
-
-	public Date getEndedAt() {
-		return endedAt;
-	}
-
-	public void setEndedAt(Date endedAt) {
-		this.endedAt = endedAt;
 	}
 
 	public String getFullName() {
