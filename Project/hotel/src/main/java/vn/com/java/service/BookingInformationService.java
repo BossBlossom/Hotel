@@ -77,14 +77,15 @@ public class BookingInformationService
 	
 	public BookingInformation checkBookingInformationCustomer(BookingInformationModel bookingInformationModel)
 	{	
-		Customer customer = new Customer();
-		bookingInformationModel.toCustomer(customer);
+		BookingInformation bookingInformation =bookingInformationDao.findByRoom(bookingInformationModel.getRoomNo());
+		
+		Customer customer = customerDao.findById(bookingInformation.getCustomer().getId());
 		
 		Room room = roomDao.find(bookingInformationModel.getRoomNo());
 		room.setStatus("check in");
 		roomDao.update(room);
 		
-		BookingInformation bookingInformation = new BookingInformation();
+		
 		bookingInformation.setStatus("check in");
 		BookingInformation result = bookingInformationDao.update(bookingInformation);
 		

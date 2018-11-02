@@ -42,6 +42,14 @@ public class BookingInformationDao
 		return bookingInformation;
 	}
 	
+	public BookingInformation findByRoom(int roomNo)
+	{
+		TypedQuery<BookingInformation> query = getSession().createQuery("FROM BookingInformation WHERE room.roomNo = :roomNo", BookingInformation.class);
+		query.setParameter("roomNo", roomNo);
+		BookingInformation bookingInformation = query.getSingleResult();
+		return bookingInformation;
+	}
+	
 	public BookingInformation create(BookingInformation bookingInformation)
 	{
 		getSession().save(bookingInformation);

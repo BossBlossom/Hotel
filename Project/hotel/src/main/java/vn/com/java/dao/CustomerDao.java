@@ -30,14 +30,14 @@ public class CustomerDao {
 		return customers;
 	}
 	
-	public List<Customer> findByCmnd(int cmndNo)
+	public List<Customer> findByAllCmnd(String cmnd)
 	{
 		return new ArrayList<>();
 	}
 	
-	public Customer findByName(String name)
+	public Customer findById(int id)
 	{
-		Customer customer = getSession().find(Customer.class, name);
+		Customer customer = getSession().find(Customer.class, id);
 		return customer;
 	}
 	
