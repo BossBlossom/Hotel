@@ -1,11 +1,16 @@
 package vn.com.java.service;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.transaction.Transactional;
 
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -145,7 +150,15 @@ public class BookingInformationService
 		BookingInformation result = bookingInformationDao.update(bookingInformation);
 		
 		BookingHistory bookingHistory = bookingHistoryDao.findByRoom(bookingInformationModel.getRoomNo());
-		bookingHistory.setCheckOut(new Date());
+		Date currentDate = new Date();
+		bookingHistory.setCheckOut(currentDate);
+		
+		long days = TimeUnit.MILLISECONDS.toDays(Math.abs(currentDate.getTime() - bookingHistory.getCheckIn().getTime()));
+		if (days < 1) {
+			bookingHistory.setDayTotal(1);
+		} else {
+			bookingHistory.setDayTotal((int)days);
+		}
 		bookingHistoryDao.update(bookingHistory);
 		
 		return result;
