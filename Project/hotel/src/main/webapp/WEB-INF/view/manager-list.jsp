@@ -101,7 +101,6 @@
 							<button class="dropbtn">&#9947;</button>
 							<span class="dropdown-content">
 								<a href='<spring:url value="/manager-list/bill?roomNo=${room.roomNo}" />'>bill</a> 
-								<a href='<spring:url value="/manager-list/view-room?roomNo=${room.roomNo}" />'>view</a>
 								<a href="#"	data-toggle="modal" data-target="#myModal"
 									data-backdrop="static" data-keyboard="false">bill</a> 
 								<a href="#">history</a>
