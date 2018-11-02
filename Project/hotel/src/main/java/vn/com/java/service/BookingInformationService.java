@@ -1,9 +1,5 @@
 package vn.com.java.service;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.temporal.ChronoUnit;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -13,11 +9,13 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import vn.com.java.dao.BillDao;
 import vn.com.java.dao.BookingHistoryDao;
 import vn.com.java.dao.BookingInformationDao;
 import vn.com.java.dao.CustomerDao;
 import vn.com.java.dao.RoomDao;
 import vn.com.java.dao.RoomStyleDao;
+import vn.com.java.entity.Bill;
 import vn.com.java.entity.BookingHistory;
 import vn.com.java.entity.BookingInformation;
 import vn.com.java.entity.Customer;
@@ -43,6 +41,9 @@ public class BookingInformationService
 	
 	@Autowired
 	private BookingHistoryDao bookingHistoryDao;
+	
+	@Autowired
+	private BillDao billDao;
 	
 	public List<BookingInformation> search(int id)
 	{
@@ -159,6 +160,12 @@ public class BookingInformationService
 			bookingHistory.setDayTotal((int)days);
 		}
 		bookingHistoryDao.update(bookingHistory);
+		
+		Bill bill = new Bill();
+		bill.setBookingInformation(bookingInformation);
+		bill.setRoom(room);
+		bill.setRoomTotal(bookingHistory.getDayTotal()*bookingHistory.getPrice());
+		bill.setStatus("none");
 		
 		return result;
 	}

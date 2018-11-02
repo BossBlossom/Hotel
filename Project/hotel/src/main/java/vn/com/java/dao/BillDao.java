@@ -42,6 +42,14 @@ public class BillDao
 		return bill;
 	}
 	
+	public Bill findByRoom(int roomNo)
+	{
+		TypedQuery<Bill> query = getSession().createQuery("FROM Bill WHERE room.roomNo = :roomNo", Bill.class);
+		query.setParameter("roomNo", roomNo);
+		Bill bill = query.getSingleResult();
+		return bill;
+	}
+	
 	public Bill create(Bill bill)
 	{
 		getSession().save(bill);
