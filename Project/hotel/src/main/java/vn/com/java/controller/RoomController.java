@@ -53,7 +53,7 @@ public class RoomController
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public String handleCreate(@ModelAttribute("room") RoomModel roomModel, 
 			@RequestParam(name="roomNo")int roomNo, @RequestParam(name="bed")int bed, 
-			@RequestParam(name="airConditioner")int airConditioner, @RequestParam(name="money")int money,
+			@RequestParam(name="airConditioner")int airConditioner,
 			BindingResult result, ModelMap modelMap)
 	{
 		Room rooms = roomService.find(roomNo);
@@ -73,10 +73,6 @@ public class RoomController
 		}
 		else if(airConditioner == 0) {
 			modelMap.put("ketqua3", "Báº¡n chÆ°a nháº­p sá»‘ lÆ°á»£ng mÃ¡y láº¡nh!");
-			return "manager-create-room";
-		}
-		else if(money == 0) {
-			modelMap.put("ketqua4", "Báº¡n chÆ°a nháº­p giÃ¡ tiá»�n!");
 			return "manager-create-room";
 		}
 		
@@ -207,7 +203,7 @@ public class RoomController
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public String handleUpdate(@ModelAttribute("room") RoomModel roomModel,
 			@RequestParam(name="bed")int bed, @RequestParam(name="airConditioner")int airConditioner, 
-			@RequestParam(name="money")int money, BindingResult result, ModelMap modelMap)
+			BindingResult result, ModelMap modelMap)
 	{
 		
 		if(bed == 0) {
@@ -216,10 +212,6 @@ public class RoomController
 		}
 		else if(airConditioner == 0) {
 			modelMap.put("ketqua3", "Báº¡n chÆ°a cáº­p nháº­t sá»‘ lÆ°á»£ng mÃ¡y láº¡nh!");
-			return "manager-update-room";
-		}
-		else if(money == 0) {
-			modelMap.put("ketqua4", "Báº¡n chÆ°a cáº­p nháº­t giÃ¡ tiá»�n!");
 			return "manager-update-room";
 		}
 		
