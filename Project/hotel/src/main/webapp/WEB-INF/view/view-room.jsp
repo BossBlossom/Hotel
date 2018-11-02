@@ -8,13 +8,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
 <title>Trang chủ Manager</title>
-<link rel="stylesheet" type="text/css" href='<spring:url value="/resources/css/style2.css"/>'>
+<link rel="stylesheet" type="text/css" href='<spring:url value="/resources/css/style3.css"/>'>
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 	crossorigin="anonymous">
+	
+<style type="text/css">
+	#left{
+		float: left;
+		width: 600px;
+		margin: 50px 10px 50px 30px;
+		text-align: justify;
+	}
+	
+	#right{
+		float: right;
+		width: 600px;
+		margin: 50px 30px 50px 10px;
+		text-align: justify;
+	}
+	
+	article td{
+		text-align: left;
+	}
+</style>	
 </head>
 
 <body>
@@ -30,47 +49,50 @@
 
 		<article>
 
-			<div style="margin: auto; float: none;">
-				<table>
-					<tr>
-						<td colspan="2">Chi tiết phòng ${room.roomNo}</td>
-					</tr>
-					<tr>
-						<td>Loại phòng: </td>
-						<td>${room.getRoomStyle().getName()}</td>
-					</tr>
-					<tr>
-						<td>Trạng thái: </td>
-						<td>${room.status}</td>
-					</tr>
-					<tr>
-						<td>Giường: </td>
-						<td>${room.bed}</td>
-					</tr>
-					<tr>
-						<td>Máy lạnh: </td>
-						<td>${room.airConditioner}</td>
-					</tr>
-
-				</table>
+			<div style="margin: auto;">
+				<div id="left">
+					<table>
+						<tr>
+							<td colspan="2" style="color: red;"><b>Chi tiết phòng ${room.roomNo}</b></td>
+						</tr>
+						<tr>
+							<td>Loại phòng: </td>
+							<td>${room.getRoomStyle().getName()}</td>
+						</tr>
+						<tr>
+							<td>Trạng thái: </td>
+							<td>${room.status}</td>
+						</tr>
+						<tr>
+							<td>Giường: </td>
+							<td>${room.bed}</td>
+						</tr>
+						<tr>
+							<td>Máy lạnh: </td>
+							<td>${room.airConditioner}</td>
+						</tr>
+					</table>
+				</div>
 			<c:forEach var="bookingInformation" items="${bookingInformations}">
 				<c:if test="${bookingInformation.getRoom().getRoomNo() eq room.roomNo }">
 				
 					<c:if test="${bookingInformation.status eq 'none'}">
-						<table>
-							<tr>
-								<td>Chứng minh nhân dân: </td>
-								<td>${bookingInformation.getCustomer().getCmnd()}</td>
-							</tr>
-							<tr>
-								<td>Họ Tên: </td>
-								<td>${bookingInformation.getCustomer().getFullName()}</td>
-							</tr>
-							<tr>
-								<td>Ngày đặt phòng: </td>
-								<td>${bookingInformation.startedAt}</td>
-							</tr>
-						</table>
+						<div id="right">
+							<table>
+								<tr>
+									<td>Chứng minh nhân dân: </td>
+									<td>${bookingInformation.getCustomer().getCmnd()}</td>
+								</tr>
+								<tr>
+									<td>Họ Tên: </td>
+									<td>${bookingInformation.getCustomer().getFullName()}</td>
+								</tr>
+								<tr>
+									<td>Ngày đặt phòng: </td>
+									<td>${bookingInformation.startedAt}</td>
+								</tr>
+							</table>
+						</div>
 					</c:if>
 					
 				</c:if>
