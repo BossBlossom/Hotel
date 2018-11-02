@@ -1,6 +1,5 @@
 package vn.com.java.controller;
 
-import java.text.ParseException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -100,7 +99,12 @@ public class RoomController
 			return"redirect:/manager-list";
 		}
 		
+		RoomModel roomModel = new RoomModel();
+		roomModel.fromRoom(room);
+		BookingInformationModel bookingInformationModel = new BookingInformationModel();
+		
 		model.addAttribute("room", room);
+		model.addAttribute("booking", bookingInformationModel);
 		
 		return "manager-booking-room";
 	}
@@ -147,17 +151,30 @@ public class RoomController
 	
 	@RequestMapping(value = "/check-in", method = RequestMethod.GET)
 	public String checkIn(@RequestParam(name="roomNo")int roomNo, 
-			@ModelAttribute("booking") BookingInformationModel bookingInformationModel,BindingResult result, Model model)
+			@ModelAttribute("booking") BookingInformationModel bookingInformationModel,
+			BindingResult result, Model model)
 	{
-		bookingInformationService.checkBookingInformationCustomer(bookingInformationModel);
+		bookingInformationService.checkInBookingInformationCustomer(bookingInformationModel);
 		
 		return "redirect:/manager-list";
 	}
 	
 	@RequestMapping(value = "/check-out", method = RequestMethod.GET)
-	public String checkOut(@RequestParam(name="roomNo")int roomNo, Model model)
+	public String checkOut(@RequestParam(name="roomNo")int roomNo, 
+			@ModelAttribute("booking") BookingInformationModel bookingInformationModel,
+			BindingResult result, Model model)
 	{
-		roomService.checkOutRoom(roomNo);
+		bookingInformationService.checkOutBookingInformationCustomer(bookingInformationModel);
+		
+		return "redirect:/manager-list";
+	}
+	
+	@RequestMapping(value = "/cancel", method = RequestMethod.GET)
+	public String checkCancel(@RequestParam(name="roomNo")int roomNo, 
+			@ModelAttribute("booking") BookingInformationModel bookingInformationModel,
+			BindingResult result, Model model)
+	{
+		bookingInformationService.checkCancelBookingInformationCustomer(bookingInformationModel);
 		
 		return "redirect:/manager-list";
 	}

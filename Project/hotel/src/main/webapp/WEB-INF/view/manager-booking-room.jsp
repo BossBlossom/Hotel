@@ -31,7 +31,7 @@
 		<a href='<spring:url value="/manager-list" />'>Trang chủ</a>
 	</nav>
 
-	<form:form id="form1" modelAttribute="room" method="post">
+	<form:form id="form1" modelAttribute="booking" action="${formUrl}" method="post">
 		<article>
 			<div>
 				<table>
@@ -41,15 +41,15 @@
 					</tr>
 					<tr>
 						<td>Họ Tên: </td>
-						<td><form:input path="name" /></td>
+						<td><form:input path="fullName" name="fullName"/></td>
 					</tr>
 					<tr>
 						<td>Chứng minh nhân dân: </td>
-						<td><form:input path="cmnd" /></td>
+						<td><form:input path="cmnd" name="cmnd" /></td>
 					</tr>
 					<tr>
 						<td>Ngày đặt phòng: </td>
-						<td><form:input path="startedAt" type="date" /></td>
+						<td><form:input path="startedAt" name="startedAt" type="date" /></td>
 					</tr>
 
 				</table>
