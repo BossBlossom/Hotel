@@ -107,7 +107,7 @@ public class BookingInformationService
 	
 	public BookingInformation checkInBookingInformationCustomer(BookingInformationModel bookingInformationModel)
 	{	
-		BookingInformation bookingInformation =bookingInformationDao.findByRoom(bookingInformationModel.getRoomNo());
+		BookingInformation bookingInformation = bookingInformationDao.findByRoom(bookingInformationModel.getRoomNo());
 		
 		Customer customer = customerDao.findById(bookingInformation.getCustomer().getId());
 		
@@ -132,29 +132,21 @@ public class BookingInformationService
 		return result;
 	}
 	
-	public BookingInformation checkOutBookingInformationCustomer(BookingInformationModel bookingInformationModel)
+	public BookingInformation checkOutBookingInformationManager(BookingInformationModel bookingInformationModel)
 	{	
-		BookingInformation bookingInformation =bookingInformationDao.findByRoom(bookingInformationModel.getRoomNo());
-		
-		Customer customer = customerDao.findById(bookingInformation.getCustomer().getId());
+		BookingInformation bookingInformation = bookingInformationDao.findByRoom(bookingInformationModel.getRoomNo());
 		
 		Room room = roomDao.find(bookingInformationModel.getRoomNo());
-		room.setStatus("check in");
+		room.setStatus("check out");
 		roomDao.update(room);
 		
 		
 		bookingInformation.setStatus("history");
 		BookingInformation result = bookingInformationDao.update(bookingInformation);
 		
-		RoomStyle roomStyle = roomStyleDao.findId(room.getRoomStyle().getId());
-		
-		BookingHistory bookingHistory = new BookingHistory();
+		BookingHistory bookingHistory = bookingHistoryDao.findByRoom(bookingInformationModel.getRoomNo());
 		bookingHistory.setCheckOut(new Date());
-		bookingHistory.setPrice(roomStyle.getPrice());
-		bookingHistory.setCustomer(customer);
-		bookingHistory.setDayTotal(1);
-		bookingHistory.setRoom(room);
-		bookingHistoryDao.create(bookingHistory);
+		bookingHistoryDao.update(bookingHistory);
 		
 		return result;
 	}

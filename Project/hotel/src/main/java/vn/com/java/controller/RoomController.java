@@ -164,7 +164,7 @@ public class RoomController
 			@ModelAttribute("booking") BookingInformationModel bookingInformationModel,
 			BindingResult result, Model model)
 	{
-		bookingInformationService.checkOutBookingInformationCustomer(bookingInformationModel);
+		bookingInformationService.checkOutBookingInformationManager(bookingInformationModel);
 		
 		return "redirect:/manager-list";
 	}

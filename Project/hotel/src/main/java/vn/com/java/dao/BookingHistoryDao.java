@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import vn.com.java.entity.BookingHistory;
+import vn.com.java.entity.BookingInformation;
 
 @Repository
 public class BookingHistoryDao 
@@ -38,7 +39,9 @@ public class BookingHistoryDao
 	
 	public BookingHistory findByRoom(int roomNo)
 	{
-		BookingHistory bookingHistory = getSession().find(BookingHistory.class, roomNo);
+		TypedQuery<BookingHistory> query = getSession().createQuery("FROM BookingHistory WHERE room.roomNo = :roomNo", BookingHistory.class);
+		query.setParameter("roomNo", roomNo);
+		BookingHistory bookingHistory = query.getSingleResult();
 		return bookingHistory;
 	}
 	
@@ -51,6 +54,12 @@ public class BookingHistoryDao
 	public BookingHistory create(BookingHistory bookingHistory)
 	{
 		getSession().save(bookingHistory);
+		return bookingHistory;
+	}
+	
+	public BookingHistory update(BookingHistory bookingHistory)
+	{
+		getSession().update(bookingHistory);
 		return bookingHistory;
 	}
 }
