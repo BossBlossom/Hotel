@@ -243,12 +243,21 @@ public class RoomController
 	}
 	
 	@RequestMapping(value = "/order", method = RequestMethod.GET)
-	public String order(@RequestParam(name="roomNo")int roomNo, @ModelAttribute("room") RoomModel roomModel, BindingResult result, Model model)
+	public String order(@RequestParam(name="roomNo")int roomNo, BindingResult result, Model model)
 	{
+		Room room = roomService.find(roomNo);
+		if(room == null)
+		{
+			return"redirect:/manager-list";
+		}
+		
+		RoomModel roomModel = new RoomModel();
+		roomModel.fromRoom(room);
 		
 		List<Product> product = productService.search(0);
-		model.addAttribute("order", product);
+		model.addAttribute("room", room);
+		model.addAttribute("product", product);
 		
-		return "redirect:/order";
+		return "order";
 	}
 }

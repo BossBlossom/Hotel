@@ -56,7 +56,7 @@
 				</c:forEach>
 				
 				<p class="btn">
-					<a style="right: 0;" href="#" onclick="submitForm('form1')">TẠO PHÒNG</a>
+					<a style="right: 0;" href="#" onclick="submitForm('form1')">ORDER</a>
 					<a href='<spring:url value="/manager-list" />'>TRỞ VỀ</a>
 				</p>
 			</table>
