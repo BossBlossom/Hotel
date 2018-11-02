@@ -18,7 +18,7 @@ import vn.com.java.entity.Room;
 import vn.com.java.model.BookingInformationModel;
 import vn.com.java.model.RoomModel;
 import vn.com.java.service.BookingInformationService;
-import vn.com.java.service.OrderService;
+import vn.com.java.service.ProductService;
 import vn.com.java.service.RoomService;
 
 @Controller
@@ -30,7 +30,7 @@ public class RoomController
 	@Autowired
 	private BookingInformationService bookingInformationService;
 	@Autowired
-	private OrderService orderService;
+	private ProductService productService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(Model model)
@@ -59,24 +59,24 @@ public class RoomController
 		Room rooms = roomService.find(roomNo);
 		if(rooms != null)
 		{
-			modelMap.put("ketqua", "Số phòng này đã tồn tại!");
+			modelMap.put("ketqua", "Sá»‘ phÃ²ng nÃ y Ä‘Ã£ tá»“n táº¡i!");
 			return "manager-create-room";
 		}
 		
 		if(roomNo == 0) {
-			modelMap.put("ketqua", "Bạn chưa nhập số phòng!");
+			modelMap.put("ketqua", "Báº¡n chÆ°a nháº­p sá»‘ phÃ²ng!");
 			return "manager-create-room";
 		}
 		else if(bed == 0) {
-			modelMap.put("ketqua2", "Bạn chưa nhập số lượng giường!");
+			modelMap.put("ketqua2", "Báº¡n chÆ°a nháº­p sá»‘ lÆ°á»£ng giÆ°á»�ng!");
 			return "manager-create-room";
 		}
 		else if(airConditioner == 0) {
-			modelMap.put("ketqua3", "Bạn chưa nhập số lượng máy lạnh!");
+			modelMap.put("ketqua3", "Báº¡n chÆ°a nháº­p sá»‘ lÆ°á»£ng mÃ¡y láº¡nh!");
 			return "manager-create-room";
 		}
 		else if(money == 0) {
-			modelMap.put("ketqua4", "Bạn chưa nhập giá tiền!");
+			modelMap.put("ketqua4", "Báº¡n chÆ°a nháº­p giÃ¡ tiá»�n!");
 			return "manager-create-room";
 		}
 		
@@ -211,15 +211,15 @@ public class RoomController
 	{
 		
 		if(bed == 0) {
-			modelMap.put("ketqua2", "Bạn chưa cập nhật số lượng giường!");
+			modelMap.put("ketqua2", "Báº¡n chÆ°a cáº­p nháº­t sá»‘ lÆ°á»£ng giÆ°á»�ng!");
 			return "manager-update-room";
 		}
 		else if(airConditioner == 0) {
-			modelMap.put("ketqua3", "Bạn chưa cập nhật số lượng máy lạnh!");
+			modelMap.put("ketqua3", "Báº¡n chÆ°a cáº­p nháº­t sá»‘ lÆ°á»£ng mÃ¡y láº¡nh!");
 			return "manager-update-room";
 		}
 		else if(money == 0) {
-			modelMap.put("ketqua4", "Bạn chưa cập nhật giá tiền!");
+			modelMap.put("ketqua4", "Báº¡n chÆ°a cáº­p nháº­t giÃ¡ tiá»�n!");
 			return "manager-update-room";
 		}
 		
@@ -246,7 +246,7 @@ public class RoomController
 	public String order(@RequestParam(name="roomNo")int roomNo, @ModelAttribute("room") RoomModel roomModel, BindingResult result, Model model)
 	{
 		
-		List<Product> product = orderService.search(0);
+		List<Product> product = productService.search(0);
 		model.addAttribute("order", product);
 		
 		return "redirect:/order";
