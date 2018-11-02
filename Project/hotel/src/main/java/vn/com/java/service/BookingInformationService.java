@@ -10,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 
 import javax.transaction.Transactional;
 
-import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

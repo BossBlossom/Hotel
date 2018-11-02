@@ -63,7 +63,7 @@ public class HomeController
 	@RequestMapping(value = "/home",method = RequestMethod.GET)
 	public String Rooms(Model model)
 	{
-		return "rooms";
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value = "/services",method = RequestMethod.GET)
