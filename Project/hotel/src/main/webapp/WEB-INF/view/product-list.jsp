@@ -43,17 +43,23 @@
 					<td>Giá</td>
 					<td colspan="2">action</td>
 				</tr>
-				<hr>
-				<c:forEach var="product" items="${product}">
-					<tr>
-						<td>Hình</td>
-						<td>Tên</td>
-						<td>Loại</td>
-						<td>Giá</td>
-						<td>update</td>
-						<td>delete</td>	
-					</tr>
-					<hr>
+				<c:forEach var="product" items="${products}">
+					<c:if test="${product.style eq 'food'}">
+						<tr>
+							<td><img src="resources/Home_resources/images/food/${product.image}" height="90px" width="60px"/></td>
+							<td>${product.product}</td>
+							<td>${product.style}</td>
+							<td>${product.price}</td>
+						</tr>
+					</c:if>
+					<c:if test="${product.style eq 'drink'}">
+						<tr>
+							<td><img src="resources/Home_resources/images/drink/${product.image}" height="90px" width="60px"/></td>
+							<td>${product.product}</td>
+							<td>${product.style}</td>
+							<td>${product.price}</td>
+						</tr>
+					</c:if>
 				</c:forEach>
 			</table>
 			
