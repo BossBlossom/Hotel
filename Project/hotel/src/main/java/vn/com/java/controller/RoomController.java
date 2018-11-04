@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import vn.com.java.dao.BillDao;
+import vn.com.java.entity.Bill;
 import vn.com.java.entity.BookingInformation;
 import vn.com.java.entity.Product;
 import vn.com.java.entity.Room;
@@ -178,10 +180,43 @@ public class RoomController
 	@RequestMapping(value = "/bill", method = RequestMethod.GET)
 	public String bill(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
+		BillDao billDao = new BillDao();
+		Bill bill = billDao.findByRoom(roomNo);
+		
+		model.addAttribute("bill", bill);
+		
+		return "bill";
+	}
+	
+	@RequestMapping(value = "/bill", method = RequestMethod.POST)
+	public String handleBill(@RequestParam(name="roomNo")int roomNo,
+			BindingResult result, Model model)
+	{
 		roomService.billRoom(roomNo);
 		
 		return "redirect:/manager-list";
 	}
+	
+//	@RequestMapping(value = "/order", method = RequestMethod.GET)
+//	public String billOrder(@RequestParam(name="roomNo")int roomNo, Model model)
+//	{
+//		Room room = roomService.find(roomNo);
+//		List<Product> products = productService.search(0);
+//		model.addAttribute("room", room);
+//		model.addAttribute("products", products);
+//		
+//		return "order";
+//		
+//	}
+	
+//	@RequestMapping(value = "/order", method = RequestMethod.POST)
+//	public String handleBillOrder(@RequestParam(name="roomNo")int roomNo,
+//			BindingResult result, Model model)
+//	{
+//		roomService.billRoom(roomNo);
+//		
+//		return "redirect:/manager-list";
+//	}
 	
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
 	public String update(@RequestParam(name="roomNo")int roomNo, Model model)

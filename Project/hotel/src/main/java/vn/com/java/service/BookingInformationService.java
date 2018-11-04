@@ -42,9 +42,6 @@ public class BookingInformationService
 	@Autowired
 	private BookingHistoryDao bookingHistoryDao;
 	
-	@Autowired
-	private BillDao billDao;
-	
 	public List<BookingInformation> search(int id)
 	{
 		if(id<=0)
