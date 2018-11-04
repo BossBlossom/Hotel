@@ -25,7 +25,6 @@
 
 	<nav>
 		<a href='<spring:url value="/manager-list" />'>Trang chủ</a> 
-		<a href='<spring:url value="/product-list/create" />'>Tạo sản phẩm mới</a>
 	</nav>
 
 	<article>
@@ -41,7 +40,6 @@
 					<td>Tên</td>
 					<td>Loại</td>
 					<td>Giá</td>
-					<td colspan="2">action</td>
 				</tr>
 				<c:forEach var="product" items="${products}">
 					<c:if test="${product.style eq 'food'}">
