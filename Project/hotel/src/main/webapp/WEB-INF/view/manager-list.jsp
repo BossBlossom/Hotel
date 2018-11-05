@@ -39,19 +39,20 @@
 
 <body>
 	<header>
-		<h1 id="effectText1">MANAGER PAGE</h1>
+		<h1 id="effectText1">TRANG QUẢN LÝ</h1>
 	</header>
 
 	<nav>
 		<a href='<spring:url value="/manager-list" />'>Trang chủ</a> 
 		<a href='<spring:url value="/manager-list/create" />'>Tạo phòng mới</a>
 		<a href='<spring:url value="/product-list" />'>Danh sách sản phẩm</a>
+		<a href='<spring:url value="/logout" />' style="float: right;">Đăng xuất</a>
 	</nav>
 
 	<article>
 		<div id="filter" style="margin-bottom: 50px;">
-			<input type="text" id="inp1" class="myInput" onkeyup="myFunction1()" placeholder="Search for room no..." title="Type in a no">
-			<input type="text" id="inp2" class="myInput" onkeyup="myFunction2()" placeholder="Search for status..." title="Type in a status">
+			<input type="text" id="inp1" class="myInput" onkeyup="myFunction1()" placeholder="Tìm kiếm theo số phòng..." title="Nhập số phòng">
+			<input type="text" id="inp2" class="myInput" onkeyup="myFunction2()" placeholder="Tìm kiếm theo trạng thái..." title="Nhập trạng thái">
 		</div>
 		
 		<div id="myFilter">
@@ -64,9 +65,6 @@
 			</c:if>
 			<c:if test="${room.status eq 'check in'}">
 				<div class="room" style="background-color: #e60000; color:yellow;">
-			</c:if>
-			<c:if test="${room.status eq 'check out'}">
-				<div class="room" style="background-color: #b300b3; color:yellow;">
 			</c:if>
 			<c:if test="${room.status eq 'closed'}">
 				<div class="room" style="background-color: grey; color:white;">
@@ -90,17 +88,12 @@
 						</c:if>
 						<c:if test="${room.status eq 'customer'}">
 							<tr>
-								<td>Phòng chờ</td>
+								<td>Phòng đã đặt</td>
 							</tr>
 						</c:if>
 						<c:if test="${room.status eq 'check in'}">
 							<tr>
 								<td>Phòng có khách</td>
-							</tr>
-						</c:if>
-						<c:if test="${room.status eq 'check out'}">
-							<tr>
-								<td>Trả phòng</td>
 							</tr>
 						</c:if>
 					</table>
@@ -112,18 +105,6 @@
 								<a href='<spring:url value="/manager-list/view-room?roomNo=${room.roomNo}" />'>view</a> 
 								<a href='<spring:url value="/manager-list/order?roomNo=${room.roomNo}" />'>order</a>
 								<a href='<spring:url value="/manager-list/check-out?roomNo=${room.roomNo}" />'>check out</a>
-								<a href="#">history</a>
-							</span>
-						</span>
-					</c:if>
-					
-					<c:if test="${room.status eq 'check out'}">
-						<span class="dropdown">
-							<button class="dropbtn">&#9947;</button>
-							<span class="dropdown-content">
-								<a href='<spring:url value="/manager-list/bill?roomNo=${room.roomNo}" />'>bill</a> 
-								<a href="#"	data-toggle="modal" data-target="#myModal"
-									data-backdrop="static" data-keyboard="false">bill</a> 
 								<a href="#">history</a>
 							</span>
 						</span>

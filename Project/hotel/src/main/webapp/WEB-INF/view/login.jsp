@@ -43,44 +43,40 @@
 						<i class="zmdi zmdi-landscape"></i>
 					</span>
 					<span class="login100-form-title p-b-34 p-t-27">
-						LOGIN MANAGER
+						ĐĂNG NHẬP
 					</span>
 					<c:url value="/handleLogin" var="loginUrl"/>
 					<form action="${loginUrl}" method="post">
 					<c:if test="${param.error != null}">        
-						<p>
-							Invalid username and password.
+						<p style="color: white; text-align: center;">
+							** Tài khoản hoặc mật khẩu không đúng! **
 						</p>
 					</c:if>
 					<c:if test="${param.logout != null}">       
-						<p>
-							You have been logged out.
+						<p style="color: #00ff00; text-align: center;">
+							** Bạn đã đăng xuất! **
 						</p>
 					</c:if>
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
 						<label for="username"></label>
-						<input class="input100" type="text" name="username" placeholder="Username">
+						<input class="input100" type="text" name="username" placeholder="Tài khoản">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
 						<label for="password"></label>
-						<input class="input100" type="password" name="password" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Mật khẩu">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
-					<div class="contact100-form-checkbox">
-						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-						<label class="label-checkbox100" for="ckb1">
-							Remember me
-						</label>
-					</div>
+					<br>
+					
 					<input type="hidden"                        
 						name="${_csrf.parameterName}"
 						value="${_csrf.token}"/>
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Login
+							Đăng nhập
 						</button>
 					</div>
 					</form>
