@@ -17,11 +17,15 @@ import vn.com.java.entity.Bill;
 import vn.com.java.entity.BookingInformation;
 import vn.com.java.entity.Product;
 import vn.com.java.entity.Room;
+import vn.com.java.entity.RoomStyle;
+import vn.com.java.model.BillDetailModel;
 import vn.com.java.model.BookingInformationModel;
 import vn.com.java.model.RoomModel;
+import vn.com.java.service.BillDetailService;
 import vn.com.java.service.BookingInformationService;
 import vn.com.java.service.ProductService;
 import vn.com.java.service.RoomService;
+import vn.com.java.service.RoomStyleService;
 
 @Controller
 @RequestMapping("/manager-list")
@@ -29,11 +33,19 @@ public class RoomController
 {
 	@Autowired
 	private RoomService roomService;
+	
+	@Autowired
+	private RoomStyleService roomStyleService;
+	
 	@Autowired
 	private BookingInformationService bookingInformationService;
+	
 	@Autowired
 	private ProductService productService;
-
+	
+	@Autowired 
+	private BillDetailService billDetailService;
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(Model model)
 	{
@@ -47,7 +59,9 @@ public class RoomController
 	public String create(Model model)
 	{
 		RoomModel roomModel = new RoomModel();
+		List<RoomStyle> roomStyles = roomStyleService.search(null);
 		model.addAttribute("room", roomModel);
+		model.addAttribute("roomStyles", roomStyles);
 		
 		return "manager-create-room";
 	}
@@ -197,27 +211,6 @@ public class RoomController
 		return "redirect:/manager-list";
 	}
 	
-//	@RequestMapping(value = "/order", method = RequestMethod.GET)
-//	public String billOrder(@RequestParam(name="roomNo")int roomNo, Model model)
-//	{
-//		Room room = roomService.find(roomNo);
-//		List<Product> products = productService.search(0);
-//		model.addAttribute("room", room);
-//		model.addAttribute("products", products);
-//		
-//		return "order";
-//		
-//	}
-	
-//	@RequestMapping(value = "/order", method = RequestMethod.POST)
-//	public String handleBillOrder(@RequestParam(name="roomNo")int roomNo,
-//			BindingResult result, Model model)
-//	{
-//		roomService.billRoom(roomNo);
-//		
-//		return "redirect:/manager-list";
-//	}
-	
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
 	public String update(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
@@ -227,10 +220,12 @@ public class RoomController
 			return"redirect:/manager-list";
 		}
 		
+		List<RoomStyle> roomStyles = roomStyleService.search(null);
 		RoomModel roomModel = new RoomModel();
 		roomModel.fromRoom(room);
 		
 		model.addAttribute("room", roomModel);
+		model.addAttribute("roomStyles", roomStyles);
 		
 		return "manager-update-room";
 	}
@@ -270,7 +265,7 @@ public class RoomController
 	}
 	
 	@RequestMapping(value = "/order", method = RequestMethod.GET)
-	public String order(@RequestParam(name="roomNo")int roomNo, BindingResult result, Model model)
+	public String order(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
 		Room room = roomService.find(roomNo);
 		if(room == null)
@@ -281,10 +276,18 @@ public class RoomController
 		RoomModel roomModel = new RoomModel();
 		roomModel.fromRoom(room);
 		
-		List<Product> product = productService.search(0);
+		List<Product> products = productService.search(0);
 		model.addAttribute("room", room);
-		model.addAttribute("product", product);
+		model.addAttribute("products", products);
 		
 		return "order";
+	}
+	
+	@RequestMapping(value = "/order", method = RequestMethod.POST)
+	public String handleBillOrder(@ModelAttribute(name="order") BillDetailModel billDetailModel, @RequestParam(name="roomNo")int roomNo,
+			BindingResult result, Model model)
+	{
+		billDetailService.order(billDetailModel);
+		return "redirect:/manager-list";
 	}
 }

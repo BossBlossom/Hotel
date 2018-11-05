@@ -12,8 +12,6 @@ public class BillDetailModel
 	
 	private int quantum;
 	
-	private int price;
-	
 	private String status;
 	
 	private int total;
@@ -55,14 +53,6 @@ public class BillDetailModel
 
 	public void setQuantum(int quantum) {
 		this.quantum = quantum;
-	}
-
-	public int getPrice() {
-		return price;
-	}
-
-	public void setPrice(int price) {
-		this.price = price;
 	}
 
 	public String getStatus() {
