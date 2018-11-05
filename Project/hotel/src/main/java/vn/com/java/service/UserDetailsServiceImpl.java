@@ -16,7 +16,7 @@ import vn.com.java.dao.AccountDao;
 import vn.com.java.entity.Account;
 
 @Service
-public class AccountService implements UserDetailsService
+public class UserDetailsServiceImpl implements UserDetailsService
 {
 	
 	@Autowired
