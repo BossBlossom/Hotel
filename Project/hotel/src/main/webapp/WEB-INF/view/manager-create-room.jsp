@@ -65,8 +65,8 @@
 				</table>
 				<span style="margin-bottom: 100px;"></span>
 				<p class="btn">
-					<a style="margin: 10px 10px 10px 34%" href="#" onclick="submitForm('form1')">TẠO PHÒNG</a> <a
-						href='<spring:url value="/manager-list" />'>TRỞ VỀ</a>
+					<a style="margin: 10px 10px 10px 34%" href="#" onclick="submitForm('form1')">TẠO PHÒNG</a> 
+					<a href='<spring:url value="/manager-list" />'>TRỞ VỀ</a>
 				</p>
 			</div>
 		</article>

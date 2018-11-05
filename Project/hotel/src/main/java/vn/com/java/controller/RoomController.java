@@ -277,8 +277,11 @@ public class RoomController
 		roomModel.fromRoom(room);
 		
 		List<Product> products = productService.search(0);
+		BillDetailModel billDetailModel = new BillDetailModel();
+		
 		model.addAttribute("room", room);
 		model.addAttribute("products", products);
+		model.addAttribute("order", billDetailModel);
 		
 		return "order";
 	}

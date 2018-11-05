@@ -7,9 +7,11 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import vn.com.java.dao.BillDao;
 import vn.com.java.dao.BillDetailDao;
 import vn.com.java.dao.ProductDao;
 import vn.com.java.dao.RoomDao;
+import vn.com.java.entity.Bill;
 import vn.com.java.entity.BillDetail;
 import vn.com.java.entity.Product;
 import vn.com.java.entity.Room;
@@ -27,6 +29,9 @@ public class BillDetailService
 	
 	@Autowired
 	private BillDetailDao billDetailDao;
+	
+	@Autowired
+	private BillDao billDao;
 	
 	public List<BillDetail> search(int id)
 	{
@@ -55,8 +60,28 @@ public class BillDetailService
 		billDetail.setPrice(product.getPrice());
 		billDetail.setTotal(billDetailModel.getQuantum()*product.getPrice());
 		billDetail.setStatus("none");
-				
 		BillDetail result = billDetailDao.create(billDetail);
+		
+		Bill bill = billDao.findByRoom(billDetailModel.getRoomNo());
+		if(bill.getStatus() == "none")
+		{
+			if(bill.getServiceTotal() == 0)
+			{
+				bill.setServiceTotal(billDetail.getTotal());
+			}
+			else
+			{
+				bill.setServiceTotal(bill.getServiceTotal()+billDetail.getTotal());
+			}
+			billDao.update(bill);
+		}
+		
+		if(billDetailModel.getStyle() == "drink")
+		{
+			product.setQuantum(product.getQuantum()-billDetailModel.getQuantum());
+			productDao.update(product);
+		}
+		
 		return result;
 	}
 }

@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import vn.com.java.dao.BillDao;
 import vn.com.java.dao.BookingHistoryDao;
 import vn.com.java.dao.BookingInformationDao;
 import vn.com.java.dao.CustomerDao;
@@ -40,6 +41,9 @@ public class BookingInformationService
 	
 	@Autowired
 	private BookingHistoryDao bookingHistoryDao;
+	
+	@Autowired
+	private BillDao billDao;
 	
 	public List<BookingInformation> search(int id)
 	{
@@ -162,6 +166,7 @@ public class BookingInformationService
 		bill.setRoom(room);
 		bill.setRoomTotal(bookingHistory.getDayTotal()*bookingHistory.getPrice());
 		bill.setStatus("none");
+		billDao.create(bill);
 		
 		return result;
 	}

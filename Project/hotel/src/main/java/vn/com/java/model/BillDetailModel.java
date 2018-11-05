@@ -14,6 +14,8 @@ public class BillDetailModel
 	
 	private String status;
 	
+	private String style;
+	
 	private int total;
 	
 	private int roomNo;
@@ -22,13 +24,13 @@ public class BillDetailModel
 
 	public BillDetail toBillDetail(BillDetail billDetail)
 	{
-		billDetail.setTotal(this.total);
+		billDetail.setQuantum(this.quantum);
 		return billDetail;
 	}
 	
 	public void fromBillDetail(BillDetail billDetail)
 	{
-		this.setTotal(billDetail.getTotal());
+		this.setQuantum(billDetail.getQuantum());
 	}
 	
 	public Room getRoom() {
@@ -85,6 +87,14 @@ public class BillDetailModel
 
 	public void setProductId(int productId) {
 		this.productId = productId;
+	}
+
+	public String getStyle() {
+		return style;
+	}
+
+	public void setStyle(String style) {
+		this.style = style;
 	}
 	
 }
