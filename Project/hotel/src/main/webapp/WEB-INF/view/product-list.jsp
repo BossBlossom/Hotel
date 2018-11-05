@@ -33,38 +33,41 @@
 			<input type="text" id="inp2" class="myInput" onkeyup="myFunction2()" placeholder="Search for type..." title="Type in a type">
 		</div>
 
-			<table>
-				<tr>
-					<td>Hình</td>
-					<td>Tên</td>
-					<td>Loại</td>
-					<td>Giá</td>
-				</tr>
+		<table>
+			<tr>
+				<td>Hình</td>
+				<td>Tên</td>
+				<td>Loại</td>
+				<td>Giá</td>
+			</tr>
 			<div id="myFilter">
 				<c:forEach var="product" items="${products}">
+				
 					<c:if test="${product.style eq 'food'}">
-					<div>
-						<tr>
-							<td><img src="resources/Home_resources/images/food/${product.image}" height="90px" width="60px"/></td>
-							<td>${product.product}</td>
-							<td>${product.style}</td>
-							<td>${product.price}</td>
-						</tr>
-					</div>
+						<div>
+							<tr>
+								<td><img src='<spring:url value="resources/Home_resources/images/food/${product.image}" />' height="500px" width="500px"/></td>
+								<td>${product.product}</td>
+								<td>${product.style}</td>
+								<td>${product.price}</td>
+							</tr>
+						</div>
 					</c:if>
+					
 					<c:if test="${product.style eq 'drink'}">
-					<div>
-						<tr>
-							<td><img src="resources/Home_resources/images/drink/${product.image}" height="90px" width="60px"/></td>
-							<td>${product.product}</td>
-							<td>${product.style}</td>
-							<td>${product.price}</td>
-						</tr>
-					</div>
+						<div>
+							<tr>
+								<td><img src='<spring:url value="resources/Home_resources/images/drink/${product.image}" />' height="500px" width="500px"/></td>
+								<td>${product.product}</td>
+								<td>${product.style}</td>
+								<td>${product.price}</td>
+							</tr>
+						</div>
 					</c:if>
+					
 				</c:forEach>
 			</div>
-			</table>
+		</table>
 			
 		
 
@@ -85,7 +88,7 @@
 			div = document.getElementById("myFilter");
 			div1 = div.getElementsByTagName("div");
 			for (i = 0; i < div1.length; i++) {
-				td = div1[i].getElementsByTagName("td")[0];
+				td = div1[i].getElementsByTagName("td")[1];
 				if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
 					div1[i].style.display = "";
 				} else {
@@ -103,7 +106,7 @@
 			div = document.getElementById("myFilter");
 			div1 = div.getElementsByTagName("div");
 			for (i = 0; i < div1.length; i++) {
-				td = div1[i].getElementsByTagName("td")[1];
+				td = div1[i].getElementsByTagName("td")[2];
 				if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
 					div1[i].style.display = "";
 				} else {
