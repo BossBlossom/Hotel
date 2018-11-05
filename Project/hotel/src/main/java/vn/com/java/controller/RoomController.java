@@ -1,7 +1,5 @@
 package vn.com.java.controller;
 
-import java.time.Duration;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -17,22 +15,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import vn.com.java.dao.BillDao;
 import vn.com.java.entity.Bill;
 import vn.com.java.entity.BookingHistory;
 import vn.com.java.entity.BookingInformation;
-import vn.com.java.entity.Product;
 import vn.com.java.entity.Room;
 import vn.com.java.entity.RoomStyle;
-import vn.com.java.model.BillDetailModel;
 import vn.com.java.model.BookingInformationModel;
 import vn.com.java.model.CheckOutModel;
 import vn.com.java.model.RoomModel;
-import vn.com.java.service.BillDetailService;
 import vn.com.java.service.BillService;
 import vn.com.java.service.BookingHistoryService;
 import vn.com.java.service.BookingInformationService;
-import vn.com.java.service.ProductService;
 import vn.com.java.service.RoomService;
 import vn.com.java.service.RoomStyleService;
 
@@ -48,12 +41,6 @@ public class RoomController
 	
 	@Autowired
 	private BookingInformationService bookingInformationService;
-	
-	@Autowired
-	private ProductService productService;
-	
-	@Autowired 
-	private BillDetailService billDetailService;
 	
 	@Autowired
 	private BillService billService;
@@ -232,7 +219,6 @@ public class RoomController
 	{
 		CheckOutModel checkout = (CheckOutModel) request.getSession().getAttribute("checkout"+roomNo);
 		
-		// tao ham checkout ben service
 		billService.checkout(checkout);
 		
 		return "redirect:/manager-list";
@@ -291,33 +277,4 @@ public class RoomController
 		return "redirect:/manager-list";
 	}
 	
-	@RequestMapping(value = "/order", method = RequestMethod.GET)
-	public String order(@RequestParam(name="roomNo")int roomNo, Model model)
-	{
-		Room room = roomService.find(roomNo);
-		if(room == null)
-		{
-			return"redirect:/manager-list";
-		}
-		
-		RoomModel roomModel = new RoomModel();
-		roomModel.fromRoom(room);
-		
-		List<Product> products = productService.search(0);
-		BillDetailModel billDetailModel = new BillDetailModel();
-		
-		model.addAttribute("room", room);
-		model.addAttribute("products", products);
-		model.addAttribute("order", billDetailModel);
-		
-		return "order";
-	}
-	
-	@RequestMapping(value = "/order", method = RequestMethod.POST)
-	public String handleBillOrder(@ModelAttribute(name="order") BillDetailModel billDetailModel, @RequestParam(name="roomNo")int roomNo,
-			BindingResult result, Model model)
-	{
-		billDetailService.order(billDetailModel);
-		return "redirect:/manager-list";
-	}
 }

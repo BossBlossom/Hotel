@@ -14,10 +14,10 @@ public class BookingHistoryService {
 
 	
 	@Autowired
-	private BookingHistoryDao dao;
+	private BookingHistoryDao bookingHistoryDao;
 	
 	public BookingHistory find(int roomNo, String status)
 	{
-		return dao.find(roomNo, status);
+		return bookingHistoryDao.find(roomNo, status);
 	}
 }
