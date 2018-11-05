@@ -66,20 +66,51 @@
 		
 		<div id="myFilter">
 			<c:forEach var="room" items="${rooms}">
-				<div class="room">
+			<c:if test="${room.status eq 'none'}">
+				<div class="room" style="background-color: #00e600;">
+			</c:if>
+			<c:if test="${room.status eq 'customer'}">
+				<div class="room" style="background-color: #e6e600;">
+			</c:if>
+			<c:if test="${room.status eq 'check in'}">
+				<div class="room" style="background-color: #e60000;">
+			</c:if>
+			<c:if test="${room.status eq 'check out'}">
+				<div class="room" style="background-color: #b300b3;">
+			</c:if>
+			<c:if test="${room.status eq 'closed'}">
+				<div class="room" style="background-color: grey;">
+			</c:if>
 					<table>
 						<tr>
-							<td style="color: #ffff00;">${room.getRoomStyle().getName()}</td>
+							<td style="color: black;"><b> ${room.getRoomStyle().getName()} </b></td>
 						</tr>
 						<tr>
 							<td>${room.roomNo}</td>
 						</tr>
-						<tr>
-							<td>${room.status}</td>
-						</tr>
+						<c:if test="${room.status eq 'none'}">
+							<tr>
+								<td>phòng trống</td>
+							</tr>
+						</c:if>
+						<c:if test="${room.status eq 'closed'}">
+							<tr>
+								<td>phòng đang sửa chữa</td>
+							</tr>
+						</c:if>
 						<c:if test="${room.status eq 'customer'}">
 							<tr>
-								
+								<td>phòng chờ</td>
+							</tr>
+						</c:if>
+						<c:if test="${room.status eq 'check in'}">
+							<tr>
+								<td>phòng có khách</td>
+							</tr>
+						</c:if>
+						<c:if test="${room.status eq 'check out'}">
+							<tr>
+								<td>trả phòng</td>
 							</tr>
 						</c:if>
 					</table>
