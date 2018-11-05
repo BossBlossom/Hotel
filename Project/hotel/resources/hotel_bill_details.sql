@@ -28,14 +28,14 @@ CREATE TABLE `bill_details` (
   `quantum` int(11) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `total` int(11) DEFAULT NULL,
-  `bill_id` int(11) DEFAULT NULL,
   `product_id` int(11) DEFAULT NULL,
+  `room_no` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FKfwm4sko9p82ndh6belyxx12bj` (`bill_id`),
   KEY `FK4iagdr0uhsq4tj0ag99nmmya1` (`product_id`),
+  KEY `FKj94qevlg6jm6km0sah5is3knq` (`room_no`),
   CONSTRAINT `FK4iagdr0uhsq4tj0ag99nmmya1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
-  CONSTRAINT `FKfwm4sko9p82ndh6belyxx12bj` FOREIGN KEY (`bill_id`) REFERENCES `bills` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `FKj94qevlg6jm6km0sah5is3knq` FOREIGN KEY (`room_no`) REFERENCES `rooms` (`room_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-04 17:21:53
+-- Dump completed on 2018-11-05 20:57:56
