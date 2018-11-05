@@ -35,16 +35,20 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()
-			.anyRequest().permitAll()
+			
 			.antMatchers("/resources/**").permitAll()
+			.antMatchers("/product-list/**").authenticated()
+			.antMatchers("/manager-list/**").authenticated()
 //			.antMatchers("/admin/**").access("hasRole('ADMIN')")
 //			.antMatchers("/contact/create").access("hasRole('CONTACT-MANAGER')")
+			.anyRequest().permitAll()
 		.and()
 			.formLogin()
 			.loginPage("/login")
-			.loginProcessingUrl("/handleLogin")
+			.loginProcessingUrl("/login")
 			.usernameParameter("username")
 			.passwordParameter("password")
+			.defaultSuccessUrl("/login-success", true)
 			.permitAll()
 		.and()
 			.logout().logoutUrl("/logout")

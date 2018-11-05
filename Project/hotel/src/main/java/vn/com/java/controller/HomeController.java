@@ -91,6 +91,12 @@ public class HomeController
 		return "redirect:/manager-list";
 	}
 	
+	@GetMapping(value = "/login-success")
+	public String LoginSuccess() 
+	{
+		
+		return "redirect:/manager-list";
+	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logoutPage() {
