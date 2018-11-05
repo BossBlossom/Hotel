@@ -24,7 +24,7 @@
 
 <body>
 	<header>
-		<h1 id="effectText1">MANAGER PAGE</h1>
+		<h1 id="effectText1">TRANG QUẢN LÝ</h1>
 	</header>
 
 	<nav>
@@ -36,7 +36,7 @@
 			<div>
 				<table>
 					<tr>
-						<td colspan="2">PHÒNG ${room.roomNo}</td>
+						<td colspan="2"><b>PHÒNG ${room.roomNo}</b></td>
 						<form:hidden path="roomNo"/>
 					</tr>
 					<tr>

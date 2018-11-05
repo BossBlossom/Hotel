@@ -39,7 +39,7 @@
 
 <body>
 	<header>
-		<h1 id="effectText1">MANAGER PAGE</h1>
+		<h1 id="effectText1">TRANG QUẢN LÝ</h1>
 	</header>
 
 	<nav>
@@ -51,8 +51,8 @@
 
 	<article>
 		<div id="filter" style="margin-bottom: 50px;">
-			<input type="text" id="inp1" class="myInput" onkeyup="myFunction1()" placeholder="Search for room no..." title="Type in a no">
-			<input type="text" id="inp2" class="myInput" onkeyup="myFunction2()" placeholder="Search for status..." title="Type in a status">
+			<input type="text" id="inp1" class="myInput" onkeyup="myFunction1()" placeholder="Tìm kiếm theo số phòng..." title="Nhập số phòng">
+			<input type="text" id="inp2" class="myInput" onkeyup="myFunction2()" placeholder="Tìm kiếm theo trạng thái..." title="Nhập trạng thái">
 		</div>
 		
 		<div id="myFilter">
