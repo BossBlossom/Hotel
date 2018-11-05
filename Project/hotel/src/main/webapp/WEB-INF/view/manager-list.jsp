@@ -35,16 +35,6 @@
 <link
 	href='<spring:url value="resources/Home_resources/css/responsive.css"/>'
 	rel="stylesheet">
-	
-<style type="text/css">
-
-.inf-position {
-	margin: 0 auto;
-	padding: 0 auto;
-	position: relative;
-}
-
-</style>
 </head>
 
 <body>
@@ -73,13 +63,13 @@
 				<div class="room" style="background-color: #e6e600;">
 			</c:if>
 			<c:if test="${room.status eq 'check in'}">
-				<div class="room" style="background-color: #e60000;">
+				<div class="room" style="background-color: #e60000; color:yellow;">
 			</c:if>
 			<c:if test="${room.status eq 'check out'}">
-				<div class="room" style="background-color: #b300b3;">
+				<div class="room" style="background-color: #b300b3; color:yellow;">
 			</c:if>
 			<c:if test="${room.status eq 'closed'}">
-				<div class="room" style="background-color: grey;">
+				<div class="room" style="background-color: grey; color:white;">
 			</c:if>
 					<table>
 						<tr>
@@ -90,27 +80,27 @@
 						</tr>
 						<c:if test="${room.status eq 'none'}">
 							<tr>
-								<td>phòng trống</td>
+								<td>Phòng trống</td>
 							</tr>
 						</c:if>
 						<c:if test="${room.status eq 'closed'}">
 							<tr>
-								<td>phòng đang sửa chữa</td>
+								<td>Đang sửa chữa</td>
 							</tr>
 						</c:if>
 						<c:if test="${room.status eq 'customer'}">
 							<tr>
-								<td>phòng chờ</td>
+								<td>Phòng chờ</td>
 							</tr>
 						</c:if>
 						<c:if test="${room.status eq 'check in'}">
 							<tr>
-								<td>phòng có khách</td>
+								<td>Phòng có khách</td>
 							</tr>
 						</c:if>
 						<c:if test="${room.status eq 'check out'}">
 							<tr>
-								<td>trả phòng</td>
+								<td>Trả phòng</td>
 							</tr>
 						</c:if>
 					</table>
@@ -190,61 +180,7 @@
 	
 	<script src="//code.jquery.com/jquery.js"></script>
         <!-- Bootstrap JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
-	
-<!--  	<form:form modelAttribute="room" action="room" method="post">   -->    
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-				aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLongTitle"
-								style="font-size: 30px;">Hóa Đơn</h5>
-						</div>
-
-						<div class="modal-body" style="height: 350px;">
-
-							<div class="inf-position">
-								<table style="border-collapse: collapse; width: 550px;">
-									<tr style="padding: 5px;">
-										<td style="padding: 10px;">Phòng:</td>
-										<td colspan="5">101</td>
-									</tr>
-									<tr style="padding: 5px;">
-										<td style="padding: 10px;">Tổng tiền phòng:</td>
-										<td colspan="5">100</td>
-									</tr>
-									<tr style="padding: 5px;">
-										<td style="padding: 10px;">Tổng tiền dịch vụ:</td>
-										<td colspan="5">100</td>
-									</tr>
-									<tr>
-										<td><hr style="border: 2px red solid;"></td>
-										<td><hr style="border: 2px red solid;"></td>
-										<td><hr style="border: 2px red solid;"></td>
-										<td><hr style="border: 2px red solid;"></td>
-										<td><hr style="border: 2px red solid;"></td>
-									</tr>
-									<tr style="padding: 5px;">
-										<td></td>
-										<td style="padding: 10px;">Tổng tiền:</td>
-										<td colspan="3">100</td>
-									</tr>
-
-								</table>
-							</div>
-						</div>
-
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary"
-								data-dismiss="modal">CLOSE</button>
-							<button type="submit" class="btn btn-primary">XUẤT HÓA ĐƠN</button>
-						</div>
-					</div>
-				</div>
-			</div>
-<!--    		</form:form>   -->    
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
 	
 	
 	<script>
