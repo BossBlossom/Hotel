@@ -40,7 +40,7 @@ CREATE TABLE `rooms` (
 
 LOCK TABLES `rooms` WRITE;
 /*!40000 ALTER TABLE `rooms` DISABLE KEYS */;
-INSERT INTO `rooms` VALUES (101,1,1,'none',1),(102,1,1,'none',1),(103,1,1,'none',1),(104,1,1,'none',1),(105,1,1,'none',1),(201,1,2,'none',2),(202,1,2,'none',2),(203,1,2,'none',2),(204,1,2,'none',2),(301,2,3,'none',3),(302,2,3,'none',3),(303,2,3,'none',3),(401,3,2,'none',4),(402,3,2,'none',4),(403,3,2,'none',4);
+INSERT INTO `rooms` VALUES (101,1,1,'customer',1),(102,1,1,'none',1),(103,1,1,'none',1),(104,1,1,'none',1),(105,1,1,'check in',1),(201,1,2,'check in',2),(202,1,2,'none',2),(203,1,2,'none',2),(204,1,2,'none',2),(205,1,2,'none',2),(301,2,3,'none',3),(302,2,3,'none',3),(303,2,3,'none',3),(304,2,3,'none',3),(305,2,3,'none',3),(401,3,2,'none',4),(402,3,2,'none',4),(403,3,2,'none',4);
 /*!40000 ALTER TABLE `rooms` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-02 21:31:14
+-- Dump completed on 2018-11-05 20:57:58

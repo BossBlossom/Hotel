@@ -12,14 +12,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import vn.com.java.dao.BillDao;
+import vn.com.java.entity.Bill;
 import vn.com.java.entity.BookingInformation;
 import vn.com.java.entity.Product;
 import vn.com.java.entity.Room;
+import vn.com.java.entity.RoomStyle;
+import vn.com.java.model.BillDetailModel;
 import vn.com.java.model.BookingInformationModel;
 import vn.com.java.model.RoomModel;
+import vn.com.java.service.BillDetailService;
 import vn.com.java.service.BookingInformationService;
 import vn.com.java.service.ProductService;
 import vn.com.java.service.RoomService;
+import vn.com.java.service.RoomStyleService;
 
 @Controller
 @RequestMapping("/manager-list")
@@ -27,16 +33,26 @@ public class RoomController
 {
 	@Autowired
 	private RoomService roomService;
+	
+	@Autowired
+	private RoomStyleService roomStyleService;
+	
 	@Autowired
 	private BookingInformationService bookingInformationService;
+	
 	@Autowired
 	private ProductService productService;
-
+	
+	@Autowired 
+	private BillDetailService billDetailService;
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(Model model)
 	{
 		List<Room> rooms = roomService.search(0);
+		Bill bill = new Bill();
 		model.addAttribute("rooms", rooms);
+		model.addAttribute("bill", bill);
 		
 		return "manager-list";
 	}
@@ -45,7 +61,9 @@ public class RoomController
 	public String create(Model model)
 	{
 		RoomModel roomModel = new RoomModel();
+		List<RoomStyle> roomStyles = roomStyleService.search(null);
 		model.addAttribute("room", roomModel);
+		model.addAttribute("roomStyles", roomStyles);
 		
 		return "manager-create-room";
 	}
@@ -53,7 +71,7 @@ public class RoomController
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public String handleCreate(@ModelAttribute("room") RoomModel roomModel, 
 			@RequestParam(name="roomNo")int roomNo, @RequestParam(name="bed")int bed, 
-			@RequestParam(name="airConditioner")int airConditioner, @RequestParam(name="money")int money,
+			@RequestParam(name="airConditioner")int airConditioner,
 			BindingResult result, ModelMap modelMap)
 	{
 		Room rooms = roomService.find(roomNo);
@@ -73,10 +91,6 @@ public class RoomController
 		}
 		else if(airConditioner == 0) {
 			modelMap.put("ketqua3", "Báº¡n chÆ°a nháº­p sá»‘ lÆ°á»£ng mÃ¡y láº¡nh!");
-			return "manager-create-room";
-		}
-		else if(money == 0) {
-			modelMap.put("ketqua4", "Báº¡n chÆ°a nháº­p giÃ¡ tiá»�n!");
 			return "manager-create-room";
 		}
 		
@@ -182,6 +196,18 @@ public class RoomController
 	@RequestMapping(value = "/bill", method = RequestMethod.GET)
 	public String bill(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
+		BillDao billDao = new BillDao();
+		Bill bill = billDao.findByRoom(roomNo);
+		
+		model.addAttribute("bill", bill);
+		
+		return "bill";
+	}
+	
+	@RequestMapping(value = "/bill", method = RequestMethod.POST)
+	public String handleBill(@RequestParam(name="roomNo")int roomNo,
+			BindingResult result, Model model)
+	{
 		roomService.billRoom(roomNo);
 		
 		return "redirect:/manager-list";
@@ -196,10 +222,12 @@ public class RoomController
 			return"redirect:/manager-list";
 		}
 		
+		List<RoomStyle> roomStyles = roomStyleService.search(null);
 		RoomModel roomModel = new RoomModel();
 		roomModel.fromRoom(room);
 		
 		model.addAttribute("room", roomModel);
+		model.addAttribute("roomStyles", roomStyles);
 		
 		return "manager-update-room";
 	}
@@ -207,7 +235,7 @@ public class RoomController
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public String handleUpdate(@ModelAttribute("room") RoomModel roomModel,
 			@RequestParam(name="bed")int bed, @RequestParam(name="airConditioner")int airConditioner, 
-			@RequestParam(name="money")int money, BindingResult result, ModelMap modelMap)
+			BindingResult result, ModelMap modelMap)
 	{
 		
 		if(bed == 0) {
@@ -216,10 +244,6 @@ public class RoomController
 		}
 		else if(airConditioner == 0) {
 			modelMap.put("ketqua3", "Báº¡n chÆ°a cáº­p nháº­t sá»‘ lÆ°á»£ng mÃ¡y láº¡nh!");
-			return "manager-update-room";
-		}
-		else if(money == 0) {
-			modelMap.put("ketqua4", "Báº¡n chÆ°a cáº­p nháº­t giÃ¡ tiá»�n!");
 			return "manager-update-room";
 		}
 		
@@ -243,12 +267,32 @@ public class RoomController
 	}
 	
 	@RequestMapping(value = "/order", method = RequestMethod.GET)
-	public String order(@RequestParam(name="roomNo")int roomNo, @ModelAttribute("room") RoomModel roomModel, BindingResult result, Model model)
+	public String order(@RequestParam(name="roomNo")int roomNo, Model model)
 	{
+		Room room = roomService.find(roomNo);
+		if(room == null)
+		{
+			return"redirect:/manager-list";
+		}
 		
-		List<Product> product = productService.search(0);
-		model.addAttribute("order", product);
+		RoomModel roomModel = new RoomModel();
+		roomModel.fromRoom(room);
 		
-		return "redirect:/order";
+		List<Product> products = productService.search(0);
+		BillDetailModel billDetailModel = new BillDetailModel();
+		
+		model.addAttribute("room", room);
+		model.addAttribute("products", products);
+		model.addAttribute("order", billDetailModel);
+		
+		return "order";
+	}
+	
+	@RequestMapping(value = "/order", method = RequestMethod.POST)
+	public String handleBillOrder(@ModelAttribute(name="order") BillDetailModel billDetailModel, @RequestParam(name="roomNo")int roomNo,
+			BindingResult result, Model model)
+	{
+		billDetailService.order(billDetailModel);
+		return "redirect:/manager-list";
 	}
 }

@@ -41,6 +41,9 @@ public class BookingHistory {
 	@Column(name = "price")
 	private int price;
 	
+	@Column(name = "status")
+	private String status;
+	
 	@Column(name = "day_total")
 	private int dayTotal;
 
@@ -99,4 +102,13 @@ public class BookingHistory {
 	public void setDayTotal(int dayTotal) {
 		this.dayTotal = dayTotal;
 	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	
 }

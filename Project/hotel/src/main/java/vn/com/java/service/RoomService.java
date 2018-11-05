@@ -8,8 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
+import vn.com.java.dao.BillDao;
+import vn.com.java.dao.BillDetailDao;
+import vn.com.java.dao.BookingHistoryDao;
 import vn.com.java.dao.RoomDao;
 import vn.com.java.dao.RoomStyleDao;
+import vn.com.java.entity.Bill;
+import vn.com.java.entity.BillDetail;
+import vn.com.java.entity.BookingHistory;
 import vn.com.java.entity.Room;
 import vn.com.java.model.RoomModel;
 
@@ -19,8 +25,18 @@ public class RoomService
 {
 	@Autowired
 	private RoomDao roomDao;
+	
 	@Autowired
 	private RoomStyleDao roomStyleDao;
+	
+	@Autowired
+	private BillDao billDao;
+	
+	@Autowired
+	private BookingHistoryDao bookingHistoryDao;
+	
+	@Autowired
+	private BillDetailDao billDetailDao;
 	
 	public List<Room> findAll() {
 		return roomDao.findAll();
@@ -92,6 +108,22 @@ public class RoomService
 	{
 		Room room = roomDao.find(roomNo);
 		room.setStatus("none");
+		
+		Bill bill = billDao.findByRoom(roomNo);
+		bill.setStatus("histoty");
+		billDao.update(bill);
+		
+		BookingHistory bookingHistory = bookingHistoryDao.findByRoom(roomNo);
+		if(bookingHistory.getStatus() == "none")
+		{
+			bookingHistory.setStatus("history");
+		}
+		
+		BillDetail billDetail = billDetailDao.findByRoom(roomNo);
+		if(billDetail.getStatus() == "none")
+		{
+			billDetail.setStatus("history");
+		}
 		
 		Room result = roomDao.update(room);
 		return result;

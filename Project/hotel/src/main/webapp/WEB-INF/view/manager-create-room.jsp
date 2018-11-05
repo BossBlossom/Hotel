@@ -41,10 +41,9 @@
 						<td>LOẠI PHÒNG</td>
 						<td colspan="2">
 							<form:select path="roomStyleId">
-								<form:option value="1">Single Room</form:option>
-								<form:option value="2">Double Room</form:option>
-								<form:option value="3">Super Room</form:option>
-								<form:option value="4">Delux Room</form:option>
+								<c:forEach var="roomStyle" items="${roomStyles}">
+									<form:option value="${roomStyle.id}">${roomStyle.name}</form:option>
+								</c:forEach>
 							</form:select>
 						</td>
 					</tr>
@@ -66,8 +65,8 @@
 				</table>
 				<span style="margin-bottom: 100px;"></span>
 				<p class="btn">
-					<a style="margin: 10px 10px 10px 34%" href="#" onclick="submitForm('form1')">TẠO PHÒNG</a> <a
-						href='<spring:url value="/manager-list" />'>TRỞ VỀ</a>
+					<a style="margin: 10px 10px 10px 34%" href="#" onclick="submitForm('form1')">TẠO PHÒNG</a> 
+					<a href='<spring:url value="/manager-list" />'>TRỞ VỀ</a>
 				</p>
 			</div>
 		</article>

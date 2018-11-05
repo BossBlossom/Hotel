@@ -44,19 +44,17 @@
 					<td>Giá</td>
 					<td>Số lượng</td>
 				</tr>
-				<hr>
-				<c:forEach var="product" items="${product}">
+				<c:forEach var="product" items="${products}">
 					<tr>
-						<td><form:label path="food" readonly="readonly" /></td>
-						<td><form:label path="style" readonly="readonly" /></td>
-						<td><form:label path="price" readonly="readonly" /></td>
-						<td><form:input type="number" path="quantum" /></td>	
+						<td><form:label path="product" name="product" readonly="readonly" /></td>
+						<td><form:label path="style" name="style" readonly="readonly" /></td>
+						<td><form:label path="price" name="price" readonly="readonly" /></td>
+						<td><form:input type="number" path="quantum"  name="quantum" /></td>	
 					</tr>
-					<hr>
 				</c:forEach>
 				
 				<p class="btn">
-					<a style="right: 0;" href="#" onclick="submitForm('form1')">TẠO PHÒNG</a>
+					<a style="right: 0;" href="#" onclick="submitForm('form1')">ORDER</a>
 					<a href='<spring:url value="/manager-list" />'>TRỞ VỀ</a>
 				</p>
 			</table>
