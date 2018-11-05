@@ -86,8 +86,8 @@
 		border-collapse: collapse;
 		margin: 0 auto;
 		padding: 0 auto;
-		margin-top: 20px;
-		font-size: 20px;
+		margin-top: 15px;
+		font-size: 15px;
 	}
 	
 	article td {
@@ -141,11 +141,12 @@
 	}
 	
 	.dropbtn {
-	    background-color: #00cc00;
+		background-color: #b3b3ff;
 	    color: black;
 	    padding: 2px;
 	    font-size: 18px;
 	    border: none;
+	    border-radius: 10px;
 	    cursor: pointer;
 	}
 	
