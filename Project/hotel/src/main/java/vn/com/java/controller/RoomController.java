@@ -50,7 +50,9 @@ public class RoomController
 	public String list(Model model)
 	{
 		List<Room> rooms = roomService.search(0);
+		Bill bill = new Bill();
 		model.addAttribute("rooms", rooms);
+		model.addAttribute("bill", bill);
 		
 		return "manager-list";
 	}

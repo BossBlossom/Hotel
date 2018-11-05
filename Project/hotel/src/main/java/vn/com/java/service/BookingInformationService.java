@@ -105,6 +105,7 @@ public class BookingInformationService
 		bookingHistory.setCustomer(customer);
 		bookingHistory.setDayTotal(1);
 		bookingHistory.setRoom(room);
+		bookingHistory.setStatus("none");
 		bookingHistoryDao.create(bookingHistory);
 		
 		return result;
@@ -132,6 +133,7 @@ public class BookingInformationService
 		bookingHistory.setCustomer(customer);
 		bookingHistory.setDayTotal(1);
 		bookingHistory.setRoom(room);
+		bookingHistory.setStatus("none");
 		bookingHistoryDao.create(bookingHistory);
 		
 		return result;
