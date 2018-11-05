@@ -1,6 +1,11 @@
 package vn.com.java.controller;
 
+import java.time.Duration;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,14 +19,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import vn.com.java.dao.BillDao;
 import vn.com.java.entity.Bill;
+import vn.com.java.entity.BookingHistory;
 import vn.com.java.entity.BookingInformation;
 import vn.com.java.entity.Product;
 import vn.com.java.entity.Room;
 import vn.com.java.entity.RoomStyle;
 import vn.com.java.model.BillDetailModel;
 import vn.com.java.model.BookingInformationModel;
+import vn.com.java.model.CheckOutModel;
 import vn.com.java.model.RoomModel;
 import vn.com.java.service.BillDetailService;
+import vn.com.java.service.BillService;
+import vn.com.java.service.BookingHistoryService;
 import vn.com.java.service.BookingInformationService;
 import vn.com.java.service.ProductService;
 import vn.com.java.service.RoomService;
@@ -45,6 +54,14 @@ public class RoomController
 	
 	@Autowired 
 	private BillDetailService billDetailService;
+	
+	@Autowired
+	private BillService billService;
+	
+	@Autowired
+	private BookingHistoryService historyService;
+	
+	private final int timePerDay = 24 * 60 * 60 * 1000;
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(Model model)
@@ -171,15 +188,6 @@ public class RoomController
 		return "redirect:/manager-list";
 	}
 	
-	@RequestMapping(value = "/check-out", method = RequestMethod.GET)
-	public String checkOut(@RequestParam(name="roomNo")int roomNo, 
-			@ModelAttribute("booking") BookingInformationModel bookingInformationModel,
-			BindingResult result, Model model)
-	{
-		bookingInformationService.checkOutBookingInformationManager(bookingInformationModel);
-		
-		return "redirect:/manager-list";
-	}
 	
 	@RequestMapping(value = "/cancel", method = RequestMethod.GET)
 	public String checkCancel(@RequestParam(name="roomNo")int roomNo, 
@@ -191,22 +199,41 @@ public class RoomController
 		return "redirect:/manager-list";
 	}
 	
-	@RequestMapping(value = "/bill", method = RequestMethod.GET)
-	public String bill(@RequestParam(name="roomNo")int roomNo, Model model)
+	@RequestMapping(value = "/check-out", method = RequestMethod.GET)
+	public String bill(@RequestParam(name="roomNo")int roomNo, Model model, HttpServletRequest request)
 	{
-		BillDao billDao = new BillDao();
-		Bill bill = billDao.findByRoom(roomNo);
+		Bill bill = billService.find(roomNo, "none");
+		BookingHistory history = historyService.find(roomNo, "none");
 		
-		model.addAttribute("bill", bill);
+		CheckOutModel checkout = new CheckOutModel();
+		checkout.setRoomNo(history.getRoom().getRoomNo());
+		checkout.setCheckIn(history.getCheckIn());
+		checkout.setCheckOut(new Date());
 		
-		return "bill";
+		long diff = checkout.getCheckOut().getTime() - checkout.getCheckIn().getTime();
+		int diffDays = (int) diff / timePerDay;
+		if (diff % timePerDay != 0) {
+			diffDays++;
+		}
+		checkout.setCount(diffDays);
+		int roomTotal = diffDays * history.getPrice();
+		checkout.setRoomTotal(roomTotal);
+		checkout.setServiceTotal(bill.getServiceTotal());
+		checkout.setTotal(checkout.getServiceTotal() + checkout.getRoomTotal());
+		
+		model.addAttribute("checkout", checkout);
+		request.getSession().setAttribute("checkout"+checkout.getRoomNo(), checkout);
+		
+		return "check-out";
 	}
 	
-	@RequestMapping(value = "/bill", method = RequestMethod.POST)
-	public String handleBill(@RequestParam(name="roomNo")int roomNo,
-			BindingResult result, Model model)
+	@RequestMapping(value = "/check-out", method = RequestMethod.POST)
+	public String handleBill(@RequestParam(name="roomNo")int roomNo, HttpServletRequest request)
 	{
-		roomService.billRoom(roomNo);
+		CheckOutModel checkout = (CheckOutModel) request.getSession().getAttribute("checkout"+roomNo);
+		
+		// tao ham checkout ben service
+		billService.checkout(checkout);
 		
 		return "redirect:/manager-list";
 	}

@@ -37,6 +37,19 @@ public class BookingHistoryDao
 		return new ArrayList<>();
 	}
 	
+	
+	public BookingHistory find(int roomNo, String status)
+	{
+		TypedQuery<BookingHistory> query = getSession().createQuery("FROM BookingHistory WHERE room.roomNo = :roomNo AND status = :status", BookingHistory.class);
+		query.setParameter("roomNo", roomNo);
+		query.setParameter("status", status);
+		List<BookingHistory> list = query.getResultList();
+		if (list.size() > 0) {
+			return list.get(0);
+		}
+		return null;
+	}
+	
 	public BookingHistory findByRoom(int roomNo)
 	{
 		TypedQuery<BookingHistory> query = getSession().createQuery("FROM BookingHistory WHERE room.roomNo = :roomNo", BookingHistory.class);

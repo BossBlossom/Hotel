@@ -6,7 +6,7 @@ import vn.com.java.entity.Room;
 
 public class BillDetailModel 
 {
-	private Room room;
+//	private Room room;
 	
 	private Product product;
 	
@@ -18,7 +18,9 @@ public class BillDetailModel
 	
 	private int total;
 	
-	private int roomNo;
+//	private int roomNo;
+	
+	private int billId;
 	
 	private int productId;
 
@@ -33,14 +35,15 @@ public class BillDetailModel
 		this.setQuantum(billDetail.getQuantum());
 	}
 	
-	public Room getRoom() {
-		return room;
+	
+	public int getBillId() {
+		return billId;
 	}
-
-	public void setRoom(Room room) {
-		this.room = room;
+	
+	public void setBillId(int billId) {
+		this.billId = billId;
 	}
-
+	
 	public Product getProduct() {
 		return product;
 	}
@@ -73,13 +76,13 @@ public class BillDetailModel
 		this.total = total;
 	}
 
-	public int getRoomNo() {
-		return roomNo;
-	}
-
-	public void setRoomNo(int roomNo) {
-		this.roomNo = roomNo;
-	}
+//	public int getRoomNo() {
+//		return roomNo;
+//	}
+//
+//	public void setRoomNo(int roomNo) {
+//		this.roomNo = roomNo;
+//	}
 
 	public int getProductId() {
 		return productId;

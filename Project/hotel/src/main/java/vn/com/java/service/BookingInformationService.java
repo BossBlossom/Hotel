@@ -77,6 +77,12 @@ public class BookingInformationService
 		bookingInformation.setStatus("none");
 		BookingInformation result = bookingInformationDao.create(bookingInformation);
 		
+		Bill bill = new Bill();
+		bill.setBookingInformation(bookingInformation);
+		bill.setRoom(room);
+		bill.setStatus("none");
+		billDao.create(bill);
+		
 		return result;
 	}
 	
@@ -107,6 +113,12 @@ public class BookingInformationService
 		bookingHistory.setRoom(room);
 		bookingHistory.setStatus("none");
 		bookingHistoryDao.create(bookingHistory);
+		
+		Bill bill = new Bill();
+		bill.setBookingInformation(bookingInformation);
+		bill.setRoom(room);
+		bill.setStatus("none");
+		billDao.create(bill);
 		
 		return result;
 	}

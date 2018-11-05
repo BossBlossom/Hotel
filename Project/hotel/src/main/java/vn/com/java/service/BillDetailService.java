@@ -50,11 +50,11 @@ public class BillDetailService
 	
 	public BillDetail order(BillDetailModel billDetailModel)
 	{
-		Room room = roomDao.find(billDetailModel.getRoomNo());
+		Bill bill = billDao.findById(billDetailModel.getBillId());
 		Product product = productDao.find(billDetailModel.getProductId());
 		
 		BillDetail billDetail = new BillDetail();
-		billDetail.setRoom(room);
+		billDetail.setBill(bill);
 		billDetail.setProduct(product);
 		billDetail.setQuantum(billDetailModel.getQuantum());
 		billDetail.setPrice(product.getPrice());
@@ -62,25 +62,15 @@ public class BillDetailService
 		billDetail.setStatus("none");
 		BillDetail result = billDetailDao.create(billDetail);
 		
-		Bill bill = billDao.findByRoom(billDetailModel.getRoomNo());
-		if(bill.getStatus() == "none")
-		{
-			if(bill.getServiceTotal() == 0)
-			{
-				bill.setServiceTotal(billDetail.getTotal());
-			}
-			else
-			{
-				bill.setServiceTotal(bill.getServiceTotal()+billDetail.getTotal());
-			}
-			billDao.update(bill);
-		}
+		int total = bill.getServiceTotal() + billDetail.getTotal();
+		bill.setServiceTotal(total);
+		billDao.update(bill);
 		
-		if(billDetailModel.getStyle() == "drink")
-		{
-			product.setQuantum(product.getQuantum()-billDetailModel.getQuantum());
-			productDao.update(product);
-		}
+//		if(billDetailModel.getStyle() == "drink")
+//		{
+//			product.setQuantum(product.getQuantum()-billDetailModel.getQuantum());
+//			productDao.update(product);
+//		}
 		
 		return result;
 	}

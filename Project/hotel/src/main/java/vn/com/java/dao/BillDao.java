@@ -42,6 +42,18 @@ public class BillDao
 		return bill;
 	}
 	
+	public Bill find(int roomNo, String status)
+	{
+		TypedQuery<Bill> query = getSession().createQuery("FROM Bill WHERE room.roomNo = :roomNo AND status = :status", Bill.class);
+		query.setParameter("roomNo", roomNo);
+		query.setParameter("status", status);
+		List<Bill> list = query.getResultList();
+		if (list.size() > 0) {
+			return list.get(0);
+		}
+		return null;
+	}
+	
 	public Bill findByRoom(int roomNo)
 	{
 		TypedQuery<Bill> query = getSession().createQuery("FROM Bill WHERE room.roomNo = :roomNo", Bill.class);
