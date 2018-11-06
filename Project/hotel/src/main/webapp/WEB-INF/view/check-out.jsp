@@ -40,9 +40,10 @@
 	<nav style="z-index: 1;">
 		<a href='<spring:url value="/manager-list" />'>Trang chủ</a>
 	</nav>
-
+	
 	<article>
-		<form id="form1" action='<spring:url value="/check-out" />' method="post">
+	<c:url var="formUrl" value="/manager-list/check-out?roomNo=${checkout.roomNo}" />
+		<form:form id="form1" action="${formUrl}" method="post">
 			<div class="inf-position">
 				<table style="border-collapse: collapse; width: 550px; text-align: left;">
 					<tr style="padding: 5px;">
@@ -94,7 +95,7 @@
 					</tr>
 				</table>
 			</div>
-		</form>
+		</form:form>
 	</article>
 
 
