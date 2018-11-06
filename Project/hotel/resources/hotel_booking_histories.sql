@@ -36,7 +36,7 @@ CREATE TABLE `booking_histories` (
   KEY `FKbo6tcdk5j4ota1fc0wcq5x4ei` (`room_no`),
   CONSTRAINT `FKbo6tcdk5j4ota1fc0wcq5x4ei` FOREIGN KEY (`room_no`) REFERENCES `rooms` (`room_no`),
   CONSTRAINT `FKe53rawn7gpr8dl011uxsunwoi` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ CREATE TABLE `booking_histories` (
 
 LOCK TABLES `booking_histories` WRITE;
 /*!40000 ALTER TABLE `booking_histories` DISABLE KEYS */;
-INSERT INTO `booking_histories` VALUES (18,'2018-11-05 20:55:05.142000',NULL,1,600,53,201,'none'),(19,'2018-11-05 20:56:53.373000',NULL,1,300,52,105,'none');
+INSERT INTO `booking_histories` VALUES (21,'2018-11-01 23:20:20.324000',NULL,1,300,55,102,'none'),(22,'2018-11-06 00:53:39.443000',NULL,1,800,56,305,'none'),(23,'2018-11-06 00:54:51.401000',NULL,1,300,57,101,'none');
 /*!40000 ALTER TABLE `booking_histories` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-05 20:57:57
+-- Dump completed on 2018-11-06 11:28:28
