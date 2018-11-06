@@ -35,6 +35,7 @@ public class RoomModel
 		this.setStatus(room.getStatus());
 		this.setBed(room.getBed());
 		this.setAirConditioner(room.getAirConditioner());
+		this.setRoomStyleId(room.getRoomStyle().getId());
 	}
 
 	public int getRoomNo() {

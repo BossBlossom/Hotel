@@ -246,15 +246,23 @@ public class RoomController
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public String handleUpdate(@ModelAttribute("room") RoomModel roomModel,
 			@RequestParam(name="bed")int bed, @RequestParam(name="airConditioner")int airConditioner, 
-			BindingResult result, ModelMap modelMap)
+			BindingResult result, ModelMap modelMap, Model model)
 	{
 		
 		if(bed == 0) {
 			modelMap.put("ketqua2", "Bạn chưa cập nhật số lượng giường!");
+			List<RoomStyle> roomStyles = roomStyleService.search(null);
+			
+			model.addAttribute("room", roomModel);
+			model.addAttribute("roomStyles", roomStyles);
 			return "manager-update-room";
 		}
 		else if(airConditioner == 0) {
 			modelMap.put("ketqua3", "Bạn chưa cập nhật số lượng máy lạnh!");
+			List<RoomStyle> roomStyles = roomStyleService.search(null);
+			
+			model.addAttribute("room", roomModel);
+			model.addAttribute("roomStyles", roomStyles);
 			return "manager-update-room";
 		}
 		
