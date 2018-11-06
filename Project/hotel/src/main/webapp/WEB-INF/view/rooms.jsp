@@ -843,7 +843,7 @@
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary"
 								data-dismiss="modal">CLOSE</button>
-							<button type="submit" class="btn btn-primary" onclick="alert('Đặt phòng thành công!')">BOOKING</button>
+							<button type="submit" class="btn btn-primary" onclick="alert('Thông báo', 'Đặt phòng thành công!')">BOOKING</button>
 						</div>
 					</div>
 				</div>
@@ -924,7 +924,7 @@
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary"
 								data-dismiss="modal">CLOSE</button>
-							<button type="submit" class="btn btn-primary" onclick="alert('Đặt phòng thành công!')">BOOKING</button>
+							<button type="submit" class="btn btn-primary" onclick="alert('Thông báo', 'Đặt phòng thành công!')">BOOKING</button>
 						</div>
 					</div>
 				</div>
@@ -1005,7 +1005,7 @@
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary"
 								data-dismiss="modal">CLOSE</button>
-							<button type="submit" class="btn btn-primary" onclick="alert('Đặt phòng thành công!')">BOOKING</button>
+							<button type="submit" class="btn btn-primary" onclick="alert('Thông báo', 'Đặt phòng thành công!')">BOOKING</button>
 						</div>
 					</div>
 				</div>
@@ -1086,7 +1086,7 @@
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary"
 								data-dismiss="modal">CLOSE</button>
-							<button type="submit" class="btn btn-primary" onclick="alert('Đặt phòng thành công!')">BOOKING</button>
+							<button type="submit" class="btn btn-primary" onclick="alert('Thông báo', 'Đặt phòng thành công!')">BOOKING</button>
 						</div>
 					</div>
 				</div>
