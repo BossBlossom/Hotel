@@ -609,7 +609,7 @@
 								</h3>
 								<p style="margin: 5px 0px 5px 0px;">* Phòng đẹp, tiện nghi
 									đầy đủ, không gian cực rộng, có view đẹp.</p>
-								<p style="margin: 5px 0px 5px 0px;">* Phòng 3 giường, 3 máy
+								<p style="margin: 5px 0px 5px 0px;">* Phòng 3 giường, 2 máy
 									lạnh, tivi công nghệ LED cao cấp.</p>
 								<p style="margin: 5px 0px 5px 0px;">* Giá: 800$/ngày</p>
 								<div class="links">

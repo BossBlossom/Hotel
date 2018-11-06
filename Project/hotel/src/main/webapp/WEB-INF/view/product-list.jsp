@@ -56,7 +56,7 @@
 								<td><img src='<spring:url value="resources/Home_resources/images/food/${product.image}" />' height="300px" width="500px"/></td>
 								<td style="font-size: 20px;">${product.product}</td>
 								<td style="font-size: 20px;">Đồ ăn</td>
-								<td style="font-size: 20px;">${product.price}$</td>
+								<td style="font-size: 20px; width: 15%;">${product.price}$</td>
 						</tr>
 					</c:if>
 					
@@ -66,7 +66,7 @@
 								<td><img src='<spring:url value="resources/Home_resources/images/drink/${product.image}" />' height="300px" width="300px"/></td>
 								<td style="font-size: 20px;">${product.product}</td>
 								<td style="font-size: 20px;">Đồ uống và tráng miệng</td>
-								<td style="font-size: 20px;">${product.price}$</td>
+								<td style="font-size: 20px; width: 15%;">${product.price}$</td>
 							</tr>
 					</c:if>
 					
