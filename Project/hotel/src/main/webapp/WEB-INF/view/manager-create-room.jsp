@@ -17,8 +17,6 @@
 
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-	
-<script type="text/javascript" src='<spring:url value="/resources/js/app.js" />'></script>
 
 </head>
 
@@ -40,7 +38,7 @@
 					<tr>
 						<td>LOẠI PHÒNG</td>
 						<td colspan="2">
-							<form:select path="roomStyleId">
+							<form:select id="style" path="roomStyleId" onclick="myFunction1()">
 								<c:forEach var="roomStyle" items="${roomStyles}">
 									<form:option value="${roomStyle.id}">${roomStyle.name}</form:option>
 								</c:forEach>
@@ -54,12 +52,12 @@
 					</tr>
 					<tr>
 						<td>GIƯỜNG</td>
-						<td colspan="2"><form:input path="bed" name="bed" type="number" maxlength="3"/></td>
+						<td colspan="2"><form:input path="bed" id="bedd" type="number" maxlength="3" readonly="true"/></td>
 						<td id="msg1" style="color: red">${ketqua2}</td>
 					</tr>
 					<tr>
 						<td>MÁY LẠNH</td>
-						<td colspan="2"><form:input path="airConditioner" name="airConditioner" type="number" maxlength="3"/></td>
+						<td colspan="2"><form:input path="airConditioner" id="air" name="airConditioner" type="number" maxlength="3" readonly="true"/></td>
 						<td id="msg2" style="color: red">${ketqua3}</td>
 					</tr>
 				</table>
@@ -77,22 +75,8 @@
 			lịch và đi công tác tại thành phố hoa</h3>
 	</footer>
 
-
-	<script type="text/javascript">
-		function readURL(input) {
-			if (input.files && input.files[0]) {
-				var reader = new FileReader();
-				reader.onload = function(e) {
-					$('#hinh1').attr('src', e.target.result);
-				}
-				reader.readAsDataURL(input.files[0]);
-			}
-		}
-		$("#h1").change(function() {
-			readURL1(this);
-		});
-	</script>
-
+	
+<script type="text/javascript" src='<spring:url value="/resources/js/app.js" />'></script>
 
 </body>
 </html>
