@@ -1,5 +1,6 @@
 package vn.com.java.service;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -88,6 +89,10 @@ public class BookingInformationService
 	
 	public BookingInformation createBookingInformationManager(BookingInformationModel bookingInformationModel)
 	{	
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = new Date();
+		String startAt = sdf.format(date);
+		
 		Customer customer = new Customer();
 		bookingInformationModel.toCustomer(customer);
 		customerDao.create(customer);
@@ -97,7 +102,7 @@ public class BookingInformationService
 		roomDao.update(room);
 		
 		BookingInformation bookingInformation = new BookingInformation();
-		bookingInformation.setStartedAt(bookingInformationModel.getStartedAt());
+		bookingInformation.setStartedAt(startAt);
 		bookingInformation.setCustomer(customer);
 		bookingInformation.setRoom(room);
 		bookingInformation.setStatus("none");
