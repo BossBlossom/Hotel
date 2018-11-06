@@ -74,25 +74,33 @@ public class RoomController
 	public String handleCreate(@ModelAttribute("room") RoomModel roomModel, 
 			@RequestParam(name="roomNo")int roomNo, @RequestParam(name="bed")int bed, 
 			@RequestParam(name="airConditioner")int airConditioner,
-			BindingResult result, ModelMap modelMap)
+			BindingResult result, ModelMap modelMap, Model model)
 	{
 		Room rooms = roomService.find(roomNo);
 		if(rooms != null)
 		{
 			modelMap.put("ketqua", "Số phòng này đã tồn tại!");
+			List<RoomStyle> roomStyles = roomStyleService.search(null);
+			model.addAttribute("roomStyles", roomStyles);
 			return "manager-create-room";
 		}
 		
 		if(roomNo == 0) {
 			modelMap.put("ketqua", "Bạn chưa nhập số phòng!");
+			List<RoomStyle> roomStyles = roomStyleService.search(null);
+			model.addAttribute("roomStyles", roomStyles);
 			return "manager-create-room";
 		}
 		else if(bed == 0) {
 			modelMap.put("ketqua2", "Bạn chưa nhập số lượng giường!");
+			List<RoomStyle> roomStyles = roomStyleService.search(null);
+			model.addAttribute("roomStyles", roomStyles);
 			return "manager-create-room";
 		}
 		else if(airConditioner == 0) {
 			modelMap.put("ketqua3", "Bạn chưa nhập số lượng máy lạnh!");
+			List<RoomStyle> roomStyles = roomStyleService.search(null);
+			model.addAttribute("roomStyles", roomStyles);
 			return "manager-create-room";
 		}
 		

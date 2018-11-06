@@ -14,11 +14,6 @@
 <link rel="stylesheet" type="text/css" href='<spring:url value="/resources/css/style3.css"/>'>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-<script type="text/javascript">
-	function submitForm(formName) {
-		document.getElementById(formName).submit();
-	}
-</script>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
@@ -44,7 +39,7 @@
 					<tr>
 						<td>LOẠI PHÒNG</td>
 						<td colspan="2">
-							<form:select path="roomStyleId">
+							<form:select id="style" path="roomStyleId" onclick="myFunction1()">
 								<c:forEach var="roomStyle" items="${roomStyles}">
 									<form:option value="${roomStyle.id}">${roomStyle.name}</form:option>
 								</c:forEach>
@@ -58,12 +53,12 @@
 					</tr>
 					<tr>
 						<td>GIƯỜNG</td>
-						<td colspan="2"><form:input path="bed" name="bed" type="number" maxlength="3"/></td>
+						<td colspan="2"><form:input path="bed" name="bed" id="bedd" type="number" maxlength="3" readonly="true"/></td>
 						<td id="msg1" style="color: red">${ketqua2}</td>
 					</tr>
 					<tr>
 						<td>MÁY LẠNH</td>
-						<td colspan="2"><form:input path="airConditioner" name="airConditioner" type="number" maxlength="3"/></td>
+						<td colspan="2"><form:input path="airConditioner" id="air" name="airConditioner" type="number" maxlength="3" readonly="true"/></td>
 						<td id="msg2" style="color: red">${ketqua3}</td>
 					</tr>
 				</table>
@@ -81,6 +76,7 @@
 			lịch và đi công tác tại thành phố hoa</h3>
 	</footer>
 
+	<script type="text/javascript" src='<spring:url value="/resources/js/app.js" />'></script>
 
 	<script type="text/javascript">
 		function readURL1(input) {
