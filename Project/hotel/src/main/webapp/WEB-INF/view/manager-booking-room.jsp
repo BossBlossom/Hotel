@@ -47,10 +47,6 @@
 						<td>Chứng minh nhân dân: </td>
 						<td><form:input path="cmnd" name="cmnd" /></td>
 					</tr>
-					<tr>
-						<td>Ngày đặt phòng: </td>
-						<td><form:input path="startedAt" name="startedAt" type="date" /></td>
-					</tr>
 
 				</table>
 				<span style="margin-bottom: 100px;"></span>
