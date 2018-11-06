@@ -79,20 +79,20 @@ public class RoomController
 		Room rooms = roomService.find(roomNo);
 		if(rooms != null)
 		{
-			modelMap.put("ketqua", "Sá»‘ phÃ²ng nÃ y Ä‘Ã£ tá»“n táº¡i!");
+			modelMap.put("ketqua", "Số phòng này đã tồn tại!");
 			return "manager-create-room";
 		}
 		
 		if(roomNo == 0) {
-			modelMap.put("ketqua", "Báº¡n chÆ°a nháº­p sá»‘ phÃ²ng!");
+			modelMap.put("ketqua", "Bạn chưa nhập số phòng!");
 			return "manager-create-room";
 		}
 		else if(bed == 0) {
-			modelMap.put("ketqua2", "Báº¡n chÆ°a nháº­p sá»‘ lÆ°á»£ng giÆ°á»�ng!");
+			modelMap.put("ketqua2", "Bạn chưa nhập số lượng giường!");
 			return "manager-create-room";
 		}
 		else if(airConditioner == 0) {
-			modelMap.put("ketqua3", "Báº¡n chÆ°a nháº­p sá»‘ lÆ°á»£ng mÃ¡y láº¡nh!");
+			modelMap.put("ketqua3", "Bạn chưa nhập số lượng máy lạnh!");
 			return "manager-create-room";
 		}
 		
@@ -250,11 +250,11 @@ public class RoomController
 	{
 		
 		if(bed == 0) {
-			modelMap.put("ketqua2", "Báº¡n chÆ°a cáº­p nháº­t sá»‘ lÆ°á»£ng giÆ°á»�ng!");
+			modelMap.put("ketqua2", "Bạn chưa cập nhật số lượng giường!");
 			return "manager-update-room";
 		}
 		else if(airConditioner == 0) {
-			modelMap.put("ketqua3", "Báº¡n chÆ°a cáº­p nháº­t sá»‘ lÆ°á»£ng mÃ¡y láº¡nh!");
+			modelMap.put("ketqua3", "Bạn chưa cập nhật số lượng máy lạnh!");
 			return "manager-update-room";
 		}
 		

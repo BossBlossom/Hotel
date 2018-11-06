@@ -11,7 +11,7 @@
 <meta charset="UTF-8">
 <title>Trang chủ Manager</title>
 <link rel="stylesheet" type="text/css"
-	href='<spring:url value="/resources/css/style2.css"/>'>
+	href='<spring:url value="/resources/css/style3.css"/>'>
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
@@ -23,7 +23,9 @@
 .inf-position {
 	margin: 0 auto;
 	padding: 0 auto;
+	float: none;
 	position: relative;
+	text-align: left;
 }
 
 </style>
@@ -35,48 +37,64 @@
 		<h1 id="effectText1">MANAGER PAGE</h1>
 	</header>
 
-	<nav>
+	<nav style="z-index: 1;">
 		<a href='<spring:url value="/manager-list" />'>Trang chủ</a>
 	</nav>
 
 	<article>
-		<div class="inf-position">
-			<table style="border-collapse: collapse; width: 550px;">
-				<tr style="padding: 5px;">
-					<td style="padding: 10px;">Phòng:</td>
-					<td colspan="5">${checkout.roomNo}</td>
-				</tr>
-				<tr style="padding: 5px;">
-					<td style="padding: 10px;">Ngày nhận phòng:</td>
-					<td colspan="5">${checkout.checkIn}</td>
-				</tr>
-				<tr style="padding: 5px;">
-					<td style="padding: 10px;">Ngày trả phòng:</td>
-					<td colspan="5">${checkout.checkOut}</td>
-				</tr>
-				<tr style="padding: 5px;">
-					<td style="padding: 10px;">Tiền phòng:</td>
-					<td colspan="5">${checkout.roomTotal}</td>
-				</tr>
-				<tr style="padding: 5px;">
-					<td style="padding: 10px;">Tổng tiền dịch vụ:</td>
-					<td colspan="5">${checkout.serviceTotal}</td>
-				</tr>
-				<tr>
-					<td><hr style="border: 2px red solid;"></td>
-					<td><hr style="border: 2px red solid;"></td>
-					<td><hr style="border: 2px red solid;"></td>
-					<td><hr style="border: 2px red solid;"></td>
-					<td><hr style="border: 2px red solid;"></td>
-				</tr>
-				<tr style="padding: 5px;">
-					<td></td>
-					<td style="padding: 10px;">Tổng tiền:</td>
-					<td colspan="3">${checkout.total }</td>
-				</tr>
-
-			</table>
-		</div>
+		<form id="form1" action='<spring:url value="/check-out" />' method="post">
+			<div class="inf-position">
+				<table style="border-collapse: collapse; width: 550px; text-align: left;">
+					<tr style="padding: 5px;">
+						<td colspan="2" style="padding: 10px;"><b>Phòng:</b></td>
+						<td colspan="4">${checkout.roomNo}</td>
+					</tr>
+					<tr style="padding: 5px;">
+						<td colspan="2" style="padding: 10px;"><b>Ngày nhận phòng:</b></td>
+						<td colspan="4">${checkout.checkIn}</td>
+					</tr>
+					<tr style="padding: 5px;">
+						<td colspan="2" style="padding: 10px;"><b>Ngày trả phòng:</b></td>
+						<td colspan="4">${checkout.checkOut}</td>
+					</tr>
+					<tr style="padding: 5px;">
+						<td colspan="2" style="padding: 10px;"><b>Tiền phòng:</b></td>
+						<td colspan="4">${checkout.roomTotal}$</td>
+					</tr>
+					<%-- <tr style="padding: 5px;">
+						<td style="padding: 10px;">Tổng tiền dịch vụ:</td>
+						<td colspan="5">${checkout.serviceTotal}</td>
+					</tr> --%>
+					<tr>
+						<td style="padding: 0;"><hr style="border: 2px red solid;"></td>
+						<td style="padding: 0;"><hr style="border: 2px red solid;"></td>
+						<td style="padding: 0;"><hr style="border: 2px red solid;"></td>
+						<td style="padding: 0;"><hr style="border: 2px red solid;"></td>
+						<td style="padding: 0;"><hr style="border: 2px red solid;"></td>
+						<td style="padding: 0;"><hr style="border: 2px red solid;"></td>
+					</tr>
+					<tr style="padding: 5px;">
+						<td colspan="2" style="padding: 10px;"><b>Tổng tiền:</b></td>
+						<td colspan="4">${checkout.total }$</td>
+					</tr>
+					
+					<tr style="padding: 5px;">
+						<td></td>
+						<td></td>
+						<td style="padding: 10px;" colspan="2">
+							<p class="btn" style="padding: 0; margin: 0;">	
+								<a href="#" onclick="submitForm('form1')" style="font-size: 18px;">XUẤT HÓA ĐƠN</a> 								
+							</p>
+						</td>
+						<td style="padding: 10px;" colspan="2">
+							<p class="btn" style="padding: 0; margin: 0;">	
+								<a href='<spring:url value="/manager-list" />' style="font-size: 18px;">TRỞ VỀ</a> 								
+							</p>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</form>
 	</article>
 
 
@@ -84,6 +102,8 @@
 		<h3>Nơi dừng chân nghỉ ngơi hợp với túi tiền của bạn khi đi du
 			lịch và đi công tác tại thành phố hoa</h3>
 	</footer>
+
+<script type="text/javascript" src='<spring:url value="/resources/js/app.js" />'></script>
 
 </body>
 </html>
