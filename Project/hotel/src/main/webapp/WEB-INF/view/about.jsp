@@ -343,7 +343,7 @@
 
 			<div class="copyright">
 				&copy; 2017 All right reserved. Designed by <a href="https://thienan1999.wordpress.com/"
-					target="_blank">Thien An.</a>
+					target="_blank">ADBA.</a>
 			</div>
 
 		</div>
