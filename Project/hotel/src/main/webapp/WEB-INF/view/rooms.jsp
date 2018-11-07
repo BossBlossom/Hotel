@@ -582,7 +582,7 @@
 								<div class="links">
 									<a href="" data-toggle="modal" data-target="#myModal1"
 										style="margin-top: 10px;" data-backdrop="static"
-										data-keyboard="false">Booking</a>
+										data-keyboard="false">Đặt phòng</a>
 								</div>
 							</div>
 						</div>
@@ -615,7 +615,7 @@
 								<div class="links">
 									<a href="" data-toggle="modal" data-target="#myModal2"
 										style="margin-top: 10px;" data-backdrop="static"
-										data-keyboard="false">Booking</a>
+										data-keyboard="false">Đặt phòng</a>
 								</div>
 							</div>
 						</div>
@@ -638,7 +638,7 @@
 								<div class="links">
 									<a href="" data-toggle="modal" data-target="#myModal3"
 										style="margin-top: 10px;" data-backdrop="static"
-										data-keyboard="false">Booking</a>
+										data-keyboard="false">Đặt phòng</a>
 								</div>
 							</div>
 						</div>
@@ -672,7 +672,7 @@
 								<div class="links">
 									<a href="" data-toggle="modal" data-target="#myModal4"
 										style="margin-top: 10px;" data-backdrop="static"
-										data-keyboard="false">Booking</a>
+										data-keyboard="false">Đặt phòng</a>
 								</div>
 							</div>
 						</div>
