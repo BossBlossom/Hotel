@@ -34,7 +34,7 @@
 
 <body>
 	<header>
-		<h1 id="effectText1">MANAGER PAGE</h1>
+		<h1 id="effectText1">TRANG QUẢN LÝ</h1>
 	</header>
 
 	<nav style="z-index: 1;">

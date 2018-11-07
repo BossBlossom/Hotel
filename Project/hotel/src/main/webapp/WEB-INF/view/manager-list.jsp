@@ -102,8 +102,8 @@
 						<span class="dropdown">
 							<button class="dropbtn">&#9947;</button>
 							<span class="dropdown-content">
-								<a href='<spring:url value="/manager-list/view-room?roomNo=${room.roomNo}" />'>view</a> 
-								<a href='<spring:url value="/manager-list/check-out?roomNo=${room.roomNo}" />'>check out</a>
+								<a href='<spring:url value="/manager-list/view-room?roomNo=${room.roomNo}" />'>xem thông tin</a> 
+								<a href='<spring:url value="/manager-list/check-out?roomNo=${room.roomNo}" />'>trả phòng</a>
 							</span>
 						</span>
 					</c:if>
@@ -112,9 +112,9 @@
 						<span class="dropdown">
 							<button class="dropbtn">&#9947;</button>
 							<span class="dropdown-content">
-								<a href='<spring:url value="/manager-list/view-room?roomNo=${room.roomNo}" />'>view</a>
-								<a href='<spring:url value="/manager-list/check-in?roomNo=${room.roomNo}" />'>check in</a>
-								<a href='<spring:url value="/manager-list/cancel?roomNo=${room.roomNo}" />'>cancel</a>
+								<a href='<spring:url value="/manager-list/view-room?roomNo=${room.roomNo}" />'>xem thông tin</a>
+								<a href='<spring:url value="/manager-list/check-in?roomNo=${room.roomNo}" />'>nhận phòng</a>
+								<a href='<spring:url value="/manager-list/cancel?roomNo=${room.roomNo}" />'>hủy</a>
 							</span>
 						</span>
 					</c:if>
@@ -123,9 +123,9 @@
 						<span class="dropdown">
 							<button class="dropbtn">&#9947;</button>
 							<span class="dropdown-content">
-								<a href='<spring:url value="/manager-list/open?roomNo=${room.roomNo}" />'>open</a> 
-								<a href='<spring:url value="/manager-list/update?roomNo=${room.roomNo}" />'>update</a>
-								<a href='<spring:url value="/manager-list/delete?roomNo=${room.roomNo}" />'>delete</a>
+								<a href='<spring:url value="/manager-list/open?roomNo=${room.roomNo}" />'>mở</a> 
+								<a href='<spring:url value="/manager-list/update?roomNo=${room.roomNo}" />'>cập nhật</a>
+								<a href='<spring:url value="/manager-list/delete?roomNo=${room.roomNo}" />'>xóa</a>
 							</span>
 						</span>
 					</c:if>
@@ -134,10 +134,10 @@
 						<span class="dropdown">
 							<button class="dropbtn">&#9947;</button>
 							<span class="dropdown-content">
-								<a href='<spring:url value="/manager-list/booking?roomNo=${room.roomNo}" />'>booking</a>
-								<a href='<spring:url value="/manager-list/closed?roomNo=${room.roomNo}" />'>closed</a> 
-								<a href='<spring:url value="/manager-list/update?roomNo=${room.roomNo}" />'>update</a>
-								<a href='<spring:url value="/manager-list/delete?roomNo=${room.roomNo}" />'>delete</a>
+								<a href='<spring:url value="/manager-list/booking?roomNo=${room.roomNo}" />'>đặt phòng</a>
+								<a href='<spring:url value="/manager-list/closed?roomNo=${room.roomNo}" />'>khóa phòng</a> 
+								<a href='<spring:url value="/manager-list/update?roomNo=${room.roomNo}" />'>cập nhật</a>
+								<a href='<spring:url value="/manager-list/delete?roomNo=${room.roomNo}" />'>xóa</a>
 							</span>
 						</span>
 					</c:if>
