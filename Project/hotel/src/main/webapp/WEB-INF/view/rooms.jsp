@@ -832,6 +832,10 @@
 										<td colspan="5"><form:input path="cmnd" /></td>
 									</tr>
 									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Số điện thoại:</td>
+										<td colspan="5"><form:input path="phone" /></td>
+									</tr>
+									<tr style="padding: 5px;">
 										<td style="padding: 10px;">Ngày nhận phòng:</td>
 										<td colspan="5"><form:input path="startedAt" type="date" /></td>
 									</tr>
@@ -911,6 +915,10 @@
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">CMND:</td>
 										<td colspan="5"><form:input path="cmnd" /></td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Số điện thoại:</td>
+										<td colspan="5"><form:input path="phone" /></td>
 									</tr>
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">Ngày nhận phòng:</td>
@@ -994,6 +1002,10 @@
 										<td colspan="5"><form:input path="cmnd" /></td>
 									</tr>
 									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Số điện thoại:</td>
+										<td colspan="5"><form:input path="phone" /></td>
+									</tr>
+									<tr style="padding: 5px;">
 										<td style="padding: 10px;">Ngày nhận phòng:</td>
 										<td colspan="5"><form:input path="startedAt" type="date" /></td>
 									</tr>
@@ -1073,6 +1085,10 @@
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">CMND:</td>
 										<td colspan="5"><form:input path="cmnd" /></td>
+									</tr>
+									<tr style="padding: 5px;">
+										<td style="padding: 10px;">Số điện thoại:</td>
+										<td colspan="5"><form:input path="phone" /></td>
 									</tr>
 									<tr style="padding: 5px;">
 										<td style="padding: 10px;">Ngày nhận phòng:</td>

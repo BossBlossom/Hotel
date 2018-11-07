@@ -47,7 +47,10 @@
 						<td>Chứng minh nhân dân: </td>
 						<td><form:input path="cmnd" name="cmnd" /></td>
 					</tr>
-
+					<tr>
+						<td>Số điện thoại: </td>
+						<td><form:input path="phone" name="phone" /></td>
+					</tr>
 				</table>
 				<span style="margin-bottom: 100px;"></span>
 				<p class="btn">

@@ -21,6 +21,9 @@ public class Customer {
 	@Column(name="full_name")
 	private String fullName;
 
+	@Column(name="phone")
+	private String phone;
+	
 	public int getId() {
 		return id;
 	}
@@ -43,6 +46,14 @@ public class Customer {
 
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	
 }

@@ -16,6 +16,8 @@ public class BookingInformationModel
 	
 	private String fullName;
 	
+	private String phone;
+	
 	private Room room;
 	
 	private Customer customer;
@@ -24,13 +26,15 @@ public class BookingInformationModel
 	{
 		customer.setCmnd(this.cmnd);
 		customer.setFullName(this.fullName);
+		customer.setPhone(this.phone);
 		return customer;
 	}
 	
 	public void fromCustomer(Customer customer)
 	{
-		customer.setCmnd(customer.getCmnd());
-		customer.setFullName(customer.getFullName());
+		this.setCmnd(customer.getCmnd());
+		this.setFullName(customer.getFullName());
+		this.setPhone(customer.getPhone());
 	}
 	
 	public BookingInformation toBookingInformation(BookingInformation bookingInformation)
@@ -100,4 +104,13 @@ public class BookingInformationModel
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	
 }

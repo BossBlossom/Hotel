@@ -88,6 +88,10 @@
 									<td>${bookingInformation.getCustomer().getFullName()}</td>
 								</tr>
 								<tr>
+									<td>Số điện thoại: </td>
+									<td>${bookingInformation.getCustomer().getPhone()}</td>
+								</tr>
+								<tr>
 									<td>Ngày đặt phòng: </td>
 									<td>${bookingInformation.startedAt}</td>
 								</tr>
