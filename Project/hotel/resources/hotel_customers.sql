@@ -26,8 +26,9 @@ CREATE TABLE `customers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cmnd` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `full_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +37,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (51,'025753282','Satou'),(52,'031253282','An'),(53,'01236782','Bao'),(54,'0257456123','Satou Yuu'),(55,'0257456123','Satou'),(56,'025753282','Nguyễn Việt Dũng'),(57,'0257456123','勇佐藤'),(58,'025753282','Nguyễn Việt Dũng');
+INSERT INTO `customers` VALUES (62,'025753282','Nguyễn Việt Dũng','0903627908'),(63,'036853282','Nguyễn Thiên Ân','0974384921'),(64,'042754291','Thân Văn Quốc Bảo','0969605103'),(65,'025753282','Nguyễn Việt Dũng','0903627908'),(66,'012345678','Lê Quang Anh','01694535400');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-06 11:28:27
+-- Dump completed on 2018-11-07 20:18:18

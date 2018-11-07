@@ -33,7 +33,7 @@ CREATE TABLE `booking_informations` (
   KEY `FKfi4nwf123b07udv84g4x5r1vj` (`room_no`),
   CONSTRAINT `FKfi4nwf123b07udv84g4x5r1vj` FOREIGN KEY (`room_no`) REFERENCES `rooms` (`room_no`),
   CONSTRAINT `FKginlo886sap4cvvnhtlh8fp9r` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `booking_informations` (
 
 LOCK TABLES `booking_informations` WRITE;
 /*!40000 ALTER TABLE `booking_informations` DISABLE KEYS */;
-INSERT INTO `booking_informations` VALUES (29,'none',55,102,'2018-11-23'),(30,'none',56,305,'2018-11-06'),(31,'none',57,101,'2018-11-06'),(32,'none',58,304,'2018-11-06');
+INSERT INTO `booking_informations` VALUES (36,'none',62,104,'2018-11-01'),(37,'none',63,405,'2018-11-07'),(38,'none',64,204,'2018-11-07'),(39,'none',65,105,'2018-11-07'),(40,'none',66,305,'2018-11-07');
 /*!40000 ALTER TABLE `booking_informations` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-06 11:28:29
+-- Dump completed on 2018-11-07 20:18:19

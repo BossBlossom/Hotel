@@ -81,6 +81,7 @@
 					</div>
 					</form>
 				</form>
+				<a href='<spring:url value="/" />' style="float: right;">Trở về trang chủ</a>
 			</div>
 		</div>
 	</div>
